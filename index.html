@@ -114,12 +114,12 @@
         }
         var onloadCallback = function() {
             grecaptcha.render('recaptcha1', {
-                'sitekey': '6Lda_hEaAAAAAHNkud-Y9X1r7cCZ9EKn8WBVZeF9',
+                'sitekey': '6LcQEOIbAAAAAAG9fC3yywvf-hpHP-pKywBUvPcm',
                 'callback': function(response) {
                     var message = $('#contact-message').val();
                     var name = $('#contact-message').val();
                     var email = $('#contact-email').val();
-                    sendNameChoiceEmail(name, "", "thehunt100-contact", email, message);
+                    sendNameChoiceEmail(name, "", "mailswami-contact", email, message);
 
                 }
             });
