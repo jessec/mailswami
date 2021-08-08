@@ -63,7 +63,6 @@ var cronManager = (function() {
 
                 if (e.target.id == "logout-link") {
                     cronManager.eraseCookie('authkey', location.pathname.replace('/dashboard.html', ''));
-                    cronManager.delete_cookie('authkey', location.pathname.replace('/dashboard.html', ''), location.host);
                     location.reload();
                 }
 
@@ -826,21 +825,6 @@ var cronManager = (function() {
 
         eraseCookie: function(name, path) {
             document.cookie = name + '=; Path=' + path + '; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        },
-
-        delete_cookie: function(name, path, domain) {
-            if (cronManager.get_cookie(name)) {
-                document.cookie = name + "=" +
-                    ((path) ? ";path=" + path : "") +
-                    ((domain) ? ";domain=" + domain : "") +
-                    ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
-            }
-        },
-
-        get_cookie: function(name) {
-            return document.cookie.split(';').some(c => {
-                return c.trim().startsWith(name + '=');
-            });
         }
 
     }
