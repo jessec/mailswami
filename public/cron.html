@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>title</title>
+<link rel="stylesheet" href="css/cron.css">
+</head>
+<body>
+	<!-- page content -->
+
+
+
+	<div class="custom-container">
+		<!-- cronjob entry manual expression to be parsing -->
+		<fieldset>
+			<div class="input-group col-md-12">
+				<label class="input-group-addon">Crontab Expression :</label>
+				<input id="custom_expression" class="form-control" type="text" value="* * * * *">
+				<a id="parseaction" href="#" class="btn btn-default input-group-addon">Parse to picker</a>
+			</div>
+		</fieldset>
+		<br />
+		<!-- cronjob entry manual expression to be parsing -->
+
+		<!-- cronjob picker start here -->
+		<div class="cronjobselector">
+			<fieldset id="cronjob_expression_picker" class="cron-manual-selector">
+				<!-- timeAndDates html copyright and copied from easycron html manual picker -->
+				<div class="timesAndDates" style="">
+					<table class="table table-condensed" style="margin-bottom: 0px;">
+						<thead>
+							<tr class="maintitle">
+								<th>Minutes</th>
+								<th>Hours</th>
+								<th>Days</th>
+								<th>Months</th>
+								<th>Weekdays</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="mainbody">
+								<td valign="top">
+									<ul>
+										<li>
+											<label class="radio">
+												<input checked="" data-ena="0" data-mode="0" data-name="mins[]" name="all_mins" type="radio" value="1">
+												All
+											</label>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="1" data-mode="2" data-name="mins[]" name="all_mins" type="radio" value="0">
+												Selected ..
+											</label>
+										</li>
+									</ul>
+									<table id="sortableTableNaN">
+										<tbody>
+											<tr>
+												<td valign="top">
+													<select disabled="" multiple="multiple" name="mins[]" size="12">
+														<option value="0">0</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+													</select>
+												</td>
+												<td valign="top">
+													<select disabled="" multiple="multiple" name="mins[]" size="12">
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+														<option value="18">18</option>
+														<option value="19">19</option>
+														<option value="20">20</option>
+														<option value="21">21</option>
+														<option value="22">22</option>
+														<option value="23">23</option>
+													</select>
+												</td>
+												<td valign="top">
+													<select disabled="" multiple="" name="mins[]" size="12">
+														<option value="24">24</option>
+														<option value="25">25</option>
+														<option value="26">26</option>
+														<option value="27">27</option>
+														<option value="28">28</option>
+														<option value="29">29</option>
+														<option value="30">30</option>
+														<option value="31">31</option>
+														<option value="32">32</option>
+														<option value="33">33</option>
+														<option value="34">34</option>
+														<option value="35">35</option>
+													</select>
+												</td>
+												<td valign="top">
+													<select disabled="" multiple="" name="mins[]" size="12">
+														<option value="36">36</option>
+														<option value="37">37</option>
+														<option value="38">38</option>
+														<option value="39">39</option>
+														<option value="40">40</option>
+														<option value="41">41</option>
+														<option value="42">42</option>
+														<option value="43">43</option>
+														<option value="44">44</option>
+														<option value="45">45</option>
+														<option value="46">46</option>
+														<option value="47">47</option>
+													</select>
+												</td>
+												<td valign="top">
+													<select disabled="" multiple="" name="mins[]" size="12">
+														<option value="48">48</option>
+														<option value="49">49</option>
+														<option value="50">50</option>
+														<option value="51">51</option>
+														<option value="52">52</option>
+														<option value="53">53</option>
+														<option value="54">54</option>
+														<option value="55">55</option>
+														<option value="56">56</option>
+														<option value="57">57</option>
+														<option value="58">58</option>
+														<option value="59">59</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+								<td valign="top">
+									<ul>
+										<li>
+											<label class="radio">
+												<input checked="checked" data-ena="0" data-mode="0" data-name="hours[]" name="all_hours" type="radio" value="1">
+												All
+											</label>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="1" data-mode="2" data-name="hours[]" name="all_hours" type="radio" value="0">
+												Selected ..
+											</label>
+										</li>
+									</ul>
+									<table id="sortableTableNaN">
+										<tbody>
+											<tr>
+												<td valign="top">
+													<select disabled="" multiple="" name="hours[]" size="12">
+														<option value="0">0</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+													</select>
+												</td>
+												<td valign="top">
+													<select disabled="" multiple="" name="hours[]" size="12">
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+														<option value="18">18</option>
+														<option value="19">19</option>
+														<option value="20">20</option>
+														<option value="21">21</option>
+														<option value="22">22</option>
+														<option value="23">23</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+								<td valign="top">
+									<ul>
+										<li>
+											<label class="radio">
+												<input checked="checked" data-ena="0" data-mode="0" data-name="days[]" name="all_days" type="radio" value="1">
+												All
+											</label>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="0" data-mode="0" data-name="days[]" name="all_days" type="radio" value="3">
+												Last day of the month
+											</label>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="1" data-mode="1" data-name="days[]" name="all_days" type="radio" value="4">
+												Nearest weekday of
+												<span class="questionTip" title="The nearest weekday of chosen day">
+													<i class="glyphicon glyphicon-question-sign" style="color: rgb(153, 153, 153);"></i>
+												</span>
+											</label>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="1" data-mode="2" data-name="days[]" name="all_days" type="radio" value="0">
+												Selected ..
+											</label>
+										</li>
+									</ul>
+									<table id="sortableTableNaN">
+										<tbody>
+											<tr>
+												<td valign="top">
+													<select disabled="" multiple="" name="days[]" size="11">
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+													</select>
+												</td>
+												<td valign="top">
+													<select disabled="" multiple="" name="days[]" size="11">
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+														<option value="18">18</option>
+														<option value="19">19</option>
+														<option value="20">20</option>
+														<option value="21">21</option>
+														<option value="22">22</option>
+													</select>
+												</td>
+												<td valign="top">
+													<select disabled="" multiple="" name="days[]" size="9">
+														<option value="23">23</option>
+														<option value="24">24</option>
+														<option value="25">25</option>
+														<option value="26">26</option>
+														<option value="27">27</option>
+														<option value="28">28</option>
+														<option value="29">29</option>
+														<option value="30">30</option>
+														<option value="31">31</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+								<td valign="top">
+									<ul>
+										<li>
+											<label class="radio">
+												<input checked="checked" data-ena="0" data-mode="0" data-name="months[]" name="all_months" type="radio" value="1">
+												All
+											</label>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="1" data-mode="2" data-name="months[]" name="all_months" type="radio" value="0">
+												Selected ..
+											</label>
+										</li>
+									</ul>
+									<table id="sortableTableNaN">
+										<tbody>
+											<tr>
+												<td valign="top">
+													<select disabled="" multiple="" name="months[]" size="12">
+														<option value="1">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+								<td valign="top">
+									<ul>
+										<li>
+											<label class="radio">
+												<input checked="checked" data-ena="0" data-mode="0" data-name="weekdays[]" name="all_weekdays" type="radio" value="1">
+												All
+											</label>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="1" data-mode="1" data-name="weekdays[]" name="all_weekdays" type="radio" value="3">
+												Last _
+												<span class="questionTip" title="The last chosen weekday of the month">
+													<i class="glyphicon glyphicon-question-sign" style="color: rgb(153, 153, 153);"></i>
+												</span>
+											</label>
+										</li>
+										<li>
+											<label class="radio" style="display: inline-block;">
+												<input data-ena="1" data-mode="1" data-name="weekdays[]" name="all_weekdays" type="radio" value="4">
+											</label>
+											<input class="span1" maxlength="1" name="ordinal" type="text" disabled="">
+											<label style="margin-left: 2px;">
+												<sup>th</sup> _
+											</label>
+											<span class="questionTip" title="The Xth chosen weekday of the month">
+												<i class="glyphicon glyphicon-question-sign" style="color: rgb(153, 153, 153);"></i>
+											</span>
+										</li>
+										<li>
+											<label class="radio">
+												<input data-ena="1" data-mode="2" data-name="weekdays[]" name="all_weekdays" type="radio" value="0">
+												Selected ..
+											</label>
+										</li>
+									</ul>
+									<table id="sortableTableNaN">
+										<tbody>
+											<tr>
+												<td valign="top">
+													<select disabled="" multiple="" name="weekdays[]" size="7">
+														<option value="0">Sunday</option>
+														<option value="1">Monday</option>
+														<option value="2">Tuesday</option>
+														<option value="3">Wednesday</option>
+														<option value="4">Thursday</option>
+														<option value="5">Friday</option>
+														<option value="6">Saturday</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr class="mainbody">
+								<td colspan="5">Note: Ctrl-click (or command-click on the Mac) to select and de-select minutes, hours, days and months.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="input-group col-md-5">
+					<label class="input-group-addon">Manual Expression</label>
+					<input class="form-control" name="manual_expression" type="text" readonly="" id="manual_expression" value="* * * * *">
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<!-- cronjob picker end here -->
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+-->
+<script src="js/jquery.js"></script>
+<script src="js/cron.js"></script>
+</body>
+</html>

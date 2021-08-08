@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+</head>
+<body>
+	<div id="cron-manager"></div>
+	<!-- page content -->
+    <script src="js/crypt.js"></script>
+    <script src="js/network.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/table.js"></script>
+	<script src="dashboard.js"></script>
+	<script>
+        cronManager.init("cron-manager", "http://localhost:8080");
+    </script>
+</body>
+</html>
