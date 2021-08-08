@@ -829,7 +829,7 @@ var cronManager = (function() {
         },
 
         delete_cookie: function(name, path, domain) {
-            if (get_cookie(name)) {
+            if (cronManager.get_cookie(name)) {
                 document.cookie = name + "=" +
                     ((path) ? ";path=" + path : "") +
                     ((domain) ? ";domain=" + domain : "") +
