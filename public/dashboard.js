@@ -63,7 +63,7 @@ var cronManager = (function() {
 
                 if (e.target.id == "logout-link") {
                     //cronManager.eraseCookie('authkey');
-                    cronManager.delete_cookie('authkey', '/', location.host);
+                    cronManager.delete_cookie('authkey', location.pathname.replace('/dashboard.html', ''), location.host);
                     location.reload();
                 }
 
