@@ -828,7 +828,7 @@ var cronManager = (function() {
             document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         },
 
-        delete_cookie = function(name, path, domain) {
+        delete_cookie: function(name, path, domain) {
             if (get_cookie(name)) {
                 document.cookie = name + "=" +
                     ((path) ? ";path=" + path : "") +
@@ -837,7 +837,7 @@ var cronManager = (function() {
             }
         },
 
-        get_cookie = function(name) {
+        get_cookie: function(name) {
             return document.cookie.split(';').some(c => {
                 return c.trim().startsWith(name + '=');
             });
