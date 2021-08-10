@@ -35,7 +35,7 @@ var cronManager = (function () {
             cronManager.setupLogoutLink();
         },
         getIndustries : async function(){
-            return await cronManager.fetchJson("/industries.json");
+            return await cronManager.fetchJson("industries.json");
         },
         addLogoutLink : function(){
             var ra = document.createElement("a");
