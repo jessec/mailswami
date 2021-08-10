@@ -94,13 +94,25 @@ class Table {
           span1.style.padding = '4px';
           span1.classList = "state"; 
           div1.appendChild(span1);
-          var div2 = document.createElement("div");
+          
+          //var div2 = document.createElement("div");
           var span2 = document.createElement("span");
           span2.style.padding = '4px';
           span2.classList = "state"; 
-          var cellText2 = document.createTextNode("delete");
+          var cellText2 = document.createTextNode("edit");
           span2.appendChild(cellText2);
+          
           div1.appendChild(span2);
+          
+          
+          //var div3 = document.createElement("div");
+          var span3 = document.createElement("span");
+          span3.style.padding = '4px';
+          span3.classList = "state"; 
+          var cellText3 = document.createTextNode("delete");
+          span3.appendChild(cellText3);
+          
+          div1.appendChild(span3);
           return div1;
         break;
       default:

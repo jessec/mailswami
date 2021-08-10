@@ -14,21 +14,28 @@ var cronManager = (function () {
     var aesKey = "";
     var serverUrl = "";
     var timeZoneData = [];
+    var masterDB = {};
+    var industries = {};
 
 
     return {
         init : async function (id, serverUrl) {
-            this.serverUrl = serverUrl;
-            this.encKey = "1234567891234567";
-            this.aesKey = "xx35f242a46d67eeb74aabc37d5e5d05";
-            this.editableColoms = ['expression','email','batchSize'];
-            this.hiddenColoms = ['id','expressiondesc','user'];
-            this.formatColoms = ['command','state'];
-            this.id = id;
-            this.widget = document.getElementById(this.id);
-            this.setupControles();
-            this.setupEvents();
-            this.setupLogoutLink();
+            cronManager.masterDB = {};
+            cronManager.serverUrl = serverUrl;
+            cronManager.encKey = "1234567891234567";
+            cronManager.aesKey = "xx35f242a46d67eeb74aabc37d5e5d05";
+            cronManager.editableColoms = ['expression','email','batchSize'];
+            cronManager.hiddenColoms = ['id','expressiondesc','user', 'warmerEmailAccount'];
+            cronManager.formatColoms = ['command','state'];
+            cronManager.id = id;
+            cronManager.widget = document.getElementById(this.id);
+            cronManager.industries = await this.getIndustries();
+            cronManager.setupControles();
+            cronManager.setupEvents();
+            cronManager.setupLogoutLink();
+        },
+        getIndustries : async function(){
+            return await cronManager.fetchJson("/industries.json");
         },
         addLogoutLink : function(){
             var ra = document.createElement("a");
@@ -98,6 +105,7 @@ var cronManager = (function () {
                             "firstName": cronManager.getFormValueByName(id, "firstName"),
                             "lastName": cronManager.getFormValueByName(id, "lastName"),
                             "email": cronManager.getFormValueByName(id, "email"),
+                            "industry": cronManager.getFormValueByName(id, "industry"),
                             "timeZone": cronManager.getFormValueByName(id, "timeZone"),
                             "imapUsername": cronManager.getFormValueByName(id, "imapUsername"),
                             "imapPassword": cronManager.getFormValueByName(id, "imapPassword"),
@@ -117,11 +125,11 @@ var cronManager = (function () {
                     var newEmailAccount = await cronManager.fetchJson(addEmailAccountUrl);
                     console.log(newEmailAccount);
                     var messages = document.querySelector('#cron-manager-messages');
-                    if(newEmailAccount.status == "success"){
-                        //e.target.previousSibling.click();
+                    if(newEmailAccount.status == "true"){
+                        // e.target.previousSibling.click();
                         messages.innerHTML = "Please wait 1 day for the email to become active";
                     }else{
-                        messages.innerHTML = "Oops something went wrong";
+                        messages.innerHTML = "Oops could not send the test email";
                     }
                     setTimeout(() => {
                         messages.innerHTML = "";
@@ -139,62 +147,65 @@ var cronManager = (function () {
                     e.target.parentNode.parentNode.style.display = "none";
                 }
                 
+                if(e.target.innerText.trim() == "edit"){
+                    console.log();
+                    var tdId = e.target.parentNode.parentNode.id;
+                    var email = document.querySelector("#"+tdId.replace("_state","_email")).innerText.trim();
+                    console.log(email);
+                    var accounts = cronManager.masterDB.warmerEmailAccounts;
+                    for (var i = 0; i < accounts.length; i++) {
+                        var account = accounts[i];
+                        if(account.email == email){
+                            console.log(account);   
+                            var serverWrapper = e.target.closest(".server_wrapper_class");
+                            serverWrapper.querySelector('.btn-add-email').click();
+                            account = account.warmerEmailAccount;
+                            serverWrapper.querySelector('select[name=espProvider]').value = account.espProvider;
+                            serverWrapper.querySelector('input[name=email]').value = account.email;
+                            serverWrapper.querySelector('input[name=firstName]').value = account.firstName;
+                            serverWrapper.querySelector('input[name=lastName]').value = account.lastName;
+                            serverWrapper.querySelector('select[name=industry]').value = account.industry;
+                            serverWrapper.querySelector('select[name=imapSecurity]').value = account.imapSecurity;
+                            serverWrapper.querySelector('input[name=imapHost]').value = account.imapHost;
+                            serverWrapper.querySelector('input[name=imapPassword]').value = account.imapPassword;
+                            serverWrapper.querySelector('input[name=imapPort]').value = account.imapPort;
+                            serverWrapper.querySelector('input[name=imapUsername]').value = account.imapUsername;
+                            serverWrapper.querySelector('select[name=smtpSecurity]').value = account.smtpSecurity;
+                            serverWrapper.querySelector('input[name=smtpHost]').value = account.smtpHost;
+                            serverWrapper.querySelector('input[name=smtpPassword]').value = account.smtpPassword;
+                            serverWrapper.querySelector('input[name=smtpPort]').value = account.smtpPort;
+                            serverWrapper.querySelector('input[name=smtpUsername]').value = account.smtpUsername;
+                            serverWrapper.querySelector('select[name=timeZone]').value = account.timeZone;
+                        }
+                    }
+                }
+                
                 if(e.target.innerText.trim() == "delete"){
                     e.target.parentNode.parentNode.parentNode.style.backgroundColor = "#9ecdf5";
-
                     setTimeout(async function(){ 
                         var tdId = e.target.parentNode.parentNode.id;
-                        console.log(tdId);
                         var cronJobIdParts = tdId.split("_");
                         var cronJobId = cronJobIdParts[cronJobIdParts.length - 2];
-                        
-                        console.log("deleting : " + cronJobId);
                         var serverWrapper = e.target.closest(".server_wrapper_class");                   
                         var id = serverWrapper.id;
                         var idParts = id.split('_');
                         var serverId = idParts[2];
                         var server = cronManager.serverLookup[serverId];
-                        
-                        var cronJobJson = cronManager.getCronJobsByServerID[serverId];
-                        
                         var email = document.querySelector("#"+tdId.replace("_state","_email")).innerText.trim();
-                        
-                        console.log(email);
-                        
-                        var isLastEmailAccount = cronManager.isLastEmailAccount(email, cronJobJson);
-                        
-                        console.log(isLastEmailAccount);
-                        var txt;
-                        
-                        if(isLastEmailAccount){
-                            var r = confirm("By deleting this cronjob you will also delete email account : "+ email + " do you want this?");
-                            if (r == true) {
-                              txt = "You pressed OK!";
-                              var deleteCronJobUrl = cronManager.serverUrl+"/api/dashboard/job/delete?auth=" + cronManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
+                        var r = confirm("Are you sure you want to delete "+ email + "?");
+                        if (r == true) {
+                              var deleteCronJobUrl = cronManager.serverUrl+"/api/dashboard/email/accounts/delete?auth=" + cronManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
                               var newCronJob = await cronManager.fetchJson(deleteCronJobUrl);
                               console.log(newCronJob);
-                            } else {
-                              txt = "You pressed Cancel!";
-                            }
-                        }else{
-                            var r = confirm("Are you sure you want to delete this cron job?");
-                            if (r == true) {
-                              txt = "You pressed OK!";
-                              var deleteCronJobUrl = cronManager.serverUrl+"/api/dashboard/job/delete?auth=" + cronManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=false";
-                              var newCronJob = await cronManager.fetchJson(deleteCronJobUrl);
-                              console.log(newCronJob);
-                            } else {
-                              txt = "You pressed Cancel!";
-                            }
                         }
                         e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
-                        var formData = new FormData(cronManager.loginForm);
-                        // var user = formData.get("user");
                         var authKey = cronManager.getAuthKey();
+                        delete cronManager.masterDB.warmerEmailAccounts
                         cronManager.createServerTable(server, authKey);
                         setTimeout(function(){ 
                             document.querySelector('#'+id).style.display = "inline-grid"; 
                         }, 500);
+                        
                     }, 500);
                 }
                 
@@ -643,19 +654,19 @@ var cronManager = (function () {
         },
         
         createServerTable : async function (server, pass) {
-            // var dataUrl = cronManager.serverUrl+"/api/dashboard/jobs?auth=" +
-            // pass
             var serverId = cronManager.getIdFromServerUrl(server);
-            // var cronJobJson = await this.fetchJson(dataUrl);
+            var warmerEmailAccountsJson = {};
             
-            var warmerEmailAccountsUrl = cronManager.serverUrl+"/api/dashboard/email/accounts?auth=" + pass;
-            var warmerEmailAccountsJson = await this.fetchJson(warmerEmailAccountsUrl);
+            if(!cronManager.masterDB.hasOwnProperty('warmerEmailAccounts')){
+                var warmerEmailAccountsUrl = cronManager.serverUrl+"/api/dashboard/email/accounts?auth=" + pass;
+                warmerEmailAccountsJson = await this.fetchJson(warmerEmailAccountsUrl);
+                cronManager.masterDB.warmerEmailAccounts = warmerEmailAccountsJson;
+            }else {
+                warmerEmailAccountsJson = cronManager.masterDB.warmerEmailAccounts;
+            }
             console.log(warmerEmailAccountsJson);
-            
             var cronJobJson = warmerEmailAccountsJson;
-
             if(cronManager.getCronJobsByServerID === undefined)cronManager.getCronJobsByServerID = {};
-            
             cronManager.getCronJobsByServerID[serverId] = cronJobJson;
             
             // Cron table
@@ -686,17 +697,18 @@ var cronManager = (function () {
             var inputFirstName = this.getInputField("text", {"placeholder":"First name","name":"firstName","style":"float:right;"});
             var inputLastName = this.getInputField("text", {"placeholder":"Last name","name":"lastName","style":"float:right;"});
             var inputNewEmail = this.getInputField("text", {"placeholder":"Email","class":"add-new-email","name":"email","style":"float:right;"});
+            var industry = this.getDropDown("industry", "industry", cronManager.industries);
             var timeZone = this.getDropDown("timezone", "timeZone", cronManager.timeZoneData);
             var inputImapUserName = this.getInputField("text", {"placeholder":"Imap username","name":"imapUsername","style":"float:right;"});
             var inputImapPass = this.getInputField("password", {"placeholder":"Imap password","class":"add-new-imap-password","name":"imapPassword","style":"float:right;"});
             var inputImapHost = this.getInputField("text", {"placeholder":"Imap server","name":"imapHost","style":"float:right;"});
             var inputImapPort = this.getInputField("text", {"placeholder":"Imap port","name":"imapPort","style":"float:right;"});
-            var imapSecurity = this.getDropDown("imap-security", "imapSecurity", [{"ssl_tls":"SSL/TLS"},{"insecure":"Insecure"}]);
+            var imapSecurity = this.getDropDown("imap-security", "imapSecurity", [{"true":"SSL/TLS"},{"false":"Insecure"}]);
             var inputSmtpUserName = this.getInputField("text", {"placeholder":"Smtp username","name":"smtpUsername","style":"float:right;"});
             var inputSmtpPass = this.getInputField("password", {"placeholder":"Smtp password","name":"smtpPassword","style":"float:right;"});
             var inputSmtpHost = this.getInputField("text", {"placeholder":"Smtp server","name":"smtpHost","style":"float:right;"});
             var inputSmtpPort = this.getInputField("text", {"placeholder":"Smtp port","name":"smtpPort","style":"float:right;"});
-            var smtpSecurity = this.getDropDown("smtp-security", "smtpSecurity", [{"ssl_tls":"SSL/TLS"},{"insecure":"Insecure"}]);
+            var smtpSecurity = this.getDropDown("smtp-security", "smtpSecurity", [{"true":"SSL/TLS"},{"false":"Insecure"}]);
 
             
             var tblAddEmailButton = this.getButton("save",{"class":"btn-save-email","style":"float:right;"})
@@ -713,6 +725,7 @@ var cronManager = (function () {
             emailInputWrapper.appendChild(inputFirstName);
             emailInputWrapper.appendChild(inputLastName);
             emailInputWrapper.appendChild(inputNewEmail);
+            emailInputWrapper.appendChild(industry);
             emailInputWrapper.appendChild(timeZone);
             emailInputWrapper.appendChild(inputImapUserName);
             emailInputWrapper.appendChild(inputImapPass);
