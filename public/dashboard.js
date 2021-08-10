@@ -713,7 +713,7 @@ var cronManager = (function () {
             
             var tblAddEmailButton = this.getButton("save",{"class":"btn-save-email","style":"float:right;"})
             var tblCancelEmailButton = this.getButton("cancel",{"class":"btn-cancel-email","style":"float:right;"})
-            var tblCheckEmailButton = this.getButton("check",{"class":"btn-check-email","style":"float:right;"})
+            //var tblCheckEmailButton = this.getButton("check",{"class":"btn-check-email","style":"float:right;"})
             
             tblWrapper.appendChild(tblLabel);
             
@@ -741,7 +741,7 @@ var cronManager = (function () {
             var emailButtonWrapper = document.createElement("div");
             emailButtonWrapper.style.display = "flex";
             emailButtonWrapper.appendChild(tblCancelEmailButton);
-            emailButtonWrapper.appendChild(tblCheckEmailButton);            
+            //emailButtonWrapper.appendChild(tblCheckEmailButton);            
             emailButtonWrapper.appendChild(tblAddEmailButton);
             
             emailInputWrapper.appendChild(emailButtonWrapper);
@@ -780,10 +780,10 @@ var cronManager = (function () {
             tbl.style.marginTop = '20px';  
             tblWrapper.appendChild(tbl);
             document.querySelector('#cron-manager').appendChild(tblWrapper);           
-            var emailUrl = cronManager.serverUrl+"/api/dashboard/emails?auth=" + pass
-            var emailJson = await this.fetchJson(emailUrl);
-            if(cronManager.emailByServerIdLookup === undefined)cronManager.emailByServerIdLookup = {};           
-            cronManager.emailByServerIdLookup[serverId] = emailJson;
+//            var emailUrl = cronManager.serverUrl+"/api/dashboard/emails?auth=" + pass
+//            var emailJson = await this.fetchJson(emailUrl);
+//            if(cronManager.emailByServerIdLookup === undefined)cronManager.emailByServerIdLookup = {};           
+//            cronManager.emailByServerIdLookup[serverId] = emailJson;
         },
         
         fetchJson : async function(url){
