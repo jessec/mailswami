@@ -19,23 +19,25 @@
 
 	<div id="wrapper">
 
-		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="defaultOpen">Dashboard</button>
+		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')">Dashboard</button>
 		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
 		<!-- 
 		<button class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Contact</button>
 		-->
-		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')"><a id="logout-link" href="#">Logout</a></button>
+		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen"><a id="logout-link" href="#">Logout</a></button>
 		<div id="Home" class="tabcontent">
 			<div id="account-manager"></div>
 		</div>
 
 		<div id="News" class="tabcontent">
+			<div id="invoice-manager"></div>
 		</div>
 
 		<div id="Contact" class="tabcontent">
 		</div>
 
 		<div id="About" class="tabcontent">
+			<div id="user-manager"></div>
 		</div>
 
 
@@ -50,8 +52,13 @@
 	<script src="js/network.js"></script>
 	<script src="js/form.js"></script>
 	<script src="js/table.js"></script>
+	<script src="user.js"></script>
 	<script src="invoice.js"></script>
 	<script src="dashboard.js"></script>
+	
+	<script>
+        userManager.init("user-manager", "http://localhost:8080");
+    </script>
 	<script>
         accountManager.init("account-manager", "http://localhost:8080");
     </script>

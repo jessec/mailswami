@@ -69,6 +69,10 @@ input, select {
 	padding: 10px;
 }
 
+select {
+	border-right : 15px solid rgb(221, 221, 221);
+}
+
 .server_wrapper_class button {
 	padding: 5px; background : #21bf73;
 	color: #FFFFFF !important;
@@ -82,7 +86,7 @@ input, select {
 	color:#fff;
 }
 
-table > tbody > tr:nth-child(1) > td:nth-child(9) {
+.server_wrapper_class table > tbody > tr:nth-child(1) > td:nth-child(9) {
 		    color: transparent;
 }
 body .tablink, body #logout-link {
@@ -90,4 +94,7 @@ body .tablink, body #logout-link {
 }
 body.dashboard .tablink, body.dashboard #logout-link  {
 	color:#fff;
+}
+#invoice-table-table {
+	width:100%;
 }
