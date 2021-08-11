@@ -85,3 +85,9 @@ input, select {
 table > tbody > tr:nth-child(1) > td:nth-child(9) {
 		    color: transparent;
 }
+body .tablink, body #logout-link {
+	color: transparent;
+}
+body.dashboard .tablink, body.dashboard #logout-link  {
+	color:#fff;
+}

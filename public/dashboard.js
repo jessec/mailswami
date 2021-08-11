@@ -34,6 +34,9 @@ var cronManager = (function () {
             cronManager.setupEvents();
             cronManager.setupLogoutLink();
         },
+        setupCss : function(){
+            document.body.classList.add("dashboard");
+        },
         getIndustries : async function(){
             return await cronManager.fetchJson("industries.json");
         },
@@ -584,6 +587,7 @@ var cronManager = (function () {
             }
             cronManager.addLogoutLink();
             document.querySelector('#server-dropdown-id').disabled = false;
+            cronManager.setupCss();
         },
         
         setupServerDropDown : function(elementId, selectId, name, values){
