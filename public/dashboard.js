@@ -25,7 +25,7 @@ var cronManager = (function () {
             cronManager.encKey = "1234567891234567";
             cronManager.aesKey = "xx35f242a46d67eeb74aabc37d5e5d05";
             cronManager.editableColoms = ['expression','email','batchSize'];
-            cronManager.hiddenColoms = ['id','expressiondesc','user', 'warmerEmailAccount'];
+            cronManager.hiddenColoms = ['id','expressiondesc','user', 'warmerEmailAccount','expression','command','batchSize'];
             cronManager.formatColoms = ['command','state'];
             cronManager.id = id;
             cronManager.widget = document.getElementById(this.id);
@@ -42,7 +42,7 @@ var cronManager = (function () {
             ra.innerText = "Logout";
             ra.id = "logout-link";
             ra.href = "#";      
-            document.querySelector('.cron-manager-controles').appendChild(ra);
+            //document.querySelector('.cron-manager-controles').appendChild(ra);
         },
         setupLogoutLink : function(){
             var authKey = this.getAuthKey();
@@ -234,7 +234,7 @@ var cronManager = (function () {
                     
                     
                     setTimeout(function(){ 
-                        document.querySelector('#'+id).style.display = "inline-grid"; 
+                        document.querySelector('#'+id).style.display = "flex"; 
                         document.querySelector('#'+id+' table > tbody > tr:last-child').style.backgroundColor = "yellow";
                     }, 500);
                     
@@ -605,7 +605,7 @@ var cronManager = (function () {
                 for (var i = 0; i < wrappers.length; i++) {
                     wrappers[i].style.display = "none";
                 }
-                document.querySelector('#server_wrapper_'+this.value).style.display = "inline-grid";
+                document.querySelector('#server_wrapper_'+this.value).style.display = "flex";
             });
             
             if(document.querySelector('#'+selectId)){
@@ -676,6 +676,7 @@ var cronManager = (function () {
             tblWrapper.style.display = 'none'; 
             tblWrapper.style.border = "1px solid";
             tblWrapper.style.padding = "5px";
+            tblWrapper.style.flexDirection = "column";
             tblWrapper.id = "server_wrapper_"+serverId;
             tblWrapper.classList = "server_wrapper_class"; 
 

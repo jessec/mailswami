@@ -3,10 +3,48 @@
 <head>
 <meta charset="utf-8">
 <title>Dashboard</title>
+
 <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-	<div id="cron-manager"></div>
+
+
+
+
+
+
+
+
+
+
+	<div id="wrapper">
+
+		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="defaultOpen">Dashboard</button>
+		<!-- 
+		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">News</button>
+		<button class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Contact</button>
+		-->
+		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')"><a id="logout-link" href="#">Logout</a></button>
+		<div id="Home" class="tabcontent">
+			<div id="cron-manager"></div>
+		</div>
+
+		<div id="News" class="tabcontent">
+		</div>
+
+		<div id="Contact" class="tabcontent">
+		</div>
+
+		<div id="About" class="tabcontent">
+		</div>
+
+
+
+
+
+
+	</div>
+
 	<!-- page content -->
 	<script src="js/crypt.js"></script>
 	<script src="js/network.js"></script>
@@ -16,5 +54,32 @@
 	<script>
         cronManager.init("cron-manager", "http://localhost:8080");
     </script>
+
+	<script>
+        function openPage(pageName, elmnt, color) {
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
+
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
 </body>
 </html>

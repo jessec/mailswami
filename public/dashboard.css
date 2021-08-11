@@ -1,3 +1,83 @@
+*:focus {
+    outline: none;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+
 body {
-    background: #f0f5f9;
+	display: flex;
+	justify-content: center;
+	background: #f0f5f9;
+}
+
+#wrapper {
+	max-width: 600px;
+}
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+	height: 100%;
+	margin: 0;
+	font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+	background-color: #555;
+	color: white;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	width: 50%;
+}
+
+.tablink:hover {
+	background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+	color: white;
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
+	min-width: 600px;
+	box-sizing: border-box;
+	background-color: #4d9bc0;
+}
+
+#cronmanager {
+	background: whitesmoke;
+	color: black;
+	display: flex;
+	flex-direction: column;
+}
+
+.server_wrapper_class {
+	color: black;
+	background: #fff2e5;
+	border: 0px !important;
+	padding: 15px !important;
+}
+
+input, select {
+	border: 0px;
+	padding: 10px;
+}
+
+.server_wrapper_class button {
+	padding: 5px; background : #21bf73;
+	color: #FFFFFF !important;
+	border: 0px solid #21bf73 !important;
+	box-sizing: border-box;
+	background: #21bf73;
+}
+
+#logout-link, #register-link, #reset-link {
+	text-decoration: none;
+	color:#fff;
 }
