@@ -81,3 +81,7 @@ input, select {
 	text-decoration: none;
 	color:#fff;
 }
+
+table > tbody > tr:nth-child(1) > td:nth-child(9) {
+		    color: transparent;
+}
