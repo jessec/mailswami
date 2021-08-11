@@ -3,7 +3,7 @@ class Table {
       console.log("init table");
   }
   
-  createJsonTable(serverId, jsonArray){
+  createJsonTable(serverId, jsonArray, editableColoms, hiddenColoms, formatColoms){
       this.removeJsonTable(serverId);
       var tbl = document.createElement("table");
       var tblBody = document.createElement("tbody");
@@ -16,11 +16,11 @@ class Table {
                   cell.classList = "table-th";  
                   cell.style.border = '1px solid black';  
                   cell.style.padding = '3px'; 
-                  if(cronManager.hiddenColoms.includes(key)){
+                  if(hiddenColoms.includes(key)){
                       cell.classList = "hidden-json-field"; 
                       cell.style.display = "none";
                   }
-                  if(cronManager.formatColoms.includes(key)){
+                  if(formatColoms.includes(key)){
                       tdObj = this.formatColom(key+"_th",tdObj);
                   }                        
                   var cellText = document.createTextNode(key);
@@ -37,14 +37,14 @@ class Table {
               cell.style.padding = '3px'; 
               var tdId = serverId+"_"+j+"_"+key;
               cell.setAttribute("id", tdId);  
-              if(cronManager.editableColoms.includes(key)){
+              if(editableColoms.includes(key)){
                   cell.classList = "json-field"; 
               }
-              if(cronManager.hiddenColoms.includes(key)){
+              if(hiddenColoms.includes(key)){
                   cell.classList = "hidden-json-field"; 
                   cell.style.display = "none";
               }
-              if(cronManager.formatColoms.includes(key)){
+              if(formatColoms.includes(key)){
                   tdObj = this.formatColom(key,tdObj);
               }
               //var cellText = document.createTextNode(tdObj);

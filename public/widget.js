@@ -544,7 +544,9 @@ var cronManager = (function () {
                 }
             }
             
-            var tbl = table.createJsonTable(serverId, cronJobJson);
+            var tbl = table.createJsonTable(serverId, cronJobJson, cronManager.editableColoms, cronManager.hiddenColoms, cronManager.formatColoms);
+            
+            //var tbl = table.createJsonTable(serverId, cronJobJson);
             tbl.style.marginTop = '20px';  
             tblWrapper.appendChild(tbl);
 

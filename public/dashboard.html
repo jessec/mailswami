@@ -20,13 +20,13 @@
 	<div id="wrapper">
 
 		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="defaultOpen">Dashboard</button>
+		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
 		<!-- 
-		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">News</button>
 		<button class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Contact</button>
 		-->
 		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')"><a id="logout-link" href="#">Logout</a></button>
 		<div id="Home" class="tabcontent">
-			<div id="cron-manager"></div>
+			<div id="account-manager"></div>
 		</div>
 
 		<div id="News" class="tabcontent">
@@ -50,9 +50,13 @@
 	<script src="js/network.js"></script>
 	<script src="js/form.js"></script>
 	<script src="js/table.js"></script>
+	<script src="invoice.js"></script>
 	<script src="dashboard.js"></script>
 	<script>
-        cronManager.init("cron-manager", "http://localhost:8080");
+        accountManager.init("account-manager", "http://localhost:8080");
+    </script>
+    <script>
+    	invoiceManager.init("invoice-manager", "http://localhost:8080");
     </script>
 
 	<script>
