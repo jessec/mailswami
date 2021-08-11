@@ -43,9 +43,10 @@ var invoiceManager = (function () {
                 "items",
                 "credits",
                 "invoiceId",
-                "balance",
-                "amount"
+                "status"
             ];
+            
+            invoices.reverse();
             var tbl = table.createJsonTable("invoice-table", invoices, [], hiddenColumns, []);
             document.querySelector('#invoice-manager').appendChild(tbl);        
         },
