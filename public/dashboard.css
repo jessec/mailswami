@@ -1,8 +1,9 @@
 *:focus {
-    outline: none;
+	outline: none;
 }
-textarea:focus, input:focus{
-    outline: none;
+
+textarea:focus, input:focus {
+	outline: none;
 }
 
 body {
@@ -44,14 +45,15 @@ body, html {
 	color: white;
 	display: none;
 	padding: 100px 20px;
-	height: 100%;
+	min-height: 100%;
+	height: auto;
 	min-width: 750px;
 	box-sizing: border-box;
 	background-color: #4d9bc0;
 }
 
 #cronmanager {
-	background: whitesmoke;
+	background: white;
 	color: black;
 	display: flex;
 	flex-direction: column;
@@ -59,9 +61,9 @@ body, html {
 
 .server_wrapper_class {
 	color: black;
-	background: #fff2e5;
+	background: white;
 	border: 0px !important;
-	padding: 15px !important;
+	_padding: 15px !important;
 }
 
 input, select {
@@ -70,36 +72,241 @@ input, select {
 }
 
 select {
-	border-right : 15px solid rgb(221, 221, 221);
+	border-right: 15px solid rgb(221, 221, 221);
+}
+.email-input-wrapper label {
+	padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    color: white;
+    font-weight: bold;
 }
 
-.server_wrapper_class button {
-	padding: 5px; background : #21bf73;
+.email-input-wrapper input, .email-input-wrapper select {
+    width: calc(100% - 150px);
+    float: right !important;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.email-input-wrapper div:last-child{
+	background: #fff;
+	display: flex;
+    justify-content: flex-end;
+}
+
+.email-input-wrapper {
+	font-size: 13px;
+	width: 100%;
+}
+.email-input-wrapper div {
+	background: #21bf73;
+}
+
+
+.balance {
+    float: right;
+    width: 100%;
+	_color:black;
+    color:white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: right;
+    background:white;
+}
+
+.btn-add-email {
+	margin-left:10px;
+}
+.btn-cancel-renew {
+	display:none;
+}
+.renew-amounts-wrapper {
+	float:right;
+	_display:inline-block;
+}
+select#renew-amounts {
+	padding: 4px;
+    box-sizing: border-box;
+}
+.email-line {
+	display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nrdays {
+	display:none;
+}
+
+.state-pause, .state-active, .state-edit, .state-delete {
+    background: #21bf73;
+    color: white;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.state-pause, .state-active {
+    width: 45px;
+    text-align: center;
+}
+.state-pause {
+	background: #e85858;
+}
+
+.server_wrapper_class button, #invoice-manager button {
+	padding: 5px;
+	background: #21bf73;
 	color: #FFFFFF !important;
 	border: 0px solid #21bf73 !important;
 	box-sizing: border-box;
 	background: #21bf73;
 }
-
+.btn-add-credit {
+	margin-bottom:10px;
+	display:none;
+}
 #logout-link, #register-link, #reset-link {
 	text-decoration: none;
-	color:#fff;
+	color: #fff;
 }
 
-.server_wrapper_class table > tbody > tr:nth-child(1) > td:nth-child(9) {
-		    color: transparent;
+.server_wrapper_class table td {
+	border: 1px solid black;
 }
+
+.server_wrapper_class table>tbody>tr:nth-child(1)>td:nth-child(9) {
+	color: transparent;
+}
+
+.server_wrapper_class table tbody > tr > td:last-child {
+
+	width:100px;
+}
+
+.server_wrapper_class table tbody > tr > td:last-child > div {
+		display:flex;
+}
+
+
 body .tablink, body #logout-link {
 	color: transparent;
 }
-body.dashboard .tablink, body.dashboard #logout-link  {
-	color:#fff;
+
+body.dashboard .tablink, body.dashboard #logout-link {
+	color: #fff;
 }
-#invoice-manager {
-	    background: #fff2e5;
-    color: black;
-    padding: 20px;
+
+#invoice {
+	color:black;
 }
+
+#invoice-manager, #account-manager {
+	color: black;
+	padding: 20px;
+	background:white;
+}
+
+#invoice-manager>img, #account-manager>img {
+	margin-left: calc(50% - 32px);
+}
+
 #invoice-table-table {
-	width:100%;
+	width: 100%;
 }
+
+#invoice-table-table td{
+	padding-left: 15px !important;
+}
+
+
+#invoice-table-table td:nth-child(5){
+	text-align:center;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	width:60px;
+}
+
+#invoice-personal-details td{
+	width:100%;
+	text-align:right;
+}
+#invoice-nr {
+	color:black;
+}
+#invoice-viewer {
+	display:none;
+	background:#fff;
+	padding:15px;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+#paypal-button-container {
+    width: 180px;
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+#invoice table {
+	color:#000;
+	text-align: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 25px;
+}
+#invoice-table {
+		width: 100%;
+}
+#invoice-table > thead > tr {
+	background: aliceblue;
+}
+
+
+#close-invoice {
+	color:#000;
+	float:right;
+}
+.invoice-totals, .invoice-paypal {
+	float:right;
+}
+
+.pagination-item {
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.current-page {
+	background:#21bf73;
+	color:white;
+}
+
+.fa-check-circle {
+	color:green;
+}
+.fa-times-circle{
+	color:red;
+}
+
+#invoice-table-paginagion ul{
+	list-style: none;
+	display: flex;
+}
+
+/**
+
+disable select all 
+
+**/
+
+.renew-amounts-wrapper, .email-line input  {
+	display:none !important;
+}
+

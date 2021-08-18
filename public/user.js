@@ -231,7 +231,13 @@ var userManager = (function () {
             var password = btoa(aesPassword);
             return password;
         },
-        
+        fetchJson : async function(url){
+            const response = await fetch(url);
+            response.ok;     
+            response.status; 
+            const json = await response.json();
+            return json;
+        },
         setCookie : function (name,value,days) {
             var expires = "";
             if (days) {

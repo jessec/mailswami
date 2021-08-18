@@ -3,47 +3,92 @@
 <head>
 <meta charset="utf-8">
 <title>Dashboard</title>
-
+<script src="https://kit.fontawesome.com/933defe073.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="dashboard.css">
+<script src="https://www.paypal.com/sdk/js?client-id=AeD0_G_C5W6DDxUvNyv7c6J2k5C25_LrBsOLH1jczxJQB59EZwJcoKBPjJAiLLBhx9wkynIHIq87ExrV"></script>
+
 </head>
 <body>
-
-
-
-
-
-
-
-
 
 
 	<div id="wrapper">
 
 		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')">Dashboard</button>
 		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
-		<!-- 
-		<button class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Contact</button>
-		-->
-		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen"><a id="logout-link" href="#">Logout</a></button>
+		<button style="display:none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Contact</button>
+		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen">
+			<a id="logout-link" href="#">Logout</a>
+		</button>
 		<div id="Home" class="tabcontent">
-			<div id="account-manager"></div>
+			<div class="balance">Balance : <span></span></div>
+			<div id="account-manager">
+				<img src="images/spinner.svg">
+			</div>
 		</div>
 
 		<div id="News" class="tabcontent">
-			<div id="invoice-manager"></div>
+			<div class="balance">Balance : <span></span></div>
+			<div id="invoice-viewer">
+
+
+				<div id="invoice">
+					<i id="close-invoice" class="far fa-window-close"></i>
+					<span>Invoice nr: <span id="invoice-nr"></span></span>
+					<table id="invoice-personal-details" class="transparent subtitle">
+						<tbody>
+							<tr>
+								<th id="customer-name">Robert Cooke</th>
+								<td id="company-name">MailSwami</td>
+							</tr>
+							<tr>
+								<th id="customer-email">robert@prospecting.in</th>
+								<td id="company-email">invoice@mailswami.com</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table id="invoice-table" class="table table-condensed mobile-data dataTable no-footer" role="grid">
+						<thead>
+							<tr role="row">
+								<th rowspan="1" colspan="1">DESCRIPTION</th>
+								<th rowspan="1" colspan="1">START DATE</th>
+								<th rowspan="1" colspan="1">END DATE</th>
+								<th rowspan="1" colspan="1">AMOUNT</th>
+							</tr>
+						</thead>
+						<tbody id="invoice-table-body">
+						</tbody>
+					</table>
+
+					<table class="invoice-totals">
+						<tbody>
+							<tr>
+								<th></th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Invoice Total:</th>
+								<td id="invoice-table-totals"></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+
+				<div id="paypal-button-container"></div>
+			</div>
+			<div id="invoice-manager">
+				
+				<img src="images/spinner.svg">
+			<button class="btn-add-credit" style="float: right; visibility: visible;">add credit</button>
+			</div>
 		</div>
 
-		<div id="Contact" class="tabcontent">
-		</div>
+		<div id="Contact" class="tabcontent"></div>
 
 		<div id="About" class="tabcontent">
 			<div id="user-manager"></div>
 		</div>
-
-
-
-
-
 
 	</div>
 
@@ -55,40 +100,31 @@
 	<script src="user.js"></script>
 	<script src="invoice.js"></script>
 	<script src="dashboard.js"></script>
-	
+
 	<script>
         userManager.init("user-manager", "http://localhost:8080");
+    </script>
+    <script>
+        invoiceManager.init("invoice-manager", "http://localhost:8080");
     </script>
 	<script>
         accountManager.init("account-manager", "http://localhost:8080");
     </script>
-    <script>
-    	invoiceManager.init("invoice-manager", "http://localhost:8080");
-    </script>
 
 	<script>
         function openPage(pageName, elmnt, color) {
-            // Hide all elements with class="tabcontent" by default */
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
-
-            // Remove the background color of all tablinks/buttons
             tablinks = document.getElementsByClassName("tablink");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].style.backgroundColor = "";
             }
-
-            // Show the specific tab content
             document.getElementById(pageName).style.display = "block";
-
-            // Add the specific color to the button used to open the tab content
             elmnt.style.backgroundColor = color;
         }
-
-        // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
     </script>
 
