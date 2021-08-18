@@ -100,15 +100,20 @@
 	<script src="user.js"></script>
 	<script src="invoice.js"></script>
 	<script src="dashboard.js"></script>
+	
+	<script>
+	var host = "http://localhost:8080";
+	host = "http://do.thehunt100.com:8083";
+	</script>
 
 	<script>
-        userManager.init("user-manager", "http://localhost:8080");
+        userManager.init("user-manager", host);
     </script>
     <script>
-        invoiceManager.init("invoice-manager", "http://localhost:8080");
+        invoiceManager.init("invoice-manager", host);
     </script>
 	<script>
-        accountManager.init("account-manager", "http://localhost:8080");
+        accountManager.init("account-manager", host);
     </script>
 
 	<script>
