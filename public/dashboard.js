@@ -39,7 +39,19 @@ var accountManager = (function () {
             if(e)e.preventDefault();
             var authKey = userManager.getAuthKey();
             var dataUrl = accountManager.serverUrl+"/api/dashboard/domains?auth=" + authKey;
+            
             var serverJson = await accountManager.fetchJson(dataUrl);
+            
+            var email = userManager.getUserEmail();
+            //var name   = email.substring(0, email.lastIndexOf("@"));
+            var domain = email.substring(email.lastIndexOf("@") +1);
+            
+            if(serverJson.serverlist.length == 0){
+                serverJson.serverlist[0] = "http://"+domain;
+            }
+            
+
+            
             var timeZoneUrl = accountManager.serverUrl+"/api/dashboard/timezones?auth=" + authKey;
             accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
             accountManager.servers = serverJson.serverlist;
@@ -50,8 +62,12 @@ var accountManager = (function () {
             }
             document.querySelector('#server-dropdown-id').disabled = false;
             var firstEmail = document.querySelector("#server-dropdown-id").value;
-            document.querySelector("#server_wrapper_"+firstEmail).style.display = "block";
-            document.querySelector('#'+firstEmail+'-table').style.width = "100%";
+            if(firstEmail != ""){
+                document.querySelector("#server_wrapper_"+firstEmail).style.display = "block";
+                document.querySelector('#'+firstEmail+'-table').style.width = "100%";   
+            }else{
+                
+            }
         },
         
         

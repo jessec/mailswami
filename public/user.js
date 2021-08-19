@@ -190,10 +190,16 @@ var userManager = (function () {
                 if(!user || !pass)return "";
                 var authKey = userManager.aesEncrypt(user+":::::"+pass);
                 this.setCookie('authkey',authKey,1);
-                //this.setUser(user);
+                this.setUserEmail(user);
             }
     
             return userManager.encryptUserAndPassword(user, pass, userManager.encKey);
+        },
+        setUserEmail : function(userEmail){
+            this.setCookie('useremail',userEmail,1);
+        },
+        getUserEmail : function(){
+            return this.getCookie('useremail');
         },
         aesDecrypt : function(cryptText){
             var key = CryptoJS.enc.Utf8.parse('b75524255a7f54d2726a951bb39204df');
