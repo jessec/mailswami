@@ -105,6 +105,7 @@ var userManager = (function () {
             var user = document.createElement("input");
             user.setAttribute('type', "text");
             user.setAttribute('name', "user");
+            user.placeholder = "Username";
             user.id = "loginname";
             user.style.display = "block";
             var userforgotpassword = document.createElement("input");
@@ -115,6 +116,7 @@ var userManager = (function () {
             var pass = document.createElement("input");
             pass.setAttribute('type', "password");
             pass.setAttribute('name', "pass");
+            pass.placeholder = "Password";
             pass.id = "loginpass";
             pass.style.display = "block";
             var s = document.createElement("input");
