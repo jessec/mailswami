@@ -103,8 +103,10 @@
 	<script src="dashboard.js"></script>
 	
 	<script>
-	var host = "http://localhost:8080";
-	host = "http://do.thehunt100.com:8083";
+	var host = "http://do.thehunt100.com:8083";
+	if(location.host == "localhost:8080"){
+	    host = "http://localhost:8080";
+	}
 	</script>
 
 	<script>
