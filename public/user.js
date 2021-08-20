@@ -39,8 +39,7 @@ var userManager = (function () {
                 }
                 
                 if(e.target.id == "logout-link"){
-                    userManager.eraseCookie('authkey', location.pathname.replace('/dashboard.html', ''));
-                    document.body.classList.remove("dashboard");
+                    userManager.logOut();
                     location.reload();
                 }
 
@@ -82,6 +81,10 @@ var userManager = (function () {
                 
             });
         },
+        logOut : function(){
+            userManager.eraseCookie('authkey', location.pathname.replace('/dashboard.html', ''));
+            document.body.classList.remove("dashboard");
+        },
         hideLoginForm : function(){
             document.querySelector('#user-manager').style.display = "none";
         },
@@ -102,6 +105,7 @@ var userManager = (function () {
                 }
             }else{
                 document.querySelector('#user-manager-messages').innerHTML = "Oops something went wrong are your password and email correct?";
+                userManager.logOut();
             }
         },        
         setupLogoutLink : function(){
