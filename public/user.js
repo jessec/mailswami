@@ -102,6 +102,7 @@ var userManager = (function () {
                     userManager.setupCss();   
                     userManager.hideLoginForm();
                     document.querySelector('#user-manager-messages').innerHTML = "";
+                    document.querySelector('#dashboard-button').click();
                 }
             }else{
                 document.querySelector('#user-manager-messages').innerHTML = "Oops something went wrong are your password and email correct?";
