@@ -27,6 +27,14 @@ var userManager = (function () {
         setupEvents : async function(){
             document.addEventListener('click', async function(e) {
                 
+                if(e.target.id == "reset-password"){
+                    if(e)e.preventDefault();
+                    var email = document.querySelector('#user-forgot-password').value;
+                    var dataUrl = userManager.serverUrl+"/api/dashboard/reset/password?email="+email;
+                    var responseJson = await userManager.fetchJson(dataUrl);
+                    document.querySelector('#user-manager-messages').innerHTML = "We have sent an email with a key that you can use to reset your password.";
+                }
+                
                 if(e.target.id == "logout-link"){
                     userManager.eraseCookie('authkey', location.pathname.replace('/dashboard.html', ''));
                     document.body.classList.remove("dashboard");
@@ -37,11 +45,30 @@ var userManager = (function () {
                     var auth = userManager.getAuthKey();
                     var dataUrl = userManager.serverUrl+"/api/dashboard/register/account?auth=" + auth;
                     var responseJson = await userManager.fetchJson(dataUrl);
-                    console.log(responseJson);
                 }
                 
                 if(e.target.id == "reset-link"){
-                    userManager.showLogin(["user-forgot-password","reset-password"]);
+                    userManager.showLogin(["user-forgot-password","reset-password","reset-key-link"]);
+                }
+                
+                if(e.target.id == "reset-key-link"){
+                    userManager.showLogin(["user-forgot-password","loginpass","user-reset-key","reset-key"]);
+                    document.querySelector('#loginpass').placeholder = "New password";
+                    document.querySelector('#reset-key').value  = "Submit";
+                }
+                
+                if(e.target.id == "reset-key"){
+                    if(e)e.preventDefault();                   
+                    var email  = document.querySelector('#user-forgot-password').value;
+                    var resetKey = document.querySelector('#user-reset-key').value;
+                    var newPassword = document.querySelector('#loginpass').value;
+                    if(newPassword == ""){
+                        var dataUrl = userManager.serverUrl+"/api/dashboard/reset/key?email="+email+"&key="+resetKey;
+                        var responseJson = await userManager.fetchJson(dataUrl);
+                    }else{
+                        var dataUrl = userManager.serverUrl+"/api/dashboard/new/password?email="+email+"&key="+resetKey+"&newpassword="+newPassword;
+                        var responseJson = await userManager.fetchJson(dataUrl);
+                    }
                 }
                 
                 if(e.target.id == "register-link"){
@@ -53,17 +80,32 @@ var userManager = (function () {
         hideLoginForm : function(){
             document.querySelector('#user-manager').style.display = "none";
         },
+        checkLogin : async function(){
+            try {
+                var dataUrl = userManager.serverUrl+"/api/dashboard/is/loggedin?auth=" + userManager.getAuthKey();
+                var responseJson = await userManager.fetchJson(dataUrl);
+                console.log(responseJson);
+                if(responseJson.status == "ok"){
+                    return true;
+                }
+            } catch (e) {
+                return false;
+            }
+            return false;
+        },
         submitLogin : async function (e) {
             if(e)e.preventDefault();
-            var authKey = userManager.getAuthKey();
-            if(authKey){
+            var loggedIn = await userManager.checkLogin();
+            if(loggedIn){
                 userManager.setupCss();   
                 userManager.hideLoginForm();
+            }else{
+                document.querySelector('#user-manager-messages').innerHTML = "Oops something went wrong are your password and email correct?";
             }
         },        
-        setupLogoutLink : function(){
-            var authKey = this.getAuthKey();
-            if(authKey.length > 1){
+        setupLogoutLink : async function(){
+            var loggedIn = await userManager.checkLogin();
+            if(loggedIn){
                 this.submitLogin();
             }else{
                 this.setupLogin();   
@@ -79,7 +121,10 @@ var userManager = (function () {
             "reset-password",
             "register-link",
             "reset-link",
-            "login-link"
+            "login-link",
+            "reset-key",
+            "reset-key-link",
+            "user-reset-key"
             ]
             for (var i = 0; i < allIds.length; i++) {
                 if(excludeIdList.includes(allIds[i])){
@@ -110,9 +155,16 @@ var userManager = (function () {
             user.style.display = "block";
             var userforgotpassword = document.createElement("input");
             userforgotpassword.id = "user-forgot-password";
+            userforgotpassword.placeholder = "Account email";
             userforgotpassword.setAttribute('type', "text");
             userforgotpassword.setAttribute('name', "userforgotpassword");
             userforgotpassword.style.display = "none";
+            var ufpkip = document.createElement("input");
+            ufpkip.id = "user-reset-key";
+            ufpkip.placeholder = "Reset key";
+            ufpkip.setAttribute('type', "text");
+            ufpkip.setAttribute('name', "userresetkey");
+            ufpkip.style.display = "none";
             var pass = document.createElement("input");
             pass.setAttribute('type', "password");
             pass.setAttribute('name', "pass");
@@ -135,6 +187,11 @@ var userManager = (function () {
             ufp.setAttribute('type', "submit");
             ufp.setAttribute('value', "Reset Password");
             ufp.style.display = "none";
+            var ufpk = document.createElement("input");
+            ufpk.id = "reset-key";
+            ufpk.setAttribute('type', "submit");
+            ufpk.setAttribute('value', "Reset Key");
+            ufpk.style.display = "none";
             var rr = document.createElement("a");
             rr.innerText = "Register";
             rr.id = "register-link";
@@ -148,15 +205,23 @@ var userManager = (function () {
             rl.id = "login-link";
             rl.href = "#";
             rl.style.display = "none";
+            var rlrsk = document.createElement("a");
+            rlrsk.innerText = "I got a reset key";
+            rlrsk.id = "reset-key-link";
+            rlrsk.href = "#";
+            rlrsk.style.display = "none";
             var br1 = document.createElement("br");
             var br2 = document.createElement("br");
             var br3 = document.createElement("br");
             this.loginForm.appendChild(user);
+            this.loginForm.appendChild(ufpkip);
             this.loginForm.appendChild(pass);
             this.loginForm.appendChild(userforgotpassword);
             this.loginForm.appendChild(s);
             this.loginForm.appendChild(r);
             this.loginForm.appendChild(ufp);
+            this.loginForm.appendChild(ufpk);
+            this.loginForm.appendChild(rlrsk);
             this.loginForm.appendChild(br1);
             this.loginForm.appendChild(rr);
             this.loginForm.appendChild(br2);

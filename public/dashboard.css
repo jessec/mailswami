@@ -172,9 +172,13 @@ select#renew-amounts {
 	margin-bottom:10px;
 	display:none;
 }
-#logout-link, #register-link, #reset-link {
+#logout-link, #register-link, #reset-link, #reset-key-link {
 	text-decoration: none;
 	color: #fff;
+}
+
+#reset-key, #reset-password {
+	display:inline;
 }
 
 .server_wrapper_class table td {
