@@ -30,12 +30,9 @@ var userManager = (function () {
                 if(e.target.id == "reset-password"){
                     if(e)e.preventDefault();
                     var email = document.querySelector('#user-forgot-password').value;
-                    console.log("reset password for : "+ email);
                     var dataUrl = userManager.serverUrl+"/api/dashboard/reset/password?email="+email;
                     var responseJson = await userManager.fetchJson(dataUrl);
-                    console.log(responseJson);
                     document.querySelector('#user-manager-messages').innerHTML = "We have sent an email with a key that you can use to reset your password.";
-                    
                 }
                 
                 if(e.target.id == "logout-link"){
@@ -61,12 +58,10 @@ var userManager = (function () {
                 }
                 
                 if(e.target.id == "reset-key"){
-                    if(e)e.preventDefault();
-                    
+                    if(e)e.preventDefault();                   
                     var email  = document.querySelector('#user-forgot-password').value;
                     var resetKey = document.querySelector('#user-reset-key').value;
                     var newPassword = document.querySelector('#loginpass').value;
-
                     if(newPassword == ""){
                         var dataUrl = userManager.serverUrl+"/api/dashboard/reset/key?email="+email+"&key="+resetKey;
                         var responseJson = await userManager.fetchJson(dataUrl);
@@ -85,28 +80,34 @@ var userManager = (function () {
         hideLoginForm : function(){
             document.querySelector('#user-manager').style.display = "none";
         },
+        checkLogin : async function(){
+            try {
+                var authKey = userManager.getAuthKey();
+                var dataUrl = userManager.serverUrl+"/api/dashboard/is/loggedin?auth=" + authKey;
+                var responseJson = await userManager.fetchJson(dataUrl);
+                console.log(responseJson);
+                if(JSON.stringify(responseJson) == "{}")return false;
+                if(responseJson.status == "ok"){
+                    return true;
+                }
+            } catch (e) {
+                return false;
+            }
+            return false;
+        },
         submitLogin : async function (e) {
             if(e)e.preventDefault();
-            var authKey = userManager.getAuthKey();
-            var dataUrl = userManager.serverUrl+"/api/dashboard/domains?auth=" + authKey;
-            var serverJson = null;
-            try {
-                serverJson = await userManager.fetchJson(dataUrl);                
-            } catch (e) {
-            }
-            if(serverJson != null){
-                if(serverJson.serverlist.length >= 0){
-                    userManager.setupCss();   
-                    userManager.hideLoginForm();
-                    document.querySelector('#user-manager-messages').innerHTML = "";
-                }
+            var loggedIn = await userManager.checkLogin();
+            if(loggedIn){
+                userManager.setupCss();   
+                userManager.hideLoginForm();
             }else{
                 document.querySelector('#user-manager-messages').innerHTML = "Oops something went wrong are your password and email correct?";
             }
         },        
-        setupLogoutLink : function(){
-            var authKey = this.getAuthKey();
-            if(authKey.length > 1){
+        setupLogoutLink : async function(){
+            var loggedIn = await userManager.checkLogin();
+            if(loggedIn){
                 this.submitLogin();
             }else{
                 this.setupLogin();   
@@ -306,10 +307,15 @@ var userManager = (function () {
             return password;
         },
         fetchJson : async function(url){
-            const response = await fetch(url);
+            const response = {};
+            const json = {};
+            try {
+                response = await fetch(url);
+                json = await response.json();
+            } catch (e) {
+            }
             response.ok;     
             response.status; 
-            const json = await response.json();
             return json;
         },
         setCookie : function (name,value,days) {
