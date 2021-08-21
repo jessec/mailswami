@@ -223,7 +223,8 @@ body.dashboard .tablink, body.dashboard #logout-link {
 }
 
 #invoice-manager>img, #account-manager>img {
-	margin-left: calc(50% - 32px);
+margin-left: calc(50% - 50px);
+    width: 100px;
 }
 
 #invoice-table-table {
@@ -232,6 +233,7 @@ body.dashboard .tablink, body.dashboard #logout-link {
 
 #invoice-table-table td{
 	padding-left: 15px !important;
+	border:1px solid black;
 }
 
 

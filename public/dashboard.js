@@ -43,7 +43,6 @@ var accountManager = (function () {
             var serverJson = await accountManager.fetchJson(dataUrl);
             
             var email = userManager.getUserEmail();
-            //var name   = email.substring(0, email.lastIndexOf("@"));
             var domain = email.substring(email.lastIndexOf("@") +1);
             
             if(serverJson.serverlist.length == 0){
@@ -294,7 +293,6 @@ var accountManager = (function () {
                     var state = e.target.innerText.trim();
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
                     var cssQuery = '#'+emailId+' .email-line > div';
-                    console.log(cssQuery);
                     var email = document.querySelector(cssQuery).innerText
                     if(state == "pause"){
                         state = "active";
