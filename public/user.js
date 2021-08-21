@@ -70,7 +70,10 @@ var userManager = (function () {
                         var dataUrl = userManager.serverUrl+"/api/dashboard/reset/key?email="+email+"&key="+resetKey;
                         var responseJson = await userManager.fetchJson(dataUrl);
                     }else{
-                        var dataUrl = userManager.serverUrl+"/api/dashboard/new/password?email="+email+"&key="+resetKey+"&newpassword="+newPassword;
+                        
+                        var encPassword = userManager.encryptUserAndPassword("nouser", newPassword, userManager.encKey);
+                        
+                        var dataUrl = userManager.serverUrl+"/api/dashboard/new/password?email="+email+"&key="+resetKey+"&newpassword="+encPassword;//newPassword;
                         var responseJson = await userManager.fetchJson(dataUrl);
                     }
                 }
