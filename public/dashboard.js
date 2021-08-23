@@ -13,7 +13,7 @@ var accountManager = (function () {
     var timeZoneData = [];
     var masterDB = {};
     var industries = {};
-
+    let publicKey;
 
     return {
         init : async function (id, serverUrl) {
@@ -25,6 +25,8 @@ var accountManager = (function () {
             accountManager.id = id;
             accountManager.widget = document.getElementById(this.id);
             accountManager.industries = await this.getIndustries();
+            accountManager.publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBWMSNABfvlZCM2EBJiDllyoIsChTxxyuxeE1pbaaxab/lwumdE9RJWAwYMUufgnGncaYZXwZInH0W3Ys+dLbu3j7zxXZ7x9LWhZA9MLbCH+Xf+DxgbU5kaeNx1m0f7tz7xj2CntHuYBYY9BkDNyTbnKOr7RwilNllVQvpV6A9RwIDAQAB";
+            
             
             accountManager.listenForLogin();
 
@@ -183,9 +185,29 @@ var accountManager = (function () {
                             "smtpSecurity": accountManager.getFormValueByName(id, "smtpSecurity")
                           }
 
-                    var newEmailPlusAuth = userManager.encryptString(JSON.stringify(newEmailAccount), userManager.encKey);
+                    //var newEmailPlusAuth = userManager.encryptString(JSON.stringify(newEmailAccount), userManager.encKey);
+
+                    let RSAEncrypt = new JSEncrypt();
+                    RSAEncrypt.setPublicKey(accountManager.publicKey);
                     
-                    var addEmailAccountUrl = accountManager.serverUrl+"/api/dashboard/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + newEmailPlusAuth;
+                    //let encImapPassword = encodeURIComponent(RSAEncrypt.encrypt(newEmailAccount.imapPassword));
+                    //let encSmtpPassword = encodeURIComponent(RSAEncrypt.encrypt(newEmailAccount.smtpPassword));
+                    let encImapPassword = RSAEncrypt.encrypt(newEmailAccount.imapPassword);
+                    let encSmtpPassword = RSAEncrypt.encrypt(newEmailAccount.smtpPassword);
+                    
+                    newEmailAccount.imapPassword = encImapPassword;
+                    newEmailAccount.smtpPassword = encSmtpPassword;
+                    
+                    var newAccount = JSON.stringify(newEmailAccount);
+                    
+                    console.log(newAccount);
+                    
+                    var encNewAccount = userManager.encryptString(newAccount, userManager.encKey);
+                    
+                    var addEmailAccountUrl = accountManager.serverUrl+"/api/dashboard/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + encNewAccount;
+                    //var addEmailAccountUrl = accountManager.serverUrl+"/api/dashboard/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + newEmailPlusAuth;
+                    
+                    
                     var newEmailAccount = await accountManager.fetchJson(addEmailAccountUrl);
                     console.log(newEmailAccount);
                     var messages = document.querySelector('#account-manager-messages');
