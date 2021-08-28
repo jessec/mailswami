@@ -57,7 +57,7 @@ var accountManager = (function () {
             accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
             accountManager.servers = serverJson.serverlist;
             accountManager.setupServerDropDown("account-manager", "server-dropdown-id", "server-dropdown-name", accountManager.servers);
-            document.querySelector('#account-manager').firstElementChild.remove();
+            document.querySelector('#home-spinner').style.display = "none";
             for (var i = 0; i < accountManager.servers.length; i++) {
                 await accountManager.createServerTable(accountManager.servers[i], authKey);
             }
@@ -66,8 +66,6 @@ var accountManager = (function () {
             if(firstEmail != ""){
                 document.querySelector("#server_wrapper_"+firstEmail).style.display = "block";
                 document.querySelector('#'+firstEmail+'-table').style.width = "100%";   
-            }else{
-                
             }
         },
         
@@ -160,11 +158,13 @@ var accountManager = (function () {
           
                 if(e.target.classList == "btn-save-email"){
                         
+                    document.querySelector('#home-spinner').style.display = "block";
+                    
                     var serverWrapper = e.target.closest(".server_wrapper_class");                   
                     var id = serverWrapper.id;
-                    var idParts = id.split('_');
-                    var serverId = idParts[2];
-                    var server = accountManager.serverLookup[serverId];
+                    //var idParts = id.split('_');
+                    //var serverId = idParts[2];
+                    //var server = accountManager.serverLookup[serverId];
 
                     var newEmailAccount = {
                             "espProvider": accountManager.getFormValueByName(id, "espProvider"),
@@ -184,42 +184,29 @@ var accountManager = (function () {
                             "smtpPort": accountManager.getFormValueByName(id, "smtpPort"),
                             "smtpSecurity": accountManager.getFormValueByName(id, "smtpSecurity")
                           }
-
-                    //var newEmailPlusAuth = userManager.encryptString(JSON.stringify(newEmailAccount), userManager.encKey);
-
                     let RSAEncrypt = new JSEncrypt();
                     RSAEncrypt.setPublicKey(accountManager.publicKey);
-                    
-                    //let encImapPassword = encodeURIComponent(RSAEncrypt.encrypt(newEmailAccount.imapPassword));
-                    //let encSmtpPassword = encodeURIComponent(RSAEncrypt.encrypt(newEmailAccount.smtpPassword));
                     let encImapPassword = RSAEncrypt.encrypt(newEmailAccount.imapPassword);
                     let encSmtpPassword = RSAEncrypt.encrypt(newEmailAccount.smtpPassword);
-                    
                     newEmailAccount.imapPassword = encImapPassword;
                     newEmailAccount.smtpPassword = encSmtpPassword;
-                    
                     var newAccount = JSON.stringify(newEmailAccount);
-                    
-                    console.log(newAccount);
-                    
                     var encNewAccount = userManager.encryptString(newAccount, userManager.encKey);
                     
                     var addEmailAccountUrl = accountManager.serverUrl+"/api/dashboard/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + encNewAccount;
-                    //var addEmailAccountUrl = accountManager.serverUrl+"/api/dashboard/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + newEmailPlusAuth;
-                    
                     
                     var newEmailAccount = await accountManager.fetchJson(addEmailAccountUrl);
                     console.log(newEmailAccount);
                     var messages = document.querySelector('#account-manager-messages');
+                    document.querySelector('#home-spinner').style.display = "none";
                     if(newEmailAccount.status == "true"){
-                        // e.target.previousSibling.click();
                         messages.innerHTML = "Please wait 1 day for the email to become active";
                     }else{
                         messages.innerHTML = newEmailAccount.message;
                     }
                     setTimeout(() => {
                         messages.innerHTML = "";
-                    }, 3000);
+                    }, 5000);
                 }
                 
 

@@ -25,24 +25,54 @@ var invoiceManager = (function () {
                 if(e.target.id == "close-invoice"){
                     document.querySelector('#invoice-viewer').style.display = "none";
                     document.querySelector('#invoice-manager').style.display = "block";
-                    var elements = document.querySelector('#paypal-button-container').children;
-                    for (var i = 0; i < elements.length; i++) {
-                        elements[i].remove();
-                    }
+                    invoiceManager.removePayPalButton();
                 }
                 
                 if(e.target.classList.contains("fa-times-circle")||e.target.classList.contains("fa-check-circle")){
-                    document.querySelector('#invoice-viewer').style.display = "flex";
-                    document.querySelector('#invoice-manager').style.display = "none";
+                    
+                    document.querySelector('#invoice-spinner').style.display = "block";
                     
                     var invoiceNr = e.target.parentNode.dataset.invoicenr;
                     
                     var invoice = invoiceManager.getInvoiceByInvoiceNr(invoiceNr);
+                    var authKey = userManager.getAuthKey();
+
+                    var subscriptionIdsArr = [];
+                    for (var i = 0; i < invoice.items.length; i++) {
+                        var item = invoice.items[i];
+                        subscriptionIdsArr[i] = item.subscriptionIdStr;
+                    }
+                   
+                    var subscriptionIds = encodeURIComponent(JSON.stringify(subscriptionIdsArr));
+                    
+
+                    
+                    var dataUrl = userManager.serverUrl+"/api/dashboard/subscriptions/get/emails?auth=" + authKey + "&subscriptionIds="+subscriptionIds;
+                    var subscriptionIdArrays = await invoiceManager.fetchJson(dataUrl);
+                    console.log(subscriptionIdArrays);
+                    
+                    for (var i = 0; i < invoice.items.length; i++) {
+                        var item = invoice.items[i];
+                        var email = subscriptionIdArrays[item.subscriptionIdStr];
+                        if(email !== undefined){
+                            if(!item.description.startsWith(email)){
+                                invoice.items[i].description = email + " - " + item.description;   
+                            }
+                        }
+                    }
+                    
+                    document.querySelector('#invoice-spinner').style.display = "none";
                     invoiceManager.fillInvoice(invoice);
                 }
 
                 
             });
+        },
+        removePayPalButton : function(){
+            var elements = document.querySelector('#paypal-button-container').children;
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].remove();
+            }
         },
         fillInvoiceId : function(id,value){
             document.querySelector(id).innerText = value;
@@ -55,6 +85,7 @@ var invoiceManager = (function () {
             invoiceManager.fillInvoiceId("#customer-email",invoiceManager.account.email);         
             
             document.querySelector('#invoice-table-body').innerHTML = '';
+            
             
             for (var i = 0; i < invoice.items.length; i++) {
                 var item = invoice.items[i];
@@ -82,6 +113,8 @@ var invoiceManager = (function () {
             if(invoice.balance != 0){
                 invoiceManager.addPayPal(invoice);
             }
+            document.querySelector('#invoice-viewer').style.display = "flex";
+            document.querySelector('#invoice-manager').style.display = "none";
         },
         getInvoiceByInvoiceNr : function(nr){
             for (var i = 0; i < invoiceManager.invoices.length; i++) {
@@ -129,11 +162,8 @@ var invoiceManager = (function () {
             var tbl = table.createJsonTable("invoice-table", filteredInvoices.slice(startSlice, endSlice), [], hiddenColumns, formatColumns);
             tableWrapper.appendChild(tbl);
             if(document.querySelector('#invoice-manager')){
-                if(document.querySelector('#invoice-manager > img')){
-                    document.querySelector('#invoice-manager > img').remove();
-                }
+                document.querySelector('#invoice-spinner').style.display = "none";
                 document.querySelector('#invoice-manager').appendChild(tableWrapper);  
-
                 document.querySelector('#invoice-manager').appendChild(invoiceManager.getInvoiceTablePagination(invoiceManager.pages, page));  
             }
         },
@@ -210,6 +240,7 @@ var invoiceManager = (function () {
             }
         },
         addPayPal : function(invoice){
+            invoiceManager.removePayPalButton();
             paypal.Buttons({
                 createOrder : function (data, actions) {
                     return actions.order.create({

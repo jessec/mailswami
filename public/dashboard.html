@@ -22,7 +22,7 @@
 		<div id="Home" class="tabcontent">
 			<div class="balance">Balance : <span></span></div>
 			<div id="account-manager">
-				<img src="images/spinner.svg">
+				<img id="home-spinner" src="images/spinner.svg">
 			</div>
 		</div>
 
@@ -37,11 +37,11 @@
 					<table id="invoice-personal-details" class="transparent subtitle">
 						<tbody>
 							<tr>
-								<th id="customer-name">Robert Cooke</th>
+								<th id="customer-name"></th>
 								<td id="company-name">MailSwami</td>
 							</tr>
 							<tr>
-								<th id="customer-email">robert@prospecting.in</th>
+								<th id="customer-email"></th>
 								<td id="company-email">invoice@mailswami.com</td>
 							</tr>
 						</tbody>
@@ -79,7 +79,7 @@
 			</div>
 			<div id="invoice-manager">
 				
-				<img src="images/spinner.svg">
+				<img id="invoice-spinner" src="images/spinner.svg">
 			<button class="btn-add-credit" style="float: right; visibility: visible;">add credit</button>
 			</div>
 		</div>
@@ -106,7 +106,7 @@
 	<script>
 	var host = "https://app.mailswami.com";
 	if(location.host == "localhost:8080"){
-	    host = "http://localhost:8080";
+	    //host = "http://localhost:8080";
 	}
 	</script>
 
