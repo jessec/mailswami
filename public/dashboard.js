@@ -299,6 +299,7 @@ var accountManager = (function () {
                 
                 
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
+                    document.querySelector('#home-spinner').style.display = "block";
                     var state = e.target.innerText.trim();
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
                     var cssQuery = '#'+emailId+' .email-line > div';
@@ -328,6 +329,7 @@ var accountManager = (function () {
                             }   
                         }
                     }
+                    document.querySelector('#home-spinner').style.display = "none";
                     return;
                 }
 

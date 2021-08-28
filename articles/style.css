@@ -6,6 +6,8 @@
 body {
     display: flex;
     justify-content: center;
+    font-family: 'Montserrat';
+    color: #3a3a47;
 }
 
 li {
