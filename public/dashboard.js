@@ -316,9 +316,9 @@ var accountManager = (function () {
                         e.target.innerText = state;  
                         accountManager.replaceStateClass(e.target);   
                     }else{
-                        if(result.message == "There is an open invoice for this subscription"){
+                        if(result.message == "There are outstanding invoices"){
                             alert(result.message);
-                        }else{
+                        }else if (result.message == "There is no subscription for this email do you want to create one?"){
                             var r = confirm(result.message);
                             if (r == true) {
                                 var createInvoiceUrl = accountManager.serverUrl+"/api/dashboard/invoice/create?auth=" + userManager.getAuthKey() + "&email=" + email + "&plan=email-warm-up-6";
