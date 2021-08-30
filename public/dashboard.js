@@ -126,6 +126,50 @@ var accountManager = (function () {
             }
         },
         setupEvents : async function(){
+            
+            
+            document.addEventListener('change', async function(e) {             
+               
+                if(e.target.id == "esp-provider"){
+                     var id = e.target.closest(".server_wrapper_class").id;
+                     console.log(id);
+                     //document.querySelector('#'+id+'  #esp-provider').value
+                     var espProvider = e.target.value;
+                     console.log(espProvider);
+                     if(espProvider == "google"){
+                         document.querySelector('#'+id+'  input[name=imapHost]').value = "imap.gmail.com";
+                         document.querySelector('#'+id+'  input[name=imapHost]').disabled = true;
+                         document.querySelector('#'+id+'  input[name=imapPort]').value = "993";
+                         document.querySelector('#'+id+'  input[name=imapPort]').disabled = true;
+                         document.querySelector('#'+id+'  select[name=imapSecurity]').value = "true";
+                         document.querySelector('#'+id+'  select[name=imapSecurity]').disabled = true;
+                         
+                         document.querySelector('#'+id+'  input[name=smtpHost]').value = "smtp.gmail.com";
+                         document.querySelector('#'+id+'  input[name=smtpHost]').disabled = true;
+                         document.querySelector('#'+id+'  input[name=smtpPort]').value = "465";
+                         document.querySelector('#'+id+'  input[name=smtpPort]').disabled = true;
+                         document.querySelector('#'+id+'  select[name=smtpSecurity]').value = "true";
+                         document.querySelector('#'+id+'  select[name=smtpSecurity]').disabled = true;
+                     }else{
+                         document.querySelector('#'+id+'  input[name=imapHost]').value = "";
+                         document.querySelector('#'+id+'  input[name=imapHost]').disabled = false;
+                         document.querySelector('#'+id+'  input[name=imapPort]').value = "";
+                         document.querySelector('#'+id+'  input[name=imapPort]').disabled = false;
+                         document.querySelector('#'+id+'  select[name=imapSecurity]').value = "true";
+                         document.querySelector('#'+id+'  select[name=imapSecurity]').disabled = false;
+                         
+                         document.querySelector('#'+id+'  input[name=smtpHost]').value = "";
+                         document.querySelector('#'+id+'  input[name=smtpHost]').disabled = false;
+                         document.querySelector('#'+id+'  input[name=smtpPort]').value = "";
+                         document.querySelector('#'+id+'  input[name=smtpPort]').disabled = false;
+                         document.querySelector('#'+id+'  select[name=smtpSecurity]').value = "true";
+                         document.querySelector('#'+id+'  select[name=smtpSecurity]').disabled = false;
+                     }
+                }   
+            });
+    
+            
+            
             document.addEventListener('click', async function(e) {
                 
                 
@@ -562,7 +606,7 @@ var accountManager = (function () {
             tblLabel.appendChild(renewAmountsWrapper);
 
 
-            var espProvider = this.getDropDown("esp-provider", "espProvider", [{"google":"Google"},{"manual":"Manual"}]);
+            var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Manual"},{"google":"Google"}]);
             var inputFirstName = this.getInputField("text", {"placeholder":"First name","name":"firstName","style":"float:right;"});
             var inputLastName = this.getInputField("text", {"placeholder":"Last name","name":"lastName","style":"float:right;"});
             var inputNewEmail = this.getInputField("text", {"placeholder":"Email","class":"add-new-email","name":"email","style":"float:right;"});

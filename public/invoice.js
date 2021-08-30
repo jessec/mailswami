@@ -127,10 +127,16 @@ var invoiceManager = (function () {
             var authKey = userManager.getAuthKey();
             var dataUrl = userManager.serverUrl+"/api/dashboard/invoice/all?auth=" + authKey;
             var invoices = await invoiceManager.fetchJson(dataUrl);
-            invoiceManager.invoices = invoices;
-            invoiceManager.invoices.reverse();
-            invoiceManager.pages = invoiceManager.splitArrayIntoChunksOfLen(invoiceManager.invoices, invoiceManager.pageSize);
-            invoiceManager.showInvoiceTable(page);
+            
+            if(invoices.length == 0){
+                document.querySelector('#invoice-manager-messages').innerHTML = "No invoices have been created";
+                document.querySelector('#invoice-spinner').style.display = "none";
+            }else{
+                invoiceManager.invoices = invoices;
+                invoiceManager.invoices.reverse();
+                invoiceManager.pages = invoiceManager.splitArrayIntoChunksOfLen(invoiceManager.invoices, invoiceManager.pageSize);
+                invoiceManager.showInvoiceTable(page);   
+            }
         },
         showInvoiceTable : function(page){
             var hiddenColumns = [
