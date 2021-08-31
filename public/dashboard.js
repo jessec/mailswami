@@ -323,19 +323,23 @@ var accountManager = (function () {
                         var serverId = idParts[2];
                         var server = accountManager.serverLookup[serverId];
                         var email = document.querySelector("#"+tdId.replace("_state","_email")).innerText.trim();
-                        var r = confirm("Are you sure you want to delete "+ email + "?");
+                        var r = confirm("You are canceling the subscription for this email account. Are you sure you want to delete "+ email + "?");
                         if (r == true) {
                               var deleteCronJobUrl = accountManager.serverUrl+"/api/dashboard/email/accounts/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
-                              var newCronJob = await accountManager.fetchJson(deleteCronJobUrl);
-                              console.log(newCronJob);
+                              var result = await accountManager.fetchJson(deleteCronJobUrl);
+                              console.log(result);
+                              if(result.message == "There are outstanding invoices"){
+                                  alert(result.message);
+                              }else{
+                                  e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
+                                  var authKey = userManager.getAuthKey();
+                                  delete accountManager.masterDB.warmerEmailAccounts
+                                  accountManager.createServerTable(server, authKey);
+                                  setTimeout(function(){ 
+                                      document.querySelector('#'+id).style.display = "inline-grid"; 
+                                  }, 500);   
+                              }
                         }
-                        e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
-                        var authKey = userManager.getAuthKey();
-                        delete accountManager.masterDB.warmerEmailAccounts
-                        accountManager.createServerTable(server, authKey);
-                        setTimeout(function(){ 
-                            document.querySelector('#'+id).style.display = "inline-grid"; 
-                        }, 500);
                     }, 500);
                 }
                 
