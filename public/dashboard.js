@@ -332,12 +332,13 @@ var accountManager = (function () {
                                   alert(result.message);
                               }else{
                                   e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
-                                  var authKey = userManager.getAuthKey();
-                                  delete accountManager.masterDB.warmerEmailAccounts
-                                  accountManager.createServerTable(server, authKey);
-                                  setTimeout(function(){ 
-                                      document.querySelector('#'+id).style.display = "inline-grid"; 
-                                  }, 500);   
+                                  //var authKey = userManager.getAuthKey();
+                                  delete accountManager.masterDB.warmerEmailAccounts;
+                                  e.target.closest('tr').remove();
+                                  //accountManager.createServerTable(server, authKey);
+                                  //setTimeout(function(){ 
+                                  //    document.querySelector('#'+id).style.display = "inline-grid"; 
+                                  //}, 500);   
                               }
                         }
                     }, 500);
