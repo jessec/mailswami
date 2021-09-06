@@ -6,28 +6,34 @@
 <script src="https://kit.fontawesome.com/933defe073.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="dashboard.css">
 <script src="https://www.paypal.com/sdk/js?client-id=AeD0_G_C5W6DDxUvNyv7c6J2k5C25_LrBsOLH1jczxJQB59EZwJcoKBPjJAiLLBhx9wkynIHIq87ExrV"></script>
-
+	<script>
+	var USER_ROLE = "user";
+	var host = "https://app.mailswami.com";
+	if(location.host == "localhost:8080"){
+	    host = "http://localhost:8080";
+	    USER_ROLE = "admin";
+	}
+	</script>
 </head>
 <body>
 
 
 	<div id="wrapper">
 
-		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="dashboard-button">Dashboard</button>
+		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="dashboard-button">Warmup</button>
+		<button id="cronjobpage" style="display:none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Schedule</button>
+		<button id="serverpage" style="display:none;" class="tablink" onclick="openPage('Servers', this, '#4d9bc0')">Servers</button>
 		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
-		<button style="display:none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Contact</button>
-		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen">
+				<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen">
 			<a id="logout-link" href="#">Logout</a>
 		</button>
 		<div id="Home" class="tabcontent">
-			<div class="balance">Balance : <span></span></div>
 			<div id="account-manager">
 				<img id="home-spinner" src="images/spinner.svg">
 			</div>
 		</div>
 
 		<div id="News" class="tabcontent">
-			<div class="balance">Balance : <span></span></div>
 			<div id="invoice-viewer">
 
 
@@ -84,7 +90,14 @@
 			</div>
 		</div>
 
-		<div id="Contact" class="tabcontent"></div>
+		<div id="Contact" class="tabcontent">
+			<div id="schedule-manager-messages"></div>
+			<div id="schedule-manager"></div>
+		</div>
+		<div id="Servers" class="tabcontent">
+			<div id="server-manager-messages"></div>
+			<div id="server-manager"></div>
+		</div>
 
 		<div id="About" class="tabcontent">
 			<div id="user-manager-messages"></div>
@@ -101,14 +114,20 @@
 	<script src="js/table.js"></script>
 	<script src="user.js"></script>
 	<script src="invoice.js"></script>
-	<script src="dashboard.js"></script>
+	<script src="warmup.js"></script>
 	
+
 	<script>
-	var host = "https://app.mailswami.com";
-	if(location.host == "localhost:8080"){
-	    host = "http://localhost:8080";
+	if(USER_ROLE == "admin"){
+		document.querySelector('#cronjobpage').style.display = "block";
+		document.querySelector('#serverpage').style.display = "block";
+		var tablinks = document.querySelectorAll('.tablink');
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.width = "20%";
+        }
 	}
 	</script>
+
 
 	<script>
         userManager.init("user-manager", host);
