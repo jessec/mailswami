@@ -59,7 +59,7 @@ body, html {
 	flex-direction: column;
 }
 
-.server_wrapper_class {
+.warmup_wrapper_class {
 	color: black;
 	background: white;
 	border: 0px !important;
@@ -148,7 +148,7 @@ select#renew-amounts {
 	background: #e85858;
 }
 
-.server_wrapper_class button, #invoice-manager button {
+.warmup_wrapper_class button, #invoice-manager button {
 	padding: 5px;
 	background: #21bf73;
 	color: #FFFFFF !important;
@@ -174,20 +174,20 @@ select#renew-amounts {
     background: #555 !important;
 	}
 
-.server_wrapper_class table td {
+.warmup_wrapper_class table td {
 	border: 1px solid black;
 }
 
-.server_wrapper_class table>tbody>tr:nth-child(1)>td:nth-child(9) {
+.warmup_wrapper_class table>tbody>tr:nth-child(1)>td:nth-child(9) {
 	color: transparent;
 }
 
-.server_wrapper_class table tbody > tr > td:last-child {
+.warmup_wrapper_class table tbody > tr > td:last-child {
 
 	width:100px;
 }
 
-.server_wrapper_class table tbody > tr > td:last-child > div {
+.warmup_wrapper_class table tbody > tr > td:last-child > div {
 		display:flex;
 }
 
@@ -204,7 +204,7 @@ body.dashboard .tablink, body.dashboard #logout-link {
 	color:black;
 }
 
-#invoice-manager, #account-manager, #schedule-manager,  #server-manager {
+#invoice-manager, #account-manager, #cron-manager,  #server-manager {
 	color: black;
 	padding: 20px;
 	background:white;

@@ -64,7 +64,7 @@ var accountManager = (function () {
             document.querySelector('#server-dropdown-id').disabled = false;
             var firstEmail = document.querySelector("#server-dropdown-id").value;
             if(firstEmail != ""){
-                document.querySelector("#server_wrapper_"+firstEmail).style.display = "block";
+                document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";
                 document.querySelector('#'+firstEmail+'-table').style.width = "100%";   
             }
         },
@@ -112,7 +112,7 @@ var accountManager = (function () {
             return document.querySelector("#"+id+" .email-input-wrapper").querySelector('[name='+name+']').value;
         },
         displayEmailButtons : function(display){
-            var serverWrappers = document.querySelectorAll('.server_wrapper_class');
+            var serverWrappers = document.querySelectorAll('.warmup_wrapper_class');
             //document.querySelector('.btn-add-email').style.display = display;
             for (var i = 0; i < serverWrappers.length; i++) {
                 var serverWrap = serverWrappers[i];
@@ -131,7 +131,7 @@ var accountManager = (function () {
             document.addEventListener('change', async function(e) {             
                
                 if(e.target.id == "esp-provider"){
-                     var id = e.target.closest(".server_wrapper_class").id;
+                     var id = e.target.closest(".warmup_wrapper_class").id;
                      console.log(id);
                      //document.querySelector('#'+id+'  #esp-provider').value
                      var espProvider = e.target.value;
@@ -185,7 +185,7 @@ var accountManager = (function () {
                     accountManager.displayRenewCancelButtons('block');
                     //accountManager.displayRenewAmountsButtons("block");
                     
-                    var serverWrappers = document.querySelectorAll('.server_wrapper_class');
+                    var serverWrappers = document.querySelectorAll('.warmup_wrapper_class');
                     for (var i = 0; i < serverWrappers.length; i++) {
                         var serverWrap = serverWrappers[i];
                         serverWrap.style.display = "block";
@@ -204,7 +204,7 @@ var accountManager = (function () {
                         
                     document.querySelector('#home-spinner').style.display = "block";
                     
-                    var serverWrapper = e.target.closest(".server_wrapper_class");                   
+                    var serverWrapper = e.target.closest(".warmup_wrapper_class");                   
                     var id = serverWrapper.id;
                     //var idParts = id.split('_');
                     //var serverId = idParts[2];
@@ -288,7 +288,7 @@ var accountManager = (function () {
                     for (var i = 0; i < accounts.length; i++) {
                         var account = accounts[i];
                         if(account.email == email){  
-                            var serverWrapper = e.target.closest(".server_wrapper_class");
+                            var serverWrapper = e.target.closest(".warmup_wrapper_class");
                             serverWrapper.querySelector('.btn-add-email').click();
                             account = account.warmerEmailAccount;
                             serverWrapper.querySelector('select[name=espProvider]').value = account.espProvider;
@@ -317,7 +317,7 @@ var accountManager = (function () {
                         var tdId = e.target.parentNode.parentNode.id;
                         var cronJobIdParts = tdId.split("_");
                         var cronJobId = cronJobIdParts[cronJobIdParts.length - 2];
-                        var serverWrapper = e.target.closest(".server_wrapper_class");                   
+                        var serverWrapper = e.target.closest(".warmup_wrapper_class");                   
                         var id = serverWrapper.id;
                         var idParts = id.split('_');
                         var serverId = idParts[2];
@@ -439,7 +439,7 @@ var accountManager = (function () {
         },
         
         switchAddEmailButton : function(turnoff){
-            var serverWrappers = document.querySelectorAll(".server_wrapper_class");
+            var serverWrappers = document.querySelectorAll(".warmup_wrapper_class");
             for (var i = 0; i < serverWrappers.length; i++) {
                 var wrapper = serverWrappers[i];
                 var button = wrapper.querySelector('.btn-add-email');
@@ -452,11 +452,11 @@ var accountManager = (function () {
         },
         selectServerWrapper : function(server){
             
-            var wrappers = document.querySelectorAll('.server_wrapper_class');
+            var wrappers = document.querySelectorAll('.warmup_wrapper_class');
             for (var i = 0; i < wrappers.length; i++) {
                 wrappers[i].style.display = "none";
             }
-            document.querySelector('#server_wrapper_'+server).style.display = "flex";
+            document.querySelector('#warmup_wrapper_'+server).style.display = "flex";
             accountManager.displayEmailButtons("block");
             accountManager.displayRenewButton("block");
             accountManager.displayRenewCancelButtons("none");
@@ -588,8 +588,8 @@ var accountManager = (function () {
             tblWrapper.style.border = "1px solid";
             tblWrapper.style.padding = "5px";
             tblWrapper.style.flexDirection = "column";
-            tblWrapper.id = "server_wrapper_"+serverId;
-            tblWrapper.classList = "server_wrapper_class"; 
+            tblWrapper.id = "warmup_wrapper_"+serverId;
+            tblWrapper.classList = "warmup_wrapper_class"; 
 
             var tblLabel = document.createElement("span");
             var tblLabelServer = document.createElement("span");

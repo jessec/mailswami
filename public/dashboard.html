@@ -92,8 +92,8 @@
 		</div>
 
 		<div id="Contact" class="tabcontent">
-			<div id="schedule-manager-messages"></div>
-			<div id="schedule-manager"></div>
+			<div id="cron-manager-messages"></div>
+			<div id="cron-manager"></div>
 		</div>
 		<div id="Servers" class="tabcontent">
 			<div id="server-manager-messages"></div>
@@ -116,6 +116,7 @@
 	<script src="user.js"></script>
 	<script src="invoice.js"></script>
 	<script src="warmup.js"></script>
+	<script src="schedule.js"></script>
 	
 
 	<script>
@@ -139,7 +140,9 @@
 	<script>
         accountManager.init("account-manager", host);
     </script>
-
+	<script>
+        cronManager.init("cron-manager");
+    </script>
 	<script>
         function openPage(pageName, elmnt, color) {
             var i, tabcontent, tablinks;
