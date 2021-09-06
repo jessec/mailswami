@@ -79,10 +79,10 @@ var accountManager = (function () {
                 var callback = function(mutationsList) {
                     for(var mutation of mutationsList) {
                         if (mutation.type == 'childList') {
-                            console.log('A child node has been added or removed.');
+                            //console.log('A child node has been added or removed.');
                         }
                         else if (mutation.type == 'attributes') {
-                            console.log('The ' + mutation.attributeName + ' attribute was modified.');
+                            //console.log('The ' + mutation.attributeName + ' attribute was modified.');
                             if(document.body.classList.contains('dashboard')){
                                 accountManager.main();
                             }
@@ -575,7 +575,7 @@ var accountManager = (function () {
             }else {
                 warmerEmailAccountsJson = accountManager.masterDB.warmerEmailAccounts;
             }
-            console.log(warmerEmailAccountsJson);
+            //console.log(warmerEmailAccountsJson);
             var cronJobJson = warmerEmailAccountsJson;
             if(accountManager.getCronJobsByServerID === undefined)accountManager.getCronJobsByServerID = {};
             accountManager.getCronJobsByServerID[serverId] = cronJobJson;
@@ -677,7 +677,7 @@ var accountManager = (function () {
             
             var filteredCronJobJson = [];
 
-            console.log(cronJobJson);
+            //console.log(cronJobJson);
             var j = 0;
             for (var i = 0; i < cronJobJson.length; i++) {
                 if(!cronJobJson.hasOwnProperty('state')){
