@@ -19,7 +19,19 @@ var userManager = (function () {
             userManager.setupLogoutLink();
             
             userManager.setupEvents();
+            
+            userManager.isLoggedIn();
 
+
+        },
+        isLoggedIn : function(){
+            var auth = userManager.getAuthKey();
+            if(auth != ""){
+                return true;
+            }else{
+                userManager.logOut();
+                return false;
+            }
         },
         setupCss : function(){
             document.body.classList.add("dashboard");

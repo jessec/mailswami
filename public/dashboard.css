@@ -59,7 +59,7 @@ body, html {
 	flex-direction: column;
 }
 
-.warmup_wrapper_class {
+.warmup_wrapper_class, .server_wrapper_class {
 	color: black;
 	background: white;
 	border: 0px !important;
@@ -74,7 +74,7 @@ input, select {
 select {
 	border-right: 15px solid rgb(221, 221, 221);
 }
-.email-input-wrapper label {
+.email-input-wrapper label, .server-input-wrapper label {
 	padding: 10px;
     box-sizing: border-box;
     position: absolute;
@@ -82,7 +82,7 @@ select {
     font-weight: bold;
 }
 
-.email-input-wrapper input, .email-input-wrapper select {
+.email-input-wrapper input, .email-input-wrapper select, .server-input-wrapper input, .server-input-wrapper select {
     width: calc(100% - 150px);
     float: right !important;
     padding: 10px;
@@ -90,18 +90,34 @@ select {
 
 }
 
-.email-input-wrapper div:last-child{
+.email-input-wrapper div:last-child, .server-input-wrapper div:last-child{
 	background: #fff;
 	display: flex;
     justify-content: flex-end;
 }
 
-.email-input-wrapper {
+.email-input-wrapper , .server-input-wrapper {
 	font-size: 13px;
 	width: 100%;
 }
-.email-input-wrapper div {
+.email-input-wrapper div, .server-input-wrapper div {
 	background: #21bf73;
+}
+
+#Contact .email-input-wrapper{
+    top: 20px;
+    position: relative;
+}
+
+#Contact .email-input-wrapper div{
+	box-sizing: border-box;
+    padding: 10px;
+}
+
+#Contact .email-input-wrapper input {
+	width:80%;
+	position: relative;
+	left: -10px;
 }
 
 .btn-add-email {
@@ -138,6 +154,7 @@ select#renew-amounts {
     padding-right: 8px;
     margin-right: 5px;
     margin-left: 5px;
+	display: inline-block;
 }
 
 .state-pause, .state-active {
@@ -148,7 +165,7 @@ select#renew-amounts {
 	background: #e85858;
 }
 
-.warmup_wrapper_class button, #invoice-manager button {
+.warmup_wrapper_class button, #invoice-manager button, .server_wrapper_class button{
 	padding: 5px;
 	background: #21bf73;
 	color: #FFFFFF !important;
@@ -174,20 +191,20 @@ select#renew-amounts {
     background: #555 !important;
 	}
 
-.warmup_wrapper_class table td {
+.warmup_wrapper_class table td, .server_wrapper_class table td, .email_wrapper_class table td {
 	border: 1px solid black;
 }
 
-.warmup_wrapper_class table>tbody>tr:nth-child(1)>td:nth-child(9) {
+.warmup_wrapper_class table>tbody>tr:nth-child(1)>td:nth-child(9), .server_wrapper_class table>tbody>tr:nth-child(1)>td:nth-child(10) {
 	color: transparent;
 }
 
-.warmup_wrapper_class table tbody > tr > td:last-child {
+.warmup_wrapper_class table tbody > tr > td:last-child, .server_wrapper_class table tbody > tr > td:last-child{
 
 	width:100px;
 }
 
-.warmup_wrapper_class table tbody > tr > td:last-child > div {
+.warmup_wrapper_class table tbody > tr > td:last-child > div, .server_wrapper_class table tbody > tr > td:last-child > div {
 		display:flex;
 }
 
@@ -210,7 +227,7 @@ body.dashboard .tablink, body.dashboard #logout-link {
 	background:white;
 }
 
-#invoice-manager>img, #account-manager>img {
+#invoice-manager>img, #account-manager>img , #server-manager>img, #cron-manager>img, .spinner {
 margin-left: calc(50% - 50px);
     width: 100px;
 }

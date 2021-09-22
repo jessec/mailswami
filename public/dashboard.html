@@ -7,14 +7,14 @@
 <script src="https://kit.fontawesome.com/933defe073.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="dashboard.css">
 <script src="https://www.paypal.com/sdk/js?client-id=AeD0_G_C5W6DDxUvNyv7c6J2k5C25_LrBsOLH1jczxJQB59EZwJcoKBPjJAiLLBhx9wkynIHIq87ExrV"></script>
-	<script>
-	var USER_ROLE = "user";
-	var host = "https://app.mailswami.com";
-	if(location.host == "localhost:8080"){
-	    host = "http://localhost:8080";
-	    USER_ROLE = "admin";
-	}
-	</script>
+<script>
+    var USER_ROLE = "user";
+    var host = "https://app.mailswami.com";
+    if (location.host == "localhost:8080") {
+        host = "http://localhost:8080";
+        USER_ROLE = "admin";
+    }
+</script>
 </head>
 <body>
 
@@ -22,15 +22,15 @@
 	<div id="wrapper">
 
 		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="dashboard-button">Warmup</button>
-		<button id="cronjobpage" style="display:none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Schedule</button>
-		<button id="serverpage" style="display:none;" class="tablink" onclick="openPage('Servers', this, '#4d9bc0')">Servers</button>
+		<button id="cronjobpage" style="display: none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Schedule</button>
+		<button id="serverpage" style="display: none;" class="tablink" onclick="openPage('Servers', this, '#4d9bc0')">Servers</button>
 		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
-				<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen">
+		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen">
 			<a id="logout-link" href="#">Logout</a>
 		</button>
 		<div id="Home" class="tabcontent">
+			<img id="home-spinner" class="spinner" src="images/spinner.svg">
 			<div id="account-manager">
-				<img id="home-spinner" src="images/spinner.svg">
 			</div>
 		</div>
 
@@ -40,7 +40,10 @@
 
 				<div id="invoice">
 					<i id="close-invoice" class="far fa-window-close"></i>
-					<span>Invoice nr: <span id="invoice-nr"></span></span>
+					<span>
+						Invoice nr:
+						<span id="invoice-nr"></span>
+					</span>
 					<table id="invoice-personal-details" class="transparent subtitle">
 						<tbody>
 							<tr>
@@ -85,19 +88,23 @@
 				<div id="paypal-button-container"></div>
 			</div>
 			<div id="invoice-manager">
-				
+
 				<img id="invoice-spinner" src="images/spinner.svg">
-			<button class="btn-add-credit" style="float: right; visibility: visible;">add credit</button>
+				<button class="btn-add-credit" style="float: right; visibility: visible;">add credit</button>
 			</div>
 		</div>
 
 		<div id="Contact" class="tabcontent">
 			<div id="cron-manager-messages"></div>
-			<div id="cron-manager"></div>
+			<div id="cron-manager">
+				<img id="cron-spinner" src="images/spinner.svg">
+			</div>
 		</div>
 		<div id="Servers" class="tabcontent">
 			<div id="server-manager-messages"></div>
-			<div id="server-manager"></div>
+			<img id="server-spinner" class="spinner" src="images/spinner.svg">
+			<div id="server-manager">
+			</div>
 		</div>
 
 		<div id="About" class="tabcontent">
@@ -108,7 +115,7 @@
 	</div>
 
 	<!-- page content -->
-    <script src="js/jsencrypt.min.js"></script>
+	<script src="js/jsencrypt.min.js"></script>
 	<script src="js/crypt.js"></script>
 	<script src="js/network.js"></script>
 	<script src="js/form.js"></script>
@@ -117,32 +124,31 @@
 	<script src="invoice.js"></script>
 	<script src="warmup.js"></script>
 	<script src="schedule.js"></script>
-	
+	<script src="servers.js"></script>
+
 
 	<script>
-	if(USER_ROLE == "admin"){
-		document.querySelector('#cronjobpage').style.display = "block";
-		document.querySelector('#serverpage').style.display = "block";
-		var tablinks = document.querySelectorAll('.tablink');
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.width = "20%";
+        if (USER_ROLE == "admin") {
+            document.querySelector('#cronjobpage').style.display = "block";
+            document.querySelector('#serverpage').style.display = "block";
+            var tablinks = document.querySelectorAll('.tablink');
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.width = "20%";
+            }
         }
-	}
-	</script>
+    </script>
 
 
 	<script>
         userManager.init("user-manager", host);
-    </script>
-    <script>
         invoiceManager.init("invoice-manager", host);
-    </script>
-	<script>
         accountManager.init("account-manager", host);
+
+        serverManager.init("server-manager", host);
+
+        cronManager.init("cron-manager", host);
     </script>
-	<script>
-        cronManager.init("cron-manager");
-    </script>
+
 	<script>
         function openPage(pageName, elmnt, color) {
             var i, tabcontent, tablinks;

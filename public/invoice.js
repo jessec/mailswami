@@ -16,7 +16,16 @@ var invoiceManager = (function () {
             invoiceManager.pageSize = 10;
         },
         setupEvents : async function(){
+            
+
+            
             document.addEventListener('click', async function(e) {
+                var tabcontent = e.target.closest('.tabcontent');
+                if(tabcontent !== null){
+                    if(tabcontent.id !== "News"){
+                        return;
+                    }
+                }
                 
                 if(e.target.classList.contains("pagination-item")){
                     invoiceManager.showInvoiceTable(parseInt(e.target.innerText) - 1);
@@ -49,7 +58,6 @@ var invoiceManager = (function () {
                     
                     var dataUrl = userManager.serverUrl+"/api/dashboard/subscriptions/get/emails?auth=" + authKey + "&subscriptionIds="+subscriptionIds;
                     var subscriptionIdArrays = await invoiceManager.fetchJson(dataUrl);
-                    console.log(subscriptionIdArrays);
                     
                     for (var i = 0; i < invoice.items.length; i++) {
                         var item = invoice.items[i];
@@ -78,7 +86,6 @@ var invoiceManager = (function () {
             document.querySelector(id).innerText = value;
         },
         fillInvoice : function(invoice){
-            console.log(invoice);
             
             invoiceManager.fillInvoiceId("#invoice-nr",invoice.invoiceNumber);
             invoiceManager.fillInvoiceId("#customer-name",invoiceManager.account.name);
@@ -108,7 +115,7 @@ var invoiceManager = (function () {
             }
             
             
-            invoiceManager.fillInvoiceId("#invoice-table-totals","$"+invoice.amount);       
+            invoiceManager.fillInvoiceId("#invoice-table-totals","$"+invoice.balance);       
             
             if(invoice.balance != 0){
                 invoiceManager.addPayPal(invoice);
@@ -206,7 +213,7 @@ var invoiceManager = (function () {
             return paginationTable;
         },
         main : async function(){
-            invoiceManager.setupControles();
+            invoiceManager.initControles();
             invoiceManager.setupEvents();
             invoiceManager.account = await invoiceManager.setupAccount();
             invoiceManager.run();
@@ -214,7 +221,7 @@ var invoiceManager = (function () {
         run : function(){
             invoiceManager.getInvoicesAll(0);
         },
-        setupControles : function () {
+        initControles : function () {
             this.setupMessages = document.createElement("div");
             this.setupMessages.id = this.id + "-messages";
             this.widget.appendChild(this.setupMessages);
@@ -255,7 +262,7 @@ var invoiceManager = (function () {
                             invoice_id : invoice.invoiceId,
                             description : "MailSwami account : "+invoice.invoiceCheckSum,
                             amount : {
-                                value : invoice.amount,
+                                value : invoice.balance,
                                 currency_code:'USD'
                             }
                         } ]

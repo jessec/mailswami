@@ -1,19 +1,19 @@
-var accountManager = (function () {
+var serverManager = (function () {
 
-    var servers = [];
-    var serverLookup = {};
-    var emailByServerIdLookup = {};
-    var widget = {};
-    var setupControles = {};
-    var editableColoms = [];
-    var hiddenColoms = [];
-    var formatColoms = [];
-    var getCronJobsByServerID = {};
-    var serverUrl = "";
-    var timeZoneData = [];
-    var masterDB = {};
-    var industries = {};
-    let publicKey;
+//    var servers = [];
+//    var serverLookup = {};
+//    var emailByServerIdLookup = {};
+//    var widget = {};
+//    var setupControles = {};
+//    var editableColoms = [];
+//    var hiddenColoms = [];
+//    var formatColoms = [];
+//    var getCronJobsByServerID = {};
+//    var serverUrl = "";
+//    var timeZoneData = [];
+//    var masterDB = {};
+//    var industries = {};
+//    let publicKey;
 
     return {
         init : async function (id, serverUrl) {
@@ -21,56 +21,57 @@ var accountManager = (function () {
             serverManager.id = id;
             document.querySelector("#"+id).innerHTML = "";
             
-            accountManager.masterDB = {};
-            accountManager.serverUrl = serverUrl;
-            accountManager.editableColoms = ['expression','email','batchSize'];
-            accountManager.hiddenColoms = ['id','expressiondesc','user', 'warmerEmailAccount','expression','command','batchSize'];
-            accountManager.formatColoms = ['command','state','email'];
-            accountManager.id = id;
-            accountManager.widget = document.getElementById(this.id);
-            accountManager.industries = await this.getIndustries();
-            accountManager.publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBWMSNABfvlZCM2EBJiDllyoIsChTxxyuxeE1pbaaxab/lwumdE9RJWAwYMUufgnGncaYZXwZInH0W3Ys+dLbu3j7zxXZ7x9LWhZA9MLbCH+Xf+DxgbU5kaeNx1m0f7tz7xj2CntHuYBYY9BkDNyTbnKOr7RwilNllVQvpV6A9RwIDAQAB";
-            accountManager.listenForLogin();
+            serverManager.masterDB = {};
+            serverManager.serverUrl = serverUrl;
+            serverManager.editableColoms = ['expression','email','batchSize'];
+            serverManager.hiddenColoms = ['serverAccount','id','expressiondesc','user', 'warmerEmailAccount','expression','command','batchSize','email'];
+            serverManager.formatColoms = ['command','state','email'];
+            serverManager.widget = document.getElementById(this.id);
+            serverManager.industries = await this.getIndustries();
+            serverManager.publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBWMSNABfvlZCM2EBJiDllyoIsChTxxyuxeE1pbaaxab/lwumdE9RJWAwYMUufgnGncaYZXwZInH0W3Ys+dLbu3j7zxXZ7x9LWhZA9MLbCH+Xf+DxgbU5kaeNx1m0f7tz7xj2CntHuYBYY9BkDNyTbnKOr7RwilNllVQvpV6A9RwIDAQAB";
+            serverManager.listenForLogin();
         },
         main : function(){
-            accountManager.initControles();
-            accountManager.setupEvents();
-            accountManager.run();
+            serverManager.initControles();
+            serverManager.setupEvents();
+            serverManager.run();
         },
-        
         run : async function (e) {
+            console.log("running server manager");
             if(e)e.preventDefault();
             var authKey = userManager.getAuthKey();
-            var dataUrl = accountManager.serverUrl+"/api/dashboard/domains?auth=" + authKey;
-            var serverJson = await accountManager.fetchJson(dataUrl);
+            var dataUrl = serverManager.serverUrl+"/api/server/domains?auth=" + authKey;
+            var serverJson = await serverManager.fetchJson(dataUrl);
             var email = userManager.getUserEmail();
             var domain = email.substring(email.lastIndexOf("@") +1);
             if(serverJson.serverlist.length == 0){
                 serverJson.serverlist[0] = "http://"+domain;
             }
-            var timeZoneUrl = accountManager.serverUrl+"/api/dashboard/timezones?auth=" + authKey;
-            accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
-            accountManager.servers = serverJson.serverlist;
-            accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
-            document.querySelector('#home-spinner').style.display = "none";
-            for (var i = 0; i < accountManager.servers.length; i++) {
-                await accountManager.createServerTable(accountManager.servers[i], authKey);
+            var timeZoneUrl = serverManager.serverUrl+"/api/server/timezones?auth=" + authKey;
+            serverManager.timeZoneData = await serverManager.fetchJson(timeZoneUrl);
+            serverManager.servers = serverJson.serverlist;
+            serverManager.setupServerDropDown("server-manager", "server-dropdown-id", "server-dropdown-name", serverManager.servers);
+            if(document.querySelector('#server-spinner')){
+                document.querySelector('#server-spinner').style.display = "none";                
             }
-            if(document.querySelector('#domain-dropdown-id')){
-                document.querySelector('#domain-dropdown-id').disabled = false;   
+            for (var i = 0; i < serverManager.servers.length; i++) {
+                await serverManager.createServerTable(serverManager.servers[i], authKey);
             }
-            var firstEmail = document.querySelector("#domain-dropdown-id").value;
+            document.querySelector('#server-dropdown-id').disabled = false;
+            var firstEmail = document.querySelector("#server-dropdown-id").value;
             if(firstEmail != ""){
-                document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";
-                document.querySelector('#'+firstEmail+'-table').style.width = "100%";   
+                if(document.querySelector("#server_wrapper_"+firstEmail)){
+                    document.querySelector("#server_wrapper_"+firstEmail).style.display = "block";
+                    if(document.querySelector('#'+firstEmail+'-table')){
+                        document.querySelector('#'+firstEmail+'-table').style.width = "100%";                       
+                    }   
+                }
             }
         },
-        
-        
         listenForLogin : function(){
             var targetNode = document.querySelector('body');
             if(targetNode.classList.contains('dashboard')){
-                accountManager.main();
+                serverManager.main();
             }else{
                 var config = { attributes: true, childList: true };
                 var callback = function(mutationsList) {
@@ -79,7 +80,7 @@ var accountManager = (function () {
                         }
                         else if (mutation.type == 'attributes') {
                             if(document.body.classList.contains('dashboard')){
-                                accountManager.main();
+                                serverManager.main();
                             }
                         }
                     }
@@ -87,10 +88,9 @@ var accountManager = (function () {
                 var observer = new MutationObserver(callback);
                 observer.observe(targetNode, config);
             }
-
         },
         getIndustries : async function(){
-            return await accountManager.fetchJson("industries.json");
+            return await serverManager.fetchJson("industries.json");
         },
         initControles : function() {
             this.setupMessages = document.createElement("div");
@@ -103,10 +103,10 @@ var accountManager = (function () {
 
         },
         getFormValueByName: function(id, name){
-            return document.querySelector("#"+id+" .email-input-wrapper").querySelector('[name='+name+']').value;
+            return document.querySelector("#"+id+" .server-input-wrapper").querySelector('[name='+name+']').value;
         },
         displayEmailButtons : function(display){
-            var serverWrappers = document.querySelectorAll('.warmup_wrapper_class');
+            var serverWrappers = document.querySelectorAll('.server_wrapper_class');
             //document.querySelector('.btn-add-email').style.display = display;
             for (var i = 0; i < serverWrappers.length; i++) {
                 var serverWrap = serverWrappers[i];
@@ -120,18 +120,20 @@ var accountManager = (function () {
             }
         },
         setupEvents : async function(){
-            if(document.querySelector('.homeinit'))return;
-            document.querySelector('#Home').classList.add('homeinit');
+            if(document.querySelector('.serverinit'))return;
+            document.querySelector('#Servers').classList.add('serverinit');
             console.log("server init.");
+            
             document.addEventListener('change', async function(e) {             
+            
                 var tabcontent = e.target.closest('.tabcontent');
                 if(tabcontent !== null){
-                    if(tabcontent.id !== "Home"){
+                    if(tabcontent.id !== "Servers"){
                         return;
                     }
                 }
                 if(e.target.id == "esp-provider"){
-                     var id = e.target.closest(".warmup_wrapper_class").id;
+                     var id = e.target.closest(".server_wrapper_class").id;
                      console.log(id);
                      //document.querySelector('#'+id+'  #esp-provider').value
                      var espProvider = e.target.value;
@@ -166,76 +168,71 @@ var accountManager = (function () {
                          document.querySelector('#'+id+'  select[name=smtpSecurity]').disabled = false;
                      }
                 }   
-            });
-    
-            document.addEventListener('click', async function(e) {
                 
+                
+            });
+            
+            document.addEventListener('click', async function(e) {
                 var tabcontent = e.target.closest('.tabcontent');
                 if(tabcontent !== null){
-                    if(tabcontent.id !== "Home"){
+                    if(tabcontent.id !== "Servers"){
                         return;
                     }
                 }
-                
-                
                 if(e.target.classList == "btn-cancel-renew"){
-                    accountManager.selectServerWrapper(document.querySelector('#domain-dropdown-id').value);
+                    serverManager.selectServerWrapper(document.querySelector('#server-dropdown-id').value);
                 }
-                
                 if(e.target.classList == "btn-renew-email"){
-                    accountManager.displayEmailButtons("none");
-                    accountManager.displayRenewCancelButtons('block');
-                    //accountManager.displayRenewAmountsButtons("block");
-                    var serverWrappers = document.querySelectorAll('.warmup_wrapper_class');
+                    serverManager.displayEmailButtons("none");
+                    serverManager.displayRenewCancelButtons('block');
+                    //serverManager.displayRenewAmountsButtons("block");
+                    var serverWrappers = document.querySelectorAll('.server_wrapper_class');
                     for (var i = 0; i < serverWrappers.length; i++) {
                         var serverWrap = serverWrappers[i];
                         serverWrap.style.display = "block";
                     }
-                    var renewAmounts = accountManager.getDropDown("renew-amounts", "renew-amounts", [{"value-0-87":"----"},{"value-0-87":"1 week"},{"value-0-187":"2 week"},{"value-0-87":"1 month"},{"value-0-187":"2 months"},{"value-0-287":"3 months"}]);
+                    var renewAmounts = serverManager.getDropDown("renew-amounts", "renew-amounts", [{"value-0-87":"----"},{"value-0-87":"1 week"},{"value-0-187":"2 week"},{"value-0-87":"1 month"},{"value-0-187":"2 months"},{"value-0-287":"3 months"}]);
                     var renewAmountsWrapper = document.querySelector('.renew-amounts-wrapper');
                     if(renewAmountsWrapper.children.length == 0){
                         renewAmountsWrapper.appendChild(renewAmounts);
                     }
-                    accountManager.displayRenewAmountsButtons("block");
+                    serverManager.displayRenewAmountsButtons("block");
                 }
-                
-          
                 if(e.target.classList == "btn-save-email"){
-                        
-                    document.querySelector('#home-spinner').style.display = "block";
-                    var serverWrapper = e.target.closest(".warmup_wrapper_class");                   
+                    document.querySelector('#server-spinner').style.display = "block";
+                    var serverWrapper = e.target.closest(".server_wrapper_class");                   
                     var id = serverWrapper.id;
                     var newEmailAccount = {
-                            "espProvider": accountManager.getFormValueByName(id, "espProvider"),
-                            "firstName": accountManager.getFormValueByName(id, "firstName"),
-                            "lastName": accountManager.getFormValueByName(id, "lastName"),
-                            "email": accountManager.getFormValueByName(id, "email"),
-                            "industry": accountManager.getFormValueByName(id, "industry"),
-                            "timeZone": accountManager.getFormValueByName(id, "timeZone"),
-                            "imapUsername": accountManager.getFormValueByName(id, "imapUsername"),
-                            "imapPassword": accountManager.getFormValueByName(id, "imapPassword"),
-                            "imapHost": accountManager.getFormValueByName(id, "imapHost"),
-                            "imapPort": accountManager.getFormValueByName(id, "imapPort"),
-                            "imapSecurity": accountManager.getFormValueByName(id, "imapSecurity"),
-                            "smtpUsername": accountManager.getFormValueByName(id, "smtpUsername"),
-                            "smtpPassword": accountManager.getFormValueByName(id, "smtpPassword"),
-                            "smtpHost": accountManager.getFormValueByName(id, "smtpHost"),
-                            "smtpPort": accountManager.getFormValueByName(id, "smtpPort"),
-                            "smtpSecurity": accountManager.getFormValueByName(id, "smtpSecurity")
+                            "espProvider": serverManager.getFormValueByName(id, "espProvider"),
+                            "firstName": serverManager.getFormValueByName(id, "firstName"),
+                            "lastName": serverManager.getFormValueByName(id, "lastName"),
+                            "email": serverManager.getFormValueByName(id, "email"),
+                            "industry": serverManager.getFormValueByName(id, "industry"),
+                            "timeZone": serverManager.getFormValueByName(id, "timeZone"),
+                            "imapUsername": serverManager.getFormValueByName(id, "imapUsername"),
+                            "imapPassword": serverManager.getFormValueByName(id, "imapPassword"),
+                            "imapHost": serverManager.getFormValueByName(id, "imapHost"),
+                            "imapPort": serverManager.getFormValueByName(id, "imapPort"),
+                            "imapSecurity": serverManager.getFormValueByName(id, "imapSecurity"),
+                            "smtpUsername": serverManager.getFormValueByName(id, "smtpUsername"),
+                            "smtpPassword": serverManager.getFormValueByName(id, "smtpPassword"),
+                            "smtpHost": serverManager.getFormValueByName(id, "smtpHost"),
+                            "smtpPort": serverManager.getFormValueByName(id, "smtpPort"),
+                            "smtpSecurity": serverManager.getFormValueByName(id, "smtpSecurity")
                           }
                     let RSAEncrypt = new JSEncrypt();
-                    RSAEncrypt.setPublicKey(accountManager.publicKey);
+                    RSAEncrypt.setPublicKey(serverManager.publicKey);
                     let encImapPassword = RSAEncrypt.encrypt(newEmailAccount.imapPassword);
                     let encSmtpPassword = RSAEncrypt.encrypt(newEmailAccount.smtpPassword);
                     newEmailAccount.imapPassword = encImapPassword;
                     newEmailAccount.smtpPassword = encSmtpPassword;
                     var newAccount = JSON.stringify(newEmailAccount);
                     var encNewAccount = userManager.encryptString(newAccount, userManager.encKey);
-                    var addEmailAccountUrl = accountManager.serverUrl+"/api/dashboard/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + encNewAccount;
-                    var newEmailAccount = await accountManager.fetchJson(addEmailAccountUrl);
-                    console.log(newEmailAccount);
-                    var messages = document.querySelector('#account-manager-messages');
-                    document.querySelector('#home-spinner').style.display = "none";
+                    var addEmailAccountUrl = serverManager.serverUrl+"/api/server/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + encNewAccount;
+                    var newEmailAccount = await serverManager.fetchJson(addEmailAccountUrl);
+                    var messages = document.querySelector('#server-manager-messages');
+                    await  serverManager.init(serverManager.id, serverManager.serverUrl);
+                    document.querySelector('#server-spinner').style.display = "none";
                     if(newEmailAccount.status == "true"){
                         messages.innerHTML = "Please wait 1 day for the email to become active";
                     }else{
@@ -246,40 +243,58 @@ var accountManager = (function () {
                     }, 5000);
                 }
                 
-
-                
                 if(e.target.classList == "btn-add-email"){
-                    accountManager.switchAddEmailButton(false);
-                    var wrapper = e.target.parentNode.parentNode.querySelector('.email-input-wrapper'); 
+                    var excludedFields = ['email'];
+                    serverManager.switchAddEmailButton(false);
+                    var wrapper = e.target.parentNode.parentNode.querySelector('.server-input-wrapper'); 
                     wrapper.style.display = "grid";
                     var inputs = wrapper.querySelectorAll('input');
                     for (var i = 0; i < inputs.length; i++) {
                         inputs[i].value = "";
+                        if(!excludedFields.includes(inputs[i].name)){
+                            inputs[i].parentNode.style.display = "none";
+                        }
                     }
-                    accountManager.displayRenewButton("none");
-                    accountManager.displayRenewCancelButtons("none");
-                    accountManager.displayRenewAmountsButtons("none");
+                    var selects = wrapper.querySelectorAll('select');
+                    for (var i = 0; i < selects.length; i++) {
+                        selects[i].parentNode.style.display = "none";
+                    }
+                    serverManager.displayRenewButton("none");
+                    serverManager.displayRenewCancelButtons("none");
+                    serverManager.displayRenewAmountsButtons("none");
                 }
-                
                 if(e.target.classList == "btn-cancel-email"){
-                    accountManager.switchAddEmailButton(true);
+                    serverManager.switchAddEmailButton(true);
                     e.target.parentNode.parentNode.style.display = "none";
-                    accountManager.displayRenewButton("block");
+                    serverManager.displayRenewButton("block");
                 }
-                
                 if(e.target.innerText.trim() == "edit"){
-                    accountManager.switchAddEmailButton(false);
-                    var tdId = e.target.parentNode.parentNode.id;
+                    serverManager.switchAddEmailButton(false);
                     
+                    var excludedFields = ['hidefield'];
+                    var wrapper = e.target.closest('table').parentNode;
+                    var inputs = wrapper.querySelectorAll('input');
+                    for (var i = 0; i < inputs.length; i++) {
+                        inputs[i].value = "";
+                        if(excludedFields.includes(inputs[i].name)){
+                            inputs[i].parentNode.style.display = "none";
+                        }else{
+                            inputs[i].parentNode.style.display = "block";
+                        }
+                    }
+                    var selects = wrapper.querySelectorAll('select');
+                    for (var i = 0; i < selects.length; i++) {
+                        selects[i].parentNode.style.display = "block";
+                    }
+                    
+                    var tdId = e.target.parentNode.parentNode.id;
                     var emailRowId = "#"+tdId.replace("_state","_email");
                     var email = document.querySelector(emailRowId+' .email-line > div').innerText;
-                    
-                    
-                    var accounts = accountManager.masterDB.warmerEmailAccounts;
+                    var accounts = serverManager.masterDB.warmerEmailAccounts;
                     for (var i = 0; i < accounts.length; i++) {
                         var account = accounts[i];
                         if(account.email == email){  
-                            var serverWrapper = e.target.closest(".warmup_wrapper_class");
+                            var serverWrapper = e.target.closest(".server_wrapper_class");
                             serverWrapper.querySelector('.btn-add-email').click();
                             account = account.warmerEmailAccount;
                             serverWrapper.querySelector('select[name=espProvider]').value = account.espProvider;
@@ -301,45 +316,29 @@ var accountManager = (function () {
                         }
                     }
                 }
-                
                 if(e.target.innerText.trim() == "delete"){
                     e.target.parentNode.parentNode.parentNode.style.backgroundColor = "#9ecdf5";
-                    setTimeout(async function(){ 
                         var tdId = e.target.parentNode.parentNode.id;
                         var cronJobIdParts = tdId.split("_");
                         var cronJobId = cronJobIdParts[cronJobIdParts.length - 2];
-                        //var serverWrapper = e.target.closest(".warmup_wrapper_class");                   
-                        //var id = serverWrapper.id;
-                        //var idParts = id.split('_');
-                        //var serverId = idParts[2];
-                        //var server = accountManager.serverLookup[serverId];
-                        var email = document.querySelector("#"+tdId.replace("_state","_email")).innerText.trim();
+                        var email = document.querySelector("#"+tdId.replace("_state","_server")).innerText.trim();
                         var r = confirm("You are canceling the subscription for this email account. Are you sure you want to delete "+ email + "?");
                         if (r == true) {
-                              var deleteCronJobUrl = accountManager.serverUrl+"/api/dashboard/email/accounts/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
-                              var result = await accountManager.fetchJson(deleteCronJobUrl);
+                              var deleteCronJobUrl = serverManager.serverUrl+"/api/server/email/accounts/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
+                              var result = await serverManager.fetchJson(deleteCronJobUrl);
                               console.log(result);
                               if(result.message == "There are outstanding invoices"){
                                   alert(result.message);
                               }else{
                                   e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
-                                  //var authKey = userManager.getAuthKey();
-                                  delete accountManager.masterDB.warmerEmailAccounts;
+                                  delete serverManager.masterDB.warmerEmailAccounts;
                                   e.target.closest('tr').remove();
-                                  //accountManager.createServerTable(server, authKey);
-                                  //setTimeout(function(){ 
-                                  //    document.querySelector('#'+id).style.display = "inline-grid"; 
-                                  //}, 500);   
                               }
                         }
-                    }, 500);
+                        await serverManager.init(serverManager.id, serverManager.serverUrl);
                 }
-                
-
-                
-                
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
-                    document.querySelector('#home-spinner').style.display = "block";
+                    document.querySelector('#server-spinner').style.display = "block";
                     var state = e.target.innerText.trim();
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
                     var cssQuery = '#'+emailId+' .email-line > div';
@@ -351,27 +350,27 @@ var accountManager = (function () {
                         state = "pause";
                     }
 
-                    var result = await accountManager.saveEmailState(email,state);
+                    var result = await serverManager.saveEmailState(email,state);
                     if(result.status != "false"){
                         e.target.innerText = state;  
-                        accountManager.replaceStateClass(e.target);   
+                        serverManager.replaceStateClass(e.target);   
                     }else{
                         if(result.message == "There are outstanding invoices"){
                             alert(result.message);
                         }else if (result.message == "There is no subscription for this email do you want to create one?"){
                             var r = confirm(result.message);
                             if (r == true) {
-                                var createInvoiceUrl = accountManager.serverUrl+"/api/dashboard/invoice/create?auth=" + userManager.getAuthKey() + "&email=" + email + "&plan=email-warm-up-6";
-                                var newInvoice = await accountManager.fetchJson(createInvoiceUrl);
+                                var createInvoiceUrl = serverManager.serverUrl+"/api/dashboard/invoice/create?auth=" + userManager.getAuthKey() + "&email=" + email + "&plan=basic";
+                                var newInvoice = await serverManager.fetchJson(createInvoiceUrl);
                                 console.log(newInvoice);
                                 alert("The invoice was created in the account tab");
                                 invoiceManager.getInvoicesAll(0);
                             }   
                         }
                     }
-                    document.querySelector('#home-spinner').style.display = "none";
+                    document.querySelector('#server-spinner').style.display = "none";
                     return;
-                }
+                }                
              });
         },
         
@@ -387,14 +386,14 @@ var accountManager = (function () {
         },
         
         saveEmailState : async function(email,state){
-            var dataUrl = accountManager.serverUrl+"/api/dashboard/email/state?auth="+userManager.getAuthKey()+"&email="+ email + "&state="+state;
+            var dataUrl = serverManager.serverUrl+"/api/server/email/state?auth="+userManager.getAuthKey()+"&email="+ email + "&state="+state;
             var json = await this.fetchJson(dataUrl);
             console.log(json);
             return json;
         },
         
         displayEmailInputWrapper : function(display){
-            var emailInputWrappers = document.querySelectorAll('.email-input-wrapper');
+            var emailInputWrappers = document.querySelectorAll('.server-input-wrapper');
             for (var i = 0; i < emailInputWrappers.length; i++) {
                 emailInputWrappers[i].style.display = display;
             }  
@@ -413,7 +412,7 @@ var accountManager = (function () {
         },
         
         displayRenewCancelButtons : function(display){
-            var renewCancelButtons = document.querySelectorAll('.btn-cancel-renew');
+            var renewCancelButtons = document.querySelectorAll('#Servers .btn-cancel-renew');
             for (var i = 0; i < renewCancelButtons.length; i++) {
                 renewCancelButtons[i].style.display = "none";
             }  
@@ -428,7 +427,7 @@ var accountManager = (function () {
         },
         
         switchAddEmailButton : function(turnoff){
-            var serverWrappers = document.querySelectorAll(".warmup_wrapper_class");
+            var serverWrappers = document.querySelectorAll(".server_wrapper_class");
             for (var i = 0; i < serverWrappers.length; i++) {
                 var wrapper = serverWrappers[i];
                 var button = wrapper.querySelector('.btn-add-email');
@@ -441,17 +440,17 @@ var accountManager = (function () {
         },
         selectServerWrapper : function(server){
             
-            var wrappers = document.querySelectorAll('.warmup_wrapper_class');
+            var wrappers = document.querySelectorAll('.server_wrapper_class');
             for (var i = 0; i < wrappers.length; i++) {
                 wrappers[i].style.display = "none";
             }
-            document.querySelector('#warmup_wrapper_'+server).style.display = "flex";
-            accountManager.displayEmailButtons("block");
-            accountManager.displayRenewButton("block");
-            accountManager.displayRenewCancelButtons("none");
-            accountManager.displayRenewAmountsButtons("none");
-            accountManager.switchAddEmailButton(true);
-            accountManager.displayEmailInputWrapper("none");
+            document.querySelector('#server_wrapper_'+server).style.display = "flex";
+            serverManager.displayEmailButtons("block");
+            serverManager.displayRenewButton("block");
+            serverManager.displayRenewCancelButtons("none");
+            serverManager.displayRenewAmountsButtons("none");
+            serverManager.switchAddEmailButton(true);
+            serverManager.displayEmailInputWrapper("none");
             
             
         },
@@ -490,13 +489,13 @@ var accountManager = (function () {
             {
                 var option = document.createElement("option");
                 var sanatizedVal = new URL(val).hostname;
-                var serverId =accountManager.getIdFromServerUrl(val);
+                var serverId =serverManager.getIdFromServerUrl(val);
                 option.value = serverId;
                 option.text = sanatizedVal;
                 select.appendChild(option);
             }
             select.addEventListener("change", function() {
-                accountManager.selectServerWrapper(this.value);
+                serverManager.selectServerWrapper(this.value);
             });
             if(document.querySelector('#'+selectId)){
                 document.querySelector('#'+selectId).remove();
@@ -543,7 +542,6 @@ var accountManager = (function () {
             }
             return select;
         },
-        
         fieldWrapper : function(text, field){
             var fieldWrapper = document.createElement("div");
             var newlabel = document.createElement("Label");
@@ -552,34 +550,32 @@ var accountManager = (function () {
             fieldWrapper.appendChild(field);
             return fieldWrapper;
         },
-        
         createServerTable : async function (server, pass) {
-            var serverId = accountManager.getIdFromServerUrl(server);
+            var serverId = serverManager.getIdFromServerUrl(server);
             var warmerEmailAccountsJson = {};
-            
-            if(!accountManager.masterDB.hasOwnProperty('warmerEmailAccounts')){
-                var warmerEmailAccountsUrl = accountManager.serverUrl+"/api/dashboard/email/accounts?auth=" + pass;
+            if(!serverManager.masterDB.hasOwnProperty('warmerEmailAccounts')){
+                var warmerEmailAccountsUrl = serverManager.serverUrl+"/api/server/email/accounts?auth=" + pass;
                 warmerEmailAccountsJson = await this.fetchJson(warmerEmailAccountsUrl);
-                accountManager.masterDB.warmerEmailAccounts = warmerEmailAccountsJson;
+                serverManager.masterDB.warmerEmailAccounts = warmerEmailAccountsJson;
             }else {
-                warmerEmailAccountsJson = accountManager.masterDB.warmerEmailAccounts;
+                warmerEmailAccountsJson = serverManager.masterDB.warmerEmailAccounts;
             }
             var cronJobJson = warmerEmailAccountsJson;
-            if(accountManager.getCronJobsByServerID === undefined)accountManager.getCronJobsByServerID = {};
-            accountManager.getCronJobsByServerID[serverId] = cronJobJson;
+            if(serverManager.getCronJobsByServerID === undefined)serverManager.getCronJobsByServerID = {};
+            serverManager.getCronJobsByServerID[serverId] = cronJobJson;
             var tblWrapper = document.createElement("div");
             tblWrapper.style.marginTop = '20px';  
             tblWrapper.style.display = 'none'; 
             tblWrapper.style.border = "1px solid";
             tblWrapper.style.padding = "5px";
             tblWrapper.style.flexDirection = "column";
-            tblWrapper.id = "warmup_wrapper_"+serverId;
-            tblWrapper.classList = "warmup_wrapper_class"; 
+            tblWrapper.id = "server_wrapper_"+serverId;
+            tblWrapper.classList = "server_wrapper_class"; 
             var tblLabel = document.createElement("span");
             var tblLabelServer = document.createElement("span");
             tblLabelServer.classList = "server-name";
             tblLabelServer.innerText = new URL(server).hostname;
-            var tblAddShowEmailButton = this.getButton("add email", {"class":"btn-add-email","style":"float:right;"});
+            var tblAddShowEmailButton = this.getButton("add server", {"class":"btn-add-email","style":"float:right;"});
             var tblRenewButton = this.getButton("view all", {"class":"btn-renew-email","style":"float:right;"});
             var tblRenewCancelButton = this.getButton("cancel", {"class":"btn-cancel-renew","style":"float:right;"});
             var renewAmountsWrapper = document.createElement("div");
@@ -592,9 +588,9 @@ var accountManager = (function () {
             var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Manual"},{"google":"Google"}]);
             var inputFirstName = this.getInputField("text", {"placeholder":"First name","name":"firstName","style":"float:right;"});
             var inputLastName = this.getInputField("text", {"placeholder":"Last name","name":"lastName","style":"float:right;"});
-            var inputNewEmail = this.getInputField("text", {"placeholder":"Email","class":"add-new-email","name":"email","style":"float:right;"});
-            var industry = this.getDropDown("industry", "industry", accountManager.industries);
-            var timeZone = this.getDropDown("timezone", "timeZone", accountManager.timeZoneData);
+            var inputNewEmail = this.getInputField("text", {"placeholder":"Domain","class":"add-new-email","name":"email","style":"float:right;"});
+            var industry = this.getDropDown("industry", "industry", serverManager.industries);
+            var timeZone = this.getDropDown("timezone", "timeZone", serverManager.timeZoneData);
             var inputImapUserName = this.getInputField("text", {"placeholder":"Imap username","name":"imapUsername","style":"float:right;"});
             var inputImapPass = this.getInputField("password", {"placeholder":"Imap password","class":"add-new-imap-password","name":"imapPassword","style":"float:right;"});
             var inputImapHost = this.getInputField("text", {"placeholder":"Imap server","name":"imapHost","style":"float:right;"});
@@ -610,11 +606,11 @@ var accountManager = (function () {
             tblWrapper.appendChild(tblLabel);
             var emailInputWrapper = document.createElement("div");
             emailInputWrapper.style.display = "none";
-            emailInputWrapper.classList = "email-input-wrapper";
+            emailInputWrapper.classList = "server-input-wrapper";
             emailInputWrapper.appendChild(this.fieldWrapper("Email provider", espProvider));
             emailInputWrapper.appendChild(this.fieldWrapper("First name", inputFirstName));
             emailInputWrapper.appendChild(this.fieldWrapper("Last name", inputLastName));
-            emailInputWrapper.appendChild(this.fieldWrapper("Email", inputNewEmail));
+            emailInputWrapper.appendChild(this.fieldWrapper("Server", inputNewEmail));
             emailInputWrapper.appendChild(this.fieldWrapper("Industry", industry));
             emailInputWrapper.appendChild(this.fieldWrapper("Timezone", timeZone));
             emailInputWrapper.appendChild(this.fieldWrapper("Imap username", inputImapUserName));
@@ -637,6 +633,7 @@ var accountManager = (function () {
             var filteredCronJobJson = [];
             var j = 0;
             for (var i = 0; i < cronJobJson.length; i++) {
+                cronJobJson[i].server = cronJobJson[i].email;
                 if(!cronJobJson.hasOwnProperty('state')){
                     cronJobJson[i].state = "active";
                     if(cronJobJson[i].expression == "* * 31 2 *"){
@@ -650,13 +647,12 @@ var accountManager = (function () {
                     filteredCronJobJson[j] = cronJobJson[i];
                     j++;
                 }
-
             }
             cronJobJson = filteredCronJobJson;
-            var tbl = table.createJsonTable(serverId, cronJobJson, accountManager.editableColoms, accountManager.hiddenColoms, accountManager.formatColoms);
+            var tbl = table.createJsonTable(serverId+"-server-manager", cronJobJson, serverManager.editableColoms, serverManager.hiddenColoms, serverManager.formatColoms);
             tbl.style.marginTop = '20px';  
             tblWrapper.appendChild(tbl);
-            document.querySelector('#account-manager').appendChild(tblWrapper);           
+            document.querySelector('#server-manager').appendChild(tblWrapper);           
         },
         
         fetchJson : async function(url){
@@ -669,10 +665,11 @@ var accountManager = (function () {
         
         getIdFromServerUrl : function (serverUrl) {
             var url = new URL(serverUrl);
-            //var id = url.hostname.replace('.', '-');
             var id = url.hostname.replaceAll('.', '-');
-            if(accountManager.serverLookup === undefined)accountManager.serverLookup = {};
-            accountManager.serverLookup[id] = serverUrl;
+            if(serverManager.serverLookup === undefined){
+                serverManager.serverLookup = {};
+            }  
+            serverManager.serverLookup[id] = serverUrl;
             return id;
         }
         

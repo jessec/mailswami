@@ -1,208 +1,213 @@
 var cronManager = (function () {
 
-    var servers = [];
-    var serverLookup = {};
-    var emailByServerIdLookup = {};
-    var widget = {};
-    var setupControles = {};
-    var loginForm;
-    var editableColoms = [];
-    var hiddenColoms = [];
-    var formatColoms = [];
-    var getCronJobsByServerID = {};
-    var encKey = "";
-    //FIXME more form data checking
+//    var servers = [];
+//    var serverLookup = {};
+//    var emailByServerIdLookup = {};
+//    var widget = {};
+//    var setupControles = {};
+//    var loginForm;
+//    var editableColoms = [];
+//    var hiddenColoms = [];
+//    var formatColoms = [];
+//    var getCronJobsByServerID = {};
+//    var encKey = "";
+//    var serverUrl;
+//    var availableEmails = [];
+//    var cronJobJsonArray = [];
 
 
     return {
-        init : async function (id) {
+        init : async function (id, serverUrl) {
             this.encKey = "1234567891234567";
             this.editableColoms = ['expression','email','batchSize'];
-            this.hiddenColoms = ['id','expressiondesc','user'];
-            this.formatColoms = ['command','state'];
+            this.hiddenColoms = ['id','expressiondesc','user','command'];
+            this.formatColoms = ['state'];
+            this.availableEmails = [];
             this.id = id;
+            this.serverUrl = serverUrl;
             this.widget = document.getElementById(this.id);
-            this.setupControles();
+            this.initControles();
             this.setupEvents();
         },
 
-        setupControles : function () {
+        initControles : async function () {
             this.setupMessages = document.createElement("div");
             this.setupMessages.id = this.id + "-messages";
             this.widget.appendChild(this.setupMessages);
-           
             this.setupControles = document.createElement("div");
             this.setupControles.classList = this.id + "-controles";
             this.widget.appendChild(this.setupControles);
-            this.setupLogin();
+            this.setupTable();
+        },
+        
+        howManyCronJobsForThisEmail : function(email){
+            var nrOfEmails = 0;
+            for (var i = 0; i < cronManager.cronJobJsonArray.length; i++) {
+                var job = cronManager.cronJobJsonArray[i];
+                if(job.email == email){
+                    nrOfEmails++;
+                }
+            }
+            return nrOfEmails;
+        },
+        
+        setupTable : async function(){
+        
+            
+            
+            var dataUrl = cronManager.serverUrl + "/api/server/domains?auth=" + userManager.getAuthKey();
+            cronManager.serverList = await this.fetchJson(dataUrl);
+            
+            
+            
+            
+            var dataUrl = cronManager.serverUrl + "/api/crontab/jobs?auth=" + userManager.getAuthKey();
+            var cronJobJsonArray = await this.fetchJson(dataUrl);
+            cronManager.cronJobJsonArray = cronJobJsonArray;
+            var domains = [];
+            for (var i = 0; i < cronJobJsonArray.length; i++) {
+                var job = cronJobJsonArray[i];
+                var domain = "http://"+job.email.replace(/.*@/, "");
+                if(!domains.includes(domain)){
+                    domains.push(domain);
+                    cronManager.availableEmails.push(job.email);
+                }
+            }
+            cronManager.setupServerDropDown("cron-manager", "email-dropdown-id", "server-dropdown-name", cronManager.serverList.serverlist);
+            cronManager.createServerTable(cronJobJsonArray);
         },
 
         setupEvents : async function(){
             document.addEventListener('click', async function(e) {
+                
+                var tabcontent = e.target.closest('.tabcontent');
+                if(tabcontent !== null){
+                    if(tabcontent.id !== "Contact"){
+                        return;
+                    }
+                }
 
                 if(e.target.classList == "btn-save-email"){
                     console.log('saving email');
                     var email = e.target.parentNode.parentNode.querySelector('.add-new-email').value.trim();
                     var password = e.target.parentNode.parentNode.querySelector('.add-new-password').value.trim();
-                    console.log();
-                    var newEmailPlusAuth = cronManager.encryptUserAndPassword(email, password, cronManager.encKey);
-                  
                     
-                    var serverWrapper = e.target.closest(".server_wrapper_class");                   
-                    var id = serverWrapper.id;
-                    var idParts = id.split('_');
-                    var serverId = idParts[2];
-                    var server = cronManager.serverLookup[serverId];
+                    var isValidEmail = false;
+                    var domains = cronManager.serverList.serverlist;
+                    for (var i = 0; i < domains.length; i++) {
+                        var domain = domains[i];
+                        console.log(domain);
+                        var url = new URL(domain);
+                        var hostname = url.hostname;
+                        var emaildomain = email.split('@')[1];
+                        if(hostname == emaildomain){
+                            isValidEmail = true;
+                        }
+                        
+                    }
                     
-                    
-                    var addEmailAccountUrl = server + "/api/crontab/email/account/add?auth=" + cronManager.getAuthKey() + "&newEmailPlusAuth=" + newEmailPlusAuth;
-                    var newEmailAccount = await cronManager.fetchJson(addEmailAccountUrl);
-                    console.log(newEmailAccount);
                     var messages = document.querySelector('#cron-manager-messages');
-                    if(newEmailAccount.status == "success"){
-                        e.target.previousSibling.click();
-                        messages.innerHTML = "Please wait 5 minutes for the email to become active";
+                    
+                    if(isValidEmail){
+                        var newEmailPlusAuth = userManager.encryptUserAndPassword(email, password, userManager.encKey);
+                        var serverWrapper = e.target.closest(".email_wrapper_class");                   
+                        var id = serverWrapper.id;
+                        var addEmailAccountUrl = cronManager.serverUrl + "/api/crontab/email/account/add?auth=" + userManager.getAuthKey() + "&newEmailPlusAuth=" + newEmailPlusAuth;
+                        var newEmailAccount = await cronManager.fetchJson(addEmailAccountUrl);
+                        console.log(newEmailAccount);
+
+                        if(newEmailAccount.status == "success"){
+                            e.target.previousSibling.click();
+                            cronManager.addCronJob(email);
+                            messages.innerHTML = "Please create an new cronjob to activate the email";
+                        }else{
+                            messages.innerHTML = "Oops something went wrong";
+                        }
+                        setTimeout(() => {
+                            messages.innerHTML = "";
+                        }, 13000);
                     }else{
-                        messages.innerHTML = "Oops something went wrong";
+                        messages.innerHTML = "There is no server for this email";
                     }
                     setTimeout(() => {
                         messages.innerHTML = "";
-                    }, 3000);
+                    }, 13000);
+                    
+
                 }
                 
                 if(e.target.classList == "btn-add-email"){
-                    console.log('adding email');
                     var wrapper = e.target.parentNode.parentNode.querySelector('.email-input-wrapper'); 
-                    console.log(wrapper);
                     wrapper.style.display = "grid";
                 }
                 
                 if(e.target.classList == "btn-cancel-email"){
-                    console.log('cancel email');
                     e.target.parentNode.parentNode.style.display = "none";
                 }
                 
                 if(e.target.innerText.trim() == "delete"){
                     e.target.parentNode.parentNode.parentNode.style.backgroundColor = "#9ecdf5";
 
-                    setTimeout(async function(){ 
                         var tdId = e.target.parentNode.parentNode.id;
-                        console.log(tdId);
                         var cronJobIdParts = tdId.split("_");
                         var cronJobId = cronJobIdParts[cronJobIdParts.length - 2];
-                        
-                        console.log("deleting : " + cronJobId);
-                        var serverWrapper = e.target.closest(".server_wrapper_class");                   
+                        var serverWrapper = e.target.closest(".email_wrapper_class");                   
                         var id = serverWrapper.id;
-                        var idParts = id.split('_');
-                        var serverId = idParts[2];
-                        var server = cronManager.serverLookup[serverId];
-                        
-                        var cronJobJson = cronManager.getCronJobsByServerID[serverId];
-                        
                         var email = document.querySelector("#"+tdId.replace("_state","_email")).innerText.trim();
+                        // FIXME
                         
-                        console.log(email);
-                        
-                        var isLastEmailAccount = cronManager.isLastEmailAccount(email, cronJobJson);
-                        
-                        console.log(isLastEmailAccount);
-                        var txt;
+                        var nrOfEmails = cronManager.howManyCronJobsForThisEmail(email);
+
+                        var isLastEmailAccount = false;
+                        if(nrOfEmails == 1){
+                            isLastEmailAccount = true;
+                        }
                         
                         if(isLastEmailAccount){
                             var r = confirm("By deleting this cronjob you will also delete email account : "+ email + " do you want this?");
                             if (r == true) {
-                              txt = "You pressed OK!";
-                              var deleteCronJobUrl = server + "/api/crontab/job/delete?auth=" + cronManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
-                              var newCronJob = await cronManager.fetchJson(deleteCronJobUrl);
-                              console.log(newCronJob);
-                            } else {
-                              txt = "You pressed Cancel!";
+                              document.querySelector('#cron-spinner').style.display = "block";
+                              var deleteCronJobUrl = cronManager.serverUrl + "/api/crontab/job/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
+                              await cronManager.fetchJson(deleteCronJobUrl);
+                              await cronManager.setupTable();
+                              document.querySelector('#cron-spinner').style.display = "none";
                             }
                         }else{
                             var r = confirm("Are you sure you want to delete this cron job?");
                             if (r == true) {
-                              txt = "You pressed OK!";
-                              var deleteCronJobUrl = server + "/api/crontab/job/delete?auth=" + cronManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=false";
-                              var newCronJob = await cronManager.fetchJson(deleteCronJobUrl);
-                              console.log(newCronJob);
-                            } else {
-                              txt = "You pressed Cancel!";
+                              document.querySelector('#cron-spinner').style.display = "block";
+                              var deleteCronJobUrl = cronManager.serverUrl + "/api/crontab/job/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=false";
+                              await cronManager.fetchJson(deleteCronJobUrl);
+                              await cronManager.setupTable();
+                              document.querySelector('#cron-spinner').style.display = "none";
                             }
                         }
-                        
-
-
-                        console.log(txt);
                         e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
-                        
-                        var formData = new FormData(cronManager.loginForm);
-                        var user = formData.get("user");
-                        var password = cronManager.getAuthKey();
-                      
-                        cronManager.createServerTable(server, user, password);
-                        
-                        
-                        setTimeout(function(){ 
-                            document.querySelector('#'+id).style.display = "inline-grid"; 
-                        }, 500);
-                        
-                        
-                    }, 500);
                 }
                 
                 if(e.target.classList == "btn-add-cron-job"){
-                    console.log('adding a cron job');
-                    var serverWrapper = e.target.closest(".server_wrapper_class");                   
-                    var id = serverWrapper.id;
-                    var inputValue = "* * 31 2 *";
-                    var idParts = id.split('_');
-                    var serverId = idParts[2];
-                    var server = cronManager.serverLookup[serverId];
-                    
-                    var cronJobJson = cronManager.getCronJobsByServerID[serverId];
-
-                    var newCronJobUrl = server + "/api/crontab/job/new?auth=" + cronManager.getAuthKey();
-                    var newCronJob = await cronManager.fetchJson(newCronJobUrl);
-                    console.log(cronJobJson);
-                    console.log(newCronJob);
-                    // reload table
-                    
-                    var formData = new FormData(cronManager.loginForm);
-                    var user = formData.get("user");
-                    var password = cronManager.getAuthKey();
-                  
-                    cronManager.createServerTable(server, user, password);
-                    
-                    
-                    setTimeout(function(){ 
-                        document.querySelector('#'+id).style.display = "inline-grid"; 
-                        document.querySelector('#'+id+' table > tbody > tr:last-child').style.backgroundColor = "yellow";
-                    }, 500);
-                    
+                    cronManager.addCronJob(email);
                     return;
                 }
-                
                 if(e.target.innerText.trim() == "* * 31 2 *"){
                     return;
                 }
-                
-                if(e.target.innerText.trim() == "paused"){
+                if(e.target.innerText.trim() == "pause"){
                     var tmpTdId = e.target.parentNode.parentNode.id.replace("_state","_expression");
                     var tmpTd = e.target.parentNode.parentNode.parentNode.querySelector('#'+tmpTdId);
                     tmpTd.innerText = "0 * 31 2 *"
-                        
                     var inputValue = "0 * 31 2 *";
                     var id = tmpTdId;
                     var idParts = id.split('_');
-                    var server = cronManager.serverLookup[idParts[0]];
                     var cronId = idParts[1];
                     var cronField = idParts[2];
-                    cronManager.saveJsonField(server, cronId, cronField, inputValue, id);
+                    await cronManager.saveJsonField(cronId, cronField, inputValue, id);
                     e.target.innerText = "active";   
+                    e.target.classList.remove("state-pause");
+                    e.target.classList.add("state-active");
                     return;
-                        
                 }
+                
                 if(e.target.innerText.trim() == "active"){
                     console.log(e.target);
                     var tmpTdId = e.target.parentNode.parentNode.id.replace("_state","_expression");
@@ -211,11 +216,12 @@ var cronManager = (function () {
                     var inputValue = "* * 31 2 *";
                     var id = tmpTdId;
                     var idParts = id.split('_');
-                    var server = cronManager.serverLookup[idParts[0]];
                     var cronId = idParts[1];
                     var cronField = idParts[2];
-                    cronManager.saveJsonField(server, cronId, cronField, inputValue, id);
-                    e.target.innerText = "paused";
+                    await cronManager.saveJsonField(cronId, cronField, inputValue, id);
+                    e.target.innerText = "pause";
+                    e.target.classList.remove("state-active");
+                    e.target.classList.add("state-pause");
                     return;
                 }
                 
@@ -228,11 +234,10 @@ var cronManager = (function () {
                             cronManager.saveEmailDropDownField(dropDownField);
                         }
                         jsonField.innerText = "";
-                        var serverId = jsonField.id.split("_")[0];
                         var elementId = jsonField.id;
                         var selectId = "email-dropdown";
                         var name = "email-dropdown";
-                        var values = cronManager.emailByServerIdLookup[serverId];
+                        var values = cronManager.availableEmails;
                         var innerHTML = "";
                         var htmlFor = "email";
                         cronManager.createEmailDropDown(elementId, selectId, name, values, innerHTML, htmlFor);
@@ -249,17 +254,28 @@ var cronManager = (function () {
                             var inputValue = inputField.value;
                             var id = inputField.parentNode.id;
                             var idParts = id.split('_');
-                            var server = cronManager.serverLookup[idParts[0]];
                             var cronId = idParts[1];
                             var cronField = idParts[2];
                             inputField.parentNode.innerText = inputValue;
                             inputField.remove();
-                            cronManager.saveJsonField(server, cronId, cronField, inputValue, id);
+                            await cronManager.saveJsonField(cronId, cronField, inputValue, id);
                         }
                     }
                 }
              });
         },
+        
+        addCronJob : async function(email){
+            document.querySelector('#cron-spinner').style.display = "block";
+            var newCronJobUrl = cronManager.serverUrl + "/api/crontab/job/new?auth=" + userManager.getAuthKey() + "&email="+email;
+            await cronManager.fetchJson(newCronJobUrl);
+            await cronManager.setupTable();
+            document.querySelector('#serverId-table > tbody > tr:last-child').style.backgroundColor = "yellow";
+            setTimeout(function(){ 
+                document.querySelector('#serverId-table > tbody > tr:last-child').style.backgroundColor = "transparent"; 
+            }, 10000);
+            document.querySelector('#cron-spinner').style.display = "none";
+        }, 
         
         isLastEmailAccount : function(email, cronJobJson){
             var index = 0;
@@ -294,118 +310,34 @@ var cronManager = (function () {
             document.getElementById(elementId).appendChild(select);
         },
         
-        saveEmailDropDownField : function(that){
+        saveEmailDropDownField : async function(that){
             var inputValue = that.value;
             var id = that.parentNode.id;
             var idParts = id.split('_');
-            var server = cronManager.serverLookup[idParts[0]];
             var cronId = idParts[1];
             var cronField = idParts[2];
             that.parentNode.innerText = inputValue;
             that.remove();
-            cronManager.saveJsonField(server, cronId, cronField, inputValue, id);
+            await cronManager.saveJsonField(cronId, cronField, inputValue, id);
         },
         
-        createCronJob : async function(server, cronId, cronField, inputValue, tdid){
-            var data = {
-                 cronid : cronId,
-                 field : cronField,
-                 value : inputValue,
-                 tdid : tdid
-            }
-            var dataUrl = server + "/api/crontab/jobs/edit?auth="+cronManager.getAuthKey()+"&payload="+  encodeURIComponent(JSON.stringify(data));
-            var json = await this.fetchJson(dataUrl);
-            if(json.status == "error"){
-                document.querySelector('#'+data.tdid).style.backgroundColor = 'red';
-            }else{
-                document.querySelector('#'+data.tdid).style.backgroundColor = 'white';
-            }
-        },
-        
-        saveJsonField : async function(server, cronId, cronField, inputValue, tdid){
-            var data = {
-                 cronid : cronId,
-                 field : cronField,
-                 value : inputValue,
-                 tdid : tdid
-            }
-            var dataUrl = server + "/api/crontab/jobs/edit?auth="+cronManager.getAuthKey()+"&payload="+  encodeURIComponent(JSON.stringify(data));
-            var json = await this.fetchJson(dataUrl);
-            if(json.status == "error"){
-                document.querySelector('#'+data.tdid).style.backgroundColor = 'red';
-            }else{
-                document.querySelector('#'+data.tdid).style.backgroundColor = 'white';
-            }
-        },
+//        createCronJob : async function(server, cronId, cronField, inputValue, tdid){
+//            var data = {
+//                 cronid : cronId,
+//                 field : cronField,
+//                 value : inputValue,
+//                 tdid : tdid
+//            }
+//            var dataUrl = cronManager.serverUrl + "/api/crontab/jobs/edit?auth="+userManager.getAuthKey()+"&payload="+  encodeURIComponent(JSON.stringify(data));
+//            var json = await this.fetchJson(dataUrl);
+//            if(json.status == "error"){
+//                document.querySelector('#'+data.tdid).style.backgroundColor = 'red';
+//            }else{
+//                document.querySelector('#'+data.tdid).style.backgroundColor = 'white';
+//            }
+//        },
 
-        handleJsonField : function(jsonField){
-            var orgValue = jsonField.innerText;
-            var input = document.createElement("INPUT");
-            input.setAttribute("type", "text");
-            jsonField.innerText = "";
-            input.value = orgValue;
-            input.id = "edit-json-field";
-            jsonField.append(input);
-        },
-        
-        setupLogin : function () {
-            this.loginForm = document.createElement("form");
-            var user = document.createElement("input");
-            user.setAttribute('type', "text");
-            user.setAttribute('name', "user");
-            var pass = document.createElement("input");
-            pass.setAttribute('type', "password");
-            pass.setAttribute('name', "pass");
-            var s = document.createElement("input");
-            s.setAttribute('type', "submit");
-            s.setAttribute('value', "Submit");
-            this.loginForm.appendChild(user);
-            this.loginForm.appendChild(pass);
-            this.loginForm.appendChild(s);
-            this.loginForm.addEventListener("submit", this.submitLogin);
-            this.setupControles.appendChild(this.loginForm);
-        },
-        
-        getAuthKey : function (){
-            var formData = new FormData(cronManager.loginForm);
-            var user = formData.get("user");
-            var pass = formData.get("pass");
-            return cronManager.encryptUserAndPassword(user, pass, cronManager.encKey);
-        },
-        
-        encryptUserAndPassword : function(user, pass, encKey){
-            var iv = CryptoJS.lib.WordArray.random(128/8).toString(CryptoJS.enc.Hex);
-            var salt = CryptoJS.lib.WordArray.random(128/8).toString(CryptoJS.enc.Hex);
-            var aesUtil = new AesUtil(128, 1000);
-            var ciphertext = aesUtil.encrypt(salt, iv, encKey, user+":::::"+pass+":::::"+Date.now());
-            var aesPassword = (iv + "::" + salt + "::" + ciphertext);
-            var password = btoa(aesPassword);
-            return password;
-        },
 
-        submitLogin : async function (e) {
-            e.preventDefault();
-            
-
-                
-                
-            
-            
-            var formData = new FormData(cronManager.loginForm);
-            var user = formData.get("user");
-            var password = cronManager.getAuthKey();
-            var serverUrl = "https://agile-ridge-12468.herokuapp.com/?user="+user+"&domain="+location.hostname;
-            //var serverUrl = "http://0.0.0.0:5000/?user="+user+"&domain="+location.hostname;
-            var serverJson = await cronManager.fetchJson(serverUrl);
-            cronManager.servers = serverJson.serverlist;
-            cronManager.setupServerDropDown("cron-manager", "server-dropdown-id", "server-dropdown-name", cronManager.servers);
-            for (var i = 0; i < cronManager.servers.length; i++) {
-                cronManager.createServerTable(cronManager.servers[i], user, password);
-            }
-            document.querySelector('form > input[name=user]').style.visibility = 'hidden';
-            document.querySelector('form > input[name=pass]').style.visibility = 'hidden';
-            document.querySelector('form > input[type=submit]').value = "reload";
-        },
         
         setupServerDropDown : function(elementId, selectId, name, values){
             var select = document.createElement("select");
@@ -416,169 +348,170 @@ var cronManager = (function () {
             {
                 var option = document.createElement("option");
                 var sanatizedVal = new URL(val).hostname;
-                var serverId =cronManager.getIdFromServerUrl(val);
-                option.value = serverId;
+                option.value = "";
                 option.text = sanatizedVal;
                 select.appendChild(option);
             }
             select.addEventListener("change", function() {
-                var wrappers = document.querySelectorAll('.server_wrapper_class');
+                var wrappers = document.querySelectorAll('.email_wrapper_class');
                 for (var i = 0; i < wrappers.length; i++) {
                     wrappers[i].style.display = "none";
                 }
-                document.querySelector('#server_wrapper_'+this.value).style.display = "inline-grid";
+                if(document.querySelector('#email_wrapper_'+this.value)){
+                    document.querySelector('#email_wrapper_'+this.value).style.display = "inline-grid";   
+                }
             });
             
             if(document.querySelector('#'+selectId)){
                 document.querySelector('#'+selectId).remove();
                 console.log("delete dropdown")
+                document.getElementById(elementId).appendChild(select);
             }else{
                 document.getElementById(elementId).appendChild(select);
-            }
-            
-            
+            }  
         },
 
+        fieldWrapper : function(text, field){
+            var fieldWrapper = document.createElement("div");
+            var newlabel = document.createElement("Label");
+            newlabel.innerHTML = text;
+            fieldWrapper.appendChild(newlabel);
+            fieldWrapper.appendChild(field);
+            return fieldWrapper;
+        },
         
-        createServerTable : async function (server, user, pass) {
-            var dataUrl = server + "/api/crontab/jobs?auth=" + pass
-            var serverId = cronManager.getIdFromServerUrl(server);
-            var cronJobJson = await this.fetchJson(dataUrl);
+        createServerTable : async function (cronJobJson) {
 
-            if(cronManager.getCronJobsByServerID === undefined)cronManager.getCronJobsByServerID = {};
-            
-            cronManager.getCronJobsByServerID[serverId] = cronJobJson;
-            
-            // Cron table
-            
             var tblWrapper = document.createElement("div");
             tblWrapper.style.marginTop = '20px';  
-            tblWrapper.style.display = 'none'; 
             tblWrapper.style.border = "1px solid";
             tblWrapper.style.padding = "5px";
-            tblWrapper.id = "server_wrapper_"+serverId;
-            tblWrapper.classList = "server_wrapper_class"; 
-            
-            //var tblLabel = document.createElement("span");
-
+            tblWrapper.style.width = "100%";
+            tblWrapper.id = "email_wrapper_";// +serverId;
+            tblWrapper.classList = "email_wrapper_class"; 
             var tblLabel = document.createElement("span");
             var tblLabelServer = document.createElement("span");
             tblLabelServer.classList = "server-name";
-            tblLabelServer.innerText = new URL(server).hostname;
-
-
+            tblLabelServer.innerText = "";// new URL(server).hostname;
             var tblAddShowEmailButton = document.createElement("button");
             tblAddShowEmailButton.innerText = "add email";
             tblAddShowEmailButton.style.float = "right";
             tblAddShowEmailButton.classList = "btn-add-email";
-            
             var tblAddButton = document.createElement("button");
             tblAddButton.innerText = "add cron job";
             tblAddButton.style.float = "right";
             tblAddButton.classList = "btn-add-cron-job";
-            
-            
             tblLabel.appendChild(tblLabelServer);
             tblLabel.appendChild(tblAddButton);
             tblLabel.appendChild(tblAddShowEmailButton);
-
-            
-            
             var input = document.createElement("INPUT");
             input.setAttribute("type", "text");
-            input.id = "add-new-email_"+serverId;
+            input.id = "add-new-email_";// +serverId;
             input.classList = "add-new-email";
             input.style.marginTop = "10px";
-            input.placeholder = "Email"
-            
+            input.placeholder = "Email";
             var inputPass = document.createElement("INPUT");
             inputPass.setAttribute("type", "password");
-            inputPass.id = "add-new-password_"+serverId;
+            inputPass.id = "add-new-password_";// +serverId;
             inputPass.classList = "add-new-password";
             inputPass.style.marginBottom = "10px";
             inputPass.style.marginTop = "10px";
-            inputPass.placeholder = "Password"
-            
+            inputPass.placeholder = "Password";
             var tblAddEmailButton = document.createElement("button");
             tblAddEmailButton.innerText = "save email";
             tblAddEmailButton.style.float = "right";
             tblAddEmailButton.classList = "btn-save-email";
-            
             var tblCancelEmailButton = document.createElement("button");
             tblCancelEmailButton.innerText = "cancel";
             tblCancelEmailButton.style.float = "right";
             tblCancelEmailButton.classList = "btn-cancel-email";
-            
-            
             tblWrapper.appendChild(tblLabel);
             
             var emailInputWrapper = document.createElement("div");
             emailInputWrapper.style.display = "none";
             emailInputWrapper.classList = "email-input-wrapper";
+//            emailInputWrapper.appendChild(input);
+//            emailInputWrapper.appendChild(inputPass);
             
-            emailInputWrapper.appendChild(input);
-            emailInputWrapper.appendChild(inputPass);
+            emailInputWrapper.appendChild(this.fieldWrapper("Email", input));
+            emailInputWrapper.appendChild(this.fieldWrapper("Password", inputPass));
             
             var emailButtonWrapper = document.createElement("div");
             emailButtonWrapper.style.display = "flex";
             emailButtonWrapper.appendChild(tblCancelEmailButton);
             emailButtonWrapper.appendChild(tblAddEmailButton);
-            
             emailInputWrapper.appendChild(emailButtonWrapper);
-
+            
+            
             tblWrapper.appendChild(emailInputWrapper);
             
             
+            //tblWrapper.appendChild(this.fieldWrapper("Imap password", emailInputWrapper));
+            
+            
+            
             let table = new Table();
-            
-            console.log(cronJobJson);
-            for (var i = 0; i < cronJobJson.length; i++) {
-                if(!cronJobJson.hasOwnProperty('state')){
-                    cronJobJson[i].state = "active";
-                    
-                    if(cronJobJson[i].expression == "* * 31 2 *"){
-                        cronJobJson[i].state = "paused";
+            if(cronJobJson !== null){
+                for (var i = 0; i < cronJobJson.length; i++) {
+                    if(!cronJobJson.hasOwnProperty('state')){
+                        cronJobJson[i].state = "active";
+                        
+                        if(cronJobJson[i].expression == "* * 31 2 *"){
+                            cronJobJson[i].state = "pause";
+                        }
+                        // * * 31 2 * disabled cron -- “At every minute on
+                        // day-of-month 31 in February.”
                     }
-                    
-                    //* * 31 2 * disabled cron -- “At every minute on day-of-month 31 in February.”
-                }
+                }  
+                var tbl = table.createJsonTable("serverId", cronJobJson, cronManager.editableColoms, cronManager.hiddenColoms, cronManager.formatColoms);
+                tbl.style.marginTop = '20px'; 
+                tblWrapper.appendChild(tbl);
+                document.querySelector('#cron-manager').appendChild(tblWrapper);
+                document.querySelector('#cron-spinner').style.display = "none";
             }
-            
-            var tbl = table.createJsonTable(serverId, cronJobJson, cronManager.editableColoms, cronManager.hiddenColoms, cronManager.formatColoms);
-            
-            //var tbl = table.createJsonTable(serverId, cronJobJson);
-            tbl.style.marginTop = '20px';  
-            tblWrapper.appendChild(tbl);
-
-            // Email table           
-            
-            //var tbl2 = table.createJsonTable(serverId+"-outbounddr-com", cronJobJson);
-            //tbl2.style.marginTop = '20px';  
-            //tblWrapper.appendChild(tbl2);
-
-            
-            document.querySelector('#cron-manager').appendChild(tblWrapper);
-            
-            var emailUrl = server + "/api/crontab/emails?auth=" + pass
-            var emailJson = await this.fetchJson(emailUrl);
-            if(cronManager.emailByServerIdLookup === undefined)cronManager.emailByServerIdLookup = {};           
-            cronManager.emailByServerIdLookup[serverId] = emailJson;
         },
         
         fetchJson : async function(url){
+            try {
                 const response = await fetch(url);
                 response.ok;     // => false
                 response.status; // => 404
                 const json = await response.json();
                 return json;
+            } catch (e) {
+                return null;
+            }
+
         },
         
-        getIdFromServerUrl : function (serverUrl) {
-            var url = new URL(serverUrl);
-            var id = url.hostname.replace('.', '-');
-            if(cronManager.serverLookup === undefined)cronManager.serverLookup = {};
-            cronManager.serverLookup[id] = serverUrl;
-            return id;
+        
+        saveJsonField : async function(cronId, cronField, inputValue, tdid){
+            document.querySelector('#cron-spinner').style.display = "block";
+            var data = {
+                 cronid : cronId,
+                 field : cronField,
+                 value : inputValue,
+                 tdid : tdid
+            }
+            var dataUrl = cronManager.serverUrl + "/api/crontab/jobs/edit?auth="+userManager.getAuthKey()+"&payload="+  encodeURIComponent(JSON.stringify(data));
+            var json = await this.fetchJson(dataUrl);
+            if(json.status == "error"){
+                document.querySelector('#'+data.tdid).style.backgroundColor = 'red';
+            }else{
+                document.querySelector('#'+data.tdid).style.backgroundColor = 'white';
+            }
+            document.querySelector('#cron-spinner').style.display = "none";
+        },
+        
+
+        handleJsonField : function(jsonField){
+            var orgValue = jsonField.innerText;
+            var input = document.createElement("INPUT");
+            input.setAttribute("type", "text");
+            jsonField.innerText = "";
+            input.value = orgValue;
+            input.id = "edit-json-field";
+            jsonField.append(input);
         },
         
         seconds_since_epoch : function(d){ 
