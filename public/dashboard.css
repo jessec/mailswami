@@ -204,12 +204,12 @@ select#renew-amounts {
 	color: transparent;
 }
 
-.warmup_wrapper_class table tbody > tr > td:last-child, .server_wrapper_class table tbody > tr > td:last-child{
+.warmup_wrapper_class table tbody > tr > td:last-child, .server_wrapper_class table tbody > tr > td:last-child, .email_wrapper_class table tbody > tr > td:last-child{
 
 	width:100px;
 }
 
-.warmup_wrapper_class table tbody > tr > td:last-child > div, .server_wrapper_class table tbody > tr > td:last-child > div {
+.warmup_wrapper_class table tbody > tr > td:last-child > div, .server_wrapper_class table tbody > tr > td:last-child > div , .email_wrapper_class table tbody > tr > td:last-child > div {
 		display:flex;
 }
 
