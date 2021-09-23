@@ -1982,3 +1982,10 @@ body {
     width: 50% !important;
     max-width: 100%;
 }
+
+#register-user,
+#login-user,
+#reset-password,
+#reset-key {
+    padding: 0px;
+}
