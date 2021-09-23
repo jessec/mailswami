@@ -98,8 +98,7 @@ var userManager = (function () {
             });
         },
         logOut : function(){
-            userManager.eraseCookie('authkey', location.pathname.replace('/dashboard.html', ''));
-            userManager.eraseCookie('authkey', location.pathname.replace('/', ''));
+            userManager.eraseCookie('authkey', "/loggedout");
             document.body.classList.remove("dashboard");
         },
         hideLoginForm : function(){
