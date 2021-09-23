@@ -60,6 +60,13 @@ var userManager = (function () {
                     var auth = userManager.getAuthKey();
                     var dataUrl = userManager.serverUrl+"/api/dashboard/register/account?auth=" + auth;
                     var responseJson = await userManager.fetchJson(dataUrl);
+                    
+                    console.log(responseJson);
+                    if(responseJson.status == "true"){
+                        window.location.href = "/public/dashboard.html";
+                    }else{
+                        alert(responseJson.message);
+                    }
                 }
                 
                 if(e.target.id == "reset-link"){
