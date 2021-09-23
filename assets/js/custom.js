@@ -236,6 +236,10 @@ $(document)
             document.querySelector('#register-link').click();
         });
 
+        $("#login-btn").click(function(event) {
+            event.preventDefault();
+            userManager.showLogin(["loginname", "loginpass", "login-user"]);
+        });
 
 
 
