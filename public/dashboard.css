@@ -165,7 +165,7 @@ select#renew-amounts {
 	background: #e85858;
 }
 
-.warmup_wrapper_class button, #invoice-manager button, .server_wrapper_class button{
+.warmup_wrapper_class button, #invoice-manager button, .server_wrapper_class button, .email_wrapper_class button{
 	padding: 5px;
 	background: #21bf73;
 	color: #FFFFFF !important;
@@ -173,6 +173,11 @@ select#renew-amounts {
 	box-sizing: border-box;
 	background: #21bf73;
 }
+
+.email_wrapper_class button {
+	margin:10px;
+}
+
 .btn-add-credit {
 	margin-bottom:10px;
 	display:none;
