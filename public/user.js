@@ -359,8 +359,8 @@ var userManager = (function () {
         },
         
         eraseCookie: function(name, path) {
-            document.cookie = name + '=; Path=' + path + '; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-            document.cookie = name + '=; Max-Age=0'
+            //document.cookie = name + '=; Path=' + path + '; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            document.cookie = name + "=" + (value || "")  + '; Expires=Thu, 01 Jan 1970 00:00:01 GMT;' + "; path="+path;
         }
     }    
 })();
