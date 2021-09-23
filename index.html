@@ -17,9 +17,23 @@
     <link rel="stylesheet" href="assets/css/owl.theme.css">
     <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <!-- Resource style -->
+
     <link href="assets/css/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
 
+    <script>
+        var USER_ROLE = "admin";
+        var host = "https://app.mailswami.com";
+        if (location.host == "localhost:8080") {
+            host = "http://localhost:8080";
+            USER_ROLE = "admin";
+        }
+    </script>
+    <script src="https://mailswami.com/public/js/crypt.js"></script>
+    <script src="https://mailswami.com/public/user.js"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=AQc5qXfxvJJxCNZiJ0IOy2clZAqq3K7-kAXouJVHgO82NayKnRIcq82fwroPFh5RaHVFI9UIBotQECIQ&currency=USD" data-sdk-integration-source="button-factory"></script>
+
+
+
     <script>
         function ValidateEmail(email) {
             if (!email) return false;
@@ -125,11 +139,15 @@
             });
             grecaptcha.render('recaptcha2', {
                 'sitekey': '6LcQEOIbAAAAAAG9fC3yywvf-hpHP-pKywBUvPcm',
-                'callback': function(response) {
+                'callback': async function(response) {
                     //var message = $('#contact-message').val();
                     var name = $('#contact-name2').val();
                     var email = $('#contact-email2').val();
                     sendNameChoiceEmail(name, "", "mailswami-signup", email, "messageslot");
+
+                    var auth = userManager.getAuthKey();
+                    var dataUrl = userManager.serverUrl + "/api/dashboard/register/account?auth=" + auth;
+                    var responseJson = await userManager.fetchJson(dataUrl);
 
                 }
             });
@@ -670,12 +688,22 @@
                 <div class="modal-body">
 
                     <div class="form">
+                        <!--
                         <form id="chimp-form2" class="subscribe-form" action="assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                            <!--<textarea class="mail" id="contact-message2" placeholder="Message" rows="6"></textarea>-->
+                           <textarea class="mail" id="contact-message2" placeholder="Message" rows="6"></textarea>
                             <input class="mail" id="contact-name2" type="text" name="name" placeholder="Your name" autocomplete="off">
-                            <input class="mail" id="contact-email2" type="email" name="email" placeholder="Your email" autocomplete="off"><input id="contact-submit2" class="submit-button" type="submit" value="Submit">
+                            <input class="mail" id="contact-email2" type="email" name="email" placeholder="Your email" autocomplete="off">
+                            <input id="contact-submit2" class="submit-button" type="submit" value="Submit">
                         </form>
+                        -->
+
+                        <div id="About" class="tabcontent">
+                            <div id="user-manager-messages"></div>
+                            <div id="user-manager"></div>
+                        </div>
+
                         <div id="recaptcha2"></div>
+
                     </div>
 
 
@@ -1463,6 +1491,9 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <script>
+        userManager.init("user-manager", host);
+    </script>
 </body>
 
 </html>

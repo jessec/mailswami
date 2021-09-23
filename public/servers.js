@@ -37,7 +37,7 @@ var serverManager = (function () {
             serverManager.run();
         },
         run : async function (e) {
-            console.log("running server manager");
+            //console.log("running server manager");
             if(e)e.preventDefault();
             var authKey = userManager.getAuthKey();
             var dataUrl = serverManager.serverUrl+"/api/server/domains?auth=" + authKey;
@@ -122,7 +122,7 @@ var serverManager = (function () {
         setupEvents : async function(){
             if(document.querySelector('.serverinit'))return;
             document.querySelector('#Servers').classList.add('serverinit');
-            console.log("server init.");
+            //console.log("server init.");
             
             document.addEventListener('change', async function(e) {             
             

@@ -42,10 +42,10 @@ var userManager = (function () {
                 if(e.target.id == "reset-password"){
                     if(e)e.preventDefault();
                     var email = document.querySelector('#user-forgot-password').value;
-                    console.log("reset password for : "+ email);
+                    //console.log("reset password for : "+ email);
                     var dataUrl = userManager.serverUrl+"/api/dashboard/reset/password?email="+email;
                     var responseJson = await userManager.fetchJson(dataUrl);
-                    console.log(responseJson);
+                    //console.log(responseJson);
                     document.querySelector('#user-manager-messages').innerHTML = "We have sent an email with a key that you can use to reset your password.";
                     
                 }
@@ -171,7 +171,7 @@ var userManager = (function () {
             var user = document.createElement("input");
             user.setAttribute('type', "text");
             user.setAttribute('name', "user");
-            user.placeholder = "Username";
+            user.placeholder = "Email";
             user.id = "loginname";
             user.style.display = "block";
             var userforgotpassword = document.createElement("input");

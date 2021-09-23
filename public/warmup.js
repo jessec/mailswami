@@ -122,7 +122,7 @@ var accountManager = (function () {
         setupEvents : async function(){
             if(document.querySelector('.homeinit'))return;
             document.querySelector('#Home').classList.add('homeinit');
-            console.log("server init.");
+            //console.log("warmup init.");
             document.addEventListener('change', async function(e) {             
                 var tabcontent = e.target.closest('.tabcontent');
                 if(tabcontent !== null){
