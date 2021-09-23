@@ -231,48 +231,13 @@ $(document)
 
         });
 
-
-        $("#chimp-form2").click(function(event) {
+        $("#register-btn").click(function(event) {
             event.preventDefault();
-
-
-
-            // $('#contact-message2')
-            //     .css('border-color', '#fff');
-            $('#contact-name2')
-                .css('border-color', '#fff');
-            $('#contact-email2')
-                .css('border-color', '#fff');
-
-            //var message = $('#contact-message2').val();
-            var name = $('#contact-name2').val();
-            var email = $('#contact-email2').val();
-
-            var proceed = true;
-            // if (message == "") {
-            //     $('#contact-message').css('border', '2px solid red');
-            //     proceed = false;
-            // }
-            if (name == "") {
-                $('#contact-name').css('border', '2px solid red');
-                proceed = false;
-            }
-            if (email == "") {
-                $('#contact-email').css('border', '2px solid red');
-                proceed = false;
-            }
-            if (!isEmail(email)) {
-                $('#contact-email').css('border', '2px solid red');
-                proceed = false;
-            }
-
-            if (proceed) {
-                document.querySelector("#recaptcha2").style.display = "block";
-                document.querySelector("#contact-submit2").style.display = "none";
-            }
-
-
+            document.querySelector('#register-link').click();
         });
+
+
+
 
 
 
