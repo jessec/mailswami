@@ -26,10 +26,14 @@ var cronManager = (function () {
             this.id = id;
             this.serverUrl = serverUrl;
             this.widget = document.getElementById(this.id);
-            this.initControles();
-            this.setupEvents();
-        },
+            cronManager.listenForLogin();
+            
 
+        },
+        main : function(){
+            cronManager.initControles();
+            cronManager.setupEvents();
+        },
         initControles : async function () {
             this.setupMessages = document.createElement("div");
             this.setupMessages.id = this.id + "-messages";
@@ -38,6 +42,28 @@ var cronManager = (function () {
             this.setupControles.classList = this.id + "-controles";
             this.widget.appendChild(this.setupControles);
             this.setupTable();
+        },
+        
+        listenForLogin : function(){
+            var targetNode = document.querySelector('body');
+            if(targetNode.classList.contains('dashboard')){
+                cronManager.main();
+            }else{
+                var config = { attributes: true, childList: true };
+                var callback = function(mutationsList) {
+                    for(var mutation of mutationsList) {
+                        if (mutation.type == 'childList') {
+                        }
+                        else if (mutation.type == 'attributes') {
+                            if(document.body.classList.contains('dashboard')){
+                                cronManager.main();
+                            }
+                        }
+                    }
+                };
+                var observer = new MutationObserver(callback);
+                observer.observe(targetNode, config);
+            }
         },
         
         howManyCronJobsForThisEmail : function(email){

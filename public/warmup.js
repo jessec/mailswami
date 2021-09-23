@@ -1,19 +1,19 @@
 var accountManager = (function () {
 
-    var servers = [];
-    var serverLookup = {};
-    var emailByServerIdLookup = {};
-    var widget = {};
-    var setupControles = {};
-    var editableColoms = [];
-    var hiddenColoms = [];
-    var formatColoms = [];
-    var getCronJobsByServerID = {};
-    var serverUrl = "";
-    var timeZoneData = [];
-    var masterDB = {};
-    var industries = {};
-    let publicKey;
+//    var servers = [];
+//    var serverLookup = {};
+//    var emailByServerIdLookup = {};
+//    var widget = {};
+//    var setupControles = {};
+//    var editableColoms = [];
+//    var hiddenColoms = [];
+//    var formatColoms = [];
+//    var getCronJobsByServerID = {};
+//    var serverUrl = "";
+//    var timeZoneData = [];
+//    var masterDB = {};
+//    var industries = {};
+//    let publicKey;
 
     return {
         init : async function (id, serverUrl) {
