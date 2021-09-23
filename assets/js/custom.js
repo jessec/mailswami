@@ -231,7 +231,7 @@ $(document)
 
         });
 
-        $("#register-btn").click(function(event) {
+        $(".register-btn").click(function(event) {
             event.preventDefault();
             document.querySelector('#register-link').click();
         });
