@@ -52,7 +52,8 @@ var userManager = (function () {
                 
                 if(e.target.id == "logout-link"){
                     userManager.logOut();
-                    location.reload();
+                    //location.reload();
+                    window.location.href = "/";
                 }
 
                 if(e.target.id == "register-user"){
@@ -98,6 +99,7 @@ var userManager = (function () {
         },
         logOut : function(){
             userManager.eraseCookie('authkey', location.pathname.replace('/dashboard.html', ''));
+            userManager.eraseCookie('authkey', location.pathname.replace('/', ''));
             document.body.classList.remove("dashboard");
         },
         hideLoginForm : function(){
