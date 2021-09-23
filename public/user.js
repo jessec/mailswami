@@ -98,7 +98,9 @@ var userManager = (function () {
             });
         },
         logOut : function(){
-            userManager.eraseCookie('authkey', "/loggedout");
+            userManager.eraseCookie('authkey', "/");
+            userManager.eraseCookie('useremail', "/");
+            
             document.body.classList.remove("dashboard");
         },
         hideLoginForm : function(){
