@@ -117,9 +117,19 @@
                 'sitekey': '6LcQEOIbAAAAAAG9fC3yywvf-hpHP-pKywBUvPcm',
                 'callback': function(response) {
                     var message = $('#contact-message').val();
-                    var name = $('#contact-message').val();
+                    var name = $('#contact-name').val();
                     var email = $('#contact-email').val();
-                    sendNameChoiceEmail(name, "", "thehunt100-contact", email, message);
+                    sendNameChoiceEmail(name, "", "mailswami-contact", email, message);
+
+                }
+            });
+            grecaptcha.render('recaptcha2', {
+                'sitekey': '6LcQEOIbAAAAAAG9fC3yywvf-hpHP-pKywBUvPcm',
+                'callback': function(response) {
+                    //var message = $('#contact-message').val();
+                    var name = $('#contact-name').val();
+                    var email = $('#contact-email').val();
+                    sendNameChoiceEmail(name, "", "mailswami-signup", email, "messageslot");
 
                 }
             });
@@ -142,7 +152,8 @@
             padding: 0px;
         }
         
-        #recaptcha1 {
+        #recaptcha1,
+        #recaptcha2 {
             display: none;
         }
         
@@ -660,7 +671,7 @@
 
                     <div class="form">
                         <form id="chimp-form2" class="subscribe-form" action="assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                            <textarea class="mail" id="contact-message2" placeholder="Message" rows="6"></textarea>
+                            <!--<textarea class="mail" id="contact-message2" placeholder="Message" rows="6"></textarea>-->
                             <input class="mail" id="contact-name2" type="text" name="name" placeholder="Your name" autocomplete="off">
                             <input class="mail" id="contact-email2" type="email" name="email" placeholder="Your email" autocomplete="off"><input id="contact-submit2" class="submit-button" type="submit" value="Submit">
                         </form>
