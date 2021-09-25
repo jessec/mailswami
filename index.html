@@ -30,8 +30,9 @@
     </script>
     <script src="https://mailswami.com/public/js/crypt.js"></script>
     <script src="https://mailswami.com/public/user.js"></script>
+    <!--
     <script src="https://www.paypal.com/sdk/js?client-id=AQc5qXfxvJJxCNZiJ0IOy2clZAqq3K7-kAXouJVHgO82NayKnRIcq82fwroPFh5RaHVFI9UIBotQECIQ&currency=USD" data-sdk-integration-source="button-factory"></script>
-
+-->
 
 
     <script>
@@ -194,7 +195,7 @@
 
 
 
-    <!-- Modal -->
+    <!-- Modal 
     <div class="modal fade" id="signupFormLong" tabindex="-1" role="dialog" aria-labelledby="signupFormLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -206,11 +207,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1">
-                                    <!--
-                                    <div class="pricing-intro">
-                                        <h1>No Spam.</h1>
-                                    </div>
-                                   -->
+
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="table-right">
@@ -224,7 +221,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--<p class="refund-txt"></p>-->
+
                                 </div>
                             </div>
                         </div>
@@ -356,7 +353,8 @@
             </div>
         </div>
     </div>
-
+    -->
+    <!--
     <div class="modal fade" id="basicFormLong" tabindex="-1" role="dialog" aria-labelledby="basicFormLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -366,166 +364,162 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
 
-                    <!-- Pricing Tables -->
+      
                     <div id="pricing-basic" class="pricing-section text-center">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1">
-                                    <!--
-                                    <div class="pricing-intro">
-                                        <h1>No Spam.</h1>
-                                    </div>
-                                   -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="table-left">
-                                                <h2>1 Account</h2>
-                                                <br>
-                                                <img class="img-fluid" src="assets/icons/rocket-dark.png" width="120" alt="Icon">
-                                                <div class="pricing-details">
-                                                    <span>$7</span>
-                                                    <div class="sub_span">Per Month</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--<p class="refund-txt">100% money back guarantee</p>-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-
-                    <div class="form">
-                        <form id="chimp-form-basic" class="subscribe-form" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                            <input class="mail" id="chimp-email-firstname2" type="email" name="email" placeholder="First name" autocomplete="off">
-                            <span class="validationtext chimp-email-firstname2">First name should be at least 3 letters</span>
-                            <input class="mail" id="chimp-email-lastname2" type="email" name="email" placeholder="Last name" autocomplete="off">
-                            <span class="validationtext chimp-email-lastname2">Last name should be at least 3 letters</span>
-                            <input class="mail" id="chimp-email-email2" type="email" name="email" placeholder="Email" autocomplete="off">
-                            <span class="validationtext chimp-email-email2">Please fill in a correct email</span>
-                            <input id="submit-button-email2" type="submit" value="Submit">
-                        </form>
-                    </div>
-
-                    <div id="smart-button-container">
-                        <div style="text-align: center;">
-                            <div id="paypal-button-container"></div>
-                        </div>
-                    </div>
-
-                    <script>
-                        document.querySelector('#chimp-form-basic').addEventListener('submit', function(e) {
-                            e.preventDefault();
-                            // Dispatch the event.
-                            const event = new Event('build2');
-                            document.querySelector('body').dispatchEvent(event);
-
-                        });
-
-                        // Listen for the event.
-                        document.querySelector('body').addEventListener('build2', function(e) {
-
-                            let firstName = document.querySelector('#chimp-email-firstname2').value;
-                            let lastName = document.querySelector('#chimp-email-lastname2').value;
-                            let email = document.querySelector('#chimp-email-email2').value;
-
-                            let isFirstNameValid = ValidateFirstName(firstName);
-                            let isLastNameValid = ValidateLastName(lastName);
-                            let isEmailValid = ValidateEmail(email);
-
-                            if (isFirstNameValid) {
-                                document.querySelector('.chimp-email-firstname2').style.display = "none";
-                            } else {
-                                document.querySelector('.chimp-email-firstname2').style.display = "block";
-                            }
-                            if (isLastNameValid) {
-                                document.querySelector('.chimp-email-lastname2').style.display = "none";
-                            } else {
-                                document.querySelector('.chimp-email-lastname2').style.display = "block";
-                            }
-                            if (isEmailValid) {
-                                document.querySelector('.chimp-email-email2').style.display = "none";
-                            } else {
-                                document.querySelector('.chimp-email-email2').style.display = "block";
-                            }
-
-                            let areAllValid = false;
-
-                            if (isFirstNameValid && isLastNameValid && isEmailValid) {
-                                areAllValid = true;
-                            }
-
-                            if (areAllValid) {
-                                document.querySelector('#submit-button-email2').style.display = "none";
-                                document.querySelector('#smart-button-container').style.display = "block";
-                            }
-                        }, false);
-
-
-                        function initPayPalButton() {
-                            paypal.Buttons({
-                                style: {
-                                    shape: 'pill',
-                                    color: 'blue',
-                                    layout: 'vertical',
-                                    label: 'pay',
-
-                                },
-
-
-                                // onInit is called when the button first renders
-                                onInit: function(data, actions) {
-                                    document.querySelector('#smart-button-container').style.display = "none";
-                                },
-
-                                // onClick is called when the button is clicked
-                                onClick: function(click) {},
-
-                                createOrder: function(data, actions) {
-                                    return actions.order.create({
-                                        payer: {
-                                            name: {
-                                                given_name: document.querySelector('#chimp-email-firstname2').value,
-                                                surname: document.querySelector('#chimp-email-lastname2').value
-                                            },
-                                            email_address: document.querySelector('#chimp-email-email2').value
-                                        },
-                                        purchase_units: [{
-                                            "description": "MailSwami : Basic -- " + document.querySelector('#chimp-email-firstname2').value + " " + document.querySelector('#chimp-email-lastname2').value + ", " + document.querySelector('#chimp-email-email2').value,
-                                            "amount": {
-                                                "currency_code": "USD",
-                                                "value": 7
-                                            }
-                                        }]
-                                    });
-                                },
-
-                                onApprove: function(data, actions) {
-                                    return actions.order.capture().then(function(details) {
-                                        //alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                                        setTimeout(function() {
-                                            window.location.replace('thank-you.html');
-                                        }, 500);
-                                    });
-                                },
-
-                                onError: function(err) {
-                                    console.log(err);
-                                }
-                            }).render('#paypal-button-container');
-                        }
-                        initPayPalButton();
-                    </script>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-left">
+                <h2>1 Account</h2>
+                <br>
+                <img class="img-fluid" src="assets/icons/rocket-dark.png" width="120" alt="Icon">
+                <div class="pricing-details">
+                    <span>$7</span>
+                    <div class="sub_span">Per Month</div>
                 </div>
-
             </div>
         </div>
     </div>
 
+    </div>
+    </div>
+    </div>
+    </div>
 
 
+    <div class="form">
+        <form id="chimp-form-basic" class="subscribe-form" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
+            <input class="mail" id="chimp-email-firstname2" type="email" name="email" placeholder="First name" autocomplete="off">
+            <span class="validationtext chimp-email-firstname2">First name should be at least 3 letters</span>
+            <input class="mail" id="chimp-email-lastname2" type="email" name="email" placeholder="Last name" autocomplete="off">
+            <span class="validationtext chimp-email-lastname2">Last name should be at least 3 letters</span>
+            <input class="mail" id="chimp-email-email2" type="email" name="email" placeholder="Email" autocomplete="off">
+            <span class="validationtext chimp-email-email2">Please fill in a correct email</span>
+            <input id="submit-button-email2" type="submit" value="Submit">
+        </form>
+    </div>
 
+    <div id="smart-button-container">
+        <div style="text-align: center;">
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#chimp-form-basic').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Dispatch the event.
+            const event = new Event('build2');
+            document.querySelector('body').dispatchEvent(event);
+
+        });
+
+        // Listen for the event.
+        document.querySelector('body').addEventListener('build2', function(e) {
+
+            let firstName = document.querySelector('#chimp-email-firstname2').value;
+            let lastName = document.querySelector('#chimp-email-lastname2').value;
+            let email = document.querySelector('#chimp-email-email2').value;
+
+            let isFirstNameValid = ValidateFirstName(firstName);
+            let isLastNameValid = ValidateLastName(lastName);
+            let isEmailValid = ValidateEmail(email);
+
+            if (isFirstNameValid) {
+                document.querySelector('.chimp-email-firstname2').style.display = "none";
+            } else {
+                document.querySelector('.chimp-email-firstname2').style.display = "block";
+            }
+            if (isLastNameValid) {
+                document.querySelector('.chimp-email-lastname2').style.display = "none";
+            } else {
+                document.querySelector('.chimp-email-lastname2').style.display = "block";
+            }
+            if (isEmailValid) {
+                document.querySelector('.chimp-email-email2').style.display = "none";
+            } else {
+                document.querySelector('.chimp-email-email2').style.display = "block";
+            }
+
+            let areAllValid = false;
+
+            if (isFirstNameValid && isLastNameValid && isEmailValid) {
+                areAllValid = true;
+            }
+
+            if (areAllValid) {
+                document.querySelector('#submit-button-email2').style.display = "none";
+                document.querySelector('#smart-button-container').style.display = "block";
+            }
+        }, false);
+
+
+        function initPayPalButton() {
+            paypal.Buttons({
+                style: {
+                    shape: 'pill',
+                    color: 'blue',
+                    layout: 'vertical',
+                    label: 'pay',
+
+                },
+
+
+                // onInit is called when the button first renders
+                onInit: function(data, actions) {
+                    document.querySelector('#smart-button-container').style.display = "none";
+                },
+
+                // onClick is called when the button is clicked
+                onClick: function(click) {},
+
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        payer: {
+                            name: {
+                                given_name: document.querySelector('#chimp-email-firstname2').value,
+                                surname: document.querySelector('#chimp-email-lastname2').value
+                            },
+                            email_address: document.querySelector('#chimp-email-email2').value
+                        },
+                        purchase_units: [{
+                            "description": "MailSwami : Basic -- " + document.querySelector('#chimp-email-firstname2').value + " " + document.querySelector('#chimp-email-lastname2').value + ", " + document.querySelector('#chimp-email-email2').value,
+                            "amount": {
+                                "currency_code": "USD",
+                                "value": 7
+                            }
+                        }]
+                    });
+                },
+
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        //alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                        setTimeout(function() {
+                            window.location.replace('thank-you.html');
+                        }, 500);
+                    });
+                },
+
+                onError: function(err) {
+                    console.log(err);
+                }
+            }).render('#paypal-button-container');
+        }
+        initPayPalButton();
+    </script>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    -->
+
+
+    <!--
     <div class="modal fade" id="inviteFormLong" tabindex="-1" role="dialog" aria-labelledby="inviteFormLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -535,114 +529,114 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
 
-                    <!-- Pricing Tables -->
-                    <div id="pricing-invite" class="pricing-section text-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1">
-                                    <div class="pricing-intro">
-                                        <h1><span style="font-size: 118%;"> MailSwami</span> <br><br>welcome</h1>
-                                        <p>
-                                            <br>Why did I get an invitation? <br><br>Based on results with previous clients we believe that you can become very successful on LinkedIn.
-                                        </p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="table-left">
-                                                <h2>SUCCESS</h2>
-                                                <p>Course</p>
-                                                <p>Software</p>
-                                                <p>Q & A Sessions</p>
-                                                <br>
-                                                <img class="img-fluid" src="assets/icons/rocket-dark.png" width="120" alt="Icon">
-                                                <div class="pricing-details">
-                                                    <span style="text-decoration: line-through;">$125</span>
-                                                    <div class="sub_span">One Year</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="refund-txt" style="font-size: 92%; line-height: 21px;">Welcome we hope you will be successful and we are here to help you. Please join our Q & A sessions to find out all the details of the program.</p>
+    
+    <div id="pricing-invite" class="pricing-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1">
+                    <div class="pricing-intro">
+                        <h1><span style="font-size: 118%;"> MailSwami</span> <br><br>welcome</h1>
+                        <p>
+                            <br>Why did I get an invitation? <br><br>Based on results with previous clients we believe that you can become very successful on LinkedIn.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-left">
+                                <h2>SUCCESS</h2>
+                                <p>Course</p>
+                                <p>Software</p>
+                                <p>Q & A Sessions</p>
+                                <br>
+                                <img class="img-fluid" src="assets/icons/rocket-dark.png" width="120" alt="Icon">
+                                <div class="pricing-details">
+                                    <span style="text-decoration: line-through;">$125</span>
+                                    <div class="sub_span">One Year</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div id="invite-code-text">YOUR CODE:<br><br></div>
-                    <div id="invite-code"></div>
-
-                    <div class="form">
-                        <form id="chimp-form-invite" class="subscribe-form" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                            <input class="mail" id="chimp-email-firstname3" type="email" name="email" placeholder="First name" autocomplete="off">
-                            <span class="validationtext chimp-email-firstname3">First name should be at least 3 letters</span>
-                            <input class="mail" id="chimp-email-lastname3" type="email" name="email" placeholder="Last name" autocomplete="off">
-                            <span class="validationtext chimp-email-lastname3">Last name should be at least 3 letters</span>
-                            <input class="mail" id="chimp-email-email3" type="email" name="email" placeholder="Email" autocomplete="off">
-                            <span class="validationtext chimp-email-email3">Please fill in a correct email</span>
-                            <input id="submit-button-email3" type="submit" value="Submit">
-                        </form>
-                    </div>
-
-
-
-                    <script>
-                        document.querySelector('#chimp-form-invite').addEventListener('submit', function(e) {
-                            e.preventDefault();
-                            // Dispatch the event.
-                            const event = new Event('build3');
-                            document.querySelector('body').dispatchEvent(event);
-
-                        });
-
-                        // Listen for the event.
-                        document.querySelector('body').addEventListener('build3', function(e) {
-
-                            let firstName = document.querySelector('#chimp-email-firstname3').value;
-                            let lastName = document.querySelector('#chimp-email-lastname3').value;
-                            let email = document.querySelector('#chimp-email-email3').value;
-                            let invitecode = document.querySelector('#invite-code').textContent;
-
-                            let isFirstNameValid = ValidateFirstName(firstName);
-                            let isLastNameValid = ValidateLastName(lastName);
-                            let isEmailValid = ValidateEmail(email);
-
-                            if (isFirstNameValid) {
-                                document.querySelector('.chimp-email-firstname3').style.display = "none";
-                            } else {
-                                document.querySelector('.chimp-email-firstname3').style.display = "block";
-                            }
-                            if (isLastNameValid) {
-                                document.querySelector('.chimp-email-lastname3').style.display = "none";
-                            } else {
-                                document.querySelector('.chimp-email-lastname3').style.display = "block";
-                            }
-                            if (isEmailValid) {
-                                document.querySelector('.chimp-email-email3').style.display = "none";
-                            } else {
-                                document.querySelector('.chimp-email-email3').style.display = "block";
-                            }
-
-                            let areAllValid = false;
-
-                            if (isFirstNameValid && isLastNameValid && isEmailValid) {
-                                areAllValid = true;
-                            }
-
-                            if (areAllValid) {
-                                document.querySelector('#submit-button-email3').style.display = "none";
-                                //send request for free account
-                                sendNameChoiceEmail(firstName, lastName, "thehunt100-invite", email, invitecode);
-                                createDashboardAccount(firstName, lastName, "thehunt100-create-account", email, invitecode);
-
-                            }
-                        }, false);
-                    </script>
+                    <p class="refund-txt" style="font-size: 92%; line-height: 21px;">Welcome we hope you will be successful and we are here to help you. Please join our Q & A sessions to find out all the details of the program.</p>
                 </div>
-
             </div>
         </div>
     </div>
 
+    <div id="invite-code-text">YOUR CODE:<br><br></div>
+    <div id="invite-code"></div>
+
+    <div class="form">
+        <form id="chimp-form-invite" class="subscribe-form" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
+            <input class="mail" id="chimp-email-firstname3" type="email" name="email" placeholder="First name" autocomplete="off">
+            <span class="validationtext chimp-email-firstname3">First name should be at least 3 letters</span>
+            <input class="mail" id="chimp-email-lastname3" type="email" name="email" placeholder="Last name" autocomplete="off">
+            <span class="validationtext chimp-email-lastname3">Last name should be at least 3 letters</span>
+            <input class="mail" id="chimp-email-email3" type="email" name="email" placeholder="Email" autocomplete="off">
+            <span class="validationtext chimp-email-email3">Please fill in a correct email</span>
+            <input id="submit-button-email3" type="submit" value="Submit">
+        </form>
+    </div>
+
+
+
+    <script>
+        document.querySelector('#chimp-form-invite').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Dispatch the event.
+            const event = new Event('build3');
+            document.querySelector('body').dispatchEvent(event);
+
+        });
+
+        // Listen for the event.
+        document.querySelector('body').addEventListener('build3', function(e) {
+
+            let firstName = document.querySelector('#chimp-email-firstname3').value;
+            let lastName = document.querySelector('#chimp-email-lastname3').value;
+            let email = document.querySelector('#chimp-email-email3').value;
+            let invitecode = document.querySelector('#invite-code').textContent;
+
+            let isFirstNameValid = ValidateFirstName(firstName);
+            let isLastNameValid = ValidateLastName(lastName);
+            let isEmailValid = ValidateEmail(email);
+
+            if (isFirstNameValid) {
+                document.querySelector('.chimp-email-firstname3').style.display = "none";
+            } else {
+                document.querySelector('.chimp-email-firstname3').style.display = "block";
+            }
+            if (isLastNameValid) {
+                document.querySelector('.chimp-email-lastname3').style.display = "none";
+            } else {
+                document.querySelector('.chimp-email-lastname3').style.display = "block";
+            }
+            if (isEmailValid) {
+                document.querySelector('.chimp-email-email3').style.display = "none";
+            } else {
+                document.querySelector('.chimp-email-email3').style.display = "block";
+            }
+
+            let areAllValid = false;
+
+            if (isFirstNameValid && isLastNameValid && isEmailValid) {
+                areAllValid = true;
+            }
+
+            if (areAllValid) {
+                document.querySelector('#submit-button-email3').style.display = "none";
+                //send request for free account
+                sendNameChoiceEmail(firstName, lastName, "thehunt100-invite", email, invitecode);
+                createDashboardAccount(firstName, lastName, "thehunt100-create-account", email, invitecode);
+
+            }
+        }, false);
+    </script>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    -->
 
 
 
@@ -686,27 +680,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="form">
-                        <!--
-                        <form id="chimp-form2" class="subscribe-form" action="assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                           <textarea class="mail" id="contact-message2" placeholder="Message" rows="6"></textarea>
-                            <input class="mail" id="contact-name2" type="text" name="name" placeholder="Your name" autocomplete="off">
-                            <input class="mail" id="contact-email2" type="email" name="email" placeholder="Your email" autocomplete="off">
-                            <input id="contact-submit2" class="submit-button" type="submit" value="Submit">
-                        </form>
-                        -->
-
                         <div id="About" class="tabcontent">
                             <div id="user-manager-messages"></div>
                             <div id="user-manager"></div>
                         </div>
-
                         <div id="recaptcha2"></div>
-
                     </div>
-
-
                 </div>
                 <div class="modal-footer">
                 </div>
@@ -944,7 +924,7 @@
 
 
 
-            <!-- Features Section -->
+            <!-- Features Section 
             <div id="features" style="display: none;" class="ft-flex">
                 <div class="container">
                     <div class="ft-inner align-center">
@@ -983,8 +963,9 @@
                 </div>
             </div>
 
+-->
 
-            <!-- Counter Section -->
+            <!-- Counter Section 
             <div style="display: none;" class="yd-stats">
                 <div class="container-s">
                     <div class="row text-center">
@@ -1044,10 +1025,11 @@
                     </div>
                 </div>
             </div>
+            -->
             <!-- Counter Section Ends -->
 
 
-            <!-- Features Section -->
+            <!-- Features Section 
             <div id="features" style="display: none;" class="ft-flex">
                 <div class="container">
                     <div class="ft-inner align-center">
@@ -1086,9 +1068,9 @@
                 </div>
             </div>
 
+-->
 
-
-            <!-- Counter Section -->
+            <!-- Counter Section 
             <div style="display: none;" class="yd-stats">
                 <div class="container-s">
                     <div class="row text-center">
@@ -1101,10 +1083,11 @@
                     </div>
                 </div>
             </div>
+            -->
             <!-- Counter Section Ends -->
 
 
-            <!-- YD Flex Grid Section -->
+            <!-- YD Flex Grid Section 
             <div id="reviews" style="display: none;" class="yd_reviews">
                 <div class="container">
                     <div class="yd_rev_inner">
@@ -1194,9 +1177,9 @@
                 </div>
             </div>
 
+-->
 
-
-            <!-- Counter Section -->
+            <!-- Counter Section 
             <div style="display: none;" class="yd-stats">
                 <div class="container-s">
                     <div class="row text-center client-companies">
@@ -1278,6 +1261,8 @@
                     </div>
                 </div>
             </div>
+
+            -->
             <!-- Counter Section Ends -->
 
 
@@ -1339,7 +1324,7 @@
 
 
 
-            <!-- Faq Section -->
+            <!-- Faq Section 
             <div id="faqs" style="display: none;" class="yd_faqs">
                 <div class="container">
                     <div class="faq_inner">
@@ -1413,6 +1398,7 @@
                     </div>
                 </div>
             </div>
+            -->
             <!-- Faq Section End -->
 
 
