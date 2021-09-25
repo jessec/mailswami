@@ -1989,3 +1989,19 @@ body {
 #reset-key {
     padding: 0px;
 }
+
+#pricing ul {
+    border-bottom: 1px solid rgb(171, 175, 179);
+}
+
+#pricing ul li {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ABAFB3;
+    line-height: 1.4;
+    font-family: 'Open Sans';
+    border: 1px solid;
+    text-align: left;
+    border-bottom: 0px;
+    padding: 10px;
+}
