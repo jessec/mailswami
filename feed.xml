@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-25T12:58:22+07:00</updated><id>/feed.xml</id><title type="html">MailSwami.</title><subtitle>No more deliverability issues for you. Our AI engine positively interacts with your emails to increase your sender reputation, so you never land in the spam folder.</subtitle><entry><title type="html">Welcome to MailSwami!</title><link href="/article/test/test.html" rel="alternate" type="text/html" title="Welcome to MailSwami!" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/test/test</id><content type="html" xml:base="/article/test/test.html">&lt;p&gt;This should be a max two line message about what is the article about.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-25T13:24:51+07:00</updated><id>/feed.xml</id><title type="html">MailSwami.</title><subtitle>No more deliverability issues for you. Our AI engine positively interacts with your emails to increase your sender reputation, so you never land in the spam folder.</subtitle><entry><title type="html">Welcome to MailSwami!</title><link href="/article/test/test.html" rel="alternate" type="text/html" title="Welcome to MailSwami!" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/test/test</id><content type="html" xml:base="/article/test/test.html">&lt;p&gt;This should be a max two line message about what is the article about.&lt;/p&gt;
 
 &lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
 
@@ -14,20 +14,50 @@
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="test" /><summary type="html">This should be a max two line message about what is the article about.</summary></entry><entry><title type="html">Welcome to MailSwami!</title><link href="/article/news/welcome-to-mailswami.html" rel="alternate" type="text/html" title="Welcome to MailSwami!" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/welcome-to-mailswami</id><content type="html" xml:base="/article/news/welcome-to-mailswami.html">&lt;p&gt;Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="test" /><summary type="html">This should be a max two line message about what is the article about.</summary></entry><entry><title type="html">Welcome to MailSwami!</title><link href="/article/news/welcome-to-mailswami.html" rel="alternate" type="text/html" title="Welcome to MailSwami!" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/welcome-to-mailswami</id><content type="html" xml:base="/article/news/welcome-to-mailswami.html">&lt;p&gt;How to Warm Up Your Cold Email List and Increase Deliverability&lt;/p&gt;
 
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+&lt;p&gt;Introduction: Why Cold Emails Fail &amp;amp; The Dos and Don’ts of Sending an Effective Cold Email
+keywords: warm up your cold email list, cold email automation software, email marketing software&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It’s always hard sending an email to someone you don’t know, but the task becomes even harder when the person is not expecting it. That’s why cold emails fail. They are not sent at the right time or they are sent to people who are not interested in your offer.&lt;/p&gt;
 
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;It’s difficult to come up with an effective cold email list that includes people who would be interested in your offer or service, but luckily there are tools that can do it for you. You should find a software that automates this process, which will free up your time and allow you to send more emails without spending too much time on it.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;Cold emails are still effective if they are well written and if they contain offers that people would want to take advantage of.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Stay Away From These 10 Common Mistakes With Your Cold Email Campaigns
+keywords: cold email mistakes, cold email automation, send personalized emails&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="news" /><summary type="html">Take a look at the source for this post to get an idea about how it works.</summary></entry></feed>
+&lt;p&gt;Many people don’t know how to create a cold email campaign, and this is why they make the mistakes that we will discuss in this section.&lt;/p&gt;
+
+&lt;p&gt;We should avoid these 10 common mistakes with your cold email campaigns.&lt;/p&gt;
+
+&lt;p&gt;1) Having no clear goal: This is the most important thing when sending emails, and if you don’t have one, you are most likely wasting your time.&lt;/p&gt;
+
+&lt;p&gt;2) Not sending personalized emails: It is always better to send personalized emails because it makes it easier for the recipient to open your email.&lt;/p&gt;
+
+&lt;p&gt;3) Sending too many emails at once: You should only send an email every 3 days or so because this will increase your click-through rate.&lt;/p&gt;
+
+&lt;p&gt;4) Not following up on unanswered emails: If you are not getting any replies after a few days&lt;/p&gt;
+
+&lt;p&gt;6 Tips for Emails That Are Guaranteed To Get Responses
+keywords: warm up your cold email list, best practices for sending emails&lt;/p&gt;
+
+&lt;p&gt;With the rise of social media, cold emails have become increasingly less common in business communication. But when used correctly, they can be an effective way to introduce yourself and your company to potential customers. Here are some tips for optimizing your email outreach:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pick the right time of day: Emails seem more urgent in the morning and evening, so you’ll get a better response rate if you email people around those times.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add a personal touch: Make it clear you’ve read their profile by mentioning something from it in your first sentence or two.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Keep your subject line concise: People will be more likely to open your email if they know what it is about from just reading the title of it, so don’t make them guess!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Conclusion: The Benefits of Using Cold Email Automation Tools
+The benefits of using a cold email automation tool are many. Whether you want to find new prospects, follow up with potential buyers, or keep contact with past customers, the right cold email automation tool can help you out. Here are some of the top reasons why you should use a cold email automation tool:&lt;/p&gt;
+
+&lt;p&gt;1) It saves time and energy: There is no need to chase after potential buyers and send them one-by-one emails manually. The right software will do it for you and save your time and energy. 2) It improves sales: You can engage with your prospects more easily and encourage them to buy from you by sending them personalized messages which will improve your sales. 3) It’s easy to use: Cold email automation tools make it easier for non-technical people to manage their&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="news" /><summary type="html">How to Warm Up Your Cold Email List and Increase Deliverability</summary></entry></feed>
