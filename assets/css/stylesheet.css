@@ -2005,3 +2005,23 @@ body {
     border-bottom: 0px;
     padding: 10px;
 }
+
+.post-list {
+    list-style: none;
+}
+
+.post-list a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.post-list h3 {
+    margin-bottom: 15px;
+}
+
+.post-list>li {
+    background-color: #f0f5f9;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
