@@ -274,4 +274,8 @@ table td { border: 1px solid white; }
 
 .highlight .il { color: #099; }
 
+.post-list { list-style: none; }
+
+.post-list > li { background-color: #f0f5f9; margin-top: 10px; box-sizing: border-box; padding: 10px; }
+
 /*# sourceMappingURL=main.css.map */
