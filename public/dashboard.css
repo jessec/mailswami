@@ -353,10 +353,12 @@ disable select all
 	height:100%;
 }
 #close-modal{
-	float: right;
+    float: right;
     padding: 30px;
     font-size: 25px;
     font-weight: bold;
+    padding-bottom: 0px;
+    padding-top: 10px;
 }
 
 
