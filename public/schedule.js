@@ -112,6 +112,11 @@ var cronManager = (function () {
                         return;
                     }
                 }
+                
+                if(e.target.classList == "help-link"){
+                    document.getElementById("help-modal").style.display = "block";
+                    document.getElementById("inner-help-modal").innerHTML='<object type="text/html" data="help/schedule.html" ></object>';
+                }
 
                 if(e.target.classList == "btn-save-email"){
                     console.log('saving email');

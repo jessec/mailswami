@@ -27,6 +27,13 @@ var invoiceManager = (function () {
                     }
                 }
                 
+                
+                if(e.target.classList == "help-link"){
+                    document.getElementById("help-modal").style.display = "block";
+                    document.getElementById("inner-help-modal").innerHTML='<object type="text/html" data="help/invoice.html" ></object>';
+                }
+                
+                
                 if(e.target.classList.contains("pagination-item")){
                     invoiceManager.showInvoiceTable(parseInt(e.target.innerText) - 1);
                 }
