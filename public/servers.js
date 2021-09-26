@@ -51,8 +51,8 @@ var serverManager = (function () {
             serverManager.timeZoneData = await serverManager.fetchJson(timeZoneUrl);
             serverManager.servers = serverJson.serverlist;
             serverManager.setupServerDropDown("server-manager", "server-dropdown-id", "server-dropdown-name", serverManager.servers);
-            if(document.querySelector('#server-spinner')){
-                document.querySelector('#server-spinner').style.display = "none";                
+            if(document.querySelector('#server-spinner')){ 
+                serverManager.spinner(false);
             }
             for (var i = 0; i < serverManager.servers.length; i++) {
                 await serverManager.createServerTable(serverManager.servers[i], authKey);
@@ -179,6 +179,14 @@ var serverManager = (function () {
                         return;
                     }
                 }
+                
+                
+                if(e.target.classList == "help-link"){
+                    document.getElementById("help-modal").style.display = "block";
+                    document.getElementById("inner-help-modal").innerHTML='<object type="text/html" data="help/server.html" ></object>';
+                }
+                
+                
                 if(e.target.classList == "btn-cancel-renew"){
                     serverManager.selectServerWrapper(document.querySelector('#server-dropdown-id').value);
                 }
@@ -199,7 +207,7 @@ var serverManager = (function () {
                     serverManager.displayRenewAmountsButtons("block");
                 }
                 if(e.target.classList == "btn-save-email"){
-                    document.querySelector('#server-spinner').style.display = "block";
+                    serverManager.spinner(true);
                     var serverWrapper = e.target.closest(".server_wrapper_class");                   
                     var id = serverWrapper.id;
                     var newEmailAccount = {
@@ -232,7 +240,7 @@ var serverManager = (function () {
                     var newEmailAccount = await serverManager.fetchJson(addEmailAccountUrl);
                     var messages = document.querySelector('#server-manager-messages');
                     await  serverManager.init(serverManager.id, serverManager.serverUrl);
-                    document.querySelector('#server-spinner').style.display = "none";
+                    serverManager.spinner(false);
                     if(newEmailAccount.status == "true"){
                         messages.innerHTML = "Please wait 1 day for the email to become active";
                     }else{
@@ -338,7 +346,7 @@ var serverManager = (function () {
                         await serverManager.init(serverManager.id, serverManager.serverUrl);
                 }
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
-                    document.querySelector('#server-spinner').style.display = "block";
+                    serverManager.spinner(true);
                     var state = e.target.innerText.trim();
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
                     var cssQuery = '#'+emailId+' .email-line > div';
@@ -368,7 +376,7 @@ var serverManager = (function () {
                             }   
                         }
                     }
-                    document.querySelector('#server-spinner').style.display = "none";
+                    serverManager.spinner(false);
                     return;
                 }                
              });
@@ -671,8 +679,16 @@ var serverManager = (function () {
             }  
             serverManager.serverLookup[id] = serverUrl;
             return id;
-        }
+        },
         
+        spinner : function(on){
+            if(on){
+                document.querySelector('#server-spinner').style.display = "block";
+            }else{
+                document.querySelector('#server-spinner').style.display = "none";
+                document.querySelector('#Servers .help-link').style.display = "block";
+            }
+        }
 //        seconds_since_epoch : function(d){ 
 //            return Math.floor( d / 1000 ); 
 //        }

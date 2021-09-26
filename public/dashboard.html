@@ -18,6 +18,10 @@
 </head>
 <body>
 
+	<div id="help-modal">
+		<div id="close-modal">x</div>
+		<div id="inner-help-modal"></div>
+	</div>
 
 	<div id="wrapper">
 
@@ -29,9 +33,8 @@
 			<span id="logout-link" href="#">Logout</span>
 		</button>
 		<div id="Home" class="tabcontent">
-			<img id="home-spinner" class="spinner" src="images/spinner.svg">
-			<div id="account-manager">
-			</div>
+			<img id="home-spinner" class="spinner" src="images/spinner.svg"> <a class="help-link" href="#">help</a>
+			<div id="account-manager"></div>
 		</div>
 
 		<div id="News" class="tabcontent">
@@ -87,28 +90,27 @@
 
 				<div id="paypal-button-container"></div>
 			</div>
+			<a class="help-link" href="#">help</a>
 			<div id="invoice-manager">
-
-				<img id="invoice-spinner" src="images/spinner.svg">
+				<img class="spinner" id="invoice-spinner" src="images/spinner.svg">
 				<button class="btn-add-credit" style="float: right; visibility: visible;">add credit</button>
 			</div>
 		</div>
 
 		<div id="Contact" class="tabcontent">
 			<div id="cron-manager-messages"></div>
-			<div id="cron-manager">
-				<img id="cron-spinner" src="images/spinner.svg">
-			</div>
+			<img class="spinner" id="cron-spinner" src="images/spinner.svg"> <a class="help-link" href="#">help</a>
+			<div id="cron-manager"></div>
 		</div>
 		<div id="Servers" class="tabcontent">
 			<div id="server-manager-messages"></div>
-			<img id="server-spinner" class="spinner" src="images/spinner.svg">
-			<div id="server-manager">
-			</div>
+			<img id="server-spinner" class="spinner" src="images/spinner.svg"> <a class="help-link" href="#">help</a>
+			<div id="server-manager"></div>
 		</div>
 
 		<div id="About" class="tabcontent">
 			<div id="user-manager-messages"></div>
+			<a class="help-link" href="#">help</a>
 			<div id="user-manager"></div>
 		</div>
 
@@ -164,6 +166,12 @@
             elmnt.style.backgroundColor = color;
         }
         document.getElementById("defaultOpen").click();
+        
+        
+        document.getElementById("close-modal").addEventListener("click", function(){
+            document.getElementById("help-modal").style.display = "none";
+        });
+        
     </script>
 
 </body>

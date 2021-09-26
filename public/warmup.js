@@ -52,7 +52,7 @@ var accountManager = (function () {
             accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
             accountManager.servers = serverJson.serverlist;
             accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
-            document.querySelector('#home-spinner').style.display = "none";
+            accountManager.spinner(false);
             for (var i = 0; i < accountManager.servers.length; i++) {
                 await accountManager.createServerTable(accountManager.servers[i], authKey);
             }
@@ -178,6 +178,12 @@ var accountManager = (function () {
                 }
                 
                 
+                if(e.target.classList == "help-link"){
+                    document.getElementById("help-modal").style.display = "block";
+                    document.getElementById("inner-help-modal").innerHTML='<object type="text/html" data="help/warmup.html" ></object>';
+                }
+                
+                
                 if(e.target.classList == "btn-cancel-renew"){
                     accountManager.selectServerWrapper(document.querySelector('#domain-dropdown-id').value);
                 }
@@ -202,7 +208,7 @@ var accountManager = (function () {
           
                 if(e.target.classList == "btn-save-email"){
                         
-                    document.querySelector('#home-spinner').style.display = "block";
+                    accountManager.spinner(true);
                     var serverWrapper = e.target.closest(".warmup_wrapper_class");                   
                     var id = serverWrapper.id;
                     var newEmailAccount = {
@@ -235,7 +241,7 @@ var accountManager = (function () {
                     var newEmailAccount = await accountManager.fetchJson(addEmailAccountUrl);
                     console.log(newEmailAccount);
                     var messages = document.querySelector('#account-manager-messages');
-                    document.querySelector('#home-spinner').style.display = "none";
+                    accountManager.spinner(false);
                     if(newEmailAccount.status == "true"){
                         messages.innerHTML = "Please wait 1 day for the email to become active";
                     }else{
@@ -339,7 +345,7 @@ var accountManager = (function () {
                 
                 
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
-                    document.querySelector('#home-spinner').style.display = "block";
+                    accountManager.spinner(true);
                     var state = e.target.innerText.trim();
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
                     var cssQuery = '#'+emailId+' .email-line > div';
@@ -369,7 +375,7 @@ var accountManager = (function () {
                             }   
                         }
                     }
-                    document.querySelector('#home-spinner').style.display = "none";
+                    accountManager.spinner(false);
                     return;
                 }
              });
@@ -665,6 +671,15 @@ var accountManager = (function () {
                 response.status; 
                 const json = await response.json();
                 return json;
+        },
+        
+        spinner : function(on){
+            if(on){
+                document.querySelector('#home-spinner').style.display = "block";
+            }else{
+                document.querySelector('#home-spinner').style.display = "none";
+                document.querySelector('#Home .help-link').style.display = "block";
+            }
         },
         
         getIdFromServerUrl : function (serverUrl) {

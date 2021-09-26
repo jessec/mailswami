@@ -39,26 +39,19 @@ var invoiceManager = (function () {
                 
                 if(e.target.classList.contains("fa-times-circle")||e.target.classList.contains("fa-check-circle")){
                     
-                    document.querySelector('#invoice-spinner').style.display = "block";
-                    
+                    invoiceManager.spinner(true);
                     var invoiceNr = e.target.parentNode.dataset.invoicenr;
-                    
                     var invoice = invoiceManager.getInvoiceByInvoiceNr(invoiceNr);
                     var authKey = userManager.getAuthKey();
-
                     var subscriptionIdsArr = [];
                     for (var i = 0; i < invoice.items.length; i++) {
                         var item = invoice.items[i];
                         subscriptionIdsArr[i] = item.subscriptionIdStr;
                     }
-                   
                     var subscriptionIds = encodeURIComponent(JSON.stringify(subscriptionIdsArr));
-                    
-
-                    
                     var dataUrl = userManager.serverUrl+"/api/dashboard/subscriptions/get/emails?auth=" + authKey + "&subscriptionIds="+subscriptionIds;
                     var subscriptionIdArrays = await invoiceManager.fetchJson(dataUrl);
-                    
+
                     for (var i = 0; i < invoice.items.length; i++) {
                         var item = invoice.items[i];
                         var email = subscriptionIdArrays[item.subscriptionIdStr];
@@ -68,8 +61,7 @@ var invoiceManager = (function () {
                             }
                         }
                     }
-                    
-                    document.querySelector('#invoice-spinner').style.display = "none";
+                    invoiceManager.spinner(false);
                     invoiceManager.fillInvoice(invoice);
                 }
 
@@ -137,7 +129,7 @@ var invoiceManager = (function () {
             
             if(invoices.length == 0){
                 document.querySelector('#invoice-manager-messages').innerHTML = "No invoices have been created";
-                document.querySelector('#invoice-spinner').style.display = "none";
+                invoiceManager.spinner(false);
             }else{
                 invoiceManager.invoices = invoices;
                 invoiceManager.invoices.reverse();
@@ -175,9 +167,17 @@ var invoiceManager = (function () {
             var tbl = table.createJsonTable("invoice-table", filteredInvoices.slice(startSlice, endSlice), [], hiddenColumns, formatColumns);
             tableWrapper.appendChild(tbl);
             if(document.querySelector('#invoice-manager')){
-                document.querySelector('#invoice-spinner').style.display = "none";
+                invoiceManager.spinner(false);
                 document.querySelector('#invoice-manager').appendChild(tableWrapper);  
                 document.querySelector('#invoice-manager').appendChild(invoiceManager.getInvoiceTablePagination(invoiceManager.pages, page));  
+            }
+        },
+        spinner : function(on){
+            if(on){
+                document.querySelector('#invoice-spinner').style.display = "block";
+            }else{
+                document.querySelector('#invoice-spinner').style.display = "none";
+                document.querySelector('#News .help-link').style.display = "block";
             }
         },
         splitArrayIntoChunksOfLen : function(arr, len) {

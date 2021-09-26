@@ -192,20 +192,20 @@ var cronManager = (function () {
                         if(isLastEmailAccount){
                             var r = confirm("By deleting this cronjob you will also delete email account : "+ email + " do you want this?");
                             if (r == true) {
-                              document.querySelector('#cron-spinner').style.display = "block";
+                              cronManager.spinner(true);
                               var deleteCronJobUrl = cronManager.serverUrl + "/api/crontab/job/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
                               await cronManager.fetchJson(deleteCronJobUrl);
                               await cronManager.setupTable();
-                              document.querySelector('#cron-spinner').style.display = "none";
+                              cronManager.spinner(false);
                             }
                         }else{
                             var r = confirm("Are you sure you want to delete this cron job?");
                             if (r == true) {
-                              document.querySelector('#cron-spinner').style.display = "block";
+                              cronManager.spinner(true);
                               var deleteCronJobUrl = cronManager.serverUrl + "/api/crontab/job/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=false";
                               await cronManager.fetchJson(deleteCronJobUrl);
                               await cronManager.setupTable();
-                              document.querySelector('#cron-spinner').style.display = "none";
+                              cronManager.spinner(false);
                             }
                         }
                         e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
@@ -292,7 +292,7 @@ var cronManager = (function () {
         },
         
         addCronJob : async function(email){
-            document.querySelector('#cron-spinner').style.display = "block";
+            cronManager.spinner(true);
             var newCronJobUrl = cronManager.serverUrl + "/api/crontab/job/new?auth=" + userManager.getAuthKey() + "&email="+email;
             await cronManager.fetchJson(newCronJobUrl);
             await cronManager.setupTable();
@@ -300,7 +300,7 @@ var cronManager = (function () {
             setTimeout(function(){ 
                 document.querySelector('#serverId-table > tbody > tr:last-child').style.backgroundColor = "transparent"; 
             }, 10000);
-            document.querySelector('#cron-spinner').style.display = "none";
+            cronManager.spinner(false);
         }, 
         
         isLastEmailAccount : function(email, cronJobJson){
@@ -493,7 +493,7 @@ var cronManager = (function () {
                 tbl.style.marginTop = '20px'; 
                 tblWrapper.appendChild(tbl);
                 document.querySelector('#cron-manager').appendChild(tblWrapper);
-                document.querySelector('#cron-spinner').style.display = "none";
+                cronManager.spinner(false);
             }
         },
         
@@ -512,7 +512,7 @@ var cronManager = (function () {
         
         
         saveJsonField : async function(cronId, cronField, inputValue, tdid){
-            document.querySelector('#cron-spinner').style.display = "block";
+            cronManager.spinner(true);
             var data = {
                  cronid : cronId,
                  field : cronField,
@@ -526,9 +526,17 @@ var cronManager = (function () {
             }else{
                 document.querySelector('#'+data.tdid).style.backgroundColor = 'white';
             }
-            document.querySelector('#cron-spinner').style.display = "none";
+            cronManager.spinner(false);
         },
         
+        spinner : function(on){
+            if(on){
+                document.querySelector('#cron-spinner').style.display = "block";
+            }else{
+                document.querySelector('#cron-spinner').style.display = "none";
+                document.querySelector('#Contact .help-link').style.display = "block";
+            }
+        },
 
         handleJsonField : function(jsonField){
             var orgValue = jsonField.innerText;
