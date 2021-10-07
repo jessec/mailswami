@@ -61,7 +61,9 @@ var accountManager = (function () {
             }
             var firstEmail = document.querySelector("#domain-dropdown-id").value;
             if(firstEmail != ""){
-                document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";
+                if(document.querySelector("#warmup_wrapper_"+firstEmail)){
+                    document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";   
+                }
                 document.querySelector('#'+firstEmail+'-table').style.width = "100%";   
             }
         },

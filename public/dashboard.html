@@ -28,7 +28,7 @@
 		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="dashboard-button">Warmup</button>
 		<button id="cronjobpage" style="display: none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Schedule</button>
 		<button id="serverpage" style="display: none;" class="tablink" onclick="openPage('Servers', this, '#4d9bc0')">Servers</button>
-		<button class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
+		<button id="invoicepage" class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
 		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen">
 			<span id="logout-link" href="#">Logout</span>
 		</button>
@@ -145,10 +145,27 @@
         userManager.init("user-manager", host);
         invoiceManager.init("invoice-manager", host);
         accountManager.init("account-manager", host);
-
         serverManager.init("server-manager", host);
-
         cronManager.init("cron-manager", host);
+
+    
+        
+        document.getElementById("dashboard-button").addEventListener("click", function(){
+            accountManager.init("account-manager", host);
+        });
+        document.getElementById("cronjobpage").addEventListener("click", function(){
+            cronManager.init("cron-manager", host);
+        });
+        document.getElementById("serverpage").addEventListener("click", function(){
+            serverManager.init("server-manager", host);
+        });
+        document.getElementById("invoicepage").addEventListener("click", function(){
+            invoiceManager.init("invoice-manager", host);
+        });
+        
+        
+        
+        
     </script>
 
 	<script>
