@@ -230,6 +230,7 @@ body.dashboard .tablink, body.dashboard #logout-link {
 	color: black;
 	padding: 20px;
 	background:white;
+    min-height: 200px;
 }
 
 .spinner {
