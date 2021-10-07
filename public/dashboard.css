@@ -234,8 +234,9 @@ body.dashboard .tablink, body.dashboard #logout-link {
 }
 
 .spinner {
-margin-left: calc(50% - 50px);
-    width: 100px;
+    margin-left: calc(50% - 25px);
+    width: 50px;
+    margin-top: -100px;
 }
 
 #invoice-table-table {
