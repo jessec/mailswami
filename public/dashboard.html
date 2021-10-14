@@ -144,7 +144,12 @@
 	<script>
         userManager.init("user-manager", host);
         invoiceManager.init("invoice-manager", host);
-        accountManager.init("account-manager", host);
+        
+        
+        setTimeout(function(){
+            accountManager.init("account-manager", host);
+        }, 3000);
+        
         serverManager.init("server-manager", host);
         cronManager.init("cron-manager", host);
 

@@ -45,6 +45,9 @@ var accountManager = (function () {
             var serverJson = await accountManager.fetchJson(dataUrl);
             var email = userManager.getUserEmail();
             var domain = email.substring(email.lastIndexOf("@") +1);
+            if(!serverJson.serverlist){
+                serverJson.serverlist = [];
+            }
             if(serverJson.serverlist.length == 0){
                 serverJson.serverlist[0] = "http://"+domain;
             }
@@ -64,7 +67,9 @@ var accountManager = (function () {
                 if(document.querySelector("#warmup_wrapper_"+firstEmail)){
                     document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";   
                 }
-                document.querySelector('#'+firstEmail+'-table').style.width = "100%";   
+                if(document.querySelector('#'+firstEmail+'-table')){
+                    document.querySelector('#'+firstEmail+'-table').style.width = "100%";    
+                }  
             }
         },
         
@@ -508,7 +513,7 @@ var accountManager = (function () {
             });
             if(document.querySelector('#'+selectId)){
                 document.querySelector('#'+selectId).remove();
-                console.log("delete dropdown")
+                //console.log("delete dropdown")
                 document.getElementById(elementId).appendChild(select);
             }else{
                 select.disabled = true;

@@ -1,12 +1,5 @@
 var invoiceManager = (function () {
 
-    var encKey = "";
-    var aesKey = "";
-    var id = "";
-    var widget = {};
-    var invoices = [];
-    var pageSize = 0;
-    var account = {};
     
     return {
         init : async function (id, serverUrl) {
@@ -14,6 +7,8 @@ var invoiceManager = (function () {
             invoiceManager.widget = document.getElementById(invoiceManager.id);
             invoiceManager.listenForLogin();
             invoiceManager.pageSize = 10;
+            invoiceManager.paypalButton = {};
+            invoiceManager.openInvoiceNr = "";
         },
         setupEvents : async function(){
             
@@ -41,7 +36,10 @@ var invoiceManager = (function () {
                 if(e.target.id == "close-invoice"){
                     document.querySelector('#invoice-viewer').style.display = "none";
                     document.querySelector('#invoice-manager').style.display = "block";
-                    invoiceManager.removePayPalButton();
+                    if (typeof invoiceManager.paypalButton.close === 'function') {
+                        await invoiceManager.paypalButton.close();
+                     }  
+                    invoiceManager.init("invoice-manager", host);
                 }
                 
                 if(e.target.classList.contains("fa-times-circle")||e.target.classList.contains("fa-check-circle")){
@@ -69,22 +67,20 @@ var invoiceManager = (function () {
                         }
                     }
                     invoiceManager.spinner(false);
-                    invoiceManager.fillInvoice(invoice);
+                    if(invoiceManager.openInvoiceNr != invoiceNr){
+                        await invoiceManager.fillInvoice(invoice);
+                        invoiceManager.openInvoiceNr = invoiceNr;
+                    }
                 }
 
                 
             });
         },
-        removePayPalButton : function(){
-            var elements = document.querySelector('#paypal-button-container').children;
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].remove();
-            }
-        },
+
         fillInvoiceId : function(id,value){
             document.querySelector(id).innerText = value;
         },
-        fillInvoice : function(invoice){
+        fillInvoice : async function(invoice){
             
             invoiceManager.fillInvoiceId("#invoice-nr",invoice.invoiceNumber);
             invoiceManager.fillInvoiceId("#customer-name",invoiceManager.account.name);
@@ -118,6 +114,10 @@ var invoiceManager = (function () {
             
             if(invoice.balance != 0){
                 invoiceManager.addPayPal(invoice);
+            }else{
+                if (typeof invoiceManager.paypalButton.close === 'function') {
+                    await invoiceManager.paypalButton.close();
+                }  
             }
             document.querySelector('#invoice-viewer').style.display = "flex";
             document.querySelector('#invoice-manager').style.display = "none";
@@ -259,9 +259,21 @@ var invoiceManager = (function () {
                 observer.observe(targetNode, config);
             }
         },
-        addPayPal : function(invoice){
-            invoiceManager.removePayPalButton();
-            paypal.Buttons({
+        sleep : async function(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        },
+
+        removePayPalButton : async function(){
+            if(document.querySelector('#paypal-button-container').children.length > 1){
+                if (typeof invoiceManager.paypalButton.close === 'function') {
+                    invoiceManager.paypalButton.close();
+                }   
+            }
+        },
+        addPayPal : async function(invoice){
+            document.querySelector('#paypal-button-container').style.visibility = "hidden";
+            await invoiceManager.removePayPalButton();
+            invoiceManager.paypalButton = paypal.Buttons({
                 createOrder : function (data, actions) {
                     return actions.order.create({
                         purchase_units : [ {
@@ -302,7 +314,21 @@ var invoiceManager = (function () {
 
                     });
                 }
-            }).render('#paypal-button-container');
+            });
+            invoiceManager.paypalButton.render('#paypal-button-container');
+            
+            setTimeout(async function(){
+                if(document.querySelector('#paypal-button-container').children.length > 1){
+                    if (typeof invoiceManager.paypalButton.close === 'function') {
+                       await invoiceManager.paypalButton.close();
+                       document.querySelector('#paypal-button-container').style.visibility = "visible";
+                    }   
+                }else{
+                    document.querySelector('#paypal-button-container').style.visibility = "visible";
+                }
+            }, 5000);
+
+            
         },
         setupAccount : async function(){
             var auth = userManager.getAuthKey();

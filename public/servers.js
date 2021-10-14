@@ -44,6 +44,11 @@ var serverManager = (function () {
             var serverJson = await serverManager.fetchJson(dataUrl);
             var email = userManager.getUserEmail();
             var domain = email.substring(email.lastIndexOf("@") +1);
+            
+            if(!serverJson.serverlist){
+                serverJson.serverlist = [];
+            }
+            
             if(serverJson.serverlist.length == 0){
                 serverJson.serverlist[0] = "http://"+domain;
             }

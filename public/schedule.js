@@ -99,8 +99,10 @@ var cronManager = (function () {
                     cronManager.availableEmails.push(job.email);
                 }
             }
-            cronManager.setupServerDropDown("cron-manager", "email-dropdown-id", "server-dropdown-name", cronManager.serverList.serverlist);
-            cronManager.createServerTable(cronJobJsonArray);
+            if(cronManager.serverList){
+                cronManager.setupServerDropDown("cron-manager", "email-dropdown-id", "server-dropdown-name", cronManager.serverList.serverlist);
+                cronManager.createServerTable(cronJobJsonArray);   
+            }
         },
 
         setupEvents : async function(){
@@ -369,8 +371,16 @@ var cronManager = (function () {
 //        },
 
 
+        isIterable : function(obj) {
+            // checks for null and undefined
+            if (obj == null) {
+              return false;
+            }
+            return typeof obj[Symbol.iterator] === 'function';
+        },
         
         setupServerDropDown : function(elementId, selectId, name, values){
+            if(!cronManager.isIterable(values))return;
             var select = document.createElement("select");
             select.name = name;
             select.id = selectId;         
