@@ -323,6 +323,10 @@ body.dashboard .tablink, body.dashboard #logout-link {
 	display: flex;
 }
 
+#Servers .state-edit {
+	display:none;
+}
+
 /**
 
 disable select all 

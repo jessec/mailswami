@@ -24,7 +24,7 @@ var serverManager = (function () {
             serverManager.masterDB = {};
             serverManager.serverUrl = serverUrl;
             serverManager.editableColoms = ['expression','email','batchSize'];
-            serverManager.hiddenColoms = ['serverAccount','id','expressiondesc','user', 'warmerEmailAccount','expression','command','batchSize','email'];
+            serverManager.hiddenColoms = ['serverAccount','id','expressiondesc','user', 'warmerEmailAccount','expression','batchSize','email'];
             serverManager.formatColoms = ['command','state','email'];
             serverManager.widget = document.getElementById(this.id);
             serverManager.industries = await this.getIndustries();
@@ -62,7 +62,9 @@ var serverManager = (function () {
             for (var i = 0; i < serverManager.servers.length; i++) {
                 await serverManager.createServerTable(serverManager.servers[i], authKey);
             }
-            document.querySelector('#server-dropdown-id').disabled = false;
+            if(document.querySelector('#server-dropdown-id')){
+                document.querySelector('#server-dropdown-id').disabled = false;   
+            }
             var firstEmail = document.querySelector("#server-dropdown-id").value;
             if(firstEmail != ""){
                 if(document.querySelector("#server_wrapper_"+firstEmail)){
@@ -258,6 +260,7 @@ var serverManager = (function () {
                 
                 if(e.target.classList == "btn-add-email"){
                     var excludedFields = ['email'];
+                    var excludedSelectFields = ['espProvider'];
                     serverManager.switchAddEmailButton(false);
                     var wrapper = e.target.parentNode.parentNode.querySelector('.server-input-wrapper'); 
                     wrapper.style.display = "grid";
@@ -270,7 +273,9 @@ var serverManager = (function () {
                     }
                     var selects = wrapper.querySelectorAll('select');
                     for (var i = 0; i < selects.length; i++) {
-                        selects[i].parentNode.style.display = "none";
+                        if(!excludedSelectFields.includes(selects[i].name)){
+                            selects[i].parentNode.style.display = "none";
+                        }
                     }
                     serverManager.displayRenewButton("none");
                     serverManager.displayRenewCancelButtons("none");
@@ -353,12 +358,18 @@ var serverManager = (function () {
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
                     serverManager.spinner(true);
                     var state = e.target.innerText.trim();
+                    
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
                     var cssQuery = '#'+emailId+' .email-line > div';
-                    var email = document.querySelector(cssQuery).innerText
+                    var email = document.querySelector(cssQuery).innerText;
+                    
+                    
+                    var commandId = e.target.parentNode.parentNode.id.replace("_state","_command");
+                    var serverType = document.querySelector('#'+commandId).innerText
+                    
                     if(state == "pause"){
                         state = "active";
-                        document.querySelector(cssQuery).classList
+                        document.querySelector(cssQuery).classList;
                     }else{
                         state = "pause";
                     }
@@ -371,9 +382,13 @@ var serverManager = (function () {
                         if(result.message == "There are outstanding invoices"){
                             alert(result.message);
                         }else if (result.message == "There is no subscription for this email do you want to create one?"){
-                            var r = confirm(result.message);
+                            var r = confirm(result.message.replace("email","server"));
                             if (r == true) {
-                                var createInvoiceUrl = serverManager.serverUrl+"/api/dashboard/invoice/create?auth=" + userManager.getAuthKey() + "&email=" + email + "&plan=basic";
+                                var plan = "mail-server-9";
+                                if(serverType == "Marketing"){
+                                    plan = "marketing-server-15";   
+                                }
+                                var createInvoiceUrl = serverManager.serverUrl+"/api/dashboard/invoice/create?auth=" + userManager.getAuthKey() + "&email=" + email + "&plan="+plan;
                                 var newInvoice = await serverManager.fetchJson(createInvoiceUrl);
                                 console.log(newInvoice);
                                 alert("The invoice was created in the account tab");
@@ -598,7 +613,7 @@ var serverManager = (function () {
             tblLabel.appendChild(tblRenewCancelButton);
             tblLabel.appendChild(tblRenewButton);
             tblLabel.appendChild(renewAmountsWrapper);
-            var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Manual"},{"google":"Google"}]);
+            var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Marketing"},{"google":"Email"}]);
             var inputFirstName = this.getInputField("text", {"placeholder":"First name","name":"firstName","style":"float:right;"});
             var inputLastName = this.getInputField("text", {"placeholder":"Last name","name":"lastName","style":"float:right;"});
             var inputNewEmail = this.getInputField("text", {"placeholder":"Domain","class":"add-new-email","name":"email","style":"float:right;"});
@@ -620,10 +635,10 @@ var serverManager = (function () {
             var emailInputWrapper = document.createElement("div");
             emailInputWrapper.style.display = "none";
             emailInputWrapper.classList = "server-input-wrapper";
-            emailInputWrapper.appendChild(this.fieldWrapper("Email provider", espProvider));
+            emailInputWrapper.appendChild(this.fieldWrapper("Server type", espProvider));
             emailInputWrapper.appendChild(this.fieldWrapper("First name", inputFirstName));
             emailInputWrapper.appendChild(this.fieldWrapper("Last name", inputLastName));
-            emailInputWrapper.appendChild(this.fieldWrapper("Server", inputNewEmail));
+            emailInputWrapper.appendChild(this.fieldWrapper("Domain", inputNewEmail));
             emailInputWrapper.appendChild(this.fieldWrapper("Industry", industry));
             emailInputWrapper.appendChild(this.fieldWrapper("Timezone", timeZone));
             emailInputWrapper.appendChild(this.fieldWrapper("Imap username", inputImapUserName));

@@ -19,10 +19,11 @@ class Table {
                       cell.classList = "hidden-json-field"; 
                       cell.style.display = "none";
                   }
+                  var cellText = document.createTextNode(key);
                   if(formatColoms.includes(key)){
                       tdObj = this.formatColom(key+"_th",tdObj,trObj);
+                      cellText = document.createTextNode(tdObj);
                   }                        
-                  var cellText = document.createTextNode(key);
                   cell.appendChild(cellText);
                   row.appendChild(cell);   
               }
@@ -100,8 +101,23 @@ class Table {
           span.dataset.invoicenr = trObj.json.invoiceNumber;
           span.appendChild(this.createElementFromHTML(pay));
           return span;
+      case "payment_th":
+      return "payment";
+      case "email_th":
+          return "email";
+      case "command_th":
+          return "server type";
       case "command":
-          return tdObj.replace(/^.*[\\\/]/, '').replace(".sh","");
+          //return tdObj.replace(/^.*[\\\/]/, '').replace(".sh","");
+          var serverType = "Email";
+          if(trObj.serverAccount){
+              if(trObj.serverAccount.espProvider){
+                  if(trObj.serverAccount.espProvider == "manual"){
+                      serverType = "Marketing";
+                  }   
+              }   
+          }
+          return serverType;
       case "state":
           var val = tdObj;
           var div1 = document.createElement("div");
