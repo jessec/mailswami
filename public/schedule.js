@@ -123,9 +123,10 @@ var cronManager = (function () {
                 if(e.target.classList == "btn-save-email"){
                     console.log('saving email');
                     var email = e.target.parentNode.parentNode.querySelector('.add-new-email').value.trim();
-                    var password = e.target.parentNode.parentNode.querySelector('.add-new-password').value.trim();
+                    var password = "nopass";//e.target.parentNode.parentNode.querySelector('.add-new-password').value.trim();
                     
-                    var isValidEmail = false;
+                    var isValidEmail = true; // we can create random cronjobs no problem
+                    // if server has account it's ok if not it's no problem
                     var domains = cronManager.serverList.serverlist;
                     for (var i = 0; i < domains.length; i++) {
                         var domain = domains[i];
@@ -475,7 +476,7 @@ var cronManager = (function () {
 //            emailInputWrapper.appendChild(inputPass);
             
             emailInputWrapper.appendChild(this.fieldWrapper("Email", input));
-            emailInputWrapper.appendChild(this.fieldWrapper("Password", inputPass));
+            //emailInputWrapper.appendChild(this.fieldWrapper("Password", inputPass));
             
             var emailButtonWrapper = document.createElement("div");
             emailButtonWrapper.style.display = "flex";
