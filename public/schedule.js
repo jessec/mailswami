@@ -1,23 +1,20 @@
 var cronManager = (function () {
-
-//    var servers = [];
-//    var serverLookup = {};
-//    var emailByServerIdLookup = {};
-//    var widget = {};
-//    var setupControles = {};
-//    var loginForm;
-//    var editableColoms = [];
-//    var hiddenColoms = [];
-//    var formatColoms = [];
-//    var getCronJobsByServerID = {};
-//    var encKey = "";
-//    var serverUrl;
-//    var availableEmails = [];
-//    var cronJobJsonArray = [];
-
+    
+    var hasRun = false;
+    var timestamp;
+    var timestampDelete;
 
     return {
         init : async function (id, serverUrl) {
+            
+            console.log("setup init");
+            
+            this.widget = document.getElementById(this.id);
+            if(cronManager.widget){
+                cronManager.widget.innerHTML = "";   
+            }
+            
+            
             this.encKey = "1234567891234567";
             this.editableColoms = ['expression','email','batchSize'];
             this.hiddenColoms = ['id','expressiondesc','user','command'];
@@ -25,7 +22,7 @@ var cronManager = (function () {
             this.availableEmails = [];
             this.id = id;
             this.serverUrl = serverUrl;
-            this.widget = document.getElementById(this.id);
+
             cronManager.listenForLogin();
             
 
@@ -35,12 +32,24 @@ var cronManager = (function () {
             cronManager.setupEvents();
         },
         initControles : async function () {
+            if(!this.widget){
+                return;
+            }
             this.setupMessages = document.createElement("div");
             this.setupMessages.id = this.id + "-messages";
-            this.widget.appendChild(this.setupMessages);
+            
+            if(this.setupMessages){
+                this.widget.appendChild(this.setupMessages);   
+            }
+            
             this.setupControles = document.createElement("div");
             this.setupControles.classList = this.id + "-controles";
-            this.widget.appendChild(this.setupControles);
+            
+            if(this.setupControles){
+                this.widget.appendChild(this.setupControles);                
+            }
+
+            
             this.setupTable();
         },
         
@@ -104,9 +113,26 @@ var cronManager = (function () {
                 cronManager.createServerTable(cronJobJsonArray);   
             }
         },
-
+        
+        
         setupEvents : async function(){
+            console.log("setup events");
             document.addEventListener('click', async function(e) {
+                
+                console.log(Date.now());
+                console.log("clicked:");
+                console.log(e);
+                
+                if(cronManager.timestamp){
+                   var diff = Date.now() - cronManager.timestamp;
+                   console.log(diff);
+                   if(diff < 1000){
+                       //FIXME
+                       console.log("return");
+                       return;
+                   }
+                }
+                cronManager.timestamp = Date.now();
                 
                 var tabcontent = e.target.closest('.tabcontent');
                 if(tabcontent !== null){
@@ -130,7 +156,7 @@ var cronManager = (function () {
                     var domains = cronManager.serverList.serverlist;
                     for (var i = 0; i < domains.length; i++) {
                         var domain = domains[i];
-                        console.log(domain);
+                        //console.log(domain);
                         var url = new URL(domain);
                         var hostname = url.hostname;
                         var emaildomain = email.split('@')[1];
@@ -180,6 +206,19 @@ var cronManager = (function () {
                 }
                 
                 if(e.target.innerText.trim() == "delete"){
+                    
+                    if(cronManager.timestampDelete){
+                        var diff = Date.now() - cronManager.timestampDelete;
+                        console.log(diff);
+                        if(diff < 3000){
+                            //FIXME
+                            console.log("delete return");
+                            return;
+                        }
+                     }
+                     cronManager.timestampDelete = Date.now();
+                    
+                    
                     e.target.parentNode.parentNode.parentNode.style.backgroundColor = "#9ecdf5";
 
                         var tdId = e.target.parentNode.parentNode.id;
@@ -327,15 +366,20 @@ var cronManager = (function () {
         },
         
         createEmailDropDown : function(elementId, selectId, name, values){
+            
+            var uniq = [...new Set(values)];
+            
             var select = document.createElement("select");
             select.name = name;
             select.id = selectId;         
-            for (const val of values)
+            for (const val of uniq)
             {
-                var option = document.createElement("option");
-                option.value = val;
-                option.text = val.charAt(0).toUpperCase() + val.slice(1);
-                select.appendChild(option);
+                if(val !== "undefined"){
+                    var option = document.createElement("option");
+                    option.value = val;
+                    option.text = val.charAt(0).toUpperCase() + val.slice(1);
+                    select.appendChild(option);   
+                }
             }
             select.addEventListener("change", function() {
                 var dropDownField = document.querySelector('#'+selectId);
@@ -354,22 +398,7 @@ var cronManager = (function () {
             that.remove();
             await cronManager.saveJsonField(cronId, cronField, inputValue, id);
         },
-        
-//        createCronJob : async function(server, cronId, cronField, inputValue, tdid){
-//            var data = {
-//                 cronid : cronId,
-//                 field : cronField,
-//                 value : inputValue,
-//                 tdid : tdid
-//            }
-//            var dataUrl = cronManager.serverUrl + "/api/crontab/jobs/edit?auth="+userManager.getAuthKey()+"&payload="+  encodeURIComponent(JSON.stringify(data));
-//            var json = await this.fetchJson(dataUrl);
-//            if(json.status == "error"){
-//                document.querySelector('#'+data.tdid).style.backgroundColor = 'red';
-//            }else{
-//                document.querySelector('#'+data.tdid).style.backgroundColor = 'white';
-//            }
-//        },
+
 
 
         isIterable : function(obj) {

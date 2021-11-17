@@ -213,6 +213,9 @@ select#renew-amounts {
 		display:flex;
 }
 
+#Contact #serverId-table > tbody > tr:nth-child(1) > td:nth-child(8) {
+	color: transparent;
+}
 
 body .tablink, body #logout-link {
 	color: transparent;

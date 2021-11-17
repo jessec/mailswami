@@ -217,45 +217,62 @@ var serverManager = (function () {
                     serverManager.spinner(true);
                     var serverWrapper = e.target.closest(".server_wrapper_class");                   
                     var id = serverWrapper.id;
-                    var newEmailAccount = {
-                            "espProvider": serverManager.getFormValueByName(id, "espProvider"),
-                            "firstName": serverManager.getFormValueByName(id, "firstName"),
-                            "lastName": serverManager.getFormValueByName(id, "lastName"),
-                            "email": serverManager.getFormValueByName(id, "email"),
-                            "industry": serverManager.getFormValueByName(id, "industry"),
-                            "timeZone": serverManager.getFormValueByName(id, "timeZone"),
-                            "imapUsername": serverManager.getFormValueByName(id, "imapUsername"),
-                            "imapPassword": serverManager.getFormValueByName(id, "imapPassword"),
-                            "imapHost": serverManager.getFormValueByName(id, "imapHost"),
-                            "imapPort": serverManager.getFormValueByName(id, "imapPort"),
-                            "imapSecurity": serverManager.getFormValueByName(id, "imapSecurity"),
-                            "smtpUsername": serverManager.getFormValueByName(id, "smtpUsername"),
-                            "smtpPassword": serverManager.getFormValueByName(id, "smtpPassword"),
-                            "smtpHost": serverManager.getFormValueByName(id, "smtpHost"),
-                            "smtpPort": serverManager.getFormValueByName(id, "smtpPort"),
-                            "smtpSecurity": serverManager.getFormValueByName(id, "smtpSecurity")
-                          }
-                    let RSAEncrypt = new JSEncrypt();
-                    RSAEncrypt.setPublicKey(serverManager.publicKey);
-                    let encImapPassword = RSAEncrypt.encrypt(newEmailAccount.imapPassword);
-                    let encSmtpPassword = RSAEncrypt.encrypt(newEmailAccount.smtpPassword);
-                    newEmailAccount.imapPassword = encImapPassword;
-                    newEmailAccount.smtpPassword = encSmtpPassword;
-                    var newAccount = JSON.stringify(newEmailAccount);
-                    var encNewAccount = userManager.encryptString(newAccount, userManager.encKey);
-                    var addEmailAccountUrl = serverManager.serverUrl+"/api/server/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + encNewAccount;
-                    var newEmailAccount = await serverManager.fetchJson(addEmailAccountUrl);
-                    var messages = document.querySelector('#server-manager-messages');
-                    await  serverManager.init(serverManager.id, serverManager.serverUrl);
-                    serverManager.spinner(false);
-                    if(newEmailAccount.status == "true"){
-                        messages.innerHTML = "Please wait 1 day for the email to become active";
-                    }else{
-                        messages.innerHTML = newEmailAccount.message;
+                    
+                    var serverName = serverManager.getFormValueByName(id, "email");
+                    
+                    // check if name already exists
+                    var serverNames = [];
+                    for (var i = 0; i < serverManager.servers.length; i++) {
+                        var name = serverManager.servers[i].replace('http://','');
+                        serverNames.push(name);
                     }
-                    setTimeout(() => {
-                        messages.innerHTML = "";
-                    }, 5000);
+                    if(!serverNames.includes(serverName)){
+                        
+                        var newEmailAccount = {
+                                "espProvider": serverManager.getFormValueByName(id, "espProvider"),
+                                "firstName": serverManager.getFormValueByName(id, "firstName"),
+                                "lastName": serverManager.getFormValueByName(id, "lastName"),
+                                "email": serverName,
+                                "industry": serverManager.getFormValueByName(id, "industry"),
+                                "timeZone": serverManager.getFormValueByName(id, "timeZone"),
+                                "imapUsername": serverManager.getFormValueByName(id, "imapUsername"),
+                                "imapPassword": serverManager.getFormValueByName(id, "imapPassword"),
+                                "imapHost": serverManager.getFormValueByName(id, "imapHost"),
+                                "imapPort": serverManager.getFormValueByName(id, "imapPort"),
+                                "imapSecurity": serverManager.getFormValueByName(id, "imapSecurity"),
+                                "smtpUsername": serverManager.getFormValueByName(id, "smtpUsername"),
+                                "smtpPassword": serverManager.getFormValueByName(id, "smtpPassword"),
+                                "smtpHost": serverManager.getFormValueByName(id, "smtpHost"),
+                                "smtpPort": serverManager.getFormValueByName(id, "smtpPort"),
+                                "smtpSecurity": serverManager.getFormValueByName(id, "smtpSecurity")
+                              }
+                        let RSAEncrypt = new JSEncrypt();
+                        RSAEncrypt.setPublicKey(serverManager.publicKey);
+                        let encImapPassword = RSAEncrypt.encrypt(newEmailAccount.imapPassword);
+                        let encSmtpPassword = RSAEncrypt.encrypt(newEmailAccount.smtpPassword);
+                        newEmailAccount.imapPassword = encImapPassword;
+                        newEmailAccount.smtpPassword = encSmtpPassword;
+                        var newAccount = JSON.stringify(newEmailAccount);
+                        var encNewAccount = userManager.encryptString(newAccount, userManager.encKey);
+                        var addEmailAccountUrl = serverManager.serverUrl+"/api/server/email/account/add?auth=" + userManager.getAuthKey() + "&newAccount=" + encNewAccount;
+                        var newEmailAccount = await serverManager.fetchJson(addEmailAccountUrl);
+                        var messages = document.querySelector('#server-manager-messages');
+                        await  serverManager.init(serverManager.id, serverManager.serverUrl);
+                        serverManager.spinner(false);
+                        if(newEmailAccount.status == "true"){
+                            messages.innerHTML = "Please wait 1 day for the email to become active";
+                        }else{
+                            messages.innerHTML = newEmailAccount.message;
+                        }
+                        setTimeout(() => {
+                            messages.innerHTML = "";
+                        }, 5000);                                            
+                        
+                        
+                    }else{
+                        alert("Name already exists");
+                    }
+ 
                 }
                 
                 if(e.target.classList == "btn-add-email"){
@@ -616,7 +633,7 @@ var serverManager = (function () {
             var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Marketing"},{"google":"Email"}]);
             var inputFirstName = this.getInputField("text", {"placeholder":"First name","name":"firstName","style":"float:right;"});
             var inputLastName = this.getInputField("text", {"placeholder":"Last name","name":"lastName","style":"float:right;"});
-            var inputNewEmail = this.getInputField("text", {"placeholder":"Domain","class":"add-new-email","name":"email","style":"float:right;"});
+            var inputNewEmail = this.getInputField("text", {"placeholder":"Name","class":"add-new-email","name":"email","style":"float:right;"});
             var industry = this.getDropDown("industry", "industry", serverManager.industries);
             var timeZone = this.getDropDown("timezone", "timeZone", serverManager.timeZoneData);
             var inputImapUserName = this.getInputField("text", {"placeholder":"Imap username","name":"imapUsername","style":"float:right;"});
@@ -638,7 +655,7 @@ var serverManager = (function () {
             emailInputWrapper.appendChild(this.fieldWrapper("Server type", espProvider));
             emailInputWrapper.appendChild(this.fieldWrapper("First name", inputFirstName));
             emailInputWrapper.appendChild(this.fieldWrapper("Last name", inputLastName));
-            emailInputWrapper.appendChild(this.fieldWrapper("Domain", inputNewEmail));
+            emailInputWrapper.appendChild(this.fieldWrapper("Name", inputNewEmail));
             emailInputWrapper.appendChild(this.fieldWrapper("Industry", industry));
             emailInputWrapper.appendChild(this.fieldWrapper("Timezone", timeZone));
             emailInputWrapper.appendChild(this.fieldWrapper("Imap username", inputImapUserName));
