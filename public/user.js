@@ -1,9 +1,9 @@
 var userManager = (function () {
 
-    var encKey = "";
-    var aesKey = "";
-    var setupControles = {};
-    var widget = {};
+//    var encKey = "";
+//    var aesKey = "";
+//    var setupControles = {};
+//    var widget = {};
     
     return {
         init : async function (id, serverUrl) {
@@ -15,7 +15,7 @@ var userManager = (function () {
             
             userManager.widget = document.getElementById(this.id);
             
-            userManager.setupControles();
+            userManager.setupControlesFunc();
             userManager.setupLogoutLink();
             
             userManager.setupEvents();
@@ -169,7 +169,7 @@ var userManager = (function () {
                 }
             }
         },
-        setupControles : function () {
+        setupControlesFunc : function () {
             this.setupMessages = document.createElement("div");
             this.setupMessages.id = this.id + "-messages";
             this.widget.appendChild(this.setupMessages);

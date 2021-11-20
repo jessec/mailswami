@@ -1,22 +1,9 @@
 var accountManager = (function () {
 
-//    var servers = [];
-//    var serverLookup = {};
-//    var emailByServerIdLookup = {};
-//    var widget = {};
-//    var setupControles = {};
-//    var editableColoms = [];
-//    var hiddenColoms = [];
-//    var formatColoms = [];
-//    var getCronJobsByServerID = {};
-//    var serverUrl = "";
-//    var timeZoneData = [];
-//    var masterDB = {};
-//    var industries = {};
-//    let publicKey;
 
     return {
         init : async function (id, serverUrl) {
+            console.log("warmup init");
             
             serverManager.id = id;
             document.querySelector("#"+id).innerHTML = "";
@@ -32,10 +19,11 @@ var accountManager = (function () {
             accountManager.publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBWMSNABfvlZCM2EBJiDllyoIsChTxxyuxeE1pbaaxab/lwumdE9RJWAwYMUufgnGncaYZXwZInH0W3Ys+dLbu3j7zxXZ7x9LWhZA9MLbCH+Xf+DxgbU5kaeNx1m0f7tz7xj2CntHuYBYY9BkDNyTbnKOr7RwilNllVQvpV6A9RwIDAQAB";
             accountManager.listenForLogin();
         },
-        main : function(){
+        main : async function(){
             accountManager.initControles();
             accountManager.setupEvents();
-            accountManager.run();
+            await accountManager.run();
+            spinner.off();
         },
         
         run : async function (e) {
@@ -55,7 +43,6 @@ var accountManager = (function () {
             accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
             accountManager.servers = serverJson.serverlist;
             accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
-            accountManager.spinner(false);
             for (var i = 0; i < accountManager.servers.length; i++) {
                 await accountManager.createServerTable(accountManager.servers[i], authKey);
             }
@@ -214,8 +201,7 @@ var accountManager = (function () {
                 
           
                 if(e.target.classList == "btn-save-email"){
-                        
-                    accountManager.spinner(true);
+                    spinner.on();
                     var serverWrapper = e.target.closest(".warmup_wrapper_class");                   
                     var id = serverWrapper.id;
                     var newEmailAccount = {
@@ -248,7 +234,6 @@ var accountManager = (function () {
                     var newEmailAccount = await accountManager.fetchJson(addEmailAccountUrl);
                     console.log(newEmailAccount);
                     var messages = document.querySelector('#account-manager-messages');
-                    accountManager.spinner(false);
                     if(newEmailAccount.status == "true"){
                         messages.innerHTML = "Please wait 1 day for the email to become active";
                     }else{
@@ -256,6 +241,7 @@ var accountManager = (function () {
                     }
                     setTimeout(() => {
                         messages.innerHTML = "";
+                        spinner.off();
                     }, 5000);
                 }
                 
@@ -352,7 +338,6 @@ var accountManager = (function () {
                 
                 
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
-                    accountManager.spinner(true);
                     var state = e.target.innerText.trim();
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
                     var cssQuery = '#'+emailId+' .email-line > div';
@@ -382,7 +367,6 @@ var accountManager = (function () {
                             }   
                         }
                     }
-                    accountManager.spinner(false);
                     return;
                 }
              });
@@ -679,16 +663,6 @@ var accountManager = (function () {
                 const json = await response.json();
                 return json;
         },
-        
-        spinner : function(on){
-            if(on){
-                document.querySelector('#home-spinner').style.display = "block";
-            }else{
-                document.querySelector('#home-spinner').style.display = "none";
-                document.querySelector('#Home .help-link').style.display = "block";
-            }
-        },
-        
         getIdFromServerUrl : function (serverUrl) {
             var url = new URL(serverUrl);
             //var id = url.hostname.replace('.', '-');
@@ -697,10 +671,5 @@ var accountManager = (function () {
             accountManager.serverLookup[id] = serverUrl;
             return id;
         }
-        
-//        seconds_since_epoch : function(d){ 
-//            return Math.floor( d / 1000 ); 
-//        }
-
     }
 })();

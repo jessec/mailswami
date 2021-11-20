@@ -1,5 +1,6 @@
 var invoiceManager = (function () {
 
+    var timestamp;
     
     return {
         init : async function (id, serverUrl) {
@@ -15,6 +16,17 @@ var invoiceManager = (function () {
 
             
             document.addEventListener('click', async function(e) {
+                
+                if(invoiceManager.timestamp){
+                    var diff = Date.now() - invoiceManager.timestamp;
+                    if(diff < 1000){
+                        //FIXME
+                        return;
+                    }
+                 }
+                invoiceManager.timestamp = Date.now();
+                
+                
                 var tabcontent = e.target.closest('.tabcontent');
                 if(tabcontent !== null){
                     if(tabcontent.id !== "News"){
@@ -26,11 +38,13 @@ var invoiceManager = (function () {
                 if(e.target.classList == "help-link"){
                     document.getElementById("help-modal").style.display = "block";
                     document.getElementById("inner-help-modal").innerHTML='<object type="text/html" data="help/invoice.html" ></object>';
+                    return;
                 }
                 
                 
                 if(e.target.classList.contains("pagination-item")){
                     invoiceManager.showInvoiceTable(parseInt(e.target.innerText) - 1);
+                    return;
                 }
                 
                 if(e.target.id == "close-invoice"){
@@ -40,11 +54,11 @@ var invoiceManager = (function () {
                         await invoiceManager.paypalButton.close();
                      }  
                     invoiceManager.init("invoice-manager", host);
+                    return;
                 }
                 
                 if(e.target.classList.contains("fa-times-circle")||e.target.classList.contains("fa-check-circle")){
-                    
-                    invoiceManager.spinner(true);
+                    spinner.on();
                     var invoiceNr = e.target.parentNode.dataset.invoicenr;
                     var invoice = invoiceManager.getInvoiceByInvoiceNr(invoiceNr);
                     var authKey = userManager.getAuthKey();
@@ -55,9 +69,11 @@ var invoiceManager = (function () {
                     }
                     var subscriptionIds = encodeURIComponent(JSON.stringify(subscriptionIdsArr));
                     var dataUrl = userManager.serverUrl+"/api/dashboard/subscriptions/get/emails?auth=" + authKey + "&subscriptionIds="+subscriptionIds;
+                    spinner.on();
                     var subscriptionIdArrays = await invoiceManager.fetchJson(dataUrl);
 
                     for (var i = 0; i < invoice.items.length; i++) {
+                        spinner.on();
                         var item = invoice.items[i];
                         var email = subscriptionIdArrays[item.subscriptionIdStr];
                         if(email !== undefined){
@@ -66,11 +82,12 @@ var invoiceManager = (function () {
                             }
                         }
                     }
-                    invoiceManager.spinner(false);
+
                     if(invoiceManager.openInvoiceNr != invoiceNr){
                         await invoiceManager.fillInvoice(invoice);
                         invoiceManager.openInvoiceNr = invoiceNr;
                     }
+                    return;
                 }
 
                 
@@ -80,16 +97,11 @@ var invoiceManager = (function () {
         fillInvoiceId : function(id,value){
             document.querySelector(id).innerText = value;
         },
-        fillInvoice : async function(invoice){
-            
-            invoiceManager.fillInvoiceId("#invoice-nr",invoice.invoiceNumber);
-            invoiceManager.fillInvoiceId("#customer-name",invoiceManager.account.name);
-            invoiceManager.fillInvoiceId("#customer-email",invoiceManager.account.email);         
-            
-            document.querySelector('#invoice-table-body').innerHTML = '';
-            
-            
+        
+        createInvoiceLines : async function(invoice){
+            spinner.on();
             for (var i = 0; i < invoice.items.length; i++) {
+                spinner.on();
                 var item = invoice.items[i];
                 var tr = document.createElement("tr");
                 var td1 = document.createElement("td");
@@ -108,12 +120,27 @@ var invoiceManager = (function () {
                 tr.appendChild(td4);
                 document.querySelector('#invoice-table-body').appendChild(tr);
             }
+            spinner.off();
+        },
+        
+        fillInvoice : async function(invoice){
+            
+            invoiceManager.fillInvoiceId("#invoice-nr",invoice.invoiceNumber);
+            invoiceManager.fillInvoiceId("#customer-name",invoiceManager.account.name);
+            invoiceManager.fillInvoiceId("#customer-email",invoiceManager.account.email);         
+            
+            document.querySelector('#invoice-table-body').innerHTML = '';
+            
+            
+            await invoiceManager.createInvoiceLines(invoice);
+            
+
             
             
             invoiceManager.fillInvoiceId("#invoice-table-totals","$"+invoice.balance);       
             
             if(invoice.balance != 0){
-                invoiceManager.addPayPal(invoice);
+                await invoiceManager.addPayPal(invoice);
             }else{
                 if (typeof invoiceManager.paypalButton.close === 'function') {
                     await invoiceManager.paypalButton.close();
@@ -121,6 +148,7 @@ var invoiceManager = (function () {
             }
             document.querySelector('#invoice-viewer').style.display = "flex";
             document.querySelector('#invoice-manager').style.display = "none";
+
         },
         getInvoiceByInvoiceNr : function(nr){
             for (var i = 0; i < invoiceManager.invoices.length; i++) {
@@ -136,7 +164,6 @@ var invoiceManager = (function () {
             
             if(invoices.length == 0){
                 document.querySelector('#invoice-manager-messages').innerHTML = "No invoices have been created";
-                invoiceManager.spinner(false);
             }else{
                 invoiceManager.invoices = invoices;
                 invoiceManager.invoices.reverse();
@@ -144,7 +171,7 @@ var invoiceManager = (function () {
                 invoiceManager.showInvoiceTable(page);   
             }
         },
-        showInvoiceTable : function(page){
+        showInvoiceTable : async function(page){
             var hiddenColumns = [
                 "json",
                 "balance"
@@ -174,18 +201,11 @@ var invoiceManager = (function () {
             var tbl = table.createJsonTable("invoice-table", filteredInvoices.slice(startSlice, endSlice), [], hiddenColumns, formatColumns);
             tableWrapper.appendChild(tbl);
             if(document.querySelector('#invoice-manager')){
-                invoiceManager.spinner(false);
                 document.querySelector('#invoice-manager').appendChild(tableWrapper);  
                 document.querySelector('#invoice-manager').appendChild(invoiceManager.getInvoiceTablePagination(invoiceManager.pages, page));  
+                spinner.off();
             }
-        },
-        spinner : function(on){
-            if(on){
-                document.querySelector('#invoice-spinner').style.display = "block";
-            }else{
-                document.querySelector('#invoice-spinner').style.display = "none";
-                document.querySelector('#News .help-link').style.display = "block";
-            }
+            
         },
         splitArrayIntoChunksOfLen : function(arr, len) {
             var chunks = [], i = 0, n = arr.length;
@@ -223,10 +243,10 @@ var invoiceManager = (function () {
             invoiceManager.initControles();
             invoiceManager.setupEvents();
             invoiceManager.account = await invoiceManager.setupAccount();
-            invoiceManager.run();
+            await invoiceManager.run();
         },
-        run : function(){
-            invoiceManager.getInvoicesAll(0);
+        run : async function(){
+            await invoiceManager.getInvoicesAll(0);
         },
         initControles : function () {
             this.setupMessages = document.createElement("div");
@@ -238,19 +258,19 @@ var invoiceManager = (function () {
             this.widget.appendChild(this.setupControles);
 
         },
-        listenForLogin : function(){
+        listenForLogin : async function(){
             var targetNode = document.querySelector('body');
             if(targetNode.classList.contains('dashboard')){
-                invoiceManager.main();
+                await invoiceManager.main();
             }else{
                 var config = { attributes: true, childList: true };
-                var callback = function(mutationsList) {
+                var callback = async function(mutationsList) {
                     for(var mutation of mutationsList) {
                         if (mutation.type == 'childList') {
                         }
                         else if (mutation.type == 'attributes') {
                             if(document.body.classList.contains('dashboard')){
-                                invoiceManager.main();
+                                await invoiceManager.main();
                             }
                         }
                     }

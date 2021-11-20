@@ -5,7 +5,7 @@
 <title>Dashboard</title>
 <link rel="icon" href="images/head-new.jpg" type="image/png" sizes="16x16">
 <script src="https://kit.fontawesome.com/933defe073.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="dashboard.css">        
+<link rel="stylesheet" href="dashboard.css">
 <script src="https://www.paypal.com/sdk/js?client-id=AQc5qXfxvJJxCNZiJ0IOy2clZAqq3K7-kAXouJVHgO82NayKnRIcq82fwroPFh5RaHVFI9UIBotQECIQ"></script>
 <script>
     var USER_ROLE = "admin";
@@ -15,8 +15,60 @@
         USER_ROLE = "admin";
     }
 </script>
+<style>
+#spin-wrapper {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#spin-wrapper>#spinner {
+	position: absolute;
+	margin-left: calc(50% - 25px);
+	width: 50px;
+	margin-top: 50px;
+}
+</style>
+<script>
+    function docReady(fn) {
+        if (document.readyState === "complete"
+                || document.readyState === "interactive") {
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    let spinner = {
+        on : function () {
+            document.querySelector('#spin-wrapper').style.display = "block";
+        },
+        off : function () {
+            document.querySelector('#spin-wrapper').style.display = "none";
+        }
+    }
+
+    docReady(function () {
+        spinner.on();
+    });
+</script>
 </head>
 <body>
+	<div id="spin-wrapper">
+		<img id="spinner" src="images/spinner.svg">
+	</div>
 
 	<div id="help-modal">
 		<div id="close-modal">x</div>
@@ -24,7 +76,6 @@
 	</div>
 
 	<div id="wrapper">
-
 		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="dashboard-button">Warmup</button>
 		<button id="cronjobpage" style="display: none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Schedule</button>
 		<button id="serverpage" style="display: none;" class="tablink" onclick="openPage('Servers', this, '#4d9bc0')">Servers</button>
@@ -33,7 +84,7 @@
 			<span id="logout-link" href="#">Logout</span>
 		</button>
 		<div id="Home" class="tabcontent">
-			<img id="home-spinner" class="spinner" src="images/spinner.svg"> <a class="help-link" href="#">help</a>
+			<a class="help-link" href="#">help</a>
 			<div id="account-manager"></div>
 		</div>
 
@@ -92,19 +143,18 @@
 			</div>
 			<a class="help-link" href="#">help</a>
 			<div id="invoice-manager">
-				<img class="spinner" id="invoice-spinner" src="images/spinner.svg">
 				<button class="btn-add-credit" style="float: right; visibility: visible;">add credit</button>
 			</div>
 		</div>
 
 		<div id="Contact" class="tabcontent">
 			<div id="cron-manager-messages"></div>
-			<img class="spinner" id="cron-spinner" src="images/spinner.svg"> <a class="help-link" href="#">help</a>
+			<a class="help-link" href="#">help</a>
 			<div id="cron-manager"></div>
 		</div>
 		<div id="Servers" class="tabcontent">
 			<div id="server-manager-messages"></div>
-			<img id="server-spinner" class="spinner" src="images/spinner.svg"> <a class="help-link" href="#">help</a>
+			<a class="help-link" href="#">help</a>
 			<div id="server-manager"></div>
 		</div>
 
@@ -130,70 +180,66 @@
 
 
 	<script>
-        if (USER_ROLE == "admin") {
-            document.querySelector('#cronjobpage').style.display = "block";
-            document.querySelector('#serverpage').style.display = "block";
-            var tablinks = document.querySelectorAll('.tablink');
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.width = "20%";
+        docReady(function () {
+
+            if (USER_ROLE == "admin") {
+                document.querySelector('#cronjobpage').style.display = "block";
+                document.querySelector('#serverpage').style.display = "block";
+                var tablinks = document.querySelectorAll('.tablink');
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.width = "20%";
+                }
             }
-        }
-    </script>
+
+            userManager.init("user-manager", host);
+            //invoiceManager.init("invoice-manager", host);
+
+            //setTimeout(function () {
+            //accountManager.init("account-manager", host);
+            //}, 5000);
+
+            //serverManager.init("server-manager", host);
+            //cronManager.init("cron-manager", host);
+
+            document.getElementById("dashboard-button").addEventListener(
+                    "click", function () {
+                        spinner.on();
+                        accountManager.init("account-manager", host);
+                    });
+            document.getElementById("cronjobpage").addEventListener("click",
+                    function () {
+                        spinner.on();
+                        cronManager.init("cron-manager", host);
+                    });
+            document.getElementById("serverpage").addEventListener("click",
+                    function () {
+                        spinner.on();
+                        serverManager.init("server-manager", host);
+                    });
+            document.getElementById("invoicepage").addEventListener("click",
+                    function () {
+                        spinner.on();
+                        invoiceManager.init("invoice-manager", host);
+                    });
 
 
-	<script>
-        userManager.init("user-manager", host);
-        invoiceManager.init("invoice-manager", host);
-        
-        
-        setTimeout(function(){
-            accountManager.init("account-manager", host);
-        }, 3000);
-        
-        serverManager.init("server-manager", host);
-        cronManager.init("cron-manager", host);
+            
+            
+            (function(){
+                document.getElementById("defaultOpen").click();
+                spinner.off();
+            })();
+            
 
-    
-        
-        document.getElementById("dashboard-button").addEventListener("click", function(){
-            accountManager.init("account-manager", host);
-        });
-        document.getElementById("cronjobpage").addEventListener("click", function(){
-            cronManager.init("cron-manager", host);
-        });
-        document.getElementById("serverpage").addEventListener("click", function(){
-            serverManager.init("server-manager", host);
-        });
-        document.getElementById("invoicepage").addEventListener("click", function(){
-            invoiceManager.init("invoice-manager", host);
-        });
-        
-        
-        
-        
-    </script>
+            document
+                    .getElementById("close-modal")
+                    .addEventListener(
+                            "click",
+                            function () {
+                                document.getElementById("help-modal").style.display = "none";
+                            });
 
-	<script>
-        function openPage(pageName, elmnt, color) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-            document.getElementById(pageName).style.display = "block";
-            elmnt.style.backgroundColor = color;
-        }
-        document.getElementById("defaultOpen").click();
-        
-        
-        document.getElementById("close-modal").addEventListener("click", function(){
-            document.getElementById("help-modal").style.display = "none";
         });
-        
     </script>
 
 </body>

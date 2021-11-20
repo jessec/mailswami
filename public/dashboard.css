@@ -191,6 +191,9 @@ select#renew-amounts {
 	display:inline;
 }
 
+.btn-add-cron-job {
+	_display:none;
+}
 
 #defaultOpen {
     background: #555 !important;
@@ -236,11 +239,8 @@ body.dashboard .tablink, body.dashboard #logout-link {
     min-height: 200px;
 }
 
-.spinner {
-    margin-left: calc(50% - 25px);
-    width: 50px;
-    margin-top: -100px;
-}
+
+
 
 #invoice-table-table {
 	width: 100%;

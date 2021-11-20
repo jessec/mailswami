@@ -9,7 +9,7 @@ var cronManager = (function () {
             
             console.log("setup init");
             
-            this.widget = document.getElementById(this.id);
+            this.widget = document.getElementById(id);
             if(cronManager.widget){
                 cronManager.widget.innerHTML = "";   
             }
@@ -27,45 +27,45 @@ var cronManager = (function () {
             
 
         },
-        main : function(){
-            cronManager.initControles();
-            cronManager.setupEvents();
+        main : async function(){
+            await cronManager.initControles();
+            await cronManager.setupEvents();
         },
         initControles : async function () {
-            if(!this.widget){
-                return;
-            }
             this.setupMessages = document.createElement("div");
             this.setupMessages.id = this.id + "-messages";
             
             if(this.setupMessages){
-                this.widget.appendChild(this.setupMessages);   
+                cronManager.widget.appendChild(this.setupMessages);   
             }
             
             this.setupControles = document.createElement("div");
             this.setupControles.classList = this.id + "-controles";
             
             if(this.setupControles){
-                this.widget.appendChild(this.setupControles);                
+                cronManager.widget.appendChild(this.setupControles);                
             }
 
             
-            this.setupTable();
+            await this.setupTable();
+
         },
         
-        listenForLogin : function(){
+        listenForLogin : async function(){
             var targetNode = document.querySelector('body');
             if(targetNode.classList.contains('dashboard')){
-                cronManager.main();
+                await cronManager.main();
+                spinner.off();
             }else{
                 var config = { attributes: true, childList: true };
-                var callback = function(mutationsList) {
+                var callback = async function(mutationsList) {
                     for(var mutation of mutationsList) {
                         if (mutation.type == 'childList') {
                         }
                         else if (mutation.type == 'attributes') {
                             if(document.body.classList.contains('dashboard')){
-                                cronManager.main();
+                                await cronManager.main();
+                                spinner.off();
                             }
                         }
                     }
@@ -119,16 +119,10 @@ var cronManager = (function () {
             console.log("setup events");
             document.addEventListener('click', async function(e) {
                 
-                console.log(Date.now());
-                console.log("clicked:");
-                console.log(e);
-                
                 if(cronManager.timestamp){
                    var diff = Date.now() - cronManager.timestamp;
-                   console.log(diff);
                    if(diff < 1000){
-                       //FIXME
-                       console.log("return");
+                       // FIXME
                        return;
                    }
                 }
@@ -144,19 +138,22 @@ var cronManager = (function () {
                 if(e.target.classList == "help-link"){
                     document.getElementById("help-modal").style.display = "block";
                     document.getElementById("inner-help-modal").innerHTML='<object type="text/html" data="help/schedule.html" ></object>';
+                    return;
                 }
 
                 if(e.target.classList == "btn-save-email"){
+                    spinner.on();
                     console.log('saving email');
                     var email = e.target.parentNode.parentNode.querySelector('.add-new-email').value.trim();
-                    var password = "nopass";//e.target.parentNode.parentNode.querySelector('.add-new-password').value.trim();
+                    var password = "nopass";// e.target.parentNode.parentNode.querySelector('.add-new-password').value.trim();
                     
-                    var isValidEmail = true; // we can create random cronjobs no problem
+                    var isValidEmail = true; // we can create random cronjobs
+                                                // no problem
                     // if server has account it's ok if not it's no problem
                     var domains = cronManager.serverList.serverlist;
                     for (var i = 0; i < domains.length; i++) {
                         var domain = domains[i];
-                        //console.log(domain);
+                        // console.log(domain);
                         var url = new URL(domain);
                         var hostname = url.hostname;
                         var emaildomain = email.split('@')[1];
@@ -193,16 +190,18 @@ var cronManager = (function () {
                         messages.innerHTML = "";
                     }, 13000);
                     
-
+                    return;
                 }
                 
                 if(e.target.classList == "btn-add-email"){
                     var wrapper = e.target.parentNode.parentNode.querySelector('.email-input-wrapper'); 
                     wrapper.style.display = "grid";
+                    return;
                 }
                 
                 if(e.target.classList == "btn-cancel-email"){
                     e.target.parentNode.parentNode.style.display = "none";
+                    return;
                 }
                 
                 if(e.target.innerText.trim() == "delete"){
@@ -211,7 +210,7 @@ var cronManager = (function () {
                         var diff = Date.now() - cronManager.timestampDelete;
                         console.log(diff);
                         if(diff < 3000){
-                            //FIXME
+                            // FIXME
                             console.log("delete return");
                             return;
                         }
@@ -239,26 +238,24 @@ var cronManager = (function () {
                         if(isLastEmailAccount){
                             var r = confirm("By deleting this cronjob you will also delete email account : "+ email + " do you want this?");
                             if (r == true) {
-                              cronManager.spinner(true);
                               var deleteCronJobUrl = cronManager.serverUrl + "/api/crontab/job/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
                               await cronManager.fetchJson(deleteCronJobUrl);
                               await cronManager.setupTable();
-                              cronManager.spinner(false);
                             }
                         }else{
                             var r = confirm("Are you sure you want to delete this cron job?");
                             if (r == true) {
-                              cronManager.spinner(true);
                               var deleteCronJobUrl = cronManager.serverUrl + "/api/crontab/job/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=false";
                               await cronManager.fetchJson(deleteCronJobUrl);
                               await cronManager.setupTable();
-                              cronManager.spinner(false);
                             }
                         }
                         e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
+                        return;
                 }
                 
                 if(e.target.classList == "btn-add-cron-job"){
+                    spinner.on();
                     cronManager.addCronJob(email);
                     return;
                 }
@@ -334,20 +331,23 @@ var cronManager = (function () {
                             await cronManager.saveJsonField(cronId, cronField, inputValue, id);
                         }
                     }
+                    return;
                 }
              });
         },
         
         addCronJob : async function(email){
-            cronManager.spinner(true);
+            if(!email){
+                email = "set-email@no-email.com";
+            }
             var newCronJobUrl = cronManager.serverUrl + "/api/crontab/job/new?auth=" + userManager.getAuthKey() + "&email="+email;
             await cronManager.fetchJson(newCronJobUrl);
             await cronManager.setupTable();
             document.querySelector('#serverId-table > tbody > tr:last-child').style.backgroundColor = "yellow";
             setTimeout(function(){ 
                 document.querySelector('#serverId-table > tbody > tr:last-child').style.backgroundColor = "transparent"; 
+                spinner.off();
             }, 10000);
-            cronManager.spinner(false);
         }, 
         
         isLastEmailAccount : function(email, cronJobJson){
@@ -501,11 +501,12 @@ var cronManager = (function () {
             var emailInputWrapper = document.createElement("div");
             emailInputWrapper.style.display = "none";
             emailInputWrapper.classList = "email-input-wrapper";
-//            emailInputWrapper.appendChild(input);
-//            emailInputWrapper.appendChild(inputPass);
+// emailInputWrapper.appendChild(input);
+// emailInputWrapper.appendChild(inputPass);
             
             emailInputWrapper.appendChild(this.fieldWrapper("Email", input));
-            //emailInputWrapper.appendChild(this.fieldWrapper("Password", inputPass));
+            // emailInputWrapper.appendChild(this.fieldWrapper("Password",
+            // inputPass));
             
             var emailButtonWrapper = document.createElement("div");
             emailButtonWrapper.style.display = "flex";
@@ -517,7 +518,8 @@ var cronManager = (function () {
             tblWrapper.appendChild(emailInputWrapper);
             
             
-            //tblWrapper.appendChild(this.fieldWrapper("Imap password", emailInputWrapper));
+            // tblWrapper.appendChild(this.fieldWrapper("Imap password",
+            // emailInputWrapper));
             
             
             
@@ -538,7 +540,6 @@ var cronManager = (function () {
                 tbl.style.marginTop = '20px'; 
                 tblWrapper.appendChild(tbl);
                 document.querySelector('#cron-manager').appendChild(tblWrapper);
-                cronManager.spinner(false);
             }
         },
         
@@ -557,7 +558,6 @@ var cronManager = (function () {
         
         
         saveJsonField : async function(cronId, cronField, inputValue, tdid){
-            cronManager.spinner(true);
             var data = {
                  cronid : cronId,
                  field : cronField,
@@ -571,18 +571,7 @@ var cronManager = (function () {
             }else{
                 document.querySelector('#'+data.tdid).style.backgroundColor = 'white';
             }
-            cronManager.spinner(false);
         },
-        
-        spinner : function(on){
-            if(on){
-                document.querySelector('#cron-spinner').style.display = "block";
-            }else{
-                document.querySelector('#cron-spinner').style.display = "none";
-                document.querySelector('#Contact .help-link').style.display = "block";
-            }
-        },
-
         handleJsonField : function(jsonField){
             var orgValue = jsonField.innerText;
             var input = document.createElement("INPUT");

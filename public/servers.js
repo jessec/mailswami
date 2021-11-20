@@ -1,19 +1,5 @@
 var serverManager = (function () {
 
-//    var servers = [];
-//    var serverLookup = {};
-//    var emailByServerIdLookup = {};
-//    var widget = {};
-//    var setupControles = {};
-//    var editableColoms = [];
-//    var hiddenColoms = [];
-//    var formatColoms = [];
-//    var getCronJobsByServerID = {};
-//    var serverUrl = "";
-//    var timeZoneData = [];
-//    var masterDB = {};
-//    var industries = {};
-//    let publicKey;
 
     return {
         init : async function (id, serverUrl) {
@@ -31,10 +17,31 @@ var serverManager = (function () {
             serverManager.publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBWMSNABfvlZCM2EBJiDllyoIsChTxxyuxeE1pbaaxab/lwumdE9RJWAwYMUufgnGncaYZXwZInH0W3Ys+dLbu3j7zxXZ7x9LWhZA9MLbCH+Xf+DxgbU5kaeNx1m0f7tz7xj2CntHuYBYY9BkDNyTbnKOr7RwilNllVQvpV6A9RwIDAQAB";
             serverManager.listenForLogin();
         },
-        main : function(){
+        cleanName : function(name){
+            name = name.replace(/\s/g, '_');
+            name = name.replace(/[^a-zA-Z ]/g, "");
+            return name;
+        },
+        
+        cleanWarmerEmailAccountsJson(warmerEmailAccountsJson){
+            var newWarmerEmailAccountsJson = [];
+            
+            for (var i = 0; i < warmerEmailAccountsJson.length; i++) {
+                var account = warmerEmailAccountsJson[i];
+                
+                account.email = serverManager.cleanName(account.email);
+                account.serverAccount.email = serverManager.cleanName(account.serverAccount.email);
+                
+                newWarmerEmailAccountsJson[i] = account;
+            }
+            return newWarmerEmailAccountsJson;
+        },
+        
+        main : async function(){
             serverManager.initControles();
             serverManager.setupEvents();
-            serverManager.run();
+            await serverManager.run();
+            spinner.off();
         },
         run : async function (e) {
             //console.log("running server manager");
@@ -54,11 +61,25 @@ var serverManager = (function () {
             }
             var timeZoneUrl = serverManager.serverUrl+"/api/server/timezones?auth=" + authKey;
             serverManager.timeZoneData = await serverManager.fetchJson(timeZoneUrl);
-            serverManager.servers = serverJson.serverlist;
-            serverManager.setupServerDropDown("server-manager", "server-dropdown-id", "server-dropdown-name", serverManager.servers);
-            if(document.querySelector('#server-spinner')){ 
-                serverManager.spinner(false);
+            var tmp = serverJson.serverlist;
+            
+            var tmpArray = [];
+            
+            for (var i = 0; i < tmp.length; i++) {
+                var server = serverManager.cleanName(tmp[i]);
+                tmpArray[i] = server;
             }
+            
+            
+            
+//            [
+//                "http://test.com",
+//                "http://Linkendin Campain"
+//            ]
+            
+            serverManager.servers = tmpArray;//tmp.serverlist;
+            
+            serverManager.setupServerDropDown("server-manager", "server-dropdown-id", "server-dropdown-name", serverManager.servers);
             for (var i = 0; i < serverManager.servers.length; i++) {
                 await serverManager.createServerTable(serverManager.servers[i], authKey);
             }
@@ -214,16 +235,17 @@ var serverManager = (function () {
                     serverManager.displayRenewAmountsButtons("block");
                 }
                 if(e.target.classList == "btn-save-email"){
-                    serverManager.spinner(true);
+                    spinner.on();
                     var serverWrapper = e.target.closest(".server_wrapper_class");                   
                     var id = serverWrapper.id;
                     
                     var serverName = serverManager.getFormValueByName(id, "email");
-                    
+                    serverName = serverManager.cleanName(serverName);
                     // check if name already exists
                     var serverNames = [];
                     for (var i = 0; i < serverManager.servers.length; i++) {
                         var name = serverManager.servers[i].replace('http://','');
+                        name = serverManager.cleanName(name);
                         serverNames.push(name);
                     }
                     if(!serverNames.includes(serverName)){
@@ -258,7 +280,6 @@ var serverManager = (function () {
                         var newEmailAccount = await serverManager.fetchJson(addEmailAccountUrl);
                         var messages = document.querySelector('#server-manager-messages');
                         await  serverManager.init(serverManager.id, serverManager.serverUrl);
-                        serverManager.spinner(false);
                         if(newEmailAccount.status == "true"){
                             messages.innerHTML = "Please wait 1 day for the email to become active";
                         }else{
@@ -266,6 +287,7 @@ var serverManager = (function () {
                         }
                         setTimeout(() => {
                             messages.innerHTML = "";
+                            spinner.off();
                         }, 5000);                                            
                         
                         
@@ -357,6 +379,7 @@ var serverManager = (function () {
                         var cronJobIdParts = tdId.split("_");
                         var cronJobId = cronJobIdParts[cronJobIdParts.length - 2];
                         var email = document.querySelector("#"+tdId.replace("_state","_server")).innerText.trim();
+                        
                         var r = confirm("You are canceling the subscription for this email account. Are you sure you want to delete "+ email + "?");
                         if (r == true) {
                               var deleteCronJobUrl = serverManager.serverUrl+"/api/server/email/accounts/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
@@ -373,7 +396,6 @@ var serverManager = (function () {
                         await serverManager.init(serverManager.id, serverManager.serverUrl);
                 }
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
-                    serverManager.spinner(true);
                     var state = e.target.innerText.trim();
                     
                     var emailId = e.target.parentNode.parentNode.id.replace("_state","_email");
@@ -413,7 +435,6 @@ var serverManager = (function () {
                             }   
                         }
                     }
-                    serverManager.spinner(false);
                     return;
                 }                
              });
@@ -601,6 +622,9 @@ var serverManager = (function () {
             if(!serverManager.masterDB.hasOwnProperty('warmerEmailAccounts')){
                 var warmerEmailAccountsUrl = serverManager.serverUrl+"/api/server/email/accounts?auth=" + pass;
                 warmerEmailAccountsJson = await this.fetchJson(warmerEmailAccountsUrl);
+                
+                warmerEmailAccountsJson = serverManager.cleanWarmerEmailAccountsJson(warmerEmailAccountsJson);
+                
                 serverManager.masterDB.warmerEmailAccounts = warmerEmailAccountsJson;
             }else {
                 warmerEmailAccountsJson = serverManager.masterDB.warmerEmailAccounts;
@@ -716,19 +740,6 @@ var serverManager = (function () {
             }  
             serverManager.serverLookup[id] = serverUrl;
             return id;
-        },
-        
-        spinner : function(on){
-            if(on){
-                document.querySelector('#server-spinner').style.display = "block";
-            }else{
-                document.querySelector('#server-spinner').style.display = "none";
-                document.querySelector('#Servers .help-link').style.display = "block";
-            }
         }
-//        seconds_since_epoch : function(d){ 
-//            return Math.floor( d / 1000 ); 
-//        }
-
     }
 })();
