@@ -18,8 +18,18 @@ var serverManager = (function () {
             serverManager.listenForLogin();
         },
         cleanName : function(name){
-            name = name.replace(/\s/g, '_');
-            name = name.replace(/[^a-zA-Z ]/g, "");
+            
+            if(name.startsWith("http://")){
+                name = name.replace("http://","");
+                name = name.replace(/\s/g, '_');
+                name = name.replace(/[^a-zA-Z_ ]/g, "");
+                name = "http://"+name;
+            }else{
+                name = name.replace(/\s/g, '_');
+                name = name.replace(/[^a-zA-Z_ ]/g, "");
+            }
+            
+
             return name;
         },
         
