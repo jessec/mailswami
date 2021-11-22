@@ -17,7 +17,7 @@ var cronManager = (function () {
             
             this.encKey = "1234567891234567";
             this.editableColoms = ['expression','email','batchSize'];
-            this.hiddenColoms = ['id','expressiondesc','user','command'];
+            this.hiddenColoms = ['id','expressiondesc','user','command','active'];
             this.formatColoms = ['state'];
             this.availableEmails = [];
             this.id = id;
@@ -205,7 +205,7 @@ var cronManager = (function () {
                 }
                 
                 if(e.target.innerText.trim() == "delete"){
-                    
+                    spinner.on();
                     if(cronManager.timestampDelete){
                         var diff = Date.now() - cronManager.timestampDelete;
                         console.log(diff);
@@ -251,6 +251,7 @@ var cronManager = (function () {
                             }
                         }
                         e.target.parentNode.parentNode.parentNode.style.backgroundColor = "";
+                        spinner.off();
                         return;
                 }
                 
@@ -259,39 +260,55 @@ var cronManager = (function () {
                     cronManager.addCronJob(email);
                     return;
                 }
-                if(e.target.innerText.trim() == "* * 31 2 *"){
-                    return;
-                }
+//                if(e.target.innerText.trim() == "* * 31 2 *"){
+//                    return;
+//                }
                 if(e.target.innerText.trim() == "pause"){
+                    spinner.on();
                     var tmpTdId = e.target.parentNode.parentNode.id.replace("_state","_expression");
-                    var tmpTd = e.target.parentNode.parentNode.parentNode.querySelector('#'+tmpTdId);
-                    tmpTd.innerText = "0 * 31 2 *"
-                    var inputValue = "0 * 31 2 *";
+
+                    //var tmpTdIdActive = e.target.parentNode.parentNode.id.replace("_state","_active");
+                    //var tmpTdActive = e.target.parentNode.parentNode.parentNode.querySelector('#'+tmpTdIdActive);
+                    
+                    //var tmpTd = e.target.parentNode.parentNode.parentNode.querySelector('#'+tmpTdId);
+                    //tmpTd.innerText = "0 * 31 2 *"
+                    //var inputValue = "0 * 31 2 *";
                     var id = tmpTdId;
                     var idParts = id.split('_');
                     var cronId = idParts[1];
-                    var cronField = idParts[2];
-                    await cronManager.saveJsonField(cronId, cronField, inputValue, id);
+                    //var cronField = idParts[2];
+                    
+                    //await cronManager.saveJsonField(cronId, cronField, inputValue, id);
+                    
+                    await cronManager.saveJsonField(cronId, "active", "active", id);
+                    
                     e.target.innerText = "active";   
                     e.target.classList.remove("state-pause");
                     e.target.classList.add("state-active");
+                    spinner.off();
                     return;
                 }
                 
                 if(e.target.innerText.trim() == "active"){
-                    console.log(e.target);
+                    spinner.on();
+                    //console.log(e.target);
                     var tmpTdId = e.target.parentNode.parentNode.id.replace("_state","_expression");
-                    var tmpTd = e.target.parentNode.parentNode.parentNode.querySelector('#'+tmpTdId);
-                    tmpTd.innerText = "* * 31 2 *";
-                    var inputValue = "* * 31 2 *";
+                    //var tmpTd = e.target.parentNode.parentNode.parentNode.querySelector('#'+tmpTdId);
+                    //tmpTd.innerText = "* * 31 2 *";
+                    //var inputValue = "* * 31 2 *";
                     var id = tmpTdId;
                     var idParts = id.split('_');
                     var cronId = idParts[1];
-                    var cronField = idParts[2];
-                    await cronManager.saveJsonField(cronId, cronField, inputValue, id);
+                    //var cronField = idParts[2];
+                    
+                    //await cronManager.saveJsonField(cronId, cronField, inputValue, id);
+                    
+                    await cronManager.saveJsonField(cronId, "active", "pause", id);
+                    
                     e.target.innerText = "pause";
                     e.target.classList.remove("state-active");
                     e.target.classList.add("state-pause");
+                    spinner.off();
                     return;
                 }
                 
@@ -319,7 +336,9 @@ var cronManager = (function () {
                         // console.log('currently editing');
                     }else{
                         if(dropDownField){
-                            cronManager.saveEmailDropDownField(dropDownField);
+                            spinner.on();
+                            await cronManager.saveEmailDropDownField(dropDownField);
+                            spinner.off();
                         }else if(inputField){
                             var inputValue = inputField.value;
                             var id = inputField.parentNode.id;
@@ -328,7 +347,9 @@ var cronManager = (function () {
                             var cronField = idParts[2];
                             inputField.parentNode.innerText = inputValue;
                             inputField.remove();
+                            spinner.on();
                             await cronManager.saveJsonField(cronId, cronField, inputValue, id);
+                            spinner.off();
                         }
                     }
                     return;
@@ -337,6 +358,7 @@ var cronManager = (function () {
         },
         
         addCronJob : async function(email){
+            spinner.on();
             if(!email){
                 email = "set-email@no-email.com";
             }
@@ -526,15 +548,21 @@ var cronManager = (function () {
             let table = new Table();
             if(cronJobJson !== null){
                 for (var i = 0; i < cronJobJson.length; i++) {
-                    if(!cronJobJson.hasOwnProperty('state')){
-                        cronJobJson[i].state = "active";
-                        
-                        if(cronJobJson[i].expression == "* * 31 2 *"){
-                            cronJobJson[i].state = "pause";
-                        }
-                        // * * 31 2 * disabled cron -- “At every minute on
-                        // day-of-month 31 in February.”
+                    
+
+                    
+                    if(cronJobJson[i].active == "null"){
+                        cronJobJson[i].active = "pause";
                     }
+                    
+                    cronJobJson[i].state = cronJobJson[i].active;
+                    
+//                    if(!cronJobJson.hasOwnProperty('state')){
+//                        cronJobJson[i].state = "active";
+//                        if(cronJobJson[i].expression == "* * 31 2 *"){
+//                            cronJobJson[i].state = "pause";
+//                        }
+//                    }
                 }  
                 var tbl = table.createJsonTable("serverId", cronJobJson, cronManager.editableColoms, cronManager.hiddenColoms, cronManager.formatColoms);
                 tbl.style.marginTop = '20px'; 

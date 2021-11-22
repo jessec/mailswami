@@ -40,6 +40,10 @@ body, html {
 	background-color: #777;
 }
 
+#serverId-table > tbody > tr:nth-child(1) > td:nth-child(9) {
+	color:transparent;
+}
+
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
 	color: white;
