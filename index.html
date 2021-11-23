@@ -155,6 +155,81 @@
         };
     </script>
     <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        td,
+        th {
+            text-align: center;
+            padding: 6px;
+            border: solid 1px #ccc;
+            font-size: 22px;
+            font-family: 'Montserrat';
+        }
+        
+        td {
+            color: red;
+        }
+        
+        .check {
+            color: limegreen;
+            font-size: 30px;
+        }
+        
+        th:first-child,
+        td:first-child {
+            _font-weight: bold;
+            color: #959597;
+        }
+        
+        .visible-xs {
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .check {
+                color: limegreen;
+                font-size: 20px;
+            }
+            .visible-xs {
+                display: table-row;
+                background: #efefef;
+            }
+            .visible-xs td,
+            th {
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: 'Montserrat';
+            }
+            td:first-child,
+            th:first-child {
+                display: none;
+            }
+        }
+        
+        .p {
+            text-align: center;
+            font-size: 13px;
+            padding-top: 130px;
+        }
+    </style>
+    <style>
         .validationtext {
             display: none;
             color: red;
@@ -382,7 +457,7 @@
                     <div class="row text-center">
                         <div class="col-sm-12">
                             <div class="intro">
-                                <h2>Price .</h2>
+                                <h2>Price per user per month.</h2>
                             </div>
                         </div>
                     </div>
@@ -394,133 +469,63 @@
             <div id="features" class="ft-flex">
                 <div class="container">
 
-                    <div class="ft-inner align-center">
-
-                        <div class="ft-text">
-                            <div class="ft-content">
-                                <h2>MailSwami.</h2>
-                                <br>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                                <br>
-                                <h3>10 X</h3>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ft-text">
-                            <div class="ft-content">
-                                <h2>LemList</h2>
-                                <br>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                                <br>
-                                <h3>10 X</h3>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ft-inner align-center">
-                        <div class="ft-text">
-                            <div class="ft-content">
-                                <h2>MailSwami.</h2>
-                                <br>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                                <br>
-                                <h3>10 X</h3>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ft-text">
-                            <div class="ft-content">
-                                <h2>Woodpecker</h2>
-                                <br>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                                <br>
-                                <h3>10 X</h3>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ft-inner align-center">
-                        <div class="ft-text">
-                            <div class="ft-content">
-                                <h2>MailSwami.</h2>
-                                <br>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                                <br>
-                                <h3>10 X</h3>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ft-text">
-                            <div class="ft-content">
-                                <h2>Mail Shake</h2>
-                                <br>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                                <br>
-                                <h3>10 X</h3>
-                                <ul>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $6 warm-up
-                                    </li>
-                                    <li><img src="assets/icons/tick.svg" alt="Tick"> $24 software
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>MailSwami.</th>
+                                <th>LemList</th>
+                                <th>Mail Shake</th>
+                                <th>Woodpecker</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="visible-xs" aria-hidden="true">
+                                <td>&nbsp;</td>
+                                <td colspan="4">Email Marketing</td>
+                            </tr>
+                            <tr>
+                                <td>Email Marketing</td>
+                                <td><b class="check">✔</b></td>
+                                <td><b class="check">✔</b></td>
+                                <td><b class="check">✔</b></td>
+                                <td><b class="check">✔</b></td>
+                            </tr>
+                            <tr class="visible-xs" aria-hidden="true">
+                                <td>&nbsp;</td>
+                                <td colspan="4">Email Warm-up</td>
+                            </tr>
+                            <tr>
+                                <td>Email Warm-up</td>
+                                <td>&mdash;</td>
+                                <td><b class="check">✔</b></td>
+                                <td><b class="check">✔</b></td>
+                                <td><b class="check">✔</b></td>
+                            </tr>
+                            <tr class="visible-xs" aria-hidden="true">
+                                <td>&nbsp;</td>
+                                <td colspan="4">Spam Protection</td>
+                            </tr>
+                            <tr>
+                                <td>Spam Protection</td>
+                                <td>&mdash;</td>
+                                <td>&mdash;</td>
+                                <td><b class="check">✔</b></td>
+                                <td><b class="check">✔</b></td>
+                            </tr>
+                            <tr class="visible-xs" aria-hidden="true">
+                                <td>&nbsp;</td>
+                                <td colspan="4">Opt In Blast</td>
+                            </tr>
+                            <tr>
+                                <td>Opt In Blast</td>
+                                <td>&mdash;</td>
+                                <td>&mdash;</td>
+                                <td><b class="check">✔</b></td>
+                                <td><b class="check">✔</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
