@@ -278,4 +278,6 @@ table td { border: 1px solid white; }
 
 .post-list > li { background-color: #f0f5f9; margin-top: 10px; box-sizing: border-box; padding: 10px; }
 
+.template-head { background-color: #95b8d5; box-sizing: border-box; padding: 5px; padding-top: 20px; padding-left: 20px; margin-top: 20px; margin-bottom: 40px; }
+
 /*# sourceMappingURL=main.css.map */
