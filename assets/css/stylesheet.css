@@ -2026,3 +2026,7 @@ body {
     box-sizing: border-box;
     padding: 20px;
 }
+
+h2 {
+    color: #053966 !important;
+}
