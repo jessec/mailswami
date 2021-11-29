@@ -280,4 +280,6 @@ table td { border: 1px solid white; }
 
 .template-head { background-color: #95b8d5; box-sizing: border-box; padding: 5px; padding-top: 20px; padding-left: 20px; margin-top: 20px; margin-bottom: 40px; }
 
+code { white-space: pre-line; background-color: transparent; font-family: unset; }
+
 /*# sourceMappingURL=main.css.map */

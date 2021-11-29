@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-29T17:15:17+07:00</updated><id>/feed.xml</id><title type="html">MailSwami.</title><subtitle>No more deliverability issues for you. Our AI engine positively interacts with your emails to increase your sender reputation, so you never land in the spam folder.</subtitle><entry><title type="html">How to Prepare an Email Account for Cold Email Sending</title><link href="/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html" rel="alternate" type="text/html" title="How to Prepare an Email Account for Cold Email Sending" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending</id><content type="html" xml:base="/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html">&lt;p&gt;How to Prepare an Email Account for Cold Email Sending&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-29T19:06:14+07:00</updated><id>/feed.xml</id><title type="html">MailSwami.</title><subtitle>No more deliverability issues for you. Our AI engine positively interacts with your emails to increase your sender reputation, so you never land in the spam folder.</subtitle><entry><title type="html">How to Prepare an Email Account for Cold Email Sending</title><link href="/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html" rel="alternate" type="text/html" title="How to Prepare an Email Account for Cold Email Sending" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending</id><content type="html" xml:base="/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html">&lt;p&gt;How to Prepare an Email Account for Cold Email Sending&lt;/p&gt;
 
 &lt;p&gt;Refresh Your Email Account
 When conducting a cold email campaign, email deliverability is critical. According to ReturnPath’s analysis, more than 20% of emails never make it to the inbox. At SalesHandy, we frequently see fresh email accounts used for cold email campaigns being stopped as soon as the campaign begins.&lt;/p&gt;
@@ -473,11 +473,491 @@ In this section, we will discuss the benefits of good email communication.&lt;/p
 
 &lt;p&gt;test
 dsf
-test&lt;/p&gt;</content><author><name></name></author><category term="analytics" /><summary type="html">Test Pillar</summary></entry><entry><title type="html">Deliverability</title><link href="/deliverability/intro.html" rel="alternate" type="text/html" title="Deliverability" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/deliverability/intro</id><content type="html" xml:base="/deliverability/intro.html">&lt;p&gt;Test Pillar&lt;/p&gt;
+test&lt;/p&gt;</content><author><name></name></author><category term="analytics" /><summary type="html">Test Pillar</summary></entry><entry><title type="html">Deliverability</title><link href="/deliverability/intro.html" rel="alternate" type="text/html" title="Deliverability" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/deliverability/intro</id><content type="html" xml:base="/deliverability/intro.html">&lt;h3 id=&quot;deliverability&quot;&gt;Deliverability&lt;/h3&gt;
+&lt;p&gt;Contents&lt;/p&gt;
 
-&lt;p&gt;test
-dsf
-test&lt;/p&gt;</content><author><name></name></author><category term="deliverability" /><summary type="html">Test Pillar</summary></entry><entry><title type="html">Scale</title><link href="/scale/intro.html" rel="alternate" type="text/html" title="Scale" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/scale/intro</id><content type="html" xml:base="/scale/intro.html">&lt;p&gt;Test Pillar&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Introduction to email deliverability&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;1.1 What is email deliverability?
+1.2 Why do emails bounce?
+1.3 What happens when emails get delivered?
+1.4 Spam, the worst?
+1.5 Summing up
+1.6 So, why is this important when it comes to sales?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;What influences deliverability?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;2.1 Technical configuration
+2.2 Reputation
+2.3 Content
+2.4 Volume
+2.5 Data quality
+2.6 Email stack&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;How can I improve my email deliverability?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;3.1 Set up the correct technical configuration
+3.2 Improve Your Reputation
+3.3 Content
+3.4 Be mindful of your email volume
+3.5 Make sure you have the highest quality of email data
+3.6 Recipient’s email stack&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;TL;DR&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Introduction to email deliverability&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;1.1 What is email deliverability?&lt;/p&gt;
+
+&lt;p&gt;Email deliverability is the ability of outbound emails to make it into their recipient’s inboxes. The result of excellent and poor deliverability only has two possible outcomes: emails can either bounce or be successfully delivered. This is why deliverability has become an essential factor driving email success (or failure) for any organization doing outbound sales in 2021.&lt;/p&gt;
+
+&lt;p&gt;1.2 Why do emails bounce?&lt;/p&gt;
+
+&lt;p&gt;A bounce happens when an email fails to be delivered to the recipient’s mailbox. This can happen for several reasons. One of the most common reasons is when the email address doesn’t exist. For example, when there is a typo in an email or when someone has left the company, these situations are called hard bounces.
+There are other possible reasons why your emails may bounce, including if the recipient’s inbox is full, the email is too large, etc - these are called soft bounces.&lt;/p&gt;
+
+&lt;p&gt;1.3 What happens when emails get delivered?&lt;/p&gt;
+
+&lt;p&gt;Getting an email delivered means that the email made it into one of the recipient’s, inbox folders. It does not mean that you are in the primary inbox. Email providers use algorithms to determine whether a specific email should be placed in the primary, inbox, social folder, promotions folder or in the spam folder.&lt;/p&gt;
+
+&lt;p&gt;1.4 Spam, the worst?&lt;/p&gt;
+
+&lt;p&gt;When sending out cold emails, some of them might land in the span. folder. This can happen for multiple reasons.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Someone marks your email as spam 
+• You have a missing or incorrect email domain setup 
+• Your domain has a poor reputation 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We will dive into these in the following sections. Spam is something that you want to avoid as much as possible and we will provide a few practical insights on how to do it.&lt;/p&gt;
+
+&lt;p&gt;1.5 Summing up…&lt;/p&gt;
+
+&lt;p&gt;Deliverability, as we define it here, is the ability to send an email that makes it to the primary inbox of your recipient. In this guide we’ll explain which factors increase the chances of your emails landing in Me Primary inbox.&lt;/p&gt;
+
+&lt;p&gt;[Image: Only a percentage of the emails you send go to the primary inbox and are opened by your recipients.]&lt;/p&gt;
+
+&lt;p&gt;1.6 So, why is this important when it comes to sales?&lt;/p&gt;
+
+&lt;p&gt;Deliverability is one of most important metrics for sales, marketing, and growth teams at B2B companies. These teams are revenue drivers and email is one of their main channels to engage with prospects and generate revenue.&lt;/p&gt;
+
+&lt;p&gt;We could summarize deliverability and its impact like this:&lt;/p&gt;
+
+&lt;p&gt;Better Deliverability -&amp;gt; More Sales Conversations -&amp;gt; Increased Sales Pipeline -&amp;gt; More New Customers -&amp;gt; Revenue!!!&lt;/p&gt;
+
+&lt;p&gt;For B2B companies improving their “top of the funnel; engaging with more prospects translates directly into more revenue at the “bottom of the funnel”.&lt;/p&gt;
+
+&lt;p&gt;A good deliverability rate at the “top of the funnel”  affects your projections for revenue, i.e. if you increase your deliverability by 50%, You would be able to increase your revenue projections by 50%.&lt;/p&gt;
+
+&lt;p&gt;So, really, for sales teams:&lt;/p&gt;
+
+&lt;p&gt;Deliverability = Revenue!!!&lt;/p&gt;
+
+&lt;p&gt;In the next sections, we’ll discuss what influences deliverability and which easy steps you can take to improve deliverability.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;What influences deliverability?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;2.1 Technical Configuration&lt;/p&gt;
+
+&lt;p&gt;Incorrect or missing configurations of your email domain will hurt your deliverability. The first thing you need to ensure is that you have your email domain properly set up.&lt;/p&gt;
+
+&lt;p&gt;SPF, DKIM, and DMARC are common configurations used to double-check the sender’s identity. Without them, external attackers can easily send malicious emails on your behalf. If this happens, your emails will most likely end up in the spam folder.&lt;/p&gt;
+
+&lt;p&gt;Lets take a closer look at each one of these 3 configurations:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sender Policy Framework, SPF. SPF allows you to choose which servers can send emails from your domain. For example, if you only allow Gmail servers, only users that are signed into your account through the Gmail platform will be able to send emails.
+
+Domain Keys Identified Message, DKIM. DKIM attributes a digital signature to your emails so that the recipient&apos;s email can automatically check if there was any content changed by a third-party (i.e attachments, links, etc).
+
+Domain-based Message Authentication, Reporting &amp;amp; Conformance, DMARC. DMARC is build on top of SPF and DKIM and allows you to determine how you want to deal with any actions that trigger security alerts. In a nutshell, this will be your security-breach reporting process.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2.2 Reputation&lt;/p&gt;
+
+&lt;p&gt;Every sender’s IP, domain, and individual email address has a reputation score. You can think of this reputation as karma points :  “good” behavior will give you positive points, and “bad” behavior will give you negative points.&lt;/p&gt;
+
+&lt;p&gt;What an individual user does will impact their own reputation but it will also impact the company’s domain and IP address reputation.&lt;/p&gt;
+
+&lt;p&gt;Let’s dive deeper into the different aspects of reputation:&lt;/p&gt;
+
+&lt;p&gt;a) Sender reputation&lt;/p&gt;
+
+&lt;p&gt;The sender’s reputation is the reputation attributed to the specific mailbox from which the email is being sent - this corresponds to your individual reputation.&lt;/p&gt;
+
+&lt;p&gt;The main factors influencing your sender reputation are:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• The history of your email address. If you have an email address that has a lot of history, i.e. it was created years ago and has been used to send and receive a lot of emails then you you have a strong reputation. On Me other hand, a brand new email address has a weak reputation. 
+
+• Your daily activity. If you send email. that are marked as spam, you will end up hurting your reputation. If most of your emails are responded to and you have a lot of email threads, you will positively impact your reputation. 
+
+• Your send volume. If you send a burst of hundreds of emails in a short period of time and they all look 99% alike you will hurt your reputation. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;b) Domain reputation&lt;/p&gt;
+
+&lt;p&gt;Domain reputation aggregates the reputation of individual mailboxes. Think of it as the sum of all senders reputation scores that belong to the same domain.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@domain.com reputation = employee[1]@domain.com + 			employee[2]@domain.com + — + employee[N]@domain.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If one user is flagged, they will hurt their own reputation and the entire domain. New domains, given their limited history, have a fragile reputation so you need to pay special attention to your activity during the first weeks or even months.&lt;/p&gt;
+
+&lt;p&gt;c) IP address reputation&lt;/p&gt;
+
+&lt;p&gt;Similarly to domain reputation, all of the users activity within an IP will impact that IP address reputation.&lt;/p&gt;
+
+&lt;p&gt;The main difference is that several companies could be sharing the same IP address. For instance, you could be sending emails responsibly and still have a poor IP reputation because of the other companies using the same platform to send their emails (i.e Hubspot, Sendgrid, Mailchimp, etc).&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Why do companies share the same IP? Having a single dedicated IP is expensive and it usually comes as an extra feature. Thus, most people end up sharing the IP address to reduce costs.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;d) Temporary Reputation&lt;/p&gt;
+
+&lt;p&gt;When too many emails are marked as spam in a short period of time, the sender could end up in “spam jail”. This will affect reputation for 48 to 72 hours of time.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;All of the factors mentioned here work in tandem and are all interconnected. Thanks to this breakdown you can now get a better understanding of where you reputation-related deliverability problems might be coming from.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2.3 Content&lt;/p&gt;
+
+&lt;p&gt;Good reputation helps. But, if the content of your email isn’t relevant, your emails can go to the wrong folder and be marked as spam. If you constantly use words like “Free”, “Promotion”, “Buy now”, etc… your emails will not land in the primary inbox.&lt;/p&gt;
+
+&lt;p&gt;The examples above are just the tip of the iceberg when it comes to content-related factors. Let’s explore what other content issues could be impacting your email deliverability.&lt;/p&gt;
+
+&lt;p&gt;a) Sending the same content too many times&lt;/p&gt;
+
+&lt;p&gt;Most of the emails that you consistently use the same template over time, allowing it to be flagged as spam enough times that you essentially “wear it out” and “ding” your reputation.&lt;/p&gt;
+
+&lt;p&gt;b) Enabling open and click tracking&lt;/p&gt;
+
+&lt;p&gt;The typical “open” tracking software adds a pixel image to every email, so it can track how many times it has been seen. Standard tracking pixels are shared across thousand of companies and have already been identified by most email clients like Gmail and Outlook. If you are not using a custom tracking pixel, you might be suffering from poor deliverability.&lt;/p&gt;
+
+&lt;p&gt;Click tracking software uses a “redirect method” to track when a recipient clicks on a link in the emails you send. Click tracking has an especially negative impact when it comes to deliverability due to the amount of “unrelated” links that are added to your email body.&lt;/p&gt;
+
+&lt;p&gt;c) Adding too many links images&lt;/p&gt;
+
+&lt;p&gt;Emails with too many images and links are typical characteristics of marketing emails, so these emails can easily be diverted from the primary inbox.&lt;/p&gt;
+
+&lt;p&gt;d) Having complex signatures&lt;/p&gt;
+
+&lt;p&gt;Adding complex signatures with HTML code, too many links or images might hinder your deliverability and hurt your chances to make it to the primary inbox.&lt;/p&gt;
+
+&lt;p&gt;2.4 Volume&lt;/p&gt;
+
+&lt;p&gt;On top of reputation and content, another important factor to take into account is the volume of emails that you’re sending:&lt;/p&gt;
+
+&lt;p&gt;a) Unusual spikes in the activity of emails&lt;/p&gt;
+
+&lt;p&gt;Sending too many emails within a short period of time and having very little activity in the remaining periods might trigger suspicious activity warnings. Furthermore, sending bursts of emails increases the likelihood of multiple recipients marking you emails as spam in a similar time-frame.&lt;/p&gt;
+
+&lt;p&gt;b) Number of emails sent vs emails received ratio&lt;/p&gt;
+
+&lt;p&gt;When this ratio is too high, it means that you send a lot of emails that go unanswered. This is a problem especially for sales emails. Why?&lt;/p&gt;
+
+&lt;p&gt;Think of an email sequence sent to 1000 prospects that has a first touch and 3 follow-up emails. If you achieve a 20% reply ratio, you’ll have 800 first touches plus 800*3 follow ups that never had an answer. You’ll end up, therefore, with an imbalance ratio of 3400-4000 emails sent vs 200 emails received!&lt;/p&gt;
+
+&lt;p&gt;c) Amount of email engagement&lt;/p&gt;
+
+&lt;p&gt;The more people who engage with your emails the better. If more people are opening and replying to your emails, the more likely it is that your emails will make it to the primary inbox.&lt;/p&gt;
+
+&lt;p&gt;This engagement can be measured in terms of open rates, reply rates, archived email rates, percentage of clicked links, etc…&lt;/p&gt;
+
+&lt;p&gt;2.5 Data quality&lt;/p&gt;
+
+&lt;p&gt;Data quality is an often overlooked part of email deliverability. When it comes to sales emails, you want to make sure that you are sending the right emails to the right people. Invest time in prospecting and validating your contact information.&lt;/p&gt;
+
+&lt;p&gt;a) Bounces&lt;/p&gt;
+
+&lt;p&gt;If you’re using poor email data, it’s likely that a high percentage of your emails will bounce. Having a high bounce rate will trigger suspicious activity warnings and hurt your deliverability.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;What bounce rate is considered safe? When it comes to cold outbound sales, having a bounce rate around 10% is considered safe and will not hinder deliverability.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;b) The wrong people are receiving your emails&lt;/p&gt;
+
+&lt;p&gt;A good lead generation process will help deliverability. If you contact the right people with the right message at the right time, you are maximizing the engagement rate of your emails and reducing the spam rate. This will help improve any future deliverability rates.&lt;/p&gt;
+
+&lt;p&gt;2.6 Email stack&lt;/p&gt;
+
+&lt;p&gt;Lastly, email deliverability will also be influenced by your recipient’s email stack (i.e Gmail, Outlook, Mailgun, etc) and any other tools that they might have in place to deal with unauthorized emails (additional verification’s and spam filters).&lt;/p&gt;
+
+&lt;p&gt;For example, companies with strict spam rules block all emails from domains they don’t usually interact with, or ask the sender additional email confirmation notices.&lt;/p&gt;
+
+&lt;p&gt;These standards differ substantially between industries: Medical and Health-care industry, Government and Defense, or Finance and Fintech are usually spam strict industries.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;How can I improve my email deliverability?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now that we have a better understanding of the factors influencing deliverability, we can start thinking about how to improve and maintain a high deliverability rating. As previously stated, protecting and improving deliverability is key to having good sales results.&lt;/p&gt;
+
+&lt;p&gt;In this section, we will dive deeper into practical tips you can implement to improve your deliverability.&lt;/p&gt;
+
+&lt;p&gt;3.1 Set up the right technical configuration&lt;/p&gt;
+
+&lt;p&gt;First things first, make sure your email domain and mailboxes are properly set up.&lt;/p&gt;
+
+&lt;p&gt;a) SPF, DKIM, and DMARC&lt;/p&gt;
+
+&lt;p&gt;An incorrect configuration of your SPF, DKIM, and DMARC will increase the likelihood of your emails ending up in the spam folder. Make sure you correctly set up all these 3 configurations.&lt;/p&gt;
+
+&lt;p&gt;For Google users:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Set up SPF&lt;/li&gt;
+  &lt;li&gt;Set up DKIM&lt;/li&gt;
+  &lt;li&gt;Set up DMARC&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For Exchange users:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Set up SPF&lt;/li&gt;
+  &lt;li&gt;Set up DKIM&lt;/li&gt;
+  &lt;li&gt;Set up DMARC&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you are not the Administrator of your email domain, send these articles to the members of your team who will be able to set these up.&lt;/p&gt;
+
+&lt;p&gt;b) Custom domain tracking&lt;/p&gt;
+
+&lt;p&gt;By default, email sequencing tools use a shared domain to track all email opens. While this provides immediate stats, it can impact the deliverability of your emails.&lt;/p&gt;
+
+&lt;p&gt;Set up a custom domain tracking and your deliverability reputation is entirely under your own control.&lt;/p&gt;
+
+&lt;p&gt;c) Mailbox setup&lt;/p&gt;
+
+&lt;p&gt;It can be easy for your recipients to forget that there’s a real person behind these emails. In order to make your mailbox look authentic, complete all the information on your profile.&lt;/p&gt;
+
+&lt;p&gt;Remember to add your name, a photo to your Google or Exchange accounts so your prospects can see the preview before they open your emails.&lt;/p&gt;
+
+&lt;p&gt;[Image: Contact on the left side has all the information missing, whereas the contact on the right side is complete.]&lt;/p&gt;
+
+&lt;p&gt;3.2. Improve Your Reputation&lt;/p&gt;
+
+&lt;p&gt;One of the most important things when it comes to deliverability is reputation. You want to ensure that you maximize your sender and your domain reputations.&lt;/p&gt;
+
+&lt;p&gt;a) Sender reputation&lt;/p&gt;
+
+&lt;p&gt;Here are a few tips on how you can maximize your sender reputation:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Increase your engagement rate. Add different types of activity to your mailbox in order to maximize the engagement rate and increase the number of non-sales activities. For example, you should exchange emails with colleagues, customers, friends, and subscribe to forums and newsletters .
+
+• Don’t overload your mailbox. Track all of the emails you’re sending; this includes both new prospects and all of your existing sequence follow-ups. Ideally, this number is below 350 emails per mailbox per day .
+
+• Create new mailboxes and spread volume. I n order to keep a healthy reputation, it’s worth controlling several mailboxes for the same user under the same domain, e.g .: john @ company.com and john.doe @ company.com. This allows you to avoid overloading a mailbox by spreading the volume across different mailboxes.
+
+• Subscribe to a w arm - up net w or k . W arming up a mailbox is the equivalent of consolidating its reputation by adding high-quality volume and engagement. I f you are an MailSwami user you can do this automatically, learn more about the warm-up network here .
+
+• Monitor your daily activity. If you use your mailbox mainly for sales emails, you should monitor the quality of your conversations. If you have a lot of prospects asking you to Stop or Unsubscribe, you should review your lead generation process and your email templates as quickly as possible.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[Image: Barometer for open rate benchmarks 24h after the first email is sent.]&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Send emails to personal mailboxes and have them mark your emails as not spam. When doing sales email outreach, it’s normal to have a number of emails marked as spam. Something you can do to curb this is to periodically send emails to personal email addresses (@gmail.com, @yahoo.com, @outlook.com...) and have the recipient mark you as not spam if they find your email in the spam folder.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;b) Domain reputation&lt;/p&gt;
+
+&lt;p&gt;The reputation of a domain is the sum of the reputations of all its individual mailboxes. A few tips to improve your domain reputation:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Make sure all your mailboxes follow the deliverability rules. In order to guarantee a strong email domain reputation, make sure all of the individual mailboxes in your account follow the rules mentioned in the previous section. Deliverability should, therefore, be an essential part of all your onboarding programs for new members in the sales team.
+
+• Create multiple domains. When doing cold outreach via email, it’s best to have multiple domains. The goal is to not overload and hurt the reputation of a single domain. You should purchase and set up different email domains, e.g.: company.com, companyapp.com, getcompany.com, trycompany.com, etc… Buying additional domains is like buying insurance for your sales team (note: a new domain costs about $15/year).
+
+• Spread email volume across different domains. With the multiple alias email domains you created, spread out the sending volume evenly. 
+
+• Warm-up your domains. It used to be possible to create a new domain and immediately start sending hundreds of sales emails. This type of behavior is no longer tolerated and domains with poor history will be marked as spam… fast! For every new domain you create, make sure to warm it up for at least 4 weeks before you start sending any outbound emails.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Read more about this here: MailSwami Warm -Up Network .&lt;/p&gt;
+
+&lt;p&gt;c) IP address reputation&lt;/p&gt;
+
+&lt;p&gt;IPs are usually shared across multiple domains.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Test your deliverability rates using different email platforms. Pay attention to which platforms you use to send emails (not only for sales but marketing, too). IPs are usually shared across multiple domains. If you are setting up a new IP you should make sure you create a dedicated IP for your company’s exclusive usage. This way, you can have complete control over its reputation.
+
+
+• Test your deliverability rates using different email platforms. Pay attention to which platforms you use to send emails (not only for sales but marketing, too). IPs are usually shared across multiple domains. If you are setting up a new IP you should make sure you create a dedicated IP for your company’s exclusive usage. This way, you can have complete control over its reputation.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;d) Temporary Reputation&lt;/p&gt;
+
+&lt;p&gt;Your deliverability can be temporarily hit if some of your emails are reported as spam.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Monitor open rates. Your deliverability can be temporarily hit if some of your emails are reported as spam. If you see open rates below 20% for a few of your first email sends, you’re likely having a spam issue.
+
+• Pause or delay any new outreach. The best way to solve a temporary deliverability issue is to hit ‘pause’ on any of your planned activity. Delay all new emails by 48-72 hours and you should see an increase in open rates. If the problem persists then you might be experiencing a more serious deliverability problem.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.3 Content&lt;/p&gt;
+
+&lt;p&gt;In order to maximize your engagement and reply rates: Make sure you’re sending a message to the right person at the right time.&lt;/p&gt;
+
+&lt;p&gt;Here are a few practical things you can do to improve your engagement rates:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Add variability to your sales outreach. Most sales teams create 2 or 3 different templates and end up using the same email copy every day. It’s easy for spam filters to pick up on this type of behavior. Therefore, you should have a number of different approaches being sent out from your mailbox, every single month. The best way to do this is to run monthly sales initiatives, where you A/B test different email templates with different audiences.
+
+• Don’t “wear out” email copy. If you’re using the same template for months on end, spam filters will have seen it being reported enough times that you end up going to spam automatically. You should review your templates periodically to avoid this issue.
+
+• Avoid using links and images. Reduce the number of links and images in your sales emails. The more images and links you add to an email the more likely it is to be marked as spam or to land in the promotions folder.
+
+• Avoid using click tracking features. Click tracking softare wraps your links in a different set of “unrelated domains” which has a substantial impact on your deliverability. If you’re using click tracking and experience low open rates, try quick test ( even if you’re using well - known tools like Mailchimp ) . You might be surprised by disabling it and running a the results.
+
+• Simplify email signatures. Don’t use complex HTML signatures. In the case of signatures, less is more. You don’t want your emails to go to spam because of your signature. Use a signature that is plain text only, with your name, and (at most) 2 to 3 different links (e.g.: company website, LinkedIn, calendar, etc...).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[Image: HTML complexity for two different email signatures. On the left, it shows a complex signature with multiple links and images, while on the right is a simple signature with only one link.]&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• The obvious. Avoid using spam triggering words like “Free”, “Promotion”, “Exclusive”, etc. You can learn more about this here.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.4. Be mindful of your email volume&lt;/p&gt;
+
+&lt;p&gt;Every email and domain has a limit on volume capacity. For example, at MailSwami, we consider the maximum number of emails you should send in a day to be 350. Beyond this daily number, your account may end up blocked by email providers like Gmail and Outlook.&lt;/p&gt;
+
+&lt;p&gt;When sending sales emails, be extra careful with the amount of volume you send from a specific mailbox and domain. Here are a few basic volume rules to follow:&lt;/p&gt;
+
+&lt;p&gt;a) Create new domains and mailboxes&lt;/p&gt;
+
+&lt;p&gt;As we’ve mentioned, having multiple mailboxes and email domains helps with reputation management but it also allows you to do more sales volume.&lt;/p&gt;
+
+&lt;p&gt;If you plan on ramping up email volume, then it’s best to create new domains and mailboxes in order to disperse the volume. Pay special attention to any new domains which may have a poor reputation, and remember to warm them up for at least 4 weeks before you send any sales email to unverified emails.&lt;/p&gt;
+
+&lt;p&gt;Note that larger companies may take advantage of their strong domain. Having a high ratio between non-sales mailboxes vs. sales mailboxes will help maintain a positive reputation within your main domain.&lt;/p&gt;
+
+&lt;p&gt;b) Send small and recurring batches of new emails&lt;/p&gt;
+
+&lt;p&gt;Remember that deliverability algorithms look for suspicious behavior in your email activity. Instead of having huge spikes in the activity of your email, it’s important that you keep it more consistent (for example, the 30/40 emails a day).&lt;/p&gt;
+
+&lt;p&gt;For MailSwami customers: You can enable the Schedule feature to avoid sending new emails on days with too much activity already scheduled. Check this article on how to set it up .&lt;/p&gt;
+
+&lt;p&gt;[Image: Left side of the image shows the right volume flow with multiple mailboxes and domains, while on the right side is shown what you shouldn’t do, irregular email activity all through the same mailbox.]&lt;/p&gt;
+
+&lt;p&gt;c) Balance your sent vs received emails ratio&lt;/p&gt;
+
+&lt;p&gt;To prevent big disparities in your sent/received emails ratio, you should focus not only on maximizing your replies, but also to signing up for newsletters that will help balance your sent/received ratios.&lt;/p&gt;
+
+&lt;p&gt;Remember the example in the previous section about the huge disparity
+between sent vs received emails? This will help with that!&lt;/p&gt;
+
+&lt;p&gt;At MailSwami, we recommend that for each email received, no more
+than 4 emails should be sent.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sent / Received ratio = 4000 / 1000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[Image: The maximum ratio of emails sent / received is 4. This means that for any linear combination between emails sent and received you should always attempt to have a maximum of 4x more sent emails than received emails (while respecting all the other deliverability rules).]&lt;/p&gt;
+
+&lt;p&gt;3.5 Make sure you have the highest quality of email data&lt;/p&gt;
+
+&lt;p&gt;This is probably one of the most difficult pieces of the email deliverability puzzle to solve.&lt;/p&gt;
+
+&lt;p&gt;Data is easy to find. But good data isn’t. It’s not a surprise that this is the #1 factor of complaints in lead generation vendors, even though that’s their unique job.&lt;/p&gt;
+
+&lt;p&gt;In order to make sure you’re maximizing the full potential of your sales
+emails, there are a few things you can do:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Take time to refine your lead generation process. Find your relevant target audience.
+
+• Find buying intent signals (e.g.: someone who engages with LinkedIn content or attends a webinar that is relevant to your ICP is showing you that he/she is interested in your product or service - read this article to find high-intent strategies)
+
+• Bounce rates: Use high-quality lead generation tools. This is really important as you don’t want to pay for software that gives you bad quality data and makes your emails end up in spam.
+
+• A void contacting shared inbox as such as info@, sales@, hello @ ... Sales emails sent to shared inboxes are more likely to be marked as spam.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Above all, make sure you’re sending your emails to the right audience. These prospects are not only more likely to convert to paying customers but will also help you achieve higher engagement levels.&lt;/p&gt;
+
+&lt;p&gt;If you don’t put the time into defining your ideal customer and personalizing your emails, you’ll find that people will be less likely to engage with your emails, and more likely to mark you as spam.&lt;/p&gt;
+
+&lt;p&gt;3.6 Recipient’s email stack&lt;/p&gt;
+
+&lt;p&gt;Although this is the factor that you have the least control of, you should be mindful about it when designing your outbound initiatives.&lt;/p&gt;
+
+&lt;p&gt;Different industries and companies have different ways of dealing with unsolicited emails. In a nutshell, the recipient’s email stack will determine if the domain you are sending emails to has additional spam filters to block your emails.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Keep spam controls in mind and continuously test for different industries, locations, etc. If you start to notice any patterns in the deliverability of your emails, A/B test and refine your target audience, or adapt the way to do your campaigns.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Example. For some leads in the medical &amp;amp; healthcare industry (a spam-strict industry), you may be able to make your “cold” emails “warmer” by previously connecting with your prospects in other online platforms/communities, such as LinkedIn. Or perhaps, you should first nurture your leads with content before you pitch any type of promotional content.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;TL;DR&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To create a successful growth engine, sales teams need to pay special attention to email deliverability.&lt;/p&gt;
+
+&lt;p&gt;In a nutshell, the the main topics that will help you achieve a healthy deliverability score are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Setting up the right technical configuration for all your domains&lt;/li&gt;
+  &lt;li&gt;Building a strong reputation derived from solid email activity&lt;/li&gt;
+  &lt;li&gt;Creating well thought content and enough variability between email approaches&lt;/li&gt;
+  &lt;li&gt;Planning volume mindfully with no big spikes in activity&lt;/li&gt;
+  &lt;li&gt;Using the best quality data for emails&lt;/li&gt;
+  &lt;li&gt;Being mindful of your audience’s restrictions to cold outbound requests&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;At MailSwami, we take the deliverability of our customers seriously and give them the best tools for the ever-changing internet world.&lt;/p&gt;
+
+&lt;p&gt;Alongside many dedicated features within MailSwami that help you monitor your deliverability, we offer 2 special packages you might want to look at:&lt;/p&gt;
+
+&lt;p&gt;Warm Up / Done For You Email Finder&lt;/p&gt;
+
+&lt;p&gt;We created a deliverability checklist to help you take action and improve your deliverability today. You can find it on the next page.&lt;/p&gt;
+
+&lt;p&gt;Deliverability Checklist&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Your email configuration: 
+[ ] Set up your SPF, DKIM, and DMARC configurations
+[ ] Create a custom tracking domain to track open rates
+[ ] Complete your mailbox profile information (add your name, photo, signature…)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sender best practices - email content &amp;amp; volume:
+[ ] Enable MailSwami warm-up network to increase your sender reputation
+[ ] Subscribe to daily newsletters to increase the number of emails that you receive every day (you can set a filter on Gmail)
+[ ] Use your mailboxes for purposes other than sales and marketing like for example exchanging emails with colleagues, friends, customers… 
+[ ] Simplify email signatures: use plain text only, include your name and at most 2 to 3 different links (ex: company website, LinkedIn, calendar, etc)
+[ ] Avoid using SPAM triggering words like “Free”, “Promotion”, “Exclusive”, etc…
+[ ] Avoid links and images in your sales emails (include 1-2 maximum if you must)
+[ ] Disable click tracking features
+[ ] Send campaigns with at most 50 new leads per mailbox per day
+[ ] Keep your send volume to 350 emails per mailbox per day. Run multiple monthly sales initiatives, where you A/B test different email templates with different audiences to avoid sending thousands of emails that look 95% alike
+[ ] Review your templates periodically to avoid “template exhaustion”&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sender best practices - lead generation:
+[ ] Take time to refine your lead generation process in order to make sure you are reaching out to the right people in order to maximise positive replies
+[ ] Make sure you’re reaching out at the right time, when prospects are more likely to buy is also a big variable in getting responses and building a positive deliverability feedback loop.
+[ ] Avoid contacting shared inboxes such as info@, sales@, hello@…
+[ ] Periodically review your lead generation by leveraging the quality of your replies and conversations - try to avoid audiences that get you a lot of “hard no’s” as replies&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you want to ramp up volume:
+[ ] Create new mailboxes. For example if your name is John Doe create john@company.com and john.doe@company.com
+[ ] Create new domains. If you are using company.com, you could create getcompany.com, companyapp.com, trycompany.com, etc…
+[ ] For every new mailbox (and new domain) make sure to warm it up for at least 4 weeks before you send any sales content
+[ ] Balance your sent vs. received emails ratio on all of your mailboxes and domains&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="deliverability" /><summary type="html">Deliverability Contents</summary></entry><entry><title type="html">Scale</title><link href="/scale/intro.html" rel="alternate" type="text/html" title="Scale" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/scale/intro</id><content type="html" xml:base="/scale/intro.html">&lt;p&gt;Test Pillar&lt;/p&gt;
 
 &lt;p&gt;test
 dsf
