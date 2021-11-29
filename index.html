@@ -273,6 +273,14 @@
         #invite-code {
             font-weight: bolder;
         }
+        
+        #resources-menu {
+            display: none;
+        }
+        
+        #resources {
+            display: none;
+        }
     </style>
 </head>
 
@@ -349,6 +357,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" id="resources" href="#resources">Learning</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="#cta" data-toggle="modal" data-target="#contactFormLong">Contact</a></li>
                         <li><a class="btn-nav btn-outline nav-link" id="login-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Login</a></li>
@@ -361,6 +370,83 @@
 
 
         <div id="main" class="main">
+
+
+            <!-- Counter Section -->
+            <div id="resources-menu" class="yd-stats">
+                <div class="container-s">
+                    <div class="row text-center">
+                        <div class="col-sm-12">
+                            <div class="intro">
+                                <h4>Cold email is hard</h4>
+                                <h2>Just start but, don't forget to learn a long the way.</h2>
+
+                            </div>
+                        </div>
+
+                        <div style="display: dnone;" class="col-6 col-sm-3">
+                            <a href="/analytics/intro.html">
+                                <div class="counter-up">
+                                    <div class="counter-icon">
+                                        <img src="assets/icons/005-recruiter.png" alt="Icon">
+                                    </div>
+                                    <h3><span class="counteroff"></span>Analytics</h3>
+                                    <div class="counter-text">
+                                        <h2>Understand your results</h2>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div style="display: dnone;" class="col-6 col-sm-3">
+                            <a href="">
+                                <div class="counter-up">
+                                    <div class="counter-icon">
+                                        <img src="assets/icons/011-hierarchy.png" alt="Icon">
+                                    </div>
+                                    <h3><span class="counterd"></span>Scale</h3>
+                                    <div class="counter-text">
+                                        <h2>How to scale your campaigns</h2>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div style="display: dnone;" class="col-6 col-sm-3">
+                            <a href="">
+                                <div class="counter-up">
+                                    <div class="counter-icon">
+                                        <img src="assets/icons/048-nurturing.png" alt="Icon">
+                                    </div>
+                                    <h3><span class="counterd"></span>Deliverability</h3>
+                                    <div class="counter-text">
+                                        <h2>Increase deliverability repair reputation</h2>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div style="display: dnone;" class="col-6 col-sm-3">
+                            <a href="">
+                                <div class="counter-up">
+                                    <div class="counter-icon">
+                                        <img src="assets/icons/029-talk.png" alt="Icon">
+                                    </div>
+                                    <h3><span class="counterd"></span>Writing</h3>
+                                    <div class="counter-text">
+                                        <h2>How to write cold emails</h2>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Counter Section Ends -->
+
+
+
+
+
             <div class="home">
                 <div class="container">
                     <div class="hero-content wow fadeIn">
@@ -1327,6 +1413,7 @@
     <!-- Wrapper -->
 
 
+
     <!-- Jquery and Js Plugins -->
     <script src="assets/js/jquery-2.1.1.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -1337,6 +1424,15 @@
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     <script>
         userManager.init("user-manager", host);
+    </script>
+    <script>
+        $("#resources").on("click", function() {
+            $("#resources-menu").toggle();
+        });
+
+        if (location.host == 'localhost:4000') {
+            $("#resources").show();
+        }
     </script>
 </body>
 
