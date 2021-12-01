@@ -164,6 +164,7 @@ var invoiceManager = (function () {
             
             if(invoices.length == 0){
                 document.querySelector('#invoice-manager-messages').innerHTML = "No invoices have been created";
+                spinner.off();
             }else{
                 invoiceManager.invoices = invoices;
                 invoiceManager.invoices.reverse();
