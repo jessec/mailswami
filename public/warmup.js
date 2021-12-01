@@ -36,22 +36,17 @@ var accountManager = (function () {
             if(!serverJson.serverlist){
                 serverJson.serverlist = [];
             }
-
-            var timeZoneUrl = accountManager.serverUrl+"/api/dashboard/timezones?auth=" + authKey;
-            accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
-            accountManager.servers = serverJson.serverlist;
             
+            var hideDropDown = false;
             
             if(serverJson.serverlist.length == 0){
                 serverJson.serverlist[0] = "http://"+domain;
+                hideDropDown = true;
             }
-            
-            if(serverJson.serverlist.length > 0){
-                //serverJson.serverlist[0] = "http://"+domain;
-                accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
-            }
-            
-            
+            var timeZoneUrl = accountManager.serverUrl+"/api/dashboard/timezones?auth=" + authKey;
+            accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
+            accountManager.servers = serverJson.serverlist;
+            accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
             for (var i = 0; i < accountManager.servers.length; i++) {
                 await accountManager.createServerTable(accountManager.servers[i], authKey);
             }
@@ -67,6 +62,14 @@ var accountManager = (function () {
                     document.querySelector('#'+firstEmail+'-table').style.width = "100%";    
                 }  
             }
+            
+            if(hideDropDown){
+                document.querySelector("#domain-dropdown-id").style.visibility = "hidden";
+                document.querySelector(".warmup_wrapper_class > span > span").style.color = "transparent";
+                document.querySelector(".warmup_wrapper_class > span > button.btn-renew-email").style.visibility = "hidden";
+            }
+
+            
         },
         
         
