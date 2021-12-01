@@ -36,15 +36,15 @@ var accountManager = (function () {
             if(!serverJson.serverlist){
                 serverJson.serverlist = [];
             }
-            if(serverJson.serverlist.length == 0){
-                serverJson.serverlist[0] = "http://"+domain;
-            }
+
             var timeZoneUrl = accountManager.serverUrl+"/api/dashboard/timezones?auth=" + authKey;
             accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
             accountManager.servers = serverJson.serverlist;
             
             
-            
+//            if(serverJson.serverlist.length == 0){
+//                serverJson.serverlist[0] = "http://"+domain;
+//            }
             
             if(serverJson.serverlist.length > 0){
                 //serverJson.serverlist[0] = "http://"+domain;
