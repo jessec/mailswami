@@ -109,7 +109,9 @@ var cronManager = (function () {
                 }
             }
             if(cronManager.serverList){
-                cronManager.setupServerDropDown("cron-manager", "email-dropdown-id", "server-dropdown-name", cronManager.serverList.serverlist);
+                if(cronManager.serverList.serverlist.length > 0){
+                    cronManager.setupServerDropDown("cron-manager", "email-dropdown-id", "server-dropdown-name", cronManager.serverList.serverlist);   
+                }
                 cronManager.createServerTable(cronJobJsonArray);   
             }
         },

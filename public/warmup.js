@@ -42,7 +42,16 @@ var accountManager = (function () {
             var timeZoneUrl = accountManager.serverUrl+"/api/dashboard/timezones?auth=" + authKey;
             accountManager.timeZoneData = await accountManager.fetchJson(timeZoneUrl);
             accountManager.servers = serverJson.serverlist;
-            accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
+            
+            
+            
+            
+            if(serverJson.serverlist.length > 0){
+                //serverJson.serverlist[0] = "http://"+domain;
+                accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
+            }
+            
+            
             for (var i = 0; i < accountManager.servers.length; i++) {
                 await accountManager.createServerTable(accountManager.servers[i], authKey);
             }
