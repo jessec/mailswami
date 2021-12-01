@@ -169,6 +169,11 @@ select#renew-amounts {
 	background: #e85858;
 }
 
+
+/* #Servers span.state.state-pause {
+	display:none;
+} */
+
 .warmup_wrapper_class button, #invoice-manager button, .server_wrapper_class button, .email_wrapper_class button{
 	padding: 5px;
 	background: #21bf73;
@@ -215,6 +220,17 @@ select#renew-amounts {
 
 	width:100px;
 }
+
+/**
+.server_wrapper_class table tbody > tr > td:last-child {
+	width:50px;
+}
+
+.server_wrapper_class table tbody > tr > td:last-child > div{
+	    justify-content: center;
+}
+**/
+
 
 .warmup_wrapper_class table tbody > tr > td:last-child > div, .server_wrapper_class table tbody > tr > td:last-child > div , .email_wrapper_class table tbody > tr > td:last-child > div {
 		display:flex;

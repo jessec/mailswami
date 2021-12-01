@@ -384,13 +384,14 @@ var serverManager = (function () {
                     }
                 }
                 if(e.target.innerText.trim() == "delete"){
+                    spinner.on();
                     e.target.parentNode.parentNode.parentNode.style.backgroundColor = "#9ecdf5";
                         var tdId = e.target.parentNode.parentNode.id;
                         var cronJobIdParts = tdId.split("_");
                         var cronJobId = cronJobIdParts[cronJobIdParts.length - 2];
                         var email = document.querySelector("#"+tdId.replace("_state","_server")).innerText.trim();
                         
-                        var r = confirm("You are canceling the subscription for this email account. Are you sure you want to delete "+ email + "?");
+                        var r = confirm("You are canceling the subscription for this server account. Are you sure you want to delete "+ email + "?");
                         if (r == true) {
                               var deleteCronJobUrl = serverManager.serverUrl+"/api/server/email/accounts/delete?auth=" + userManager.getAuthKey() + "&id=" + cronJobId + "&deleteemail=true&email="+email;
                               var result = await serverManager.fetchJson(deleteCronJobUrl);
@@ -404,6 +405,7 @@ var serverManager = (function () {
                               }
                         }
                         await serverManager.init(serverManager.id, serverManager.serverUrl);
+                        spinner.off();
                 }
                 if(e.target.innerText.trim() == "pause" || e.target.innerText.trim() == "active"){
                     var state = e.target.innerText.trim();
