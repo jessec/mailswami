@@ -57,16 +57,23 @@ var accountManager = (function () {
             }
             if(document.querySelector('#domain-dropdown-id')){
                 document.querySelector('#domain-dropdown-id').disabled = false;   
-            }
-            var firstEmail = document.querySelector("#domain-dropdown-id").value;
-            if(firstEmail != ""){
-                if(document.querySelector("#warmup_wrapper_"+firstEmail)){
-                    document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";   
+                
+                
+                
+                var firstEmail = document.querySelector("#domain-dropdown-id").value;
+                if(firstEmail != ""){
+                    if(document.querySelector("#warmup_wrapper_"+firstEmail)){
+                        document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";   
+                    }
+                    if(document.querySelector('#'+firstEmail+'-table')){
+                        document.querySelector('#'+firstEmail+'-table').style.width = "100%";    
+                    }  
                 }
-                if(document.querySelector('#'+firstEmail+'-table')){
-                    document.querySelector('#'+firstEmail+'-table').style.width = "100%";    
-                }  
+                
             }
+            
+
+            
         },
         
         
