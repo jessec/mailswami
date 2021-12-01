@@ -114,6 +114,11 @@ var cronManager = (function () {
                 }
                 cronManager.createServerTable(cronJobJsonArray);   
             }
+            
+            if(cronManager.cronJobJsonArray.length == 0){
+                document.querySelector("#email-dropdown-id").style.visibility = "hidden";
+            }
+            
         },
         
         
