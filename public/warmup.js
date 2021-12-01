@@ -49,25 +49,27 @@ var accountManager = (function () {
             if(serverJson.serverlist.length > 0){
                 //serverJson.serverlist[0] = "http://"+domain;
                 accountManager.setupServerDropDown("account-manager", "domain-dropdown-id", "domain-dropdown-name", accountManager.servers);
+          
+                if(document.querySelector('#domain-dropdown-id')){
+                    document.querySelector('#domain-dropdown-id').disabled = false;   
+                }
+                
+                var firstEmail = document.querySelector("#domain-dropdown-id").value;
+                if(firstEmail != ""){
+                    if(document.querySelector("#warmup_wrapper_"+firstEmail)){
+                        document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";   
+                    }
+                    if(document.querySelector('#'+firstEmail+'-table')){
+                        document.querySelector('#'+firstEmail+'-table').style.width = "100%";    
+                    }  
+                }
             }
             
             
             for (var i = 0; i < accountManager.servers.length; i++) {
                 await accountManager.createServerTable(accountManager.servers[i], authKey);
             }
-            if(document.querySelector('#domain-dropdown-id')){
-                document.querySelector('#domain-dropdown-id').disabled = false;   
-            }
-            
-            var firstEmail = document.querySelector("#domain-dropdown-id").value;
-            if(firstEmail != ""){
-                if(document.querySelector("#warmup_wrapper_"+firstEmail)){
-                    document.querySelector("#warmup_wrapper_"+firstEmail).style.display = "block";   
-                }
-                if(document.querySelector('#'+firstEmail+'-table')){
-                    document.querySelector('#'+firstEmail+'-table').style.width = "100%";    
-                }  
-            }
+
             
         },
         
