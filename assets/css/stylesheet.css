@@ -2030,3 +2030,12 @@ body {
 h2 {
     color: #053966 !important;
 }
+
+@media only screen and (max-width: 768px) {
+    table {
+        font-size: x-small;
+    }
+    .check {
+        font-size: x-small !important;
+    }
+}
