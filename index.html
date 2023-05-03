@@ -360,7 +360,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" id="resources" href="#resources">Learning</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="#cta" data-toggle="modal" data-target="#contactFormLong">Contact</a></li>
-                        <li><a class="btn-nav btn-outline nav-link" id="login-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Login</a></li>
+                        <li style="display: none;"><a class="btn-nav btn-outline nav-link" id="login-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Login</a></li>
 
                     </ul>
                 </div>
@@ -467,8 +467,8 @@
 
                                             <a style="display: none;" class="btn-action btn-outline nav-link _js-scroll-trigger" href="#cta" data-toggle="modal" data-target="#contactFormLong">Contact</a>
                                             <!--<a class="btn-action js-scroll-trigger" href="#pricing">Signup</a>-->
-                                            <a class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>
-                                            <a style="display: none;" id="show-success" class="btn-action btn-outline" data-toggle="modal" data-target="#inviteFormLong">Start</a>
+                                            <a style="display: none;" class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>
+                                            <a id="show-success" class="btn-action btn-outline" data-toggle="modal" data-target="#inviteFormLong">Start</a>
                                         </div>
                                         <!--
                                                                                     <p class="condition_txt">Our AI engine positively interacts with your emails to increase your sender reputation, so you never land in the spam folder.
@@ -1531,6 +1531,11 @@
         if (location.host == 'localhost:4000') {
             $("#resources").show();
         }
+        $("#show-success").click(function() {
+            $('html,body').animate({
+            scrollTop: $("#pricing").offset().top},
+            'slow');
+        });
     </script>
 
     <!--Start of Tawk.to Script-->
