@@ -5,6 +5,8 @@ var accountManager = (function () {
         init : async function (id, serverUrl) {
             console.log("warmup init");
             
+            userManager.isLoggedIn();
+            
             serverManager.id = id;
             document.querySelector("#"+id).innerHTML = "";
             

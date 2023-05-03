@@ -26,7 +26,8 @@ var userManager = (function () {
         },
         isLoggedIn : function(){
             var auth = userManager.getAuthKey();
-            if(auth != ""){
+            var email = userManager.getUserEmail();
+            if(auth != "" && email != "" && email != null){
                 return true;
             }else{
                 userManager.logOut();
@@ -95,6 +96,14 @@ var userManager = (function () {
                         
                         var dataUrl = userManager.serverUrl+"/api/dashboard/new/password?email="+email+"&key="+resetKey+"&newpassword="+encPassword;//newPassword;
                         var responseJson = await userManager.fetchJson(dataUrl);
+                        console.log(responseJson);
+                        if(responseJson.status == "true"){
+                            alert("Your password has been reset");
+                            location.reload();
+                        }else{
+                            alert("Oops something went wrong please try again or mail hello@leadspod.com");
+                            location.reload();
+                        }
                     }
                 }
                 
@@ -106,7 +115,10 @@ var userManager = (function () {
         },
         logOut : function(){
             userManager.eraseCookie('authkey', "/");
-            userManager.eraseCookie('useremail', "/");
+            userManager.eraseCookie('useremail', "/"); 
+            
+            userManager.eraseCookie('authkey', "/public");
+            userManager.eraseCookie('useremail', "/public");
             
             document.body.classList.remove("dashboard");
         },

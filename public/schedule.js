@@ -115,9 +115,9 @@ var cronManager = (function () {
                 cronManager.createServerTable(cronJobJsonArray);   
             }
             
-            //if(cronManager.cronJobJsonArray.length == 0){
+            if(document.querySelector("#email-dropdown-id")){
                 document.querySelector("#email-dropdown-id").style.visibility = "hidden";
-            //}
+            }
             
         },
         
@@ -483,7 +483,7 @@ var cronManager = (function () {
         createServerTable : async function (cronJobJson) {
 
             var tblWrapper = document.createElement("div");
-            tblWrapper.style.marginTop = '20px';  
+            tblWrapper.style.marginTop = '35px';  
             tblWrapper.style.border = "1px solid";
             tblWrapper.style.padding = "5px";
             tblWrapper.style.width = "100%";

@@ -1,969 +1,969 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-06T11:46:56+07:00</updated><id>/feed.xml</id><title type="html">MailSwami.</title><subtitle>No more deliverability issues for you. Our AI engine positively interacts with your emails to increase your sender reputation, so you never land in the spam folder.</subtitle><entry><title type="html">How to Prepare an Email Account for Cold Email Sending</title><link href="/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html" rel="alternate" type="text/html" title="How to Prepare an Email Account for Cold Email Sending" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending</id><content type="html" xml:base="/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html">&lt;p&gt;How to Prepare an Email Account for Cold Email Sending&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2023-05-03T13:56:01+07:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">MailSwami.</title><subtitle>No more deliverability issues for you. Our AI engine positively interacts with your emails to increase your sender reputation, so you never land in the spam folder.</subtitle><entry><title type="html">How to Prepare an Email Account for Cold Email Sending</title><link href="http://localhost:4001/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html" rel="alternate" type="text/html" title="How to Prepare an Email Account for Cold Email Sending" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending</id><content type="html" xml:base="http://localhost:4001/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html"><![CDATA[<p>How to Prepare an Email Account for Cold Email Sending</p>
 
-&lt;p&gt;Refresh Your Email Account
-When conducting a cold email campaign, email deliverability is critical. According to ReturnPath’s analysis, more than 20% of emails never make it to the inbox. At SalesHandy, we frequently see fresh email accounts used for cold email campaigns being stopped as soon as the campaign begins.&lt;/p&gt;
+<p>Refresh Your Email Account
+When conducting a cold email campaign, email deliverability is critical. According to ReturnPath’s analysis, more than 20% of emails never make it to the inbox. At SalesHandy, we frequently see fresh email accounts used for cold email campaigns being stopped as soon as the campaign begins.</p>
 
-&lt;p&gt;The issue is that the new email accounts are not being warmed up. With Google’s spam change in January 2019, it’s becoming more difficult to enter the inbox, as the majority of emails are now designated as spam. To avoid this, it is critical to exactly warm up your new email account before engaging in serious cold email outreach.&lt;/p&gt;
+<p>The issue is that the new email accounts are not being warmed up. With Google’s spam change in January 2019, it’s becoming more difficult to enter the inbox, as the majority of emails are now designated as spam. To avoid this, it is critical to exactly warm up your new email account before engaging in serious cold email outreach.</p>
 
-&lt;p&gt;In this blog, I’ll describe how to warm up an email account prior to sending cold emails, ensuring that your message reaches the inbox rather than the SPAM folder.&lt;/p&gt;
+<p>In this blog, I’ll describe how to warm up an email account prior to sending cold emails, ensuring that your message reaches the inbox rather than the SPAM folder.</p>
 
-&lt;p&gt;What is a “Warm-up” email?
-The email warm up process is used to establish a fresh email account’s reputation and boost the email sending limit. The warm-up procedure entails sending emails from a new email account, beginning with a small number and gradually growing each day.&lt;/p&gt;
+<p>What is a “Warm-up” email?
+The email warm up process is used to establish a fresh email account’s reputation and boost the email sending limit. The warm-up procedure entails sending emails from a new email account, beginning with a small number and gradually growing each day.</p>
 
-&lt;p&gt;When a user establishes a new email account, the email service provider limits the user’s daily email sending. However, a new account will be unable to use it entirely. For instance, Google offers 2000 emails a day with a G Suite subscription. However, from day one, you are not permitted to transfer it all; you are given a reduced restriction. To fully utilize it, you must first establish a positive reputation, which may be accomplished through email warm-up.&lt;/p&gt;
+<p>When a user establishes a new email account, the email service provider limits the user’s daily email sending. However, a new account will be unable to use it entirely. For instance, Google offers 2000 emails a day with a G Suite subscription. However, from day one, you are not permitted to transfer it all; you are given a reduced restriction. To fully utilize it, you must first establish a positive reputation, which may be accomplished through email warm-up.</p>
 
-&lt;p&gt;Ideally, it should take between 8 and 12 weeks to achieve optimum deliverability. The email is prepared more quickly depending on the volume of emails and the level of participation during the warming process. If the recipient involvement level is too low, the email warming may take longer than planned.&lt;/p&gt;
+<p>Ideally, it should take between 8 and 12 weeks to achieve optimum deliverability. The email is prepared more quickly depending on the volume of emails and the level of participation during the warming process. If the recipient involvement level is too low, the email warming may take longer than planned.</p>
 
-&lt;p&gt;Why is Email Warming Critical?
-Email warming is a process that must be followed in order to establish a reputation and increase delivery rates. It is critical to ensure emails land in inboxes when planning a large volume cold email campaign with a fresh account.&lt;/p&gt;
+<p>Why is Email Warming Critical?
+Email warming is a process that must be followed in order to establish a reputation and increase delivery rates. It is critical to ensure emails land in inboxes when planning a large volume cold email campaign with a fresh account.</p>
 
-&lt;p&gt;The first step in a cold email campaign is to reach the recipient’s mailbox. Once there, having a positive engagement can help you develop a more meaningful relationship. If the email is thoroughly warmed up prior to being sent cold, it will bypass the spam filter, arrive in the inbox, and have a better open rate.&lt;/p&gt;
+<p>The first step in a cold email campaign is to reach the recipient’s mailbox. Once there, having a positive engagement can help you develop a more meaningful relationship. If the email is thoroughly warmed up prior to being sent cold, it will bypass the spam filter, arrive in the inbox, and have a better open rate.</p>
 
-&lt;p&gt;Without further ado, let’s dig in and learn how to warm up an email account before sending cold emails in order to optimize your email account’s efficiency, sender reputation, and email deliverability.&lt;/p&gt;
+<p>Without further ado, let’s dig in and learn how to warm up an email account before sending cold emails in order to optimize your email account’s efficiency, sender reputation, and email deliverability.</p>
 
-&lt;p&gt;How to Prepare an Email Account Prior to Sending a Cold Email&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Verify Your Account
-The first step in creating a new email account is account authentication. Authentication protects your account from SPAM filters and ensures that your emails get in the inbox.&lt;/li&gt;
-&lt;/ol&gt;
+<p>How to Prepare an Email Account Prior to Sending a Cold Email</p>
+<ol>
+  <li>Verify Your Account
+The first step in creating a new email account is account authentication. Authentication protects your account from SPAM filters and ensures that your emails get in the inbox.</li>
+</ol>
 
-&lt;p&gt;There are four critical components to email authentication:&lt;/p&gt;
+<p>There are four critical components to email authentication:</p>
 
-&lt;p&gt;SPF SPF (Sender Policy Framework) is an authentication approach that establishes a record in your DNS (Domain Name System) that identifies all the servers permitted to send emails on behalf of a domain. When the recipient’s ESP detects SPF Authentication on the sender’s side, it gives the sender’s domain a clean bill of health.&lt;/p&gt;
+<p>SPF SPF (Sender Policy Framework) is an authentication approach that establishes a record in your DNS (Domain Name System) that identifies all the servers permitted to send emails on behalf of a domain. When the recipient’s ESP detects SPF Authentication on the sender’s side, it gives the sender’s domain a clean bill of health.</p>
 
-&lt;p&gt;DKIM DKIM (Domain Keys Identified Mail) is an authentication method that associates your domain with a digital signature, preventing email spoofing and ensuring that your email reaches the intended recipient.&lt;/p&gt;
+<p>DKIM DKIM (Domain Keys Identified Mail) is an authentication method that associates your domain with a digital signature, preventing email spoofing and ensuring that your email reaches the intended recipient.</p>
 
-&lt;p&gt;DMARC DMARC (Domain-based Message Authentication, Reporting, and Conformance) records to use your SPF and DKIM records to reassure the recipient’s email service provider (ESP) that the email is not the result of deceptive activity.&lt;/p&gt;
+<p>DMARC DMARC (Domain-based Message Authentication, Reporting, and Conformance) records to use your SPF and DKIM records to reassure the recipient’s email service provider (ESP) that the email is not the result of deceptive activity.</p>
 
-&lt;p&gt;Personalized Domain
-By including a custom domain in your emails, you may increase the authenticity of your links and documents. This requires both the sender and his ESP to verify the authenticity of the links and documents.&lt;/p&gt;
+<p>Personalized Domain
+By including a custom domain in your emails, you may increase the authenticity of your links and documents. This requires both the sender and his ESP to verify the authenticity of the links and documents.</p>
 
-&lt;p&gt;What are SPF and DKIM Records and How to Configure Them?&lt;/p&gt;
+<p>What are SPF and DKIM Records and How to Configure Them?</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Send Customized Emails
-The email warming method begins with manually sending emails to friends and coworkers in order to initiate a conversation. To begin, you should send ten to twenty separate emails from your new email account. Assure that the initial emails have constant engagement, as this will aid in increasing the volume of the emails. As the volume of interaction increases, your email service provider gains confidence in your authenticity and progressively prepares your email account for email campaigns.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Send Customized Emails
+The email warming method begins with manually sending emails to friends and coworkers in order to initiate a conversation. To begin, you should send ten to twenty separate emails from your new email account. Assure that the initial emails have constant engagement, as this will aid in increasing the volume of the emails. As the volume of interaction increases, your email service provider gains confidence in your authenticity and progressively prepares your email account for email campaigns.</li>
+</ol>
 
-&lt;p&gt;Ensure that you are sending emails to a variety of email services during this manual procedure, including Gmail, Yahoo, Outlook, iCloud, Godaddy, Zoho, Aol, Exchange, and Yandex. This will assist you in establishing a positive reputation with all major email service providers’ spam filters.&lt;/p&gt;
+<p>Ensure that you are sending emails to a variety of email services during this manual procedure, including Gmail, Yahoo, Outlook, iCloud, Godaddy, Zoho, Aol, Exchange, and Yandex. This will assist you in establishing a positive reputation with all major email service providers’ spam filters.</p>
 
-&lt;p&gt;PS: When using the manual approach, use a personalized subject line to ensure a better response.&lt;/p&gt;
+<p>PS: When using the manual approach, use a personalized subject line to ensure a better response.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Keep Conversation Threads Going
-Email accounts are not just for sending messages; they should also receive responses. To maximize deliverability, it is critical to create engagement in your warm up emails. Therefore, initiate the dialogue by sending emails from your old accounts and responding to them from the new one.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Keep Conversation Threads Going
+Email accounts are not just for sending messages; they should also receive responses. To maximize deliverability, it is critical to create engagement in your warm up emails. Therefore, initiate the dialogue by sending emails from your old accounts and responding to them from the new one.</li>
+</ol>
 
-&lt;p&gt;Here, having some regular interactions is critical, as this is an ongoing process that lasts between 8 and 12 weeks. Therefore, if possible, incorporate your new email address into your website’s contact form and promptly respond to inbound emails to increase your conversation rate.&lt;/p&gt;
+<p>Here, having some regular interactions is critical, as this is an ongoing process that lasts between 8 and 12 weeks. Therefore, if possible, incorporate your new email address into your website’s contact form and promptly respond to inbound emails to increase your conversation rate.</p>
 
-&lt;p&gt;This straightforward procedure demonstrates to the email service provider that your email actions are genuine. The continuous email dialogue progressively builds your email sending quota and qualifies your account for mass emailing, such as sending 1000s of emails at once.&lt;/p&gt;
+<p>This straightforward procedure demonstrates to the email service provider that your email actions are genuine. The continuous email dialogue progressively builds your email sending quota and qualifies your account for mass emailing, such as sending 1000s of emails at once.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Register for Newsletters
-If you work in sales, marketing, recruitment, or any other industry, you’re likely to receive weekly emails from a variety of publications. Subscribing to a minimum of 10-15 newsletters is a good start. Each newsletter requires confirmation; thus, return to your mailbox and complete each subscription. It will authenticate your account and boost your email inbox’s capacity. Receiving emails on a consistent basis is just as critical as sending emails to warm up your fresh email account.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Preserve a time difference between two consecutive emails
-Each email service provider uses a unique algorithm to verify the delivery and receipt of emails. Therefore, demonstrate to those algorithms that you are not a robot by avoiding sending too many emails at once. If you send a large number of emails in a short period of time, this will have an effect on your domain’s reputation.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>
+    <p>Register for Newsletters
+If you work in sales, marketing, recruitment, or any other industry, you’re likely to receive weekly emails from a variety of publications. Subscribing to a minimum of 10-15 newsletters is a good start. Each newsletter requires confirmation; thus, return to your mailbox and complete each subscription. It will authenticate your account and boost your email inbox’s capacity. Receiving emails on a consistent basis is just as critical as sending emails to warm up your fresh email account.</p>
+  </li>
+  <li>
+    <p>Preserve a time difference between two consecutive emails
+Each email service provider uses a unique algorithm to verify the delivery and receipt of emails. Therefore, demonstrate to those algorithms that you are not a robot by avoiding sending too many emails at once. If you send a large number of emails in a short period of time, this will have an effect on your domain’s reputation.</p>
+  </li>
+</ol>
 
-&lt;p&gt;Therefore, the best method to avoid this is to maintain a significant time difference between two emails while warming up your new account. Avoid sending an excessive number of emails in a single session; this activity triggers spam filters, which may result in your account being temporarily or permanently blocked.&lt;/p&gt;
+<p>Therefore, the best method to avoid this is to maintain a significant time difference between two emails while warming up your new account. Avoid sending an excessive number of emails in a single session; this activity triggers spam filters, which may result in your account being temporarily or permanently blocked.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Create a Customized Test Campaign (Using SalesHandy)
-After 12 weeks of human warming, SalesHandy will ready your account for automated email campaigns. Nonetheless, it’s prudent to begin small and uncomplicated. Begin with a modest list of 20-30 reliable receivers, supplemented by friends and coworkers to ensure a response.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Create a Customized Test Campaign (Using SalesHandy)
+After 12 weeks of human warming, SalesHandy will ready your account for automated email campaigns. Nonetheless, it’s prudent to begin small and uncomplicated. Begin with a modest list of 20-30 reliable receivers, supplemented by friends and coworkers to ensure a response.</li>
+</ol>
 
-&lt;p&gt;Customize Your Email
-When your primary objective is to warm up your email account, you must convince your receivers to open and respond to your email. Personalizing your email will suffice.&lt;/p&gt;
+<p>Customize Your Email
+When your primary objective is to warm up your email account, you must convince your receivers to open and respond to your email. Personalizing your email will suffice.</p>
 
-&lt;p&gt;Create as personalized an email as possible using SalesHandy Mail Merge. Additionally, design a customized subject line to get the highest open rate. The tailored message is crucial to eliciting responses.&lt;/p&gt;
+<p>Create as personalized an email as possible using SalesHandy Mail Merge. Additionally, design a customized subject line to get the highest open rate. The tailored message is crucial to eliciting responses.</p>
 
-&lt;p&gt;warm-up-email-account-merge-tags
+<p>warm-up-email-account-merge-tags
 FOR FREE, SEND YOUR FIRST PERSONALIZED EMAIL CAMPAIGN–TRY SALESHANDY
 Attempt to Avoid Spammy Content
-By including spam in your emails, you increase your account’s vulnerability to SPAM filters. Avoid utilizing terms such as FREE, GRAB, 50%, etc. in your emails, as these will draw the attention of SPAM filters.&lt;/p&gt;
+By including spam in your emails, you increase your account’s vulnerability to SPAM filters. Avoid utilizing terms such as FREE, GRAB, 50%, etc. in your emails, as these will draw the attention of SPAM filters.</p>
 
-&lt;p&gt;Avoid sending anything that will have a negative impact on your sender’s reputation. To ensure the best delivery, keep the information clean, straightforward, and plain, with a limited amount of links.&lt;/p&gt;
+<p>Avoid sending anything that will have a negative impact on your sender’s reputation. To ensure the best delivery, keep the information clean, straightforward, and plain, with a limited amount of links.</p>
 
-&lt;p&gt;Include an Unsubscribe Link
-Even if you’re sending a test email to a tiny list, it’s a good idea to include an unsubscribe link in the email. While you’re warming up your email account, you should eliminate any potential of the recipient spamming you. Even one spam report against a newly created account might have a detrimental effect on your reputation.&lt;/p&gt;
+<p>Include an Unsubscribe Link
+Even if you’re sending a test email to a tiny list, it’s a good idea to include an unsubscribe link in the email. While you’re warming up your email account, you should eliminate any potential of the recipient spamming you. Even one spam report against a newly created account might have a detrimental effect on your reputation.</p>
 
-&lt;p&gt;By including an unsubscribe link in your emails, you provide your receivers the option of receiving your emails or not. This function not only delights your recipients, but also protects your emails from SPAM filters.&lt;/p&gt;
+<p>By including an unsubscribe link in your emails, you provide your receivers the option of receiving your emails or not. This function not only delights your recipients, but also protects your emails from SPAM filters.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;The Most Effective Bonus Practices
-Adhering to the best measures outlined above for warming up an email account prior to sending cold emails can assist you in activating your account’s vast list of cold email campaigns. I’ve included some additional bonus ideas below that can assist you in maintaining your sender reputation and email deliverability.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>The Most Effective Bonus Practices
+Adhering to the best measures outlined above for warming up an email account prior to sending cold emails can assist you in activating your account’s vast list of cold email campaigns. I’ve included some additional bonus ideas below that can assist you in maintaining your sender reputation and email deliverability.</li>
+</ol>
 
-&lt;p&gt;Write as a genuine human being would.
+<p>Write as a genuine human being would.
 Utilize restricted links in your email content and choose an email service provider intelligently based on your requirements
 Utilize a restricted number of media files, such as photographs, movies, and GIFs.
 Steer clear of automation during email warmups.
-Utilize an email campaign solution such as SalesHandy to ensure that your cold email campaigns are sent in the most effective manner possible.&lt;/p&gt;
+Utilize an email campaign solution such as SalesHandy to ensure that your cold email campaigns are sent in the most effective manner possible.</p>
 
-&lt;p&gt;Final Remarks
-The entire system is designed to weed out spammy stuff. Adhering to best practices demonstrates to algorithms that you are a genuine human being, not a spammer.&lt;/p&gt;
+<p>Final Remarks
+The entire system is designed to weed out spammy stuff. Adhering to best practices demonstrates to algorithms that you are a genuine human being, not a spammer.</p>
 
-&lt;p&gt;Finally, and perhaps most importantly, remember that it is easier to develop a favorable reputation as a sender than it is to improve the reputation of a spammer.&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="news" /><summary type="html">How to Prepare an Email Account for Cold Email Sending</summary></entry><entry><title type="html">10 Tips To Improve Your Cold Emails</title><link href="/article/news/10-tips-to-improve-your-cold-email.html" rel="alternate" type="text/html" title="10 Tips To Improve Your Cold Emails" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/10-tips-to-improve-your-cold-email</id><content type="html" xml:base="/article/news/10-tips-to-improve-your-cold-email.html">&lt;p&gt;Rather than cold-contacting people for their business, think out how to give value to their life first.&lt;/p&gt;
+<p>Finally, and perhaps most importantly, remember that it is easier to develop a favorable reputation as a sender than it is to improve the reputation of a spammer.</p>]]></content><author><name></name></author><category term="article" /><category term="news" /><summary type="html"><![CDATA[How to Prepare an Email Account for Cold Email Sending]]></summary></entry><entry><title type="html">10 Tips To Improve Your Cold Emails</title><link href="http://localhost:4001/article/news/10-tips-to-improve-your-cold-email.html" rel="alternate" type="text/html" title="10 Tips To Improve Your Cold Emails" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/article/news/10-tips-to-improve-your-cold-email</id><content type="html" xml:base="http://localhost:4001/article/news/10-tips-to-improve-your-cold-email.html"><![CDATA[<p>Rather than cold-contacting people for their business, think out how to give value to their life first.</p>
 
-&lt;h1 id=&quot;1-make-your-emails-more-inclusive&quot;&gt;1 Make Your Emails More Inclusive&lt;/h1&gt;
+<h1 id="1-make-your-emails-more-inclusive">1 Make Your Emails More Inclusive</h1>
 
-&lt;p&gt;More than one cold outreach email has failed because a marketer misidentified a prospect: Getting some aspect of your prospects wrong, no matter how fantastic your offer is, almost guarantees that they will erase your email. Spending time drafting more inclusive emails is a quick approach to get rid of a huge roadblock.&lt;/p&gt;
+<p>More than one cold outreach email has failed because a marketer misidentified a prospect: Getting some aspect of your prospects wrong, no matter how fantastic your offer is, almost guarantees that they will erase your email. Spending time drafting more inclusive emails is a quick approach to get rid of a huge roadblock.</p>
 
-&lt;h1 id=&quot;2-findthe-most-effective-time&quot;&gt;2 Find the Most Effective Time&lt;/h1&gt;
+<h1 id="2-findthe-most-effective-time">2 Find the Most Effective Time</h1>
 
-&lt;p&gt;Consider timing based on what you know about the person or what you’ve learned from your investigation. If you got the notion to contact this individual because they were just featured in a magazine, they’re undoubtedly getting a lot of pitches at the moment. Consider when that person’s inbox is less crowded, and when they are more likely to read and respond to your email.&lt;/p&gt;
+<p>Consider timing based on what you know about the person or what you’ve learned from your investigation. If you got the notion to contact this individual because they were just featured in a magazine, they’re undoubtedly getting a lot of pitches at the moment. Consider when that person’s inbox is less crowded, and when they are more likely to read and respond to your email.</p>
 
-&lt;h1 id=&quot;3-identify-the-decisive-individual&quot;&gt;3 Identify the Decisive Individual&lt;/h1&gt;
+<h1 id="3-identify-the-decisive-individual">3 Identify the Decisive Individual</h1>
 
-&lt;p&gt;Allow time to locate the appropriate point of contact. You don’t want to waste time investigating only to discover that you contacted the incorrect person and received no response. Utilize sites such as Linkedin to ascertain a person’s position inside an organization, and compose the email with an eye toward their issues and how you may assist them.&lt;/p&gt;
+<p>Allow time to locate the appropriate point of contact. You don’t want to waste time investigating only to discover that you contacted the incorrect person and received no response. Utilize sites such as Linkedin to ascertain a person’s position inside an organization, and compose the email with an eye toward their issues and how you may assist them.</p>
 
-&lt;h1 id=&quot;4-avoid-taking-up-too-much-space-in-someones-inbox&quot;&gt;4 Avoid Taking Up Too Much Space in Someone’s Inbox&lt;/h1&gt;
+<h1 id="4-avoid-taking-up-too-much-space-in-someones-inbox">4 Avoid Taking Up Too Much Space in Someone’s Inbox</h1>
 
-&lt;p&gt;If you’re communicating over email, keep it brief and direct. Make your request explicit and demonstrate how the person you’re contacting will benefit from replying. Because people’s inboxes are already clogged, it’s critical to demonstrate your worth. Additionally, attempt to customize your email. Individuals can recognize whether they are being spammed with a generic message.&lt;/p&gt;
+<p>If you’re communicating over email, keep it brief and direct. Make your request explicit and demonstrate how the person you’re contacting will benefit from replying. Because people’s inboxes are already clogged, it’s critical to demonstrate your worth. Additionally, attempt to customize your email. Individuals can recognize whether they are being spammed with a generic message.</p>
 
-&lt;h1 id=&quot;5-run-numerous-subject-line-experiments&quot;&gt;5 Run Numerous Subject Line Experiments&lt;/h1&gt;
+<h1 id="5-run-numerous-subject-line-experiments">5 Run Numerous Subject Line Experiments</h1>
 
-&lt;p&gt;You can have the best email in the world, but it will be ineffective if few people open it! We always experiment with different subject lines in order to increase our open rates, and the effort is well worth it. You’ll get the best results by customizing the subject lines based on an article or email they authored, a significant change they made to their website, or a recent mention in the press. Concentrate on those areas.&lt;/p&gt;
+<p>You can have the best email in the world, but it will be ineffective if few people open it! We always experiment with different subject lines in order to increase our open rates, and the effort is well worth it. You’ll get the best results by customizing the subject lines based on an article or email they authored, a significant change they made to their website, or a recent mention in the press. Concentrate on those areas.</p>
 
-&lt;h1 id=&quot;6-launch-a-warm-up-email-campaign-for-cold-calls&quot;&gt;6 Launch a Warm-Up Email Campaign for Cold Calls&lt;/h1&gt;
+<h1 id="6-launch-a-warm-up-email-campaign-for-cold-calls">6 Launch a Warm-Up Email Campaign for Cold Calls</h1>
 
-&lt;p&gt;Send an email campaign to warm up your cold call outreach technique. Export the email campaign’s leads and target your cold call outreach precisely to those leads. Then export the leads who opened the email campaign and target this section for secondary outreach. Email campaigns and reporting data are excellent methods for marketers to connect the links.&lt;/p&gt;
+<p>Send an email campaign to warm up your cold call outreach technique. Export the email campaign’s leads and target your cold call outreach precisely to those leads. Then export the leads who opened the email campaign and target this section for secondary outreach. Email campaigns and reporting data are excellent methods for marketers to connect the links.</p>
 
-&lt;h1 id=&quot;7-research-three-levels-deep&quot;&gt;7 Research Three Levels Deep&lt;/h1&gt;
+<h1 id="7-research-three-levels-deep">7 Research Three Levels Deep</h1>
 
-&lt;p&gt;Cold outreach is based on the exchange of value. Consider the following framework while creating a cold pitch. The first level is defining your “ask.” The second level is defining the value you’ll provide if they express interest. Level three is all about defining the value you’ve previously supplied them with prior to delivering the first email. If you incorporate components from all three tiers into your introductory email, you will experience phenomenal success.&lt;/p&gt;
+<p>Cold outreach is based on the exchange of value. Consider the following framework while creating a cold pitch. The first level is defining your “ask.” The second level is defining the value you’ll provide if they express interest. Level three is all about defining the value you’ve previously supplied them with prior to delivering the first email. If you incorporate components from all three tiers into your introductory email, you will experience phenomenal success.</p>
 
-&lt;h1 id=&quot;8-concentrate-on-the-location-industry-and-scale&quot;&gt;8 Concentrate on the location, industry, and scale&lt;/h1&gt;
+<h1 id="8-concentrate-on-the-location-industry-and-scale">8 Concentrate on the location, industry, and scale</h1>
 
-&lt;p&gt;Our cold outreach is segmented by geography, industry, and company size. Contacting a local business always yields better outcomes. Industry type aids in the development of an engaging subject and material for an industry-specific project. The size of the business helps us determine the type of people we need to contact. Additionally, the combination of these criteria results in a reduced sample size that is easier to work with.&lt;/p&gt;
+<p>Our cold outreach is segmented by geography, industry, and company size. Contacting a local business always yields better outcomes. Industry type aids in the development of an engaging subject and material for an industry-specific project. The size of the business helps us determine the type of people we need to contact. Additionally, the combination of these criteria results in a reduced sample size that is easier to work with.</p>
 
-&lt;h1 id=&quot;9-utilize-transcripts-of-sales-calls&quot;&gt;9 Utilize Transcripts of Sales Calls&lt;/h1&gt;
+<h1 id="9-utilize-transcripts-of-sales-calls">9 Utilize Transcripts of Sales Calls</h1>
 
-&lt;p&gt;Conduct analysis and evaluation of past cold calls to see what worked and how replies were perceived. Chorus.ai is an excellent tool for accomplishing this and for determining which words perform best.&lt;/p&gt;
+<p>Conduct analysis and evaluation of past cold calls to see what worked and how replies were perceived. Chorus.ai is an excellent tool for accomplishing this and for determining which words perform best.</p>
 
-&lt;h1 id=&quot;10-approach-it-from-their-point-of-view&quot;&gt;10 Approach It From Their Point Of View&lt;/h1&gt;
+<h1 id="10-approach-it-from-their-point-of-view">10 Approach It From Their Point Of View</h1>
 
-&lt;p&gt;Rather than cold-contacting people for their business, think out how to give value to their life first. Bear in mind that individuals are primarily concerned with one thing: “What’s in it for me?” Ascertain that your outreach to prospective clients clearly communicates the level of value and assistance you wish to deliver. While this may seem obvious, surprisingly few cold outreach strategies adhere to this fundamental concept.&lt;/p&gt;
+<p>Rather than cold-contacting people for their business, think out how to give value to their life first. Bear in mind that individuals are primarily concerned with one thing: “What’s in it for me?” Ascertain that your outreach to prospective clients clearly communicates the level of value and assistance you wish to deliver. While this may seem obvious, surprisingly few cold outreach strategies adhere to this fundamental concept.</p>
 
-&lt;h2 id=&quot;and-3-bonus-tips&quot;&gt;And 3 bonus tips!&lt;/h2&gt;
+<h2 id="and-3-bonus-tips">And 3 bonus tips!</h2>
 
-&lt;h1 id=&quot;11-use-a-straightforward-closing-with-a-specific-reasonable-request&quot;&gt;11 Use a Straightforward Closing With a Specific, Reasonable Request&lt;/h1&gt;
+<h1 id="11-use-a-straightforward-closing-with-a-specific-reasonable-request">11 Use a Straightforward Closing With a Specific, Reasonable Request</h1>
 
-&lt;p&gt;Bear in mind that the receiver receives a high volume of cold emails throughout the day, and many of them miss the mark when it comes to concluding the message. The seller either requests too much, too fast, or is ambiguous about what they want from the recipient. A straightforward conclusion that includes a specific and fair request, as well as flexible scheduling choices, goes a long way.&lt;/p&gt;
+<p>Bear in mind that the receiver receives a high volume of cold emails throughout the day, and many of them miss the mark when it comes to concluding the message. The seller either requests too much, too fast, or is ambiguous about what they want from the recipient. A straightforward conclusion that includes a specific and fair request, as well as flexible scheduling choices, goes a long way.</p>
 
-&lt;h1 id=&quot;12-use-multiple-platforms&quot;&gt;12 Use multiple platforms&lt;/h1&gt;
+<h1 id="12-use-multiple-platforms">12 Use multiple platforms</h1>
 
-&lt;p&gt;The majority of outreach techniques are platform-specific, such as email, phone calls, or direct mail. Utilize a service like FullContact to locate contacts across social media platforms, allowing you to establish a presence in many areas rather than relying just on phone calls or emails. Spread it out over time to avoid prospects feeling bombarded and “stalked.”&lt;/p&gt;
+<p>The majority of outreach techniques are platform-specific, such as email, phone calls, or direct mail. Utilize a service like FullContact to locate contacts across social media platforms, allowing you to establish a presence in many areas rather than relying just on phone calls or emails. Spread it out over time to avoid prospects feeling bombarded and “stalked.”</p>
 
-&lt;h1 id=&quot;13-constantly-follow-up&quot;&gt;13 Constantly Follow Up&lt;/h1&gt;
+<h1 id="13-constantly-follow-up">13 Constantly Follow Up</h1>
 
-&lt;p&gt;Personalizing your cold outreach email is no more a nice-to-have; it is absolutely necessary if you want to be noticed. However, many people overlook their initial try. Create an email series that will be automatically sent to your target individual every few days. This way, you’ll remain top-of-mind for them and boost your chances of being recognized.&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="news" /><summary type="html">Rather than cold-contacting people for their business, think out how to give value to their life first.</summary></entry><entry><title type="html">Emails With a Profile Photo in Gmail</title><link href="/article/news/how-to-add-your-brand-to-gmail.html" rel="alternate" type="text/html" title="Emails With a Profile Photo in Gmail" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/how-to-add-your-brand-to-gmail</id><content type="html" xml:base="/article/news/how-to-add-your-brand-to-gmail.html">&lt;p&gt;The Complete Guide to Displaying Your Profile Photo in Gmail&lt;/p&gt;
+<p>Personalizing your cold outreach email is no more a nice-to-have; it is absolutely necessary if you want to be noticed. However, many people overlook their initial try. Create an email series that will be automatically sent to your target individual every few days. This way, you’ll remain top-of-mind for them and boost your chances of being recognized.</p>]]></content><author><name></name></author><category term="article" /><category term="news" /><summary type="html"><![CDATA[Rather than cold-contacting people for their business, think out how to give value to their life first.]]></summary></entry><entry><title type="html">Emails With a Profile Photo in Gmail</title><link href="http://localhost:4001/article/news/how-to-add-your-brand-to-gmail.html" rel="alternate" type="text/html" title="Emails With a Profile Photo in Gmail" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/article/news/how-to-add-your-brand-to-gmail</id><content type="html" xml:base="http://localhost:4001/article/news/how-to-add-your-brand-to-gmail.html"><![CDATA[<p>The Complete Guide to Displaying Your Profile Photo in Gmail</p>
 
-&lt;p&gt;The interesting thing about Gmail is that when you send an email from your Gmail address (e.g. name@gmail.com), your Google account profile picture will appear next to your email address. However, you won’t see the Google Account profile picture when sending email using Gmail from a non-Gmail domain.&lt;/p&gt;
+<p>The interesting thing about Gmail is that when you send an email from your Gmail address (e.g. name@gmail.com), your Google account profile picture will appear next to your email address. However, you won’t see the Google Account profile picture when sending email using Gmail from a non-Gmail domain.</p>
 
-&lt;p&gt;I’m specifically talking about different email addresses set under “Send email as” in the “Accounts” and “Gmail import” settings.&lt;/p&gt;
+<p>I’m specifically talking about different email addresses set under “Send email as” in the “Accounts” and “Gmail import” settings.</p>
 
-&lt;p&gt;For example like name@yourcompany.com.&lt;/p&gt;
+<p>For example like name@yourcompany.com.</p>
 
-&lt;p&gt;yourname@gmail.com &amp;lt;- Profile picture is displayed. 
-name@yourcompany.com &amp;lt;- Profile picture is not displayed.&lt;/p&gt;
+<p>yourname@gmail.com &lt;- Profile picture is displayed. 
+name@yourcompany.com &lt;- Profile picture is not displayed.</p>
 
-&lt;p&gt;Talk about boring!&lt;/p&gt;
+<p>Talk about boring!</p>
 
-&lt;p&gt;Where is the character?
+<p>Where is the character?
 If you get your branding right, you’ll want to be consistent across all social media channels, including Gmail. Sure, you might have a great custom signature line, but it shouldn’t end there.
 Do you really want a blue people logo that represents your company in the email?
-the new. That are great news. There is a very simple solution to showing your Google Account profile photo when sending email from a non-Gmail domain!&lt;/p&gt;
+the new. That are great news. There is a very simple solution to showing your Google Account profile photo when sending email from a non-Gmail domain!</p>
 
-&lt;p&gt;“What’s my profile picture in my Google Account?” You asked?
-This:&lt;/p&gt;
+<p>“What’s my profile picture in my Google Account?” You asked?
+This:</p>
 
-&lt;p&gt;Profile picture of Gmail&lt;/p&gt;
+<p>Profile picture of Gmail</p>
 
-&lt;p&gt;In addition, you can completely modify this photo if you wish.
+<p>In addition, you can completely modify this photo if you wish.
 Here’s how to view your Google Account profile picture when sending email from a non-Gmail domain. Follow these steps to view your Google Gmail account profile picture when sending email from a non-Gmail domain. Example: Your domain is yourcompany.com and you can use Gmail to send email to name@yourcompany.com.
-This is a quick and easy five-click process. It shouldn’t take more than three minutes. (Four or five cases for alcohol consumption or lack of sleep. Six minutes for both)&lt;/p&gt;
+This is a quick and easy five-click process. It shouldn’t take more than three minutes. (Four or five cases for alcohol consumption or lack of sleep. Six minutes for both)</p>
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;On your desktop / laptop, go to https://myaccount.google.com (or in Gmail, click your profile picture in the top right corner of the page, then click My Account).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;On the left side of the page, click Personal Information.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Under CONTACT INFO, click on the arrow to the right of the email. Scroll down to a different email address.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Add your new / alternate / company to the alternate email cell. Note: If you can’t see the Alternate Email tab, you may need to click the Advanced button. There should be a “Legacy Email” section.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>
+    <p>On your desktop / laptop, go to https://myaccount.google.com (or in Gmail, click your profile picture in the top right corner of the page, then click My Account).</p>
+  </li>
+  <li>
+    <p>On the left side of the page, click Personal Information.</p>
+  </li>
+  <li>
+    <p>Under CONTACT INFO, click on the arrow to the right of the email. Scroll down to a different email address.</p>
+  </li>
+  <li>
+    <p>Add your new / alternate / company to the alternate email cell. Note: If you can’t see the Alternate Email tab, you may need to click the Advanced button. There should be a “Legacy Email” section.</p>
+  </li>
+</ol>
 
-&lt;p&gt;Here you need to add all the email to your domain that you want to send from and view your Google account profile. Such as name@yourcompany.com.
-You have to confirm the new email address by sending a confirmation email to the email address you added as an alternate email address.&lt;/p&gt;
+<p>Here you need to add all the email to your domain that you want to send from and view your Google account profile. Such as name@yourcompany.com.
+You have to confirm the new email address by sending a confirmation email to the email address you added as an alternate email address.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Check the new “Alternative” email when it hits your inbox. Do not skip this step as your profile picture will not appear until you do this.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;To test, send an email to anyone with a Gmail email address. You should see your profile photo next to your name.
-Like him:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>
+    <p>Check the new “Alternative” email when it hits your inbox. Do not skip this step as your profile picture will not appear until you do this.</p>
+  </li>
+  <li>
+    <p>To test, send an email to anyone with a Gmail email address. You should see your profile photo next to your name.
+Like him:</p>
+  </li>
+</ol>
 
-&lt;p&gt;Ask the recipient to send you a screenshot of what they see to make sure it works.&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="news" /><summary type="html">The Complete Guide to Displaying Your Profile Photo in Gmail</summary></entry><entry><title type="html">Ideal client guide</title><link href="/article/news/how-to-improve-your-email-reputation.html" rel="alternate" type="text/html" title="Ideal client guide" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/how-to-improve-your-email-reputation</id><content type="html" xml:base="/article/news/how-to-improve-your-email-reputation.html">&lt;p&gt;With this guide, you can easily construct your cold email campaigns that get responses. Everyone who needs to reach out to someone they don’t know directly can profit from this e-book.&lt;/p&gt;
+<p>Ask the recipient to send you a screenshot of what they see to make sure it works.</p>]]></content><author><name></name></author><category term="article" /><category term="news" /><summary type="html"><![CDATA[The Complete Guide to Displaying Your Profile Photo in Gmail]]></summary></entry><entry><title type="html">Ideal client guide</title><link href="http://localhost:4001/article/news/how-to-improve-your-email-reputation.html" rel="alternate" type="text/html" title="Ideal client guide" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/article/news/how-to-improve-your-email-reputation</id><content type="html" xml:base="http://localhost:4001/article/news/how-to-improve-your-email-reputation.html"><![CDATA[<p>With this guide, you can easily construct your cold email campaigns that get responses. Everyone who needs to reach out to someone they don’t know directly can profit from this e-book.</p>
 
-&lt;h3 id=&quot;a-quick-and-dirty-guide-to-cold-emailing&quot;&gt;A Quick and Dirty Guide to Cold Emailing&lt;/h3&gt;
+<h3 id="a-quick-and-dirty-guide-to-cold-emailing">A Quick and Dirty Guide to Cold Emailing</h3>
 
-&lt;p&gt;Cold emailing is a vital sales and marketing tactic. This direct and bold approach can help many experts from many industries and niches, opening up new business and career chances. Let’s delve into the weeds of this evergreen technique.&lt;/p&gt;
+<p>Cold emailing is a vital sales and marketing tactic. This direct and bold approach can help many experts from many industries and niches, opening up new business and career chances. Let’s delve into the weeds of this evergreen technique.</p>
 
-&lt;h3 id=&quot;how-to-thrive-at-cold-outreach&quot;&gt;How to thrive at cold outreach?&lt;/h3&gt;
+<h3 id="how-to-thrive-at-cold-outreach">How to thrive at cold outreach?</h3>
 
-&lt;p&gt;Let’s review some basic guidelines to avoid having your cold emails marked as spam or garbage.&lt;/p&gt;
+<p>Let’s review some basic guidelines to avoid having your cold emails marked as spam or garbage.</p>
 
-&lt;p&gt;Define your target market. This manner, you may tailor your copy to your recipients’ interests. In sales, building your Ideal Customer Profile is essential.&lt;/p&gt;
+<p>Define your target market. This manner, you may tailor your copy to your recipients’ interests. In sales, building your Ideal Customer Profile is essential.</p>
 
-&lt;p&gt;Do your homework. Cold email automation is essential for efficiency. But you must also be effective. So getting to know your recipients better will help you to target them more precisely. To learn more about folks you wish to cold email, use the internet, social media, and other means.&lt;/p&gt;
+<p>Do your homework. Cold email automation is essential for efficiency. But you must also be effective. So getting to know your recipients better will help you to target them more precisely. To learn more about folks you wish to cold email, use the internet, social media, and other means.</p>
 
-&lt;p&gt;Build your name and power. Your recipients will be more likely to open your cold email if they recognize your name. To advertise oneself, write blogs, hold webinars, use social media, and record podcasts.&lt;/p&gt;
+<p>Build your name and power. Your recipients will be more likely to open your cold email if they recognize your name. To advertise oneself, write blogs, hold webinars, use social media, and record podcasts.</p>
 
-&lt;p&gt;Get referrals. In your cold outreach, include names. A shared interest can help break the ice.&lt;/p&gt;
+<p>Get referrals. In your cold outreach, include names. A shared interest can help break the ice.</p>
 
-&lt;p&gt;Work on your topic line. The topic line is important. Attract your audience’s attention with fascinating content. It’s vital to A/B test your subject lines (and every other email element).&lt;/p&gt;
+<p>Work on your topic line. The topic line is important. Attract your audience’s attention with fascinating content. It’s vital to A/B test your subject lines (and every other email element).</p>
 
-&lt;p&gt;Simple is best. Today’s crowd is frantic. They don’t have time to read your life narrative, so keep it brief.&lt;/p&gt;
+<p>Simple is best. Today’s crowd is frantic. They don’t have time to read your life narrative, so keep it brief.</p>
 
-&lt;p&gt;Observe! Do it forever. Persistence (but not pushiness) is key to increasing open, click, and response rates. Expect no one who sees your name in their email to think you have something to say.&lt;/p&gt;
+<p>Observe! Do it forever. Persistence (but not pushiness) is key to increasing open, click, and response rates. Expect no one who sees your name in their email to think you have something to say.</p>
 
-&lt;p&gt;Observe, improve, repeat. Monitoring your cold outreach results will show you what works and what doesn’t. Learn HOW to improve your next cold email campaign.&lt;/p&gt;
+<p>Observe, improve, repeat. Monitoring your cold outreach results will show you what works and what doesn’t. Learn HOW to improve your next cold email campaign.</p>
 
-&lt;h3 id=&quot;define-your-audience&quot;&gt;Define Your Audience&lt;/h3&gt;
+<h3 id="define-your-audience">Define Your Audience</h3>
 
-&lt;p&gt;Understanding your target audience’s wants, preferences, and pain areas is critical to your outreach’s success.  By identifying your target market, you can tailor your pitch to their needs. But, how?  Here are some handy tips.&lt;/p&gt;
+<p>Understanding your target audience’s wants, preferences, and pain areas is critical to your outreach’s success.  By identifying your target market, you can tailor your pitch to their needs. But, how?  Here are some handy tips.</p>
 
-&lt;h4 id=&quot;ideal-client-type&quot;&gt;Ideal Client Type&lt;/h4&gt;
+<h4 id="ideal-client-type">Ideal Client Type</h4>
 
-&lt;p&gt;When starting a business, getting as many clients as possible is critical.&lt;/p&gt;
+<p>When starting a business, getting as many clients as possible is critical.</p>
 
-&lt;p&gt;The more prospects know about you, the better, but that doesn’t mean your marketing activities should be wide and broad.  You’ll waste time, money, and energy on the wrong opportunities if you try to do too much. In other words, you need to narrow your target and connect with fewer sales-worthy prospects.  Those are perfect customer profiles. These profiles of perfect-fit types of firms interested in purchasing your solutions should include the following information:&lt;/p&gt;
+<p>The more prospects know about you, the better, but that doesn’t mean your marketing activities should be wide and broad.  You’ll waste time, money, and energy on the wrong opportunities if you try to do too much. In other words, you need to narrow your target and connect with fewer sales-worthy prospects.  Those are perfect customer profiles. These profiles of perfect-fit types of firms interested in purchasing your solutions should include the following information:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Industry&lt;/strong&gt; it is self-explanatory why you should define your company’s sector or specialization. It’s best to start with one industry and then fine-tune as needed.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Company size&lt;/strong&gt;, the number of employees, revenue, existing clients, or some other statistic can all be used to determine a company’s size.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Location.&lt;/strong&gt; Knowing where your target customers are located is critical to understanding their needs.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Pain points​.&lt;/strong&gt; This is a crucial part to develop because knowing your prospective clients’ concerns will help you meet their demands and focus on the features of your product or service that will benefit them specifically.&lt;/li&gt;
-  &lt;li&gt;How long this company has already been in business.&lt;/li&gt;
-  &lt;li&gt;What is the biggest reason they won’t buy your product? If your product is not usable by this particular company, try to find any impediments or unfavorable variables that could affect their decision to do business with you.&lt;/li&gt;
-  &lt;li&gt;What is the key reason they should buy your product? Determine your product’s strengths and a unique selling feature that will appeal to the organization in question.&lt;/li&gt;
-  &lt;li&gt;What can your product do for them?&lt;/li&gt;
-  &lt;li&gt;So, what goods or solutions are they using now to attain that goal?&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li><strong>Industry</strong> it is self-explanatory why you should define your company’s sector or specialization. It’s best to start with one industry and then fine-tune as needed.</li>
+  <li><strong>Company size</strong>, the number of employees, revenue, existing clients, or some other statistic can all be used to determine a company’s size.</li>
+  <li><strong>Location.</strong> Knowing where your target customers are located is critical to understanding their needs.</li>
+  <li><strong>Pain points​.</strong> This is a crucial part to develop because knowing your prospective clients’ concerns will help you meet their demands and focus on the features of your product or service that will benefit them specifically.</li>
+  <li>How long this company has already been in business.</li>
+  <li>What is the biggest reason they won’t buy your product? If your product is not usable by this particular company, try to find any impediments or unfavorable variables that could affect their decision to do business with you.</li>
+  <li>What is the key reason they should buy your product? Determine your product’s strengths and a unique selling feature that will appeal to the organization in question.</li>
+  <li>What can your product do for them?</li>
+  <li>So, what goods or solutions are they using now to attain that goal?</li>
+</ol>
 
-&lt;p&gt;These details help you focus your efforts on attracting, cultivating, and engaging organizations that fit the above description.&lt;/p&gt;
+<p>These details help you focus your efforts on attracting, cultivating, and engaging organizations that fit the above description.</p>
 
-&lt;h4 id=&quot;buyer-personas&quot;&gt;Buyer Personas&lt;/h4&gt;
+<h4 id="buyer-personas">Buyer Personas</h4>
 
-&lt;p&gt;An ideal customer persona is based on market research and real data about existing customers. It contains customer demographics, preferences, motivations, and goals.&lt;/p&gt;
+<p>An ideal customer persona is based on market research and real data about existing customers. It contains customer demographics, preferences, motivations, and goals.</p>
 
-&lt;p&gt;A single ideal customer profile can have many buyer personas. They assist you understand your target audience’s qualities and motives, allowing you to better develop your marketing message.&lt;/p&gt;
+<p>A single ideal customer profile can have many buyer personas. They assist you understand your target audience’s qualities and motives, allowing you to better develop your marketing message.</p>
 
-&lt;p&gt;When creating buyer personas, identify their personal traits, values, story, and wants. Here are some questions to help you build your buyer personas:&lt;/p&gt;
+<p>When creating buyer personas, identify their personal traits, values, story, and wants. Here are some questions to help you build your buyer personas:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;What does your buyer persona do? This helps you tailor your approach and know what to expect from your target audience. Establish a consumer persona’s education level, abilities, expertise, and professional interests to further refine the data.&lt;/li&gt;
-  &lt;li&gt;What does your buyer persona do? How long do they work?&lt;/li&gt;
-  &lt;li&gt;Do they prefer email or phone communication? What social networking sites do they use? What stuff do they enjoy? What are their daily duties? The answers to these questions will help you choose the communication channel and build your marketing message.&lt;/li&gt;
-  &lt;li&gt;Where do you live? Married or not? Is it a city? Apart from demographics, B2B organizations must incorporate organizational graphs in their buyer personas, indicating their industry, size, and department.&lt;/li&gt;
-  &lt;li&gt;The main pain issues of your buyer persona? It’s also helpful to know what motivates them to hunt for a solution and how frustrated they are when they decide to buy from you.&lt;/li&gt;
-  &lt;li&gt;What influences your buyer persona’s decision-making process? Is it the product’s features and benefits that drive them, or is it urgency?&lt;/li&gt;
-  &lt;li&gt;What do they see as common sales roadblocks? Is it your product’s pricing that’s out of their budget? Is their senior management unwilling to work with you?&lt;/li&gt;
-  &lt;li&gt;Then what are their long-term goals? How can you help them? Make a plan to help your buyer persona achieve their goals and explain how your product may help.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>What does your buyer persona do? This helps you tailor your approach and know what to expect from your target audience. Establish a consumer persona’s education level, abilities, expertise, and professional interests to further refine the data.</li>
+  <li>What does your buyer persona do? How long do they work?</li>
+  <li>Do they prefer email or phone communication? What social networking sites do they use? What stuff do they enjoy? What are their daily duties? The answers to these questions will help you choose the communication channel and build your marketing message.</li>
+  <li>Where do you live? Married or not? Is it a city? Apart from demographics, B2B organizations must incorporate organizational graphs in their buyer personas, indicating their industry, size, and department.</li>
+  <li>The main pain issues of your buyer persona? It’s also helpful to know what motivates them to hunt for a solution and how frustrated they are when they decide to buy from you.</li>
+  <li>What influences your buyer persona’s decision-making process? Is it the product’s features and benefits that drive them, or is it urgency?</li>
+  <li>What do they see as common sales roadblocks? Is it your product’s pricing that’s out of their budget? Is their senior management unwilling to work with you?</li>
+  <li>Then what are their long-term goals? How can you help them? Make a plan to help your buyer persona achieve their goals and explain how your product may help.</li>
+</ol>
 
-&lt;p&gt;Now that you have your buyer personas, it’s time to prioritize.&lt;/p&gt;
+<p>Now that you have your buyer personas, it’s time to prioritize.</p>
 
-&lt;p&gt;Create a scale and rank your personas based on their alignment with your solution, budget, and organizational impact.&lt;/p&gt;
+<p>Create a scale and rank your personas based on their alignment with your solution, budget, and organizational impact.</p>
 
-&lt;p&gt;Begin contacting the highest ranked prospects.&lt;/p&gt;
+<p>Begin contacting the highest ranked prospects.</p>
 
-&lt;h4 id=&quot;segmentation&quot;&gt;Segmentation&lt;/h4&gt;
+<h4 id="segmentation">Segmentation</h4>
 
-&lt;p&gt;While many people may be interested in your products and services, their motives and reasons may vary greatly.&lt;/p&gt;
+<p>While many people may be interested in your products and services, their motives and reasons may vary greatly.</p>
 
-&lt;p&gt;You wouldn’t send the same message to a CEO and a manager, just as applying for two identical jobs necessitates different emails.&lt;/p&gt;
+<p>You wouldn’t send the same message to a CEO and a manager, just as applying for two identical jobs necessitates different emails.</p>
 
-&lt;p&gt;This means that your target audience can be separated into categories based on shared traits.&lt;/p&gt;
+<p>This means that your target audience can be separated into categories based on shared traits.</p>
 
-&lt;p&gt;You can use the following six traits to segment your list and target your outreach:&lt;/p&gt;
+<p>You can use the following six traits to segment your list and target your outreach:</p>
 
-&lt;p&gt;**1. Location. **This is one of the simplest ways to segment your target market. If your business operates in multiple cities, states, or regions, it makes sense that you wouldn’t deliver the identical offer to customers in New York and Chicago.&lt;/p&gt;
+<p>**1. Location. **This is one of the simplest ways to segment your target market. If your business operates in multiple cities, states, or regions, it makes sense that you wouldn’t deliver the identical offer to customers in New York and Chicago.</p>
 
-&lt;p&gt;Unless you’re presenting your event online, don’t email your Canadian prospects that you’re hosting a conference in San Francisco. Your target audience will not pay much attention to your email since they will believe that what you say is irrelevant to them.&lt;/p&gt;
+<p>Unless you’re presenting your event online, don’t email your Canadian prospects that you’re hosting a conference in San Francisco. Your target audience will not pay much attention to your email since they will believe that what you say is irrelevant to them.</p>
 
-&lt;p&gt;**2. Demographics. **Age, gender, income level, title, education level, industry, or corporate position can all be used to segment audiences.&lt;/p&gt;
+<p>**2. Demographics. **Age, gender, income level, title, education level, industry, or corporate position can all be used to segment audiences.</p>
 
-&lt;p&gt;The more you know about your possibilities, the better. But finding so many details can be challenging because consumers dislike filling out forms when signing up for your business.&lt;/p&gt;
+<p>The more you know about your possibilities, the better. But finding so many details can be challenging because consumers dislike filling out forms when signing up for your business.</p>
 
-&lt;p&gt;Customer surveys can help you refine data about your prospects, but they only work if you reward them. Incentives will get you a lot of useful information.&lt;/p&gt;
+<p>Customer surveys can help you refine data about your prospects, but they only work if you reward them. Incentives will get you a lot of useful information.</p>
 
-&lt;p&gt;**3. New Subscribers. **Never undervalue new subscribers. Greeting them with a welcome email, or even better, an email sequence , will keep them warm and interested.&lt;/p&gt;
+<p>**3. New Subscribers. **Never undervalue new subscribers. Greeting them with a welcome email, or even better, an email sequence , will keep them warm and interested.</p>
 
-&lt;p&gt;This strategy works well with various segmentation factors.&lt;/p&gt;
+<p>This strategy works well with various segmentation factors.</p>
 
-&lt;p&gt;**4. Past Purchases and Recommendations. **One of the most effective ways to segment your audience is by past purchases. Remind customers of upcoming refills or warranty expiration.&lt;/p&gt;
+<p>**4. Past Purchases and Recommendations. **One of the most effective ways to segment your audience is by past purchases. Remind customers of upcoming refills or warranty expiration.</p>
 
-&lt;p&gt;Obviously, automatic recommendations and reminders can be tremendous money producers.&lt;/p&gt;
+<p>Obviously, automatic recommendations and reminders can be tremendous money producers.</p>
 
-&lt;p&gt;**5. Inactive Customers. **Not all clients who made one purchase or visited your website will return. A simple email inquiring why they stopped visiting your site or reminding them of the product or service they added to their shopping cart but never purchased is one way to reach this category and gain their attention.&lt;/p&gt;
+<p>**5. Inactive Customers. **Not all clients who made one purchase or visited your website will return. A simple email inquiring why they stopped visiting your site or reminding them of the product or service they added to their shopping cart but never purchased is one way to reach this category and gain their attention.</p>
 
-&lt;p&gt;Social evidence, such as a product link with customer feedback, can be quite powerful here. If a subscriber hasn’t logged in for more than two months, ask if they still want to be a part of your community.&lt;/p&gt;
+<p>Social evidence, such as a product link with customer feedback, can be quite powerful here. If a subscriber hasn’t logged in for more than two months, ask if they still want to be a part of your community.</p>
 
-&lt;p&gt;Disqualifying leads is as crucial as qualifying them in terms of keeping your list current and relevant.&lt;/p&gt;
+<p>Disqualifying leads is as crucial as qualifying them in terms of keeping your list current and relevant.</p>
 
-&lt;p&gt;**6. The Amount Spent. **While every penny counts, it’s still vital to segment your email list by wealth.&lt;/p&gt;
+<p>**6. The Amount Spent. **While every penny counts, it’s still vital to segment your email list by wealth.</p>
 
-&lt;p&gt;So you can’t offer a $1,000 item to someone who hasn’t spent $1,000 in your store. You can keep track of how different customers react to discounts, in addition to defining multiple price ranges and sending targeted communications.&lt;/p&gt;
+<p>So you can’t offer a $1,000 item to someone who hasn’t spent $1,000 in your store. You can keep track of how different customers react to discounts, in addition to defining multiple price ranges and sending targeted communications.</p>
 
-&lt;p&gt;Specifically, high-end buyers prefer exclusive deals above discounts. However, discounts are important buying motivators for others.&lt;/p&gt;
+<p>Specifically, high-end buyers prefer exclusive deals above discounts. However, discounts are important buying motivators for others.</p>
 
-&lt;p&gt;No matter how hard you attempt to adapt and personalize your outreach, there’s still a chance you’ll run with some unsuitable prospects.&lt;/p&gt;
+<p>No matter how hard you attempt to adapt and personalize your outreach, there’s still a chance you’ll run with some unsuitable prospects.</p>
 
-&lt;p&gt;Stats show that 50% of your prospects don’t meet the criteria. Trying to cultivate them can squander time and money, as well as lose out on certain chances.&lt;/p&gt;
+<p>Stats show that 50% of your prospects don’t meet the criteria. Trying to cultivate them can squander time and money, as well as lose out on certain chances.</p>
 
-&lt;p&gt;True, we usually discuss persistence as a key component of your outreach success. No matter how diligent you are, pursuing a bad loan will yield no results.&lt;/p&gt;
+<p>True, we usually discuss persistence as a key component of your outreach success. No matter how diligent you are, pursuing a bad loan will yield no results.</p>
 
-&lt;p&gt;Better to acknowledge your prospect is a dud early on.&lt;/p&gt;
+<p>Better to acknowledge your prospect is a dud early on.</p>
 
-&lt;p&gt;Here are some red indicators to assist you identify and eliminate these incompatible prospects:&lt;/p&gt;
+<p>Here are some red indicators to assist you identify and eliminate these incompatible prospects:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;They miss scheduled meetings.&lt;/strong&gt; If this is an isolated incident, give them a chance. But if it’s a habit, stop it.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;They’re just looking.&lt;/strong&gt; You may either quietly tell them to contact you when they’re ready to buy, or you can continue to hope that they will buy from you after learning more about your product’s benefits.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No real necessity.&lt;/strong&gt; If your prospect has the budget, authority, and desire for your product but lacks the need, they are unlikely to buy from you.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No urgency.&lt;/strong&gt; If your prospect isn’t in a hurry and can’t explain why, you can assume they’re not in a hurry.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;They don’t do homework.&lt;/strong&gt; If your prospect doesn’t execute the required tasks, they aren’t serious about buying.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No decision maker.&lt;/strong&gt; In other words, they’re hiding something and assessing their alternatives.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;No price cut.&lt;/strong&gt; Is this happening before your prospect has fully grasped the value of your product?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;They want insider information.&lt;/strong&gt; Your opponents may try to discover your plans. Be wary if your prospect asks plenty of inquiries but doesn’t reveal much about themselves.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;They aren’t engaged.&lt;/strong&gt; If your prospect still doesn’t understand your product after a demo and all your resources, they aren’t engaged. The same goes for ambiguous messages and non-responsive decision-makers in their firm.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;There is no pain.&lt;/strong&gt; Some prospects’ quirks can harm your offer or complicate the entire process. Prospects that micromanage from the outset or are impossible to satisfy might be nightmares. Consider if you’re ready to work with them.&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="article" /><category term="news" /><summary type="html">With this guide, you can easily construct your cold email campaigns that get responses. Everyone who needs to reach out to someone they don’t know directly can profit from this e-book.</summary></entry><entry><title type="html">How to Warm Up Your Cold Email List and Increase Deliverability</title><link href="/article/news/how-to-warmup-your-cold-email-list.html" rel="alternate" type="text/html" title="How to Warm Up Your Cold Email List and Increase Deliverability" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/news/how-to-warmup-your-cold-email-list</id><content type="html" xml:base="/article/news/how-to-warmup-your-cold-email-list.html">&lt;p&gt;Introduction: Why Cold Emails Fail &amp;amp; The Dos and Don’ts of Sending an Effective Cold Email&lt;/p&gt;
+<ol>
+  <li><strong>They miss scheduled meetings.</strong> If this is an isolated incident, give them a chance. But if it’s a habit, stop it.</li>
+  <li><strong>They’re just looking.</strong> You may either quietly tell them to contact you when they’re ready to buy, or you can continue to hope that they will buy from you after learning more about your product’s benefits.</li>
+  <li><strong>No real necessity.</strong> If your prospect has the budget, authority, and desire for your product but lacks the need, they are unlikely to buy from you.</li>
+  <li><strong>No urgency.</strong> If your prospect isn’t in a hurry and can’t explain why, you can assume they’re not in a hurry.</li>
+  <li><strong>They don’t do homework.</strong> If your prospect doesn’t execute the required tasks, they aren’t serious about buying.</li>
+  <li><strong>No decision maker.</strong> In other words, they’re hiding something and assessing their alternatives.</li>
+  <li><strong>No price cut.</strong> Is this happening before your prospect has fully grasped the value of your product?</li>
+  <li><strong>They want insider information.</strong> Your opponents may try to discover your plans. Be wary if your prospect asks plenty of inquiries but doesn’t reveal much about themselves.</li>
+  <li><strong>They aren’t engaged.</strong> If your prospect still doesn’t understand your product after a demo and all your resources, they aren’t engaged. The same goes for ambiguous messages and non-responsive decision-makers in their firm.</li>
+  <li><strong>There is no pain.</strong> Some prospects’ quirks can harm your offer or complicate the entire process. Prospects that micromanage from the outset or are impossible to satisfy might be nightmares. Consider if you’re ready to work with them.</li>
+</ol>]]></content><author><name></name></author><category term="article" /><category term="news" /><summary type="html"><![CDATA[With this guide, you can easily construct your cold email campaigns that get responses. Everyone who needs to reach out to someone they don’t know directly can profit from this e-book.]]></summary></entry><entry><title type="html">How to Warm Up Your Cold Email List and Increase Deliverability</title><link href="http://localhost:4001/article/news/how-to-warmup-your-cold-email-list.html" rel="alternate" type="text/html" title="How to Warm Up Your Cold Email List and Increase Deliverability" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/article/news/how-to-warmup-your-cold-email-list</id><content type="html" xml:base="http://localhost:4001/article/news/how-to-warmup-your-cold-email-list.html"><![CDATA[<p>Introduction: Why Cold Emails Fail &amp; The Dos and Don’ts of Sending an Effective Cold Email</p>
 
-&lt;p&gt;keywords: warm up your cold email list, cold email automation software, email marketing software&lt;/p&gt;
+<p>keywords: warm up your cold email list, cold email automation software, email marketing software</p>
 
-&lt;p&gt;It’s always hard sending an email to someone you don’t know, but the task becomes even harder when the person is not expecting it. That’s why cold emails fail. They are not sent at the right time or they are sent to people who are not interested in your offer.&lt;/p&gt;
+<p>It’s always hard sending an email to someone you don’t know, but the task becomes even harder when the person is not expecting it. That’s why cold emails fail. They are not sent at the right time or they are sent to people who are not interested in your offer.</p>
 
-&lt;p&gt;It’s difficult to come up with an effective cold email list that includes people who would be interested in your offer or service, but luckily there are tools that can do it for you. You should find a software that automates this process, which will free up your time and allow you to send more emails without spending too much time on it.&lt;/p&gt;
+<p>It’s difficult to come up with an effective cold email list that includes people who would be interested in your offer or service, but luckily there are tools that can do it for you. You should find a software that automates this process, which will free up your time and allow you to send more emails without spending too much time on it.</p>
 
-&lt;p&gt;Cold emails are still effective if they are well written and if they contain offers that people would want to take advantage of.&lt;/p&gt;
+<p>Cold emails are still effective if they are well written and if they contain offers that people would want to take advantage of.</p>
 
-&lt;p&gt;Stay Away From These 10 Common Mistakes With Your Cold Email Campaigns
-keywords: cold email mistakes, cold email automation, send personalized emails&lt;/p&gt;
+<p>Stay Away From These 10 Common Mistakes With Your Cold Email Campaigns
+keywords: cold email mistakes, cold email automation, send personalized emails</p>
 
-&lt;p&gt;Many people don’t know how to create a cold email campaign, and this is why they make the mistakes that we will discuss in this section.&lt;/p&gt;
+<p>Many people don’t know how to create a cold email campaign, and this is why they make the mistakes that we will discuss in this section.</p>
 
-&lt;p&gt;We should avoid these 10 common mistakes with your cold email campaigns.&lt;/p&gt;
+<p>We should avoid these 10 common mistakes with your cold email campaigns.</p>
 
-&lt;p&gt;1) Having no clear goal: This is the most important thing when sending emails, and if you don’t have one, you are most likely wasting your time.&lt;/p&gt;
+<p>1) Having no clear goal: This is the most important thing when sending emails, and if you don’t have one, you are most likely wasting your time.</p>
 
-&lt;p&gt;2) Not sending personalized emails: It is always better to send personalized emails because it makes it easier for the recipient to open your email.&lt;/p&gt;
+<p>2) Not sending personalized emails: It is always better to send personalized emails because it makes it easier for the recipient to open your email.</p>
 
-&lt;p&gt;3) Sending too many emails at once: You should only send an email every 3 days or so because this will increase your click-through rate.&lt;/p&gt;
+<p>3) Sending too many emails at once: You should only send an email every 3 days or so because this will increase your click-through rate.</p>
 
-&lt;p&gt;4) Not following up on unanswered emails: If you are not getting any replies after a few days&lt;/p&gt;
+<p>4) Not following up on unanswered emails: If you are not getting any replies after a few days</p>
 
-&lt;p&gt;6 Tips for Emails That Are Guaranteed To Get Responses
-keywords: warm up your cold email list, best practices for sending emails&lt;/p&gt;
+<p>6 Tips for Emails That Are Guaranteed To Get Responses
+keywords: warm up your cold email list, best practices for sending emails</p>
 
-&lt;p&gt;With the rise of social media, cold emails have become increasingly less common in business communication. But when used correctly, they can be an effective way to introduce yourself and your company to potential customers. Here are some tips for optimizing your email outreach:&lt;/p&gt;
+<p>With the rise of social media, cold emails have become increasingly less common in business communication. But when used correctly, they can be an effective way to introduce yourself and your company to potential customers. Here are some tips for optimizing your email outreach:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Pick the right time of day: Emails seem more urgent in the morning and evening, so you’ll get a better response rate if you email people around those times.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Add a personal touch: Make it clear you’ve read their profile by mentioning something from it in your first sentence or two.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Keep your subject line concise: People will be more likely to open your email if they know what it is about from just reading the title of it, so don’t make them guess!&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>
+    <p>Pick the right time of day: Emails seem more urgent in the morning and evening, so you’ll get a better response rate if you email people around those times.</p>
+  </li>
+  <li>
+    <p>Add a personal touch: Make it clear you’ve read their profile by mentioning something from it in your first sentence or two.</p>
+  </li>
+  <li>
+    <p>Keep your subject line concise: People will be more likely to open your email if they know what it is about from just reading the title of it, so don’t make them guess!</p>
+  </li>
+</ol>
 
-&lt;p&gt;Conclusion: The Benefits of Using Cold Email Automation Tools
-The benefits of using a cold email automation tool are many. Whether you want to find new prospects, follow up with potential buyers, or keep contact with past customers, the right cold email automation tool can help you out. Here are some of the top reasons why you should use a cold email automation tool:&lt;/p&gt;
+<p>Conclusion: The Benefits of Using Cold Email Automation Tools
+The benefits of using a cold email automation tool are many. Whether you want to find new prospects, follow up with potential buyers, or keep contact with past customers, the right cold email automation tool can help you out. Here are some of the top reasons why you should use a cold email automation tool:</p>
 
-&lt;p&gt;1) It saves time and energy: There is no need to chase after potential buyers and send them one-by-one emails manually. The right software will do it for you and save your time and energy. 2) It improves sales: You can engage with your prospects more easily and encourage them to buy from you by sending them personalized messages which will improve your sales. 3) It’s easy to use: Cold email automation tools make it easier for non-technical people to manage their&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="news" /><summary type="html">Introduction: Why Cold Emails Fail &amp;amp; The Dos and Don’ts of Sending an Effective Cold Email</summary></entry><entry><title type="html">Long-term Profit with Good Email Communications</title><link href="/article/test/long-term-profit-with-good-email-communications.html" rel="alternate" type="text/html" title="Long-term Profit with Good Email Communications" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/article/test/long-term-profit-with-good-email-communications</id><content type="html" xml:base="/article/test/long-term-profit-with-good-email-communications.html">&lt;p&gt;The Complete Guide to Creating a Long-term Profit with Good Email Communications.&lt;/p&gt;
+<p>1) It saves time and energy: There is no need to chase after potential buyers and send them one-by-one emails manually. The right software will do it for you and save your time and energy. 2) It improves sales: You can engage with your prospects more easily and encourage them to buy from you by sending them personalized messages which will improve your sales. 3) It’s easy to use: Cold email automation tools make it easier for non-technical people to manage their</p>]]></content><author><name></name></author><category term="article" /><category term="news" /><summary type="html"><![CDATA[Introduction: Why Cold Emails Fail &amp; The Dos and Don’ts of Sending an Effective Cold Email]]></summary></entry><entry><title type="html">Long-term Profit with Good Email Communications</title><link href="http://localhost:4001/article/test/long-term-profit-with-good-email-communications.html" rel="alternate" type="text/html" title="Long-term Profit with Good Email Communications" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/article/test/long-term-profit-with-good-email-communications</id><content type="html" xml:base="http://localhost:4001/article/test/long-term-profit-with-good-email-communications.html"><![CDATA[<p>The Complete Guide to Creating a Long-term Profit with Good Email Communications.</p>
 
-&lt;p&gt;Introduction: What is Good E-mail Communication and How Can it Help Your Business?
-keywords: email communication, email etiquette, how to write an email&lt;/p&gt;
+<p>Introduction: What is Good E-mail Communication and How Can it Help Your Business?
+keywords: email communication, email etiquette, how to write an email</p>
 
-&lt;p&gt;E-mail is the most used tool for communication in our society. It’s easy to use, especially if you have an accepted template to follow. One of the most important things to keep in mind when composing an email is that it should be clear and concise. There are a few spelling mistakes to avoid when writing an e-mail because they might cause confusion and result in your message being ignored by the receiver.&lt;/p&gt;
+<p>E-mail is the most used tool for communication in our society. It’s easy to use, especially if you have an accepted template to follow. One of the most important things to keep in mind when composing an email is that it should be clear and concise. There are a few spelling mistakes to avoid when writing an e-mail because they might cause confusion and result in your message being ignored by the receiver.</p>
 
-&lt;p&gt;In this section, we will cover different aspects of good e-mail communication and how it can help your business. We will also provide examples of bad email etiquette so that people can avoid them when composing their own emails, which would result in a higher response rate.&lt;/p&gt;
+<p>In this section, we will cover different aspects of good e-mail communication and how it can help your business. We will also provide examples of bad email etiquette so that people can avoid them when composing their own emails, which would result in a higher response rate.</p>
 
-&lt;p&gt;How to Write Effective E-mails that Drive Conversions
-keywords: how to write an effective email, how to open an email, what are the best types of emails&lt;/p&gt;
+<p>How to Write Effective E-mails that Drive Conversions
+keywords: how to write an effective email, how to open an email, what are the best types of emails</p>
 
-&lt;p&gt;An email is the way we convey messages to our audience. Every day, we receive emails from various sources, such as banks, retailers, and even social media sites. You may be surprised to know that the average person will spend over 80 hours reading and responding to emails this year!&lt;/p&gt;
+<p>An email is the way we convey messages to our audience. Every day, we receive emails from various sources, such as banks, retailers, and even social media sites. You may be surprised to know that the average person will spend over 80 hours reading and responding to emails this year!</p>
 
-&lt;p&gt;If you want your messages to stand out in a crowded inbox, then it is important that you write an effective email that drives conversions. To help you do this, here are some best practices:&lt;/p&gt;
+<p>If you want your messages to stand out in a crowded inbox, then it is important that you write an effective email that drives conversions. To help you do this, here are some best practices:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Open with a strong subject line&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use an appropriate greeting - Keep your messages short and concise&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Include a call to action&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>
+    <p>Open with a strong subject line</p>
+  </li>
+  <li>
+    <p>Use an appropriate greeting - Keep your messages short and concise</p>
+  </li>
+  <li>
+    <p>Include a call to action</p>
+  </li>
+</ul>
 
-&lt;p&gt;Subject Line Strategies for Captivating your Readers Attention
-keywords: subject line strategy, subject line tips, best practices for subject lines&lt;/p&gt;
+<p>Subject Line Strategies for Captivating your Readers Attention
+keywords: subject line strategy, subject line tips, best practices for subject lines</p>
 
-&lt;p&gt;Subject line strategies are the first thing you see when you open your email inbox. It can make or break your email or conversion goals. A captivating subject line provides a glimpse of what’s inside and makes the reader curious to read more. But, how do we write those captivating lines?&lt;/p&gt;
+<p>Subject line strategies are the first thing you see when you open your email inbox. It can make or break your email or conversion goals. A captivating subject line provides a glimpse of what’s inside and makes the reader curious to read more. But, how do we write those captivating lines?</p>
 
-&lt;p&gt;The best practices for subject lines are as follows:&lt;/p&gt;
+<p>The best practices for subject lines are as follows:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Incorporate emotion in your subject line to grab the readers attention - Use action-oriented words to make readers want to take an action&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Make it clear what they can expect from your email by using declarative statements&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>
+    <p>Incorporate emotion in your subject line to grab the readers attention - Use action-oriented words to make readers want to take an action</p>
+  </li>
+  <li>
+    <p>Make it clear what they can expect from your email by using declarative statements</p>
+  </li>
+</ul>
 
-&lt;p&gt;5 Tips for Writing Better Emails &amp;amp; Creating a Great Online Presence
-keywords: tips for writing better emails, writing great emails online, 10 tips on writing good emails&lt;/p&gt;
+<p>5 Tips for Writing Better Emails &amp; Creating a Great Online Presence
+keywords: tips for writing better emails, writing great emails online, 10 tips on writing good emails</p>
 
-&lt;p&gt;Emails are a vital part of the modern office, and there are a few tips that you can follow to make sure that they’re written the best way possible.&lt;/p&gt;
+<p>Emails are a vital part of the modern office, and there are a few tips that you can follow to make sure that they’re written the best way possible.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Keep email communications simple&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use correct grammar and spelling&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Be concise&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Include a signature at the end of every email&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Proofread before sending&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>
+    <p>Keep email communications simple</p>
+  </li>
+  <li>
+    <p>Use correct grammar and spelling</p>
+  </li>
+  <li>
+    <p>Be concise</p>
+  </li>
+  <li>
+    <p>Include a signature at the end of every email</p>
+  </li>
+  <li>
+    <p>Proofread before sending</p>
+  </li>
+</ol>
 
-&lt;p&gt;Conclusion: The Benefits of Good E-mail Communication and Why You Should Invest Time in It
-In this section, we will discuss the benefits of good email communication.&lt;/p&gt;
+<p>Conclusion: The Benefits of Good E-mail Communication and Why You Should Invest Time in It
+In this section, we will discuss the benefits of good email communication.</p>
 
-&lt;p&gt;Email is one of the most common forms of communication from businesses from all over the world. There are many ways to use email to communicate with customers and employees, but a lot of people still don’t know how to do it properly or at a minimum they don’t know how to make sure that their emails are being read.&lt;/p&gt;
+<p>Email is one of the most common forms of communication from businesses from all over the world. There are many ways to use email to communicate with customers and employees, but a lot of people still don’t know how to do it properly or at a minimum they don’t know how to make sure that their emails are being read.</p>
 
-&lt;p&gt;This can be a huge problem for businesses because if their emails aren’t being read then they won’t have any new opportunities for customer interaction or for promotion. In order to be successful in communicating with customers through email, there are four tips that you should keep in mind: 1) Use Titles 2) Proofread Before Sending 3) Be&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="test" /><summary type="html">The Complete Guide to Creating a Long-term Profit with Good Email Communications.</summary></entry><entry><title type="html">Analytics</title><link href="/analytics/intro.html" rel="alternate" type="text/html" title="Analytics" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/analytics/intro</id><content type="html" xml:base="/analytics/intro.html">&lt;p&gt;You can’t manage without measuring.&lt;/p&gt;
+<p>This can be a huge problem for businesses because if their emails aren’t being read then they won’t have any new opportunities for customer interaction or for promotion. In order to be successful in communicating with customers through email, there are four tips that you should keep in mind: 1) Use Titles 2) Proofread Before Sending 3) Be</p>]]></content><author><name></name></author><category term="article" /><category term="test" /><summary type="html"><![CDATA[The Complete Guide to Creating a Long-term Profit with Good Email Communications.]]></summary></entry><entry><title type="html">Analytics</title><link href="http://localhost:4001/analytics/intro.html" rel="alternate" type="text/html" title="Analytics" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/analytics/intro</id><content type="html" xml:base="http://localhost:4001/analytics/intro.html"><![CDATA[<p>You can’t manage without measuring.</p>
 
-&lt;p&gt;How can you tell if it’s a success if you don’t monitor and measure it?&lt;/p&gt;
+<p>How can you tell if it’s a success if you don’t monitor and measure it?</p>
 
-&lt;p&gt;This chapter will cover numerous strategies for tracking, analyzing, scaling, and optimizing your outreach.&lt;/p&gt;
+<p>This chapter will cover numerous strategies for tracking, analyzing, scaling, and optimizing your outreach.</p>
 
-&lt;p&gt;Fortunately, Mautic includes robust analytics and reporting features that allow you to track and fine-tune your email marketing efforts in real-time.&lt;/p&gt;
+<p>Fortunately, Mautic includes robust analytics and reporting features that allow you to track and fine-tune your email marketing efforts in real-time.</p>
 
-&lt;p&gt;What Are the Most Important Metrics to Monitor?&lt;/p&gt;
+<p>What Are the Most Important Metrics to Monitor?</p>
 
-&lt;p&gt;Before you can reap the benefits of email marketing, you must first correctly communicate your message.&lt;/p&gt;
+<p>Before you can reap the benefits of email marketing, you must first correctly communicate your message.</p>
 
-&lt;p&gt;And the only way to tell if your email efforts are working is to track key email data and see what works.&lt;/p&gt;
+<p>And the only way to tell if your email efforts are working is to track key email data and see what works.</p>
 
-&lt;p&gt;Starting with a clear vision of what you want to achieve is the first step.&lt;/p&gt;
+<p>Starting with a clear vision of what you want to achieve is the first step.</p>
 
-&lt;p&gt;Detailed statistics will tell you whether your emails are helping you reach them.&lt;/p&gt;
+<p>Detailed statistics will tell you whether your emails are helping you reach them.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Open Rate.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Open Rate.</li>
+</ol>
 
-&lt;p&gt;Simply put, the open rate is the percentage of receivers who load a link in an email.&lt;/p&gt;
+<p>Simply put, the open rate is the percentage of receivers who load a link in an email.</p>
 
-&lt;p&gt;This indicator is not considered totally dependable. It’s best to use it as a comparative metric.&lt;/p&gt;
+<p>This indicator is not considered totally dependable. It’s best to use it as a comparative metric.</p>
 
-&lt;p&gt;In other words, if you send a different message to the same list two or more weeks in succession and compare the outcomes, the open rate makes sense.&lt;/p&gt;
+<p>In other words, if you send a different message to the same list two or more weeks in succession and compare the outcomes, the open rate makes sense.</p>
 
-&lt;p&gt;The problem is that this metric is obtained through an image embedded in the email, assuming it is displayed.&lt;/p&gt;
+<p>The problem is that this metric is obtained through an image embedded in the email, assuming it is displayed.</p>
 
-&lt;p&gt;The problem is that because many email clients restrict automatic picture loading. Some receivers will open your email but not be tracked because their email software banned the image.&lt;/p&gt;
+<p>The problem is that because many email clients restrict automatic picture loading. Some receivers will open your email but not be tracked because their email software banned the image.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;CTR (Click-Through-Rate)&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>CTR (Click-Through-Rate)</li>
+</ol>
 
-&lt;p&gt;This number shows how many people clicked on a link.&lt;/p&gt;
+<p>This number shows how many people clicked on a link.</p>
 
-&lt;p&gt;The click-through rate is an essential indicators. Marketers rely heavily on it to determine how well each email performs.&lt;/p&gt;
+<p>The click-through rate is an essential indicators. Marketers rely heavily on it to determine how well each email performs.</p>
 
-&lt;p&gt;CTR gives you crucial information on how many prospects interact with your content and are interested in learning more about your product or brand.&lt;/p&gt;
+<p>CTR gives you crucial information on how many prospects interact with your content and are interested in learning more about your product or brand.</p>
 
-&lt;p&gt;You may take this a step further by employing a program such as Rebrandly URL Shortener. You will be able to acquire in-depth click statistics as a result of this, so you will know which links are performing and driving people back to your site.&lt;/p&gt;
+<p>You may take this a step further by employing a program such as Rebrandly URL Shortener. You will be able to acquire in-depth click statistics as a result of this, so you will know which links are performing and driving people back to your site.</p>
 
-&lt;p&gt;A/B testing is crucial to finding successful ways to get your readers to click your links.&lt;/p&gt;
+<p>A/B testing is crucial to finding successful ways to get your readers to click your links.</p>
 
-&lt;p&gt;To increase your CTR, create numerous versions of the call-to-action copy for each campaign and test them until you find the one that works best with your recipients.&lt;/p&gt;
+<p>To increase your CTR, create numerous versions of the call-to-action copy for each campaign and test them until you find the one that works best with your recipients.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Rate of Conversion&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Rate of Conversion</li>
+</ol>
 
-&lt;p&gt;This is the email marketing equivalent of the Holy Grail.&lt;/p&gt;
+<p>This is the email marketing equivalent of the Holy Grail.</p>
 
-&lt;p&gt;Every email should have a clear goal, such as signing up for a free trial, reading your latest blog post, or purchasing your product or service.&lt;/p&gt;
+<p>Every email should have a clear goal, such as signing up for a free trial, reading your latest blog post, or purchasing your product or service.</p>
 
-&lt;p&gt;The percentage of email recipients that completed the targeted action is referred to as the conversion rate.&lt;/p&gt;
+<p>The percentage of email recipients that completed the targeted action is referred to as the conversion rate.</p>
 
-&lt;p&gt;Again, your CTA is critical for this measure because the phrasing and design can make a significant difference.&lt;/p&gt;
+<p>Again, your CTA is critical for this measure because the phrasing and design can make a significant difference.</p>
 
-&lt;p&gt;However, it’s always a good idea to stress the usage of action words in phrases like “schedule an appointment,” or “get a deal.”&lt;/p&gt;
+<p>However, it’s always a good idea to stress the usage of action words in phrases like “schedule an appointment,” or “get a deal.”</p>
 
-&lt;p&gt;The conversion rate essentially sums up the efficacy and success of your total marketing activities.&lt;/p&gt;
+<p>The conversion rate essentially sums up the efficacy and success of your total marketing activities.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;The Bounce Rate&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>The Bounce Rate</li>
+</ol>
 
-&lt;p&gt;The bounce rate is the percentage of emails that we’re unable to be sent. A high bounce rate is obviously a terrible thing. It is frequently the result of an improperly kept contact list.&lt;/p&gt;
+<p>The bounce rate is the percentage of emails that we’re unable to be sent. A high bounce rate is obviously a terrible thing. It is frequently the result of an improperly kept contact list.</p>
 
-&lt;p&gt;There are two kinds of bounces: gentle bounces and hard bounces.&lt;/p&gt;
+<p>There are two kinds of bounces: gentle bounces and hard bounces.</p>
 
-&lt;p&gt;Soft bounces occur when a recipient’s inbox is full, a temporary server issue, or something similar.&lt;/p&gt;
+<p>Soft bounces occur when a recipient’s inbox is full, a temporary server issue, or something similar.</p>
 
-&lt;p&gt;In such cases, the recipient’s server may still deliver the email once the problem has been resolved; however, you should resend the email if this does not occur. If the same thing happens again, we’re dealing with hard bounces.&lt;/p&gt;
+<p>In such cases, the recipient’s server may still deliver the email once the problem has been resolved; however, you should resend the email if this does not occur. If the same thing happens again, we’re dealing with hard bounces.</p>
 
-&lt;p&gt;You will receive a hard bounce when you email a closed, non-existent, or incorrect address.&lt;/p&gt;
+<p>You will receive a hard bounce when you email a closed, non-existent, or incorrect address.</p>
 
-&lt;p&gt;Make sure to remove them from your contact list. If you continue to send emails to them, your internet service provider may flag you as a spammer.&lt;/p&gt;
+<p>Make sure to remove them from your contact list. If you continue to send emails to them, your internet service provider may flag you as a spammer.</p>
 
-&lt;p&gt;ISPs routinely utilize closed email addresses as spam traps. If you end up in these traps regularly, your reputation may suffer.&lt;/p&gt;
+<p>ISPs routinely utilize closed email addresses as spam traps. If you end up in these traps regularly, your reputation may suffer.</p>
 
-&lt;p&gt;That’s why it’s critical to clean your database regularly (as we’ve said several times in this e-book). With Mautic, you won’t have to worry about all of these issues because it detects potential problems and resolves them by putting hard bounces in the “Don’t email” folder.&lt;/p&gt;
+<p>That’s why it’s critical to clean your database regularly (as we’ve said several times in this e-book). With Mautic, you won’t have to worry about all of these issues because it detects potential problems and resolves them by putting hard bounces in the “Don’t email” folder.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Return on Investment&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Return on Investment</li>
+</ol>
 
-&lt;p&gt;ROI is defined as a metric used to analyze the profitability of an investment. It enables firms to assess their net profit to the amount invested.&lt;/p&gt;
+<p>ROI is defined as a metric used to analyze the profitability of an investment. It enables firms to assess their net profit to the amount invested.</p>
 
-&lt;p&gt;When it comes to your email marketing’s return-on-investment rate, it tracks how successful they are in terms of cost-effectiveness.&lt;/p&gt;
+<p>When it comes to your email marketing’s return-on-investment rate, it tracks how successful they are in terms of cost-effectiveness.</p>
 
-&lt;p&gt;In other words, this metric compares how much you earn to how much you invest.&lt;/p&gt;
+<p>In other words, this metric compares how much you earn to how much you invest.</p>
 
-&lt;p&gt;Calculating your overall ROI is simple: subtract all email marketing costs from the total campaign revenue, then divide the result by the exact price.&lt;/p&gt;
+<p>Calculating your overall ROI is simple: subtract all email marketing costs from the total campaign revenue, then divide the result by the exact price.</p>
 
-&lt;p&gt;Then double the result by 100, and there you have it.&lt;/p&gt;
+<p>Then double the result by 100, and there you have it.</p>
 
-&lt;p&gt;It’s also worth noting that email marketing has the highest ROI of any channel and is incredibly cost-effective.&lt;/p&gt;
+<p>It’s also worth noting that email marketing has the highest ROI of any channel and is incredibly cost-effective.</p>
 
-&lt;p&gt;If done correctly, it has the potential to yield a sizable profit without requiring a significant investment.&lt;/p&gt;
+<p>If done correctly, it has the potential to yield a sizable profit without requiring a significant investment.</p>
 
-&lt;p&gt;After learning what to track and how to track it, it’s time to improve your metrics.&lt;/p&gt;
+<p>After learning what to track and how to track it, it’s time to improve your metrics.</p>
 
-&lt;p&gt;What Is A/B Testing and How Can It Benefit You?&lt;/p&gt;
+<p>What Is A/B Testing and How Can It Benefit You?</p>
 
-&lt;p&gt;This is a method of comparing two different versions of the same email copy, subject line, or whatever else you wish to test. It is also known as split testing. It assists you in determining which variety performs better based on your audience’s response, allowing you to boost your marketing and sales outcomes.&lt;/p&gt;
+<p>This is a method of comparing two different versions of the same email copy, subject line, or whatever else you wish to test. It is also known as split testing. It assists you in determining which variety performs better based on your audience’s response, allowing you to boost your marketing and sales outcomes.</p>
 
-&lt;p&gt;Email marketing, like any other technique, necessitates a tremendous deal of tweaking, modifying, and fine-tuning.&lt;/p&gt;
+<p>Email marketing, like any other technique, necessitates a tremendous deal of tweaking, modifying, and fine-tuning.</p>
 
-&lt;p&gt;To get the best performing subject line, copy, CTA, or other components, you’ll need to experiment until you find what works and what doesn’t.&lt;/p&gt;
+<p>To get the best performing subject line, copy, CTA, or other components, you’ll need to experiment until you find what works and what doesn’t.</p>
 
-&lt;p&gt;The devil is in the details in email marketing, so pay attention to every word you use because your word count is limited. Long essays and narratives have no place here.&lt;/p&gt;
+<p>The devil is in the details in email marketing, so pay attention to every word you use because your word count is limited. Long essays and narratives have no place here.</p>
 
-&lt;p&gt;The problem is that there are many options to pick from and not a lot of time.&lt;/p&gt;
+<p>The problem is that there are many options to pick from and not a lot of time.</p>
 
-&lt;p&gt;However, using an A/B test, similar to a litmus test, allows you to simply compare the versions of the element and decide which one performs better. You may quickly and efficiently select the best-performing email element or version.&lt;/p&gt;
+<p>However, using an A/B test, similar to a litmus test, allows you to simply compare the versions of the element and decide which one performs better. You may quickly and efficiently select the best-performing email element or version.</p>
 
-&lt;p&gt;How Do You Run an A/B Test?&lt;/p&gt;
+<p>How Do You Run an A/B Test?</p>
 
-&lt;p&gt;The first step is to prepare two emails that differ in some way.&lt;/p&gt;
+<p>The first step is to prepare two emails that differ in some way.</p>
 
-&lt;p&gt;Subject lines, CTAs, email copy CTAs, or any other piece you wish to test may differ.&lt;/p&gt;
+<p>Subject lines, CTAs, email copy CTAs, or any other piece you wish to test may differ.</p>
 
-&lt;p&gt;If you update more than one element at a time, you won’t be able to pinpoint what caused a spike (or loss) in your statistics.&lt;/p&gt;
+<p>If you update more than one element at a time, you won’t be able to pinpoint what caused a spike (or loss) in your statistics.</p>
 
-&lt;p&gt;However, to ensure that your test is relevant, you must understand how to write each specific email component. Then you create a list of addresses and send these two emails at random.&lt;/p&gt;
+<p>However, to ensure that your test is relevant, you must understand how to write each specific email component. Then you create a list of addresses and send these two emails at random.</p>
 
-&lt;p&gt;The responses will reveal which test email is more effective and appealing to your prospects.&lt;/p&gt;
+<p>The responses will reveal which test email is more effective and appealing to your prospects.</p>
 
-&lt;p&gt;How Do A/B Test Emails Get Delivered to Recipients?&lt;/p&gt;
+<p>How Do A/B Test Emails Get Delivered to Recipients?</p>
 
-&lt;p&gt;Mautic includes an A/B testing option to assist you in making informed judgments.&lt;/p&gt;
+<p>Mautic includes an A/B testing option to assist you in making informed judgments.</p>
 
-&lt;p&gt;Contacts in your campaign will be divided as evenly as possible. Each variety will be delivered to around half of the recipients.&lt;/p&gt;
+<p>Contacts in your campaign will be divided as evenly as possible. Each variety will be delivered to around half of the recipients.</p>
 
-&lt;p&gt;Suppose you have a list of 100 contacts. In that case, the system will automatically transmit version A to 50 and version B to the remaining 50.&lt;/p&gt;
+<p>Suppose you have a list of 100 contacts. In that case, the system will automatically transmit version A to 50 and version B to the remaining 50.</p>
 
-&lt;p&gt;The email stages are randomized. Each step is randomized. This does not mean the same contact will acquire the same variety in subsequent steps.&lt;/p&gt;
+<p>The email stages are randomized. Each step is randomized. This does not mean the same contact will acquire the same variety in subsequent steps.</p>
 
-&lt;p&gt;This is because A/B testing is random. You can’t tell who got which email until both have been sent.&lt;/p&gt;
+<p>This is because A/B testing is random. You can’t tell who got which email until both have been sent.</p>
 
-&lt;p&gt;Our suggestion is to create a brief list of persons who will test the templates. A test sample of 100 to 200 people is sufficient.&lt;/p&gt;
+<p>Our suggestion is to create a brief list of persons who will test the templates. A test sample of 100 to 200 people is sufficient.</p>
 
-&lt;p&gt;How Is the Winning Email Selected?&lt;/p&gt;
+<p>How Is the Winning Email Selected?</p>
 
-&lt;p&gt;You can set the number of days your test campaign runs before the winner email is chosen for a test campaign.&lt;/p&gt;
+<p>You can set the number of days your test campaign runs before the winner email is chosen for a test campaign.</p>
 
-&lt;p&gt;The number of responses is the most crucial figure, followed by the number of clicks, and finally the number of opens.&lt;/p&gt;
+<p>The number of responses is the most crucial figure, followed by the number of clicks, and finally the number of opens.</p>
 
-&lt;p&gt;You will receive a thorough email report on the success of each version, and the system will identify the winner’s email as the winner.&lt;/p&gt;
+<p>You will receive a thorough email report on the success of each version, and the system will identify the winner’s email as the winner.</p>
 
-&lt;p&gt;Techniques and Hints&lt;/p&gt;
+<p>Techniques and Hints</p>
 
-&lt;p&gt;To run your A/B test campaign effectively and prevent typical blunders, you must adhere to specific guidelines and best practices of A/B testing.
-Choose which elements to test carefully based on your key performance metrics (opens, clicks, and replies):&lt;/p&gt;
+<p>To run your A/B test campaign effectively and prevent typical blunders, you must adhere to specific guidelines and best practices of A/B testing.
+Choose which elements to test carefully based on your key performance metrics (opens, clicks, and replies):</p>
 
-&lt;p&gt;Body content, added value for your prospects, Subject lines, and calls to action or offers. Each of these factors (and many more) is equally significant because it can assist you in converting.&lt;/p&gt;
+<p>Body content, added value for your prospects, Subject lines, and calls to action or offers. Each of these factors (and many more) is equally significant because it can assist you in converting.</p>
 
-&lt;p&gt;Dig a little deeper and see how they relate to your key performance indicators (KPIs).&lt;/p&gt;
+<p>Dig a little deeper and see how they relate to your key performance indicators (KPIs).</p>
 
-&lt;ol&gt;
-  &lt;li&gt;The Open Rate&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>The Open Rate</li>
+</ol>
 
-&lt;p&gt;Your goal should be to get your prospects to open your email and read what you have to offer. Make your subject line great by investing as much time as you need to make it as catchy and captivating as possible.&lt;/p&gt;
+<p>Your goal should be to get your prospects to open your email and read what you have to offer. Make your subject line great by investing as much time as you need to make it as catchy and captivating as possible.</p>
 
-&lt;p&gt;If you want to fully A/B test, delivery time is equally vital.&lt;/p&gt;
+<p>If you want to fully A/B test, delivery time is equally vital.</p>
 
-&lt;p&gt;Determine the most likely moments when your prospects will be checking their inboxes.&lt;/p&gt;
+<p>Determine the most likely moments when your prospects will be checking their inboxes.</p>
 
-&lt;p&gt;For each individual campaign, Mautic can alter sending times based on different time zones.&lt;/p&gt;
+<p>For each individual campaign, Mautic can alter sending times based on different time zones.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Click-through Rate&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Click-through Rate</li>
+</ol>
 
-&lt;p&gt;Too many links in the email body might have negative implications, and your email may end up in the spam folder.&lt;/p&gt;
+<p>Too many links in the email body might have negative implications, and your email may end up in the spam folder.</p>
 
-&lt;p&gt;Avoid using URL shorteners and only use reliable links in your email message.&lt;/p&gt;
+<p>Avoid using URL shorteners and only use reliable links in your email message.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Response Rate&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Response Rate</li>
+</ol>
 
-&lt;p&gt;This is the most challenging part: how to persuade your prospects to respond to your email and, of course, to respond positively.&lt;/p&gt;
+<p>This is the most challenging part: how to persuade your prospects to respond to your email and, of course, to respond positively.</p>
 
-&lt;p&gt;Don’t bore your prospects with a long email, but you may need everything covered in one email.&lt;/p&gt;
+<p>Don’t bore your prospects with a long email, but you may need everything covered in one email.</p>
 
-&lt;p&gt;Because there is no one-size-fits-all solution, you should try both variants and determine which one works best for you!&lt;/p&gt;
+<p>Because there is no one-size-fits-all solution, you should try both variants and determine which one works best for you!</p>
 
-&lt;p&gt;Use the appropriate tone and vocabulary, make your email enjoyable to read, and include all relevant information.&lt;/p&gt;
+<p>Use the appropriate tone and vocabulary, make your email enjoyable to read, and include all relevant information.</p>
 
-&lt;p&gt;It’s also vital to format your email body – short, scannable paragraphs are easier to read.&lt;/p&gt;
+<p>It’s also vital to format your email body – short, scannable paragraphs are easier to read.</p>
 
-&lt;p&gt;You should also add social proof because studies show that customers are more eager to do business if they see recommendations from reliable professionals.&lt;/p&gt;
+<p>You should also add social proof because studies show that customers are more eager to do business if they see recommendations from reliable professionals.</p>
 
-&lt;p&gt;Drop a few names, but don’t go overboard.&lt;/p&gt;
+<p>Drop a few names, but don’t go overboard.</p>
 
-&lt;p&gt;Don’t forget to perform the following as well:&lt;/p&gt;
+<p>Don’t forget to perform the following as well:</p>
 
-&lt;p&gt;Choose your testing subject lines with care.&lt;/p&gt;
+<p>Choose your testing subject lines with care.</p>
 
-&lt;p&gt;Choose a set of prospects to include in your A/B testing (for example, 100, as that amount is sufficient for obtaining results in just a few days).&lt;/p&gt;
+<p>Choose a set of prospects to include in your A/B testing (for example, 100, as that amount is sufficient for obtaining results in just a few days).</p>
 
-&lt;p&gt;Make the groups as similar in size as possible; you can also distribute recipients based on a job description, geography, seniority, etc. Variations in these elements will have minimal impact on your results.&lt;/p&gt;
+<p>Make the groups as similar in size as possible; you can also distribute recipients based on a job description, geography, seniority, etc. Variations in these elements will have minimal impact on your results.</p>
 
-&lt;p&gt;Allow yourself enough time to test A/B testing should be carried out over a set amount of time to attain statistical significance.&lt;/p&gt;
+<p>Allow yourself enough time to test A/B testing should be carried out over a set amount of time to attain statistical significance.</p>
 
-&lt;p&gt;Test your campaign for too little or too long. You won’t discern whether the results are significant, and you’ll waste valuable time.&lt;/p&gt;
+<p>Test your campaign for too little or too long. You won’t discern whether the results are significant, and you’ll waste valuable time.</p>
 
-&lt;p&gt;There is no assurance that your efforts will yield adequate results, but you should allow enough time for your test campaign to produce results you can work with.&lt;/p&gt;
+<p>There is no assurance that your efforts will yield adequate results, but you should allow enough time for your test campaign to produce results you can work with.</p>
 
-&lt;p&gt;Don’t abandon or discontinue testing if one of your test campaigns fails, or discontinue testing after a successful one. Test your winning version against a fresh one to ensure you have the best-optimized version for future campaigns.&lt;/p&gt;</content><author><name></name></author><category term="analytics" /><summary type="html">You can’t manage without measuring.</summary></entry><entry><title type="html">Deliverability</title><link href="/deliverability/intro.html" rel="alternate" type="text/html" title="Deliverability" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/deliverability/intro</id><content type="html" xml:base="/deliverability/intro.html">&lt;h3 id=&quot;deliverability&quot;&gt;Deliverability&lt;/h3&gt;
-&lt;p&gt;Contents&lt;/p&gt;
+<p>Don’t abandon or discontinue testing if one of your test campaigns fails, or discontinue testing after a successful one. Test your winning version against a fresh one to ensure you have the best-optimized version for future campaigns.</p>]]></content><author><name></name></author><category term="analytics" /><summary type="html"><![CDATA[You can’t manage without measuring.]]></summary></entry><entry><title type="html">Deliverability</title><link href="http://localhost:4001/deliverability/intro.html" rel="alternate" type="text/html" title="Deliverability" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/deliverability/intro</id><content type="html" xml:base="http://localhost:4001/deliverability/intro.html"><![CDATA[<h3 id="deliverability">Deliverability</h3>
+<p>Contents</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Introduction to email deliverability&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Introduction to email deliverability</li>
+</ol>
 
-&lt;p&gt;1.1 What is email deliverability?
+<p>1.1 What is email deliverability?
 1.2 Why do emails bounce?
 1.3 What happens when emails get delivered?
 1.4 Spam, the worst?
 1.5 Summing up
-1.6 So, why is this important when it comes to sales?&lt;/p&gt;
+1.6 So, why is this important when it comes to sales?</p>
 
-&lt;ol&gt;
-  &lt;li&gt;What influences deliverability?&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>What influences deliverability?</li>
+</ol>
 
-&lt;p&gt;2.1 Technical configuration
+<p>2.1 Technical configuration
 2.2 Reputation
 2.3 Content
 2.4 Volume
 2.5 Data quality
-2.6 Email stack&lt;/p&gt;
+2.6 Email stack</p>
 
-&lt;ol&gt;
-  &lt;li&gt;How can I improve my email deliverability?&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>How can I improve my email deliverability?</li>
+</ol>
 
-&lt;p&gt;3.1 Set up the correct technical configuration
+<p>3.1 Set up the correct technical configuration
 3.2 Improve Your Reputation
 3.3 Content
 3.4 Be mindful of your email volume
 3.5 Make sure you have the highest quality of email data
-3.6 Recipient’s email stack&lt;/p&gt;
+3.6 Recipient’s email stack</p>
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;TL;DR&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Introduction to email deliverability&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>
+    <p>TL;DR</p>
+  </li>
+  <li>
+    <p>Introduction to email deliverability</p>
+  </li>
+</ol>
 
-&lt;p&gt;1.1 What is email deliverability?&lt;/p&gt;
+<p>1.1 What is email deliverability?</p>
 
-&lt;p&gt;Email deliverability is the ability of outbound emails to make it into their recipient’s inboxes. The result of excellent and poor deliverability only has two possible outcomes: emails can either bounce or be successfully delivered. This is why deliverability has become an essential factor driving email success (or failure) for any organization doing outbound sales in 2021.&lt;/p&gt;
+<p>Email deliverability is the ability of outbound emails to make it into their recipient’s inboxes. The result of excellent and poor deliverability only has two possible outcomes: emails can either bounce or be successfully delivered. This is why deliverability has become an essential factor driving email success (or failure) for any organization doing outbound sales in 2021.</p>
 
-&lt;p&gt;1.2 Why do emails bounce?&lt;/p&gt;
+<p>1.2 Why do emails bounce?</p>
 
-&lt;p&gt;A bounce happens when an email fails to be delivered to the recipient’s mailbox. This can happen for several reasons. One of the most common reasons is when the email address doesn’t exist. For example, when there is a typo in an email or when someone has left the company, these situations are called hard bounces.
-There are other possible reasons why your emails may bounce, including if the recipient’s inbox is full, the email is too large, etc - these are called soft bounces.&lt;/p&gt;
+<p>A bounce happens when an email fails to be delivered to the recipient’s mailbox. This can happen for several reasons. One of the most common reasons is when the email address doesn’t exist. For example, when there is a typo in an email or when someone has left the company, these situations are called hard bounces.
+There are other possible reasons why your emails may bounce, including if the recipient’s inbox is full, the email is too large, etc - these are called soft bounces.</p>
 
-&lt;p&gt;1.3 What happens when emails get delivered?&lt;/p&gt;
+<p>1.3 What happens when emails get delivered?</p>
 
-&lt;p&gt;Getting an email delivered means that the email made it into one of the recipient’s, inbox folders. It does not mean that you are in the primary inbox. Email providers use algorithms to determine whether a specific email should be placed in the primary, inbox, social folder, promotions folder or in the spam folder.&lt;/p&gt;
+<p>Getting an email delivered means that the email made it into one of the recipient’s, inbox folders. It does not mean that you are in the primary inbox. Email providers use algorithms to determine whether a specific email should be placed in the primary, inbox, social folder, promotions folder or in the spam folder.</p>
 
-&lt;p&gt;1.4 Spam, the worst?&lt;/p&gt;
+<p>1.4 Spam, the worst?</p>
 
-&lt;p&gt;When sending out cold emails, some of them might land in the span. folder. This can happen for multiple reasons.&lt;/p&gt;
+<p>When sending out cold emails, some of them might land in the span. folder. This can happen for multiple reasons.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Someone marks your email as spam 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Someone marks your email as spam 
 • You have a missing or incorrect email domain setup 
 • Your domain has a poor reputation 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;We will dive into these in the following sections. Spam is something that you want to avoid as much as possible and we will provide a few practical insights on how to do it.&lt;/p&gt;
+<p>We will dive into these in the following sections. Spam is something that you want to avoid as much as possible and we will provide a few practical insights on how to do it.</p>
 
-&lt;p&gt;1.5 Summing up…&lt;/p&gt;
+<p>1.5 Summing up…</p>
 
-&lt;p&gt;Deliverability, as we define it here, is the ability to send an email that makes it to the primary inbox of your recipient. In this guide we’ll explain which factors increase the chances of your emails landing in Me Primary inbox.&lt;/p&gt;
+<p>Deliverability, as we define it here, is the ability to send an email that makes it to the primary inbox of your recipient. In this guide we’ll explain which factors increase the chances of your emails landing in Me Primary inbox.</p>
 
-&lt;p&gt;[Image: Only a percentage of the emails you send go to the primary inbox and are opened by your recipients.]&lt;/p&gt;
+<p>[Image: Only a percentage of the emails you send go to the primary inbox and are opened by your recipients.]</p>
 
-&lt;p&gt;1.6 So, why is this important when it comes to sales?&lt;/p&gt;
+<p>1.6 So, why is this important when it comes to sales?</p>
 
-&lt;p&gt;Deliverability is one of most important metrics for sales, marketing, and growth teams at B2B companies. These teams are revenue drivers and email is one of their main channels to engage with prospects and generate revenue.&lt;/p&gt;
+<p>Deliverability is one of most important metrics for sales, marketing, and growth teams at B2B companies. These teams are revenue drivers and email is one of their main channels to engage with prospects and generate revenue.</p>
 
-&lt;p&gt;We could summarize deliverability and its impact like this:&lt;/p&gt;
+<p>We could summarize deliverability and its impact like this:</p>
 
-&lt;p&gt;Better Deliverability -&amp;gt; More Sales Conversations -&amp;gt; Increased Sales Pipeline -&amp;gt; More New Customers -&amp;gt; Revenue!!!&lt;/p&gt;
+<p>Better Deliverability -&gt; More Sales Conversations -&gt; Increased Sales Pipeline -&gt; More New Customers -&gt; Revenue!!!</p>
 
-&lt;p&gt;For B2B companies improving their “top of the funnel; engaging with more prospects translates directly into more revenue at the “bottom of the funnel”.&lt;/p&gt;
+<p>For B2B companies improving their “top of the funnel; engaging with more prospects translates directly into more revenue at the “bottom of the funnel”.</p>
 
-&lt;p&gt;A good deliverability rate at the “top of the funnel”  affects your projections for revenue, i.e. if you increase your deliverability by 50%, You would be able to increase your revenue projections by 50%.&lt;/p&gt;
+<p>A good deliverability rate at the “top of the funnel”  affects your projections for revenue, i.e. if you increase your deliverability by 50%, You would be able to increase your revenue projections by 50%.</p>
 
-&lt;p&gt;So, really, for sales teams:&lt;/p&gt;
+<p>So, really, for sales teams:</p>
 
-&lt;p&gt;Deliverability = Revenue!!!&lt;/p&gt;
+<p>Deliverability = Revenue!!!</p>
 
-&lt;p&gt;In the next sections, we’ll discuss what influences deliverability and which easy steps you can take to improve deliverability.&lt;/p&gt;
+<p>In the next sections, we’ll discuss what influences deliverability and which easy steps you can take to improve deliverability.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;What influences deliverability?&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>What influences deliverability?</li>
+</ol>
 
-&lt;p&gt;2.1 Technical Configuration&lt;/p&gt;
+<p>2.1 Technical Configuration</p>
 
-&lt;p&gt;Incorrect or missing configurations of your email domain will hurt your deliverability. The first thing you need to ensure is that you have your email domain properly set up.&lt;/p&gt;
+<p>Incorrect or missing configurations of your email domain will hurt your deliverability. The first thing you need to ensure is that you have your email domain properly set up.</p>
 
-&lt;p&gt;SPF, DKIM, and DMARC are common configurations used to double-check the sender’s identity. Without them, external attackers can easily send malicious emails on your behalf. If this happens, your emails will most likely end up in the spam folder.&lt;/p&gt;
+<p>SPF, DKIM, and DMARC are common configurations used to double-check the sender’s identity. Without them, external attackers can easily send malicious emails on your behalf. If this happens, your emails will most likely end up in the spam folder.</p>
 
-&lt;p&gt;Lets take a closer look at each one of these 3 configurations:&lt;/p&gt;
+<p>Lets take a closer look at each one of these 3 configurations:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sender Policy Framework, SPF. SPF allows you to choose which servers can send emails from your domain. For example, if you only allow Gmail servers, only users that are signed into your account through the Gmail platform will be able to send emails.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sender Policy Framework, SPF. SPF allows you to choose which servers can send emails from your domain. For example, if you only allow Gmail servers, only users that are signed into your account through the Gmail platform will be able to send emails.
 
-Domain Keys Identified Message, DKIM. DKIM attributes a digital signature to your emails so that the recipient&apos;s email can automatically check if there was any content changed by a third-party (i.e attachments, links, etc).
+Domain Keys Identified Message, DKIM. DKIM attributes a digital signature to your emails so that the recipient's email can automatically check if there was any content changed by a third-party (i.e attachments, links, etc).
 
-Domain-based Message Authentication, Reporting &amp;amp; Conformance, DMARC. DMARC is build on top of SPF and DKIM and allows you to determine how you want to deal with any actions that trigger security alerts. In a nutshell, this will be your security-breach reporting process.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+Domain-based Message Authentication, Reporting &amp; Conformance, DMARC. DMARC is build on top of SPF and DKIM and allows you to determine how you want to deal with any actions that trigger security alerts. In a nutshell, this will be your security-breach reporting process.
+</code></pre></div></div>
 
-&lt;p&gt;2.2 Reputation&lt;/p&gt;
+<p>2.2 Reputation</p>
 
-&lt;p&gt;Every sender’s IP, domain, and individual email address has a reputation score. You can think of this reputation as karma points :  “good” behavior will give you positive points, and “bad” behavior will give you negative points.&lt;/p&gt;
+<p>Every sender’s IP, domain, and individual email address has a reputation score. You can think of this reputation as karma points :  “good” behavior will give you positive points, and “bad” behavior will give you negative points.</p>
 
-&lt;p&gt;What an individual user does will impact their own reputation but it will also impact the company’s domain and IP address reputation.&lt;/p&gt;
+<p>What an individual user does will impact their own reputation but it will also impact the company’s domain and IP address reputation.</p>
 
-&lt;p&gt;Let’s dive deeper into the different aspects of reputation:&lt;/p&gt;
+<p>Let’s dive deeper into the different aspects of reputation:</p>
 
-&lt;p&gt;a) Sender reputation&lt;/p&gt;
+<p>a) Sender reputation</p>
 
-&lt;p&gt;The sender’s reputation is the reputation attributed to the specific mailbox from which the email is being sent - this corresponds to your individual reputation.&lt;/p&gt;
+<p>The sender’s reputation is the reputation attributed to the specific mailbox from which the email is being sent - this corresponds to your individual reputation.</p>
 
-&lt;p&gt;The main factors influencing your sender reputation are:&lt;/p&gt;
+<p>The main factors influencing your sender reputation are:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• The history of your email address. If you have an email address that has a lot of history, i.e. it was created years ago and has been used to send and receive a lot of emails then you you have a strong reputation. On Me other hand, a brand new email address has a weak reputation. 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• The history of your email address. If you have an email address that has a lot of history, i.e. it was created years ago and has been used to send and receive a lot of emails then you you have a strong reputation. On Me other hand, a brand new email address has a weak reputation. 
 
 • Your daily activity. If you send email. that are marked as spam, you will end up hurting your reputation. If most of your emails are responded to and you have a lot of email threads, you will positively impact your reputation. 
 
 • Your send volume. If you send a burst of hundreds of emails in a short period of time and they all look 99% alike you will hurt your reputation. 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;b) Domain reputation&lt;/p&gt;
+<p>b) Domain reputation</p>
 
-&lt;p&gt;Domain reputation aggregates the reputation of individual mailboxes. Think of it as the sum of all senders reputation scores that belong to the same domain.&lt;/p&gt;
+<p>Domain reputation aggregates the reputation of individual mailboxes. Think of it as the sum of all senders reputation scores that belong to the same domain.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@domain.com reputation = employee[1]@domain.com + 			employee[2]@domain.com + — + employee[N]@domain.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@domain.com reputation = employee[1]@domain.com + 			employee[2]@domain.com + — + employee[N]@domain.com
+</code></pre></div></div>
 
-&lt;p&gt;If one user is flagged, they will hurt their own reputation and the entire domain. New domains, given their limited history, have a fragile reputation so you need to pay special attention to your activity during the first weeks or even months.&lt;/p&gt;
+<p>If one user is flagged, they will hurt their own reputation and the entire domain. New domains, given their limited history, have a fragile reputation so you need to pay special attention to your activity during the first weeks or even months.</p>
 
-&lt;p&gt;c) IP address reputation&lt;/p&gt;
+<p>c) IP address reputation</p>
 
-&lt;p&gt;Similarly to domain reputation, all of the users activity within an IP will impact that IP address reputation.&lt;/p&gt;
+<p>Similarly to domain reputation, all of the users activity within an IP will impact that IP address reputation.</p>
 
-&lt;p&gt;The main difference is that several companies could be sharing the same IP address. For instance, you could be sending emails responsibly and still have a poor IP reputation because of the other companies using the same platform to send their emails (i.e Hubspot, Sendgrid, Mailchimp, etc).&lt;/p&gt;
+<p>The main difference is that several companies could be sharing the same IP address. For instance, you could be sending emails responsibly and still have a poor IP reputation because of the other companies using the same platform to send their emails (i.e Hubspot, Sendgrid, Mailchimp, etc).</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Why do companies share the same IP? Having a single dedicated IP is expensive and it usually comes as an extra feature. Thus, most people end up sharing the IP address to reduce costs.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Why do companies share the same IP? Having a single dedicated IP is expensive and it usually comes as an extra feature. Thus, most people end up sharing the IP address to reduce costs.
+</code></pre></div></div>
 
-&lt;p&gt;d) Temporary Reputation&lt;/p&gt;
+<p>d) Temporary Reputation</p>
 
-&lt;p&gt;When too many emails are marked as spam in a short period of time, the sender could end up in “spam jail”. This will affect reputation for 48 to 72 hours of time.&lt;/p&gt;
+<p>When too many emails are marked as spam in a short period of time, the sender could end up in “spam jail”. This will affect reputation for 48 to 72 hours of time.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;All of the factors mentioned here work in tandem and are all interconnected. Thanks to this breakdown you can now get a better understanding of where you reputation-related deliverability problems might be coming from.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>All of the factors mentioned here work in tandem and are all interconnected. Thanks to this breakdown you can now get a better understanding of where you reputation-related deliverability problems might be coming from.
+</code></pre></div></div>
 
-&lt;p&gt;2.3 Content&lt;/p&gt;
+<p>2.3 Content</p>
 
-&lt;p&gt;Good reputation helps. But, if the content of your email isn’t relevant, your emails can go to the wrong folder and be marked as spam. If you constantly use words like “Free”, “Promotion”, “Buy now”, etc… your emails will not land in the primary inbox.&lt;/p&gt;
+<p>Good reputation helps. But, if the content of your email isn’t relevant, your emails can go to the wrong folder and be marked as spam. If you constantly use words like “Free”, “Promotion”, “Buy now”, etc… your emails will not land in the primary inbox.</p>
 
-&lt;p&gt;The examples above are just the tip of the iceberg when it comes to content-related factors. Let’s explore what other content issues could be impacting your email deliverability.&lt;/p&gt;
+<p>The examples above are just the tip of the iceberg when it comes to content-related factors. Let’s explore what other content issues could be impacting your email deliverability.</p>
 
-&lt;p&gt;a) Sending the same content too many times&lt;/p&gt;
+<p>a) Sending the same content too many times</p>
 
-&lt;p&gt;Most of the emails that you consistently use the same template over time, allowing it to be flagged as spam enough times that you essentially “wear it out” and “ding” your reputation.&lt;/p&gt;
+<p>Most of the emails that you consistently use the same template over time, allowing it to be flagged as spam enough times that you essentially “wear it out” and “ding” your reputation.</p>
 
-&lt;p&gt;b) Enabling open and click tracking&lt;/p&gt;
+<p>b) Enabling open and click tracking</p>
 
-&lt;p&gt;The typical “open” tracking software adds a pixel image to every email, so it can track how many times it has been seen. Standard tracking pixels are shared across thousand of companies and have already been identified by most email clients like Gmail and Outlook. If you are not using a custom tracking pixel, you might be suffering from poor deliverability.&lt;/p&gt;
+<p>The typical “open” tracking software adds a pixel image to every email, so it can track how many times it has been seen. Standard tracking pixels are shared across thousand of companies and have already been identified by most email clients like Gmail and Outlook. If you are not using a custom tracking pixel, you might be suffering from poor deliverability.</p>
 
-&lt;p&gt;Click tracking software uses a “redirect method” to track when a recipient clicks on a link in the emails you send. Click tracking has an especially negative impact when it comes to deliverability due to the amount of “unrelated” links that are added to your email body.&lt;/p&gt;
+<p>Click tracking software uses a “redirect method” to track when a recipient clicks on a link in the emails you send. Click tracking has an especially negative impact when it comes to deliverability due to the amount of “unrelated” links that are added to your email body.</p>
 
-&lt;p&gt;c) Adding too many links images&lt;/p&gt;
+<p>c) Adding too many links images</p>
 
-&lt;p&gt;Emails with too many images and links are typical characteristics of marketing emails, so these emails can easily be diverted from the primary inbox.&lt;/p&gt;
+<p>Emails with too many images and links are typical characteristics of marketing emails, so these emails can easily be diverted from the primary inbox.</p>
 
-&lt;p&gt;d) Having complex signatures&lt;/p&gt;
+<p>d) Having complex signatures</p>
 
-&lt;p&gt;Adding complex signatures with HTML code, too many links or images might hinder your deliverability and hurt your chances to make it to the primary inbox.&lt;/p&gt;
+<p>Adding complex signatures with HTML code, too many links or images might hinder your deliverability and hurt your chances to make it to the primary inbox.</p>
 
-&lt;p&gt;2.4 Volume&lt;/p&gt;
+<p>2.4 Volume</p>
 
-&lt;p&gt;On top of reputation and content, another important factor to take into account is the volume of emails that you’re sending:&lt;/p&gt;
+<p>On top of reputation and content, another important factor to take into account is the volume of emails that you’re sending:</p>
 
-&lt;p&gt;a) Unusual spikes in the activity of emails&lt;/p&gt;
+<p>a) Unusual spikes in the activity of emails</p>
 
-&lt;p&gt;Sending too many emails within a short period of time and having very little activity in the remaining periods might trigger suspicious activity warnings. Furthermore, sending bursts of emails increases the likelihood of multiple recipients marking you emails as spam in a similar time-frame.&lt;/p&gt;
+<p>Sending too many emails within a short period of time and having very little activity in the remaining periods might trigger suspicious activity warnings. Furthermore, sending bursts of emails increases the likelihood of multiple recipients marking you emails as spam in a similar time-frame.</p>
 
-&lt;p&gt;b) Number of emails sent vs emails received ratio&lt;/p&gt;
+<p>b) Number of emails sent vs emails received ratio</p>
 
-&lt;p&gt;When this ratio is too high, it means that you send a lot of emails that go unanswered. This is a problem especially for sales emails. Why?&lt;/p&gt;
+<p>When this ratio is too high, it means that you send a lot of emails that go unanswered. This is a problem especially for sales emails. Why?</p>
 
-&lt;p&gt;Think of an email sequence sent to 1000 prospects that has a first touch and 3 follow-up emails. If you achieve a 20% reply ratio, you’ll have 800 first touches plus 800*3 follow ups that never had an answer. You’ll end up, therefore, with an imbalance ratio of 3400-4000 emails sent vs 200 emails received!&lt;/p&gt;
+<p>Think of an email sequence sent to 1000 prospects that has a first touch and 3 follow-up emails. If you achieve a 20% reply ratio, you’ll have 800 first touches plus 800*3 follow ups that never had an answer. You’ll end up, therefore, with an imbalance ratio of 3400-4000 emails sent vs 200 emails received!</p>
 
-&lt;p&gt;c) Amount of email engagement&lt;/p&gt;
+<p>c) Amount of email engagement</p>
 
-&lt;p&gt;The more people who engage with your emails the better. If more people are opening and replying to your emails, the more likely it is that your emails will make it to the primary inbox.&lt;/p&gt;
+<p>The more people who engage with your emails the better. If more people are opening and replying to your emails, the more likely it is that your emails will make it to the primary inbox.</p>
 
-&lt;p&gt;This engagement can be measured in terms of open rates, reply rates, archived email rates, percentage of clicked links, etc…&lt;/p&gt;
+<p>This engagement can be measured in terms of open rates, reply rates, archived email rates, percentage of clicked links, etc…</p>
 
-&lt;p&gt;2.5 Data quality&lt;/p&gt;
+<p>2.5 Data quality</p>
 
-&lt;p&gt;Data quality is an often overlooked part of email deliverability. When it comes to sales emails, you want to make sure that you are sending the right emails to the right people. Invest time in prospecting and validating your contact information.&lt;/p&gt;
+<p>Data quality is an often overlooked part of email deliverability. When it comes to sales emails, you want to make sure that you are sending the right emails to the right people. Invest time in prospecting and validating your contact information.</p>
 
-&lt;p&gt;a) Bounces&lt;/p&gt;
+<p>a) Bounces</p>
 
-&lt;p&gt;If you’re using poor email data, it’s likely that a high percentage of your emails will bounce. Having a high bounce rate will trigger suspicious activity warnings and hurt your deliverability.&lt;/p&gt;
+<p>If you’re using poor email data, it’s likely that a high percentage of your emails will bounce. Having a high bounce rate will trigger suspicious activity warnings and hurt your deliverability.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;What bounce rate is considered safe? When it comes to cold outbound sales, having a bounce rate around 10% is considered safe and will not hinder deliverability.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What bounce rate is considered safe? When it comes to cold outbound sales, having a bounce rate around 10% is considered safe and will not hinder deliverability.
+</code></pre></div></div>
 
-&lt;p&gt;b) The wrong people are receiving your emails&lt;/p&gt;
+<p>b) The wrong people are receiving your emails</p>
 
-&lt;p&gt;A good lead generation process will help deliverability. If you contact the right people with the right message at the right time, you are maximizing the engagement rate of your emails and reducing the spam rate. This will help improve any future deliverability rates.&lt;/p&gt;
+<p>A good lead generation process will help deliverability. If you contact the right people with the right message at the right time, you are maximizing the engagement rate of your emails and reducing the spam rate. This will help improve any future deliverability rates.</p>
 
-&lt;p&gt;2.6 Email stack&lt;/p&gt;
+<p>2.6 Email stack</p>
 
-&lt;p&gt;Lastly, email deliverability will also be influenced by your recipient’s email stack (i.e Gmail, Outlook, Mailgun, etc) and any other tools that they might have in place to deal with unauthorized emails (additional verification’s and spam filters).&lt;/p&gt;
+<p>Lastly, email deliverability will also be influenced by your recipient’s email stack (i.e Gmail, Outlook, Mailgun, etc) and any other tools that they might have in place to deal with unauthorized emails (additional verification’s and spam filters).</p>
 
-&lt;p&gt;For example, companies with strict spam rules block all emails from domains they don’t usually interact with, or ask the sender additional email confirmation notices.&lt;/p&gt;
+<p>For example, companies with strict spam rules block all emails from domains they don’t usually interact with, or ask the sender additional email confirmation notices.</p>
 
-&lt;p&gt;These standards differ substantially between industries: Medical and Health-care industry, Government and Defense, or Finance and Fintech are usually spam strict industries.&lt;/p&gt;
+<p>These standards differ substantially between industries: Medical and Health-care industry, Government and Defense, or Finance and Fintech are usually spam strict industries.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;How can I improve my email deliverability?&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>How can I improve my email deliverability?</li>
+</ol>
 
-&lt;p&gt;Now that we have a better understanding of the factors influencing deliverability, we can start thinking about how to improve and maintain a high deliverability rating. As previously stated, protecting and improving deliverability is key to having good sales results.&lt;/p&gt;
+<p>Now that we have a better understanding of the factors influencing deliverability, we can start thinking about how to improve and maintain a high deliverability rating. As previously stated, protecting and improving deliverability is key to having good sales results.</p>
 
-&lt;p&gt;In this section, we will dive deeper into practical tips you can implement to improve your deliverability.&lt;/p&gt;
+<p>In this section, we will dive deeper into practical tips you can implement to improve your deliverability.</p>
 
-&lt;p&gt;3.1 Set up the right technical configuration&lt;/p&gt;
+<p>3.1 Set up the right technical configuration</p>
 
-&lt;p&gt;First things first, make sure your email domain and mailboxes are properly set up.&lt;/p&gt;
+<p>First things first, make sure your email domain and mailboxes are properly set up.</p>
 
-&lt;p&gt;a) SPF, DKIM, and DMARC&lt;/p&gt;
+<p>a) SPF, DKIM, and DMARC</p>
 
-&lt;p&gt;An incorrect configuration of your SPF, DKIM, and DMARC will increase the likelihood of your emails ending up in the spam folder. Make sure you correctly set up all these 3 configurations.&lt;/p&gt;
+<p>An incorrect configuration of your SPF, DKIM, and DMARC will increase the likelihood of your emails ending up in the spam folder. Make sure you correctly set up all these 3 configurations.</p>
 
-&lt;p&gt;For Google users:&lt;/p&gt;
+<p>For Google users:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Set up SPF&lt;/li&gt;
-  &lt;li&gt;Set up DKIM&lt;/li&gt;
-  &lt;li&gt;Set up DMARC&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Set up SPF</li>
+  <li>Set up DKIM</li>
+  <li>Set up DMARC</li>
+</ol>
 
-&lt;p&gt;For Exchange users:&lt;/p&gt;
+<p>For Exchange users:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Set up SPF&lt;/li&gt;
-  &lt;li&gt;Set up DKIM&lt;/li&gt;
-  &lt;li&gt;Set up DMARC&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Set up SPF</li>
+  <li>Set up DKIM</li>
+  <li>Set up DMARC</li>
+</ol>
 
-&lt;p&gt;If you are not the Administrator of your email domain, send these articles to the members of your team who will be able to set these up.&lt;/p&gt;
+<p>If you are not the Administrator of your email domain, send these articles to the members of your team who will be able to set these up.</p>
 
-&lt;p&gt;b) Custom domain tracking&lt;/p&gt;
+<p>b) Custom domain tracking</p>
 
-&lt;p&gt;By default, email sequencing tools use a shared domain to track all email opens. While this provides immediate stats, it can impact the deliverability of your emails.&lt;/p&gt;
+<p>By default, email sequencing tools use a shared domain to track all email opens. While this provides immediate stats, it can impact the deliverability of your emails.</p>
 
-&lt;p&gt;Set up a custom domain tracking and your deliverability reputation is entirely under your own control.&lt;/p&gt;
+<p>Set up a custom domain tracking and your deliverability reputation is entirely under your own control.</p>
 
-&lt;p&gt;c) Mailbox setup&lt;/p&gt;
+<p>c) Mailbox setup</p>
 
-&lt;p&gt;It can be easy for your recipients to forget that there’s a real person behind these emails. In order to make your mailbox look authentic, complete all the information on your profile.&lt;/p&gt;
+<p>It can be easy for your recipients to forget that there’s a real person behind these emails. In order to make your mailbox look authentic, complete all the information on your profile.</p>
 
-&lt;p&gt;Remember to add your name, a photo to your Google or Exchange accounts so your prospects can see the preview before they open your emails.&lt;/p&gt;
+<p>Remember to add your name, a photo to your Google or Exchange accounts so your prospects can see the preview before they open your emails.</p>
 
-&lt;p&gt;[Image: Contact on the left side has all the information missing, whereas the contact on the right side is complete.]&lt;/p&gt;
+<p>[Image: Contact on the left side has all the information missing, whereas the contact on the right side is complete.]</p>
 
-&lt;p&gt;3.2. Improve Your Reputation&lt;/p&gt;
+<p>3.2. Improve Your Reputation</p>
 
-&lt;p&gt;One of the most important things when it comes to deliverability is reputation. You want to ensure that you maximize your sender and your domain reputations.&lt;/p&gt;
+<p>One of the most important things when it comes to deliverability is reputation. You want to ensure that you maximize your sender and your domain reputations.</p>
 
-&lt;p&gt;a) Sender reputation&lt;/p&gt;
+<p>a) Sender reputation</p>
 
-&lt;p&gt;Here are a few tips on how you can maximize your sender reputation:&lt;/p&gt;
+<p>Here are a few tips on how you can maximize your sender reputation:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Increase your engagement rate. Add different types of activity to your mailbox in order to maximize the engagement rate and increase the number of non-sales activities. For example, you should exchange emails with colleagues, customers, friends, and subscribe to forums and newsletters .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Increase your engagement rate. Add different types of activity to your mailbox in order to maximize the engagement rate and increase the number of non-sales activities. For example, you should exchange emails with colleagues, customers, friends, and subscribe to forums and newsletters .
 
 • Don’t overload your mailbox. Track all of the emails you’re sending; this includes both new prospects and all of your existing sequence follow-ups. Ideally, this number is below 350 emails per mailbox per day .
 
@@ -972,54 +972,54 @@ Domain-based Message Authentication, Reporting &amp;amp; Conformance, DMARC. DMA
 • Subscribe to a w arm - up net w or k . W arming up a mailbox is the equivalent of consolidating its reputation by adding high-quality volume and engagement. I f you are an MailSwami user you can do this automatically, learn more about the warm-up network here .
 
 • Monitor your daily activity. If you use your mailbox mainly for sales emails, you should monitor the quality of your conversations. If you have a lot of prospects asking you to Stop or Unsubscribe, you should review your lead generation process and your email templates as quickly as possible.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;[Image: Barometer for open rate benchmarks 24h after the first email is sent.]&lt;/p&gt;
+<p>[Image: Barometer for open rate benchmarks 24h after the first email is sent.]</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Send emails to personal mailboxes and have them mark your emails as not spam. When doing sales email outreach, it’s normal to have a number of emails marked as spam. Something you can do to curb this is to periodically send emails to personal email addresses (@gmail.com, @yahoo.com, @outlook.com...) and have the recipient mark you as not spam if they find your email in the spam folder.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Send emails to personal mailboxes and have them mark your emails as not spam. When doing sales email outreach, it’s normal to have a number of emails marked as spam. Something you can do to curb this is to periodically send emails to personal email addresses (@gmail.com, @yahoo.com, @outlook.com...) and have the recipient mark you as not spam if they find your email in the spam folder.
+</code></pre></div></div>
 
-&lt;p&gt;b) Domain reputation&lt;/p&gt;
+<p>b) Domain reputation</p>
 
-&lt;p&gt;The reputation of a domain is the sum of the reputations of all its individual mailboxes. A few tips to improve your domain reputation:&lt;/p&gt;
+<p>The reputation of a domain is the sum of the reputations of all its individual mailboxes. A few tips to improve your domain reputation:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Make sure all your mailboxes follow the deliverability rules. In order to guarantee a strong email domain reputation, make sure all of the individual mailboxes in your account follow the rules mentioned in the previous section. Deliverability should, therefore, be an essential part of all your onboarding programs for new members in the sales team.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Make sure all your mailboxes follow the deliverability rules. In order to guarantee a strong email domain reputation, make sure all of the individual mailboxes in your account follow the rules mentioned in the previous section. Deliverability should, therefore, be an essential part of all your onboarding programs for new members in the sales team.
 
 • Create multiple domains. When doing cold outreach via email, it’s best to have multiple domains. The goal is to not overload and hurt the reputation of a single domain. You should purchase and set up different email domains, e.g.: company.com, companyapp.com, getcompany.com, trycompany.com, etc… Buying additional domains is like buying insurance for your sales team (note: a new domain costs about $15/year).
 
 • Spread email volume across different domains. With the multiple alias email domains you created, spread out the sending volume evenly. 
 
 • Warm-up your domains. It used to be possible to create a new domain and immediately start sending hundreds of sales emails. This type of behavior is no longer tolerated and domains with poor history will be marked as spam… fast! For every new domain you create, make sure to warm it up for at least 4 weeks before you start sending any outbound emails.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;Read more about this here: MailSwami Warm -Up Network .&lt;/p&gt;
+<p>Read more about this here: MailSwami Warm -Up Network .</p>
 
-&lt;p&gt;c) IP address reputation&lt;/p&gt;
+<p>c) IP address reputation</p>
 
-&lt;p&gt;IPs are usually shared across multiple domains.&lt;/p&gt;
+<p>IPs are usually shared across multiple domains.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Test your deliverability rates using different email platforms. Pay attention to which platforms you use to send emails (not only for sales but marketing, too). IPs are usually shared across multiple domains. If you are setting up a new IP you should make sure you create a dedicated IP for your company’s exclusive usage. This way, you can have complete control over its reputation.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Test your deliverability rates using different email platforms. Pay attention to which platforms you use to send emails (not only for sales but marketing, too). IPs are usually shared across multiple domains. If you are setting up a new IP you should make sure you create a dedicated IP for your company’s exclusive usage. This way, you can have complete control over its reputation.
 
 
 • Test your deliverability rates using different email platforms. Pay attention to which platforms you use to send emails (not only for sales but marketing, too). IPs are usually shared across multiple domains. If you are setting up a new IP you should make sure you create a dedicated IP for your company’s exclusive usage. This way, you can have complete control over its reputation.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;d) Temporary Reputation&lt;/p&gt;
+<p>d) Temporary Reputation</p>
 
-&lt;p&gt;Your deliverability can be temporarily hit if some of your emails are reported as spam.&lt;/p&gt;
+<p>Your deliverability can be temporarily hit if some of your emails are reported as spam.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Monitor open rates. Your deliverability can be temporarily hit if some of your emails are reported as spam. If you see open rates below 20% for a few of your first email sends, you’re likely having a spam issue.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Monitor open rates. Your deliverability can be temporarily hit if some of your emails are reported as spam. If you see open rates below 20% for a few of your first email sends, you’re likely having a spam issue.
 
 • Pause or delay any new outreach. The best way to solve a temporary deliverability issue is to hit ‘pause’ on any of your planned activity. Delay all new emails by 48-72 hours and you should see an increase in open rates. If the problem persists then you might be experiencing a more serious deliverability problem.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;3.3 Content&lt;/p&gt;
+<p>3.3 Content</p>
 
-&lt;p&gt;In order to maximize your engagement and reply rates: Make sure you’re sending a message to the right person at the right time.&lt;/p&gt;
+<p>In order to maximize your engagement and reply rates: Make sure you’re sending a message to the right person at the right time.</p>
 
-&lt;p&gt;Here are a few practical things you can do to improve your engagement rates:&lt;/p&gt;
+<p>Here are a few practical things you can do to improve your engagement rates:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Add variability to your sales outreach. Most sales teams create 2 or 3 different templates and end up using the same email copy every day. It’s easy for spam filters to pick up on this type of behavior. Therefore, you should have a number of different approaches being sent out from your mailbox, every single month. The best way to do this is to run monthly sales initiatives, where you A/B test different email templates with different audiences.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Add variability to your sales outreach. Most sales teams create 2 or 3 different templates and end up using the same email copy every day. It’s easy for spam filters to pick up on this type of behavior. Therefore, you should have a number of different approaches being sent out from your mailbox, every single month. The best way to do this is to run monthly sales initiatives, where you A/B test different email templates with different audiences.
 
 • Don’t “wear out” email copy. If you’re using the same template for months on end, spam filters will have seen it being reported enough times that you end up going to spam automatically. You should review your templates periodically to avoid this issue.
 
@@ -1028,119 +1028,119 @@ Domain-based Message Authentication, Reporting &amp;amp; Conformance, DMARC. DMA
 • Avoid using click tracking features. Click tracking softare wraps your links in a different set of “unrelated domains” which has a substantial impact on your deliverability. If you’re using click tracking and experience low open rates, try quick test ( even if you’re using well - known tools like Mailchimp ) . You might be surprised by disabling it and running a the results.
 
 • Simplify email signatures. Don’t use complex HTML signatures. In the case of signatures, less is more. You don’t want your emails to go to spam because of your signature. Use a signature that is plain text only, with your name, and (at most) 2 to 3 different links (e.g.: company website, LinkedIn, calendar, etc...).
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;[Image: HTML complexity for two different email signatures. On the left, it shows a complex signature with multiple links and images, while on the right is a simple signature with only one link.]&lt;/p&gt;
+<p>[Image: HTML complexity for two different email signatures. On the left, it shows a complex signature with multiple links and images, while on the right is a simple signature with only one link.]</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• The obvious. Avoid using spam triggering words like “Free”, “Promotion”, “Exclusive”, etc. You can learn more about this here.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• The obvious. Avoid using spam triggering words like “Free”, “Promotion”, “Exclusive”, etc. You can learn more about this here.
+</code></pre></div></div>
 
-&lt;p&gt;3.4. Be mindful of your email volume&lt;/p&gt;
+<p>3.4. Be mindful of your email volume</p>
 
-&lt;p&gt;Every email and domain has a limit on volume capacity. For example, at MailSwami, we consider the maximum number of emails you should send in a day to be 350. Beyond this daily number, your account may end up blocked by email providers like Gmail and Outlook.&lt;/p&gt;
+<p>Every email and domain has a limit on volume capacity. For example, at MailSwami, we consider the maximum number of emails you should send in a day to be 350. Beyond this daily number, your account may end up blocked by email providers like Gmail and Outlook.</p>
 
-&lt;p&gt;When sending sales emails, be extra careful with the amount of volume you send from a specific mailbox and domain. Here are a few basic volume rules to follow:&lt;/p&gt;
+<p>When sending sales emails, be extra careful with the amount of volume you send from a specific mailbox and domain. Here are a few basic volume rules to follow:</p>
 
-&lt;p&gt;a) Create new domains and mailboxes&lt;/p&gt;
+<p>a) Create new domains and mailboxes</p>
 
-&lt;p&gt;As we’ve mentioned, having multiple mailboxes and email domains helps with reputation management but it also allows you to do more sales volume.&lt;/p&gt;
+<p>As we’ve mentioned, having multiple mailboxes and email domains helps with reputation management but it also allows you to do more sales volume.</p>
 
-&lt;p&gt;If you plan on ramping up email volume, then it’s best to create new domains and mailboxes in order to disperse the volume. Pay special attention to any new domains which may have a poor reputation, and remember to warm them up for at least 4 weeks before you send any sales email to unverified emails.&lt;/p&gt;
+<p>If you plan on ramping up email volume, then it’s best to create new domains and mailboxes in order to disperse the volume. Pay special attention to any new domains which may have a poor reputation, and remember to warm them up for at least 4 weeks before you send any sales email to unverified emails.</p>
 
-&lt;p&gt;Note that larger companies may take advantage of their strong domain. Having a high ratio between non-sales mailboxes vs. sales mailboxes will help maintain a positive reputation within your main domain.&lt;/p&gt;
+<p>Note that larger companies may take advantage of their strong domain. Having a high ratio between non-sales mailboxes vs. sales mailboxes will help maintain a positive reputation within your main domain.</p>
 
-&lt;p&gt;b) Send small and recurring batches of new emails&lt;/p&gt;
+<p>b) Send small and recurring batches of new emails</p>
 
-&lt;p&gt;Remember that deliverability algorithms look for suspicious behavior in your email activity. Instead of having huge spikes in the activity of your email, it’s important that you keep it more consistent (for example, the 30/40 emails a day).&lt;/p&gt;
+<p>Remember that deliverability algorithms look for suspicious behavior in your email activity. Instead of having huge spikes in the activity of your email, it’s important that you keep it more consistent (for example, the 30/40 emails a day).</p>
 
-&lt;p&gt;For MailSwami customers: You can enable the Schedule feature to avoid sending new emails on days with too much activity already scheduled. Check this article on how to set it up .&lt;/p&gt;
+<p>For MailSwami customers: You can enable the Schedule feature to avoid sending new emails on days with too much activity already scheduled. Check this article on how to set it up .</p>
 
-&lt;p&gt;[Image: Left side of the image shows the right volume flow with multiple mailboxes and domains, while on the right side is shown what you shouldn’t do, irregular email activity all through the same mailbox.]&lt;/p&gt;
+<p>[Image: Left side of the image shows the right volume flow with multiple mailboxes and domains, while on the right side is shown what you shouldn’t do, irregular email activity all through the same mailbox.]</p>
 
-&lt;p&gt;c) Balance your sent vs received emails ratio&lt;/p&gt;
+<p>c) Balance your sent vs received emails ratio</p>
 
-&lt;p&gt;To prevent big disparities in your sent/received emails ratio, you should focus not only on maximizing your replies, but also to signing up for newsletters that will help balance your sent/received ratios.&lt;/p&gt;
+<p>To prevent big disparities in your sent/received emails ratio, you should focus not only on maximizing your replies, but also to signing up for newsletters that will help balance your sent/received ratios.</p>
 
-&lt;p&gt;Remember the example in the previous section about the huge disparity
-between sent vs received emails? This will help with that!&lt;/p&gt;
+<p>Remember the example in the previous section about the huge disparity
+between sent vs received emails? This will help with that!</p>
 
-&lt;p&gt;At MailSwami, we recommend that for each email received, no more
-than 4 emails should be sent.&lt;/p&gt;
+<p>At MailSwami, we recommend that for each email received, no more
+than 4 emails should be sent.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sent / Received ratio = 4000 / 1000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sent / Received ratio = 4000 / 1000
+</code></pre></div></div>
 
-&lt;p&gt;[Image: The maximum ratio of emails sent / received is 4. This means that for any linear combination between emails sent and received you should always attempt to have a maximum of 4x more sent emails than received emails (while respecting all the other deliverability rules).]&lt;/p&gt;
+<p>[Image: The maximum ratio of emails sent / received is 4. This means that for any linear combination between emails sent and received you should always attempt to have a maximum of 4x more sent emails than received emails (while respecting all the other deliverability rules).]</p>
 
-&lt;p&gt;3.5 Make sure you have the highest quality of email data&lt;/p&gt;
+<p>3.5 Make sure you have the highest quality of email data</p>
 
-&lt;p&gt;This is probably one of the most difficult pieces of the email deliverability puzzle to solve.&lt;/p&gt;
+<p>This is probably one of the most difficult pieces of the email deliverability puzzle to solve.</p>
 
-&lt;p&gt;Data is easy to find. But good data isn’t. It’s not a surprise that this is the #1 factor of complaints in lead generation vendors, even though that’s their unique job.&lt;/p&gt;
+<p>Data is easy to find. But good data isn’t. It’s not a surprise that this is the #1 factor of complaints in lead generation vendors, even though that’s their unique job.</p>
 
-&lt;p&gt;In order to make sure you’re maximizing the full potential of your sales
-emails, there are a few things you can do:&lt;/p&gt;
+<p>In order to make sure you’re maximizing the full potential of your sales
+emails, there are a few things you can do:</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Take time to refine your lead generation process. Find your relevant target audience.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Take time to refine your lead generation process. Find your relevant target audience.
 
 • Find buying intent signals (e.g.: someone who engages with LinkedIn content or attends a webinar that is relevant to your ICP is showing you that he/she is interested in your product or service - read this article to find high-intent strategies)
 
 • Bounce rates: Use high-quality lead generation tools. This is really important as you don’t want to pay for software that gives you bad quality data and makes your emails end up in spam.
 
 • A void contacting shared inbox as such as info@, sales@, hello @ ... Sales emails sent to shared inboxes are more likely to be marked as spam.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;Above all, make sure you’re sending your emails to the right audience. These prospects are not only more likely to convert to paying customers but will also help you achieve higher engagement levels.&lt;/p&gt;
+<p>Above all, make sure you’re sending your emails to the right audience. These prospects are not only more likely to convert to paying customers but will also help you achieve higher engagement levels.</p>
 
-&lt;p&gt;If you don’t put the time into defining your ideal customer and personalizing your emails, you’ll find that people will be less likely to engage with your emails, and more likely to mark you as spam.&lt;/p&gt;
+<p>If you don’t put the time into defining your ideal customer and personalizing your emails, you’ll find that people will be less likely to engage with your emails, and more likely to mark you as spam.</p>
 
-&lt;p&gt;3.6 Recipient’s email stack&lt;/p&gt;
+<p>3.6 Recipient’s email stack</p>
 
-&lt;p&gt;Although this is the factor that you have the least control of, you should be mindful about it when designing your outbound initiatives.&lt;/p&gt;
+<p>Although this is the factor that you have the least control of, you should be mindful about it when designing your outbound initiatives.</p>
 
-&lt;p&gt;Different industries and companies have different ways of dealing with unsolicited emails. In a nutshell, the recipient’s email stack will determine if the domain you are sending emails to has additional spam filters to block your emails.&lt;/p&gt;
+<p>Different industries and companies have different ways of dealing with unsolicited emails. In a nutshell, the recipient’s email stack will determine if the domain you are sending emails to has additional spam filters to block your emails.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;• Keep spam controls in mind and continuously test for different industries, locations, etc. If you start to notice any patterns in the deliverability of your emails, A/B test and refine your target audience, or adapt the way to do your campaigns.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• Keep spam controls in mind and continuously test for different industries, locations, etc. If you start to notice any patterns in the deliverability of your emails, A/B test and refine your target audience, or adapt the way to do your campaigns.
+</code></pre></div></div>
 
-&lt;p&gt;Example. For some leads in the medical &amp;amp; healthcare industry (a spam-strict industry), you may be able to make your “cold” emails “warmer” by previously connecting with your prospects in other online platforms/communities, such as LinkedIn. Or perhaps, you should first nurture your leads with content before you pitch any type of promotional content.&lt;/p&gt;
+<p>Example. For some leads in the medical &amp; healthcare industry (a spam-strict industry), you may be able to make your “cold” emails “warmer” by previously connecting with your prospects in other online platforms/communities, such as LinkedIn. Or perhaps, you should first nurture your leads with content before you pitch any type of promotional content.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;TL;DR&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>TL;DR</li>
+</ol>
 
-&lt;p&gt;To create a successful growth engine, sales teams need to pay special attention to email deliverability.&lt;/p&gt;
+<p>To create a successful growth engine, sales teams need to pay special attention to email deliverability.</p>
 
-&lt;p&gt;In a nutshell, the the main topics that will help you achieve a healthy deliverability score are:&lt;/p&gt;
+<p>In a nutshell, the the main topics that will help you achieve a healthy deliverability score are:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Setting up the right technical configuration for all your domains&lt;/li&gt;
-  &lt;li&gt;Building a strong reputation derived from solid email activity&lt;/li&gt;
-  &lt;li&gt;Creating well thought content and enough variability between email approaches&lt;/li&gt;
-  &lt;li&gt;Planning volume mindfully with no big spikes in activity&lt;/li&gt;
-  &lt;li&gt;Using the best quality data for emails&lt;/li&gt;
-  &lt;li&gt;Being mindful of your audience’s restrictions to cold outbound requests&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Setting up the right technical configuration for all your domains</li>
+  <li>Building a strong reputation derived from solid email activity</li>
+  <li>Creating well thought content and enough variability between email approaches</li>
+  <li>Planning volume mindfully with no big spikes in activity</li>
+  <li>Using the best quality data for emails</li>
+  <li>Being mindful of your audience’s restrictions to cold outbound requests</li>
+</ol>
 
-&lt;p&gt;At MailSwami, we take the deliverability of our customers seriously and give them the best tools for the ever-changing internet world.&lt;/p&gt;
+<p>At MailSwami, we take the deliverability of our customers seriously and give them the best tools for the ever-changing internet world.</p>
 
-&lt;p&gt;Alongside many dedicated features within MailSwami that help you monitor your deliverability, we offer 2 special packages you might want to look at:&lt;/p&gt;
+<p>Alongside many dedicated features within MailSwami that help you monitor your deliverability, we offer 2 special packages you might want to look at:</p>
 
-&lt;p&gt;Warm Up / Done For You Email Finder&lt;/p&gt;
+<p>Warm Up / Done For You Email Finder</p>
 
-&lt;p&gt;We created a deliverability checklist to help you take action and improve your deliverability today. You can find it on the next page.&lt;/p&gt;
+<p>We created a deliverability checklist to help you take action and improve your deliverability today. You can find it on the next page.</p>
 
-&lt;p&gt;Deliverability Checklist&lt;/p&gt;
+<p>Deliverability Checklist</p>
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Your email configuration: 
+<ol>
+  <li>
+    <p>Your email configuration: 
 [ ] Set up your SPF, DKIM, and DMARC configurations
 [ ] Create a custom tracking domain to track open rates
-[ ] Complete your mailbox profile information (add your name, photo, signature…)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sender best practices - email content &amp;amp; volume:
+[ ] Complete your mailbox profile information (add your name, photo, signature…)</p>
+  </li>
+  <li>
+    <p>Sender best practices - email content &amp; volume:
 [ ] Enable MailSwami warm-up network to increase your sender reputation
 [ ] Subscribe to daily newsletters to increase the number of emails that you receive every day (you can set a filter on Gmail)
 [ ] Use your mailboxes for purposes other than sales and marketing like for example exchanging emails with colleagues, friends, customers… 
@@ -1150,28 +1150,28 @@ emails, there are a few things you can do:&lt;/p&gt;
 [ ] Disable click tracking features
 [ ] Send campaigns with at most 50 new leads per mailbox per day
 [ ] Keep your send volume to 350 emails per mailbox per day. Run multiple monthly sales initiatives, where you A/B test different email templates with different audiences to avoid sending thousands of emails that look 95% alike
-[ ] Review your templates periodically to avoid “template exhaustion”&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Sender best practices - lead generation:
+[ ] Review your templates periodically to avoid “template exhaustion”</p>
+  </li>
+  <li>
+    <p>Sender best practices - lead generation:
 [ ] Take time to refine your lead generation process in order to make sure you are reaching out to the right people in order to maximise positive replies
 [ ] Make sure you’re reaching out at the right time, when prospects are more likely to buy is also a big variable in getting responses and building a positive deliverability feedback loop.
 [ ] Avoid contacting shared inboxes such as info@, sales@, hello@…
-[ ] Periodically review your lead generation by leveraging the quality of your replies and conversations - try to avoid audiences that get you a lot of “hard no’s” as replies&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If you want to ramp up volume:
+[ ] Periodically review your lead generation by leveraging the quality of your replies and conversations - try to avoid audiences that get you a lot of “hard no’s” as replies</p>
+  </li>
+  <li>
+    <p>If you want to ramp up volume:
 [ ] Create new mailboxes. For example if your name is John Doe create john@company.com and john.doe@company.com
 [ ] Create new domains. If you are using company.com, you could create getcompany.com, companyapp.com, trycompany.com, etc…
 [ ] For every new mailbox (and new domain) make sure to warm it up for at least 4 weeks before you send any sales content
-[ ] Balance your sent vs. received emails ratio on all of your mailboxes and domains&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="deliverability" /><summary type="html">Deliverability Contents</summary></entry><entry><title type="html">Scale</title><link href="/scale/intro.html" rel="alternate" type="text/html" title="Scale" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/scale/intro</id><content type="html" xml:base="/scale/intro.html">&lt;p&gt;Test Pillar&lt;/p&gt;
+[ ] Balance your sent vs. received emails ratio on all of your mailboxes and domains</p>
+  </li>
+</ol>]]></content><author><name></name></author><category term="deliverability" /><summary type="html"><![CDATA[Deliverability Contents]]></summary></entry><entry><title type="html">Scale</title><link href="http://localhost:4001/scale/intro.html" rel="alternate" type="text/html" title="Scale" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/scale/intro</id><content type="html" xml:base="http://localhost:4001/scale/intro.html"><![CDATA[<p>Test Pillar</p>
 
-&lt;p&gt;test
+<p>test
 dsf
-test&lt;/p&gt;</content><author><name></name></author><category term="scale" /><summary type="html">Test Pillar</summary></entry><entry><title type="html">Writing</title><link href="/writing/intro.html" rel="alternate" type="text/html" title="Writing" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>/writing/intro</id><content type="html" xml:base="/writing/intro.html">&lt;p&gt;Test Pillar&lt;/p&gt;
+test</p>]]></content><author><name></name></author><category term="scale" /><summary type="html"><![CDATA[Test Pillar]]></summary></entry><entry><title type="html">Writing</title><link href="http://localhost:4001/writing/intro.html" rel="alternate" type="text/html" title="Writing" /><published>2021-09-24T17:39:18+07:00</published><updated>2021-09-24T17:39:18+07:00</updated><id>http://localhost:4001/writing/intro</id><content type="html" xml:base="http://localhost:4001/writing/intro.html"><![CDATA[<p>Test Pillar</p>
 
-&lt;p&gt;test
+<p>test
 dsf
-test&lt;/p&gt;</content><author><name></name></author><category term="writing" /><summary type="html">Test Pillar</summary></entry></feed>
+test</p>]]></content><author><name></name></author><category term="writing" /><summary type="html"><![CDATA[Test Pillar]]></summary></entry></feed>

@@ -666,7 +666,8 @@ var serverManager = (function () {
             tblLabel.appendChild(tblRenewCancelButton);
             tblLabel.appendChild(tblRenewButton);
             tblLabel.appendChild(renewAmountsWrapper);
-            var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Marketing"},{"google":"Email"}]);
+            //var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Marketing"},{"google":"Email"}]);
+            var espProvider = this.getDropDown("esp-provider", "espProvider", [{"manual":"Marketing"}]);
             var inputFirstName = this.getInputField("text", {"placeholder":"First name","name":"firstName","style":"float:right;"});
             var inputLastName = this.getInputField("text", {"placeholder":"Last name","name":"lastName","style":"float:right;"});
             var inputNewEmail = this.getInputField("text", {"placeholder":"Name","class":"add-new-email","name":"email","style":"float:right;"});

@@ -391,3 +391,7 @@ disable select all
 }
 
 
+#server-dropdown-id, .server-name {
+	visibility:hidden !important;
+}
+
