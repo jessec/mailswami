@@ -858,7 +858,7 @@
                                         <br>
                                         <img class="img-fluid" src="assets/icons/rocket-dark.png" width="120" alt="Icon">
                                         <div class="pricing-details">
-                                            <span>$25</span>
+                                            <span>$9.99</span>
                                             <div class="sub_span">Per Month</div>
                                         </div>
                                         <br><br>
@@ -868,9 +868,35 @@
                                             <li>Unlimited leads</li>
                                             <li><span style="font-size: 90%; font-weight: bold; display:block; width:100%; text-align: center;">Life time beta price for beta users</span></li>
                                         </ul>
+
+                                        <br><br>
+
+                                        <div id="paypal-button-container-P-90557282VR7716254MRTRZKY"></div>
+                                        <script src="https://www.paypal.com/sdk/js?client-id=AQc5qXfxvJJxCNZiJ0IOy2clZAqq3K7-kAXouJVHgO82NayKnRIcq82fwroPFh5RaHVFI9UIBotQECIQ&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                                        <script>
+                                          paypal.Buttons({
+                                              style: {
+                                                  shape: 'rect',
+                                                  color: 'gold',
+                                                  layout: 'vertical',
+                                                  label: 'subscribe'
+                                              },
+                                              createSubscription: function(data, actions) {
+                                                return actions.subscription.create({
+                                                  /* Creates the subscription */
+                                                  plan_id: 'P-90557282VR7716254MRTRZKY'
+                                                });
+                                              },
+                                              onApprove: function(data, actions) {
+                                                alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                                              }
+                                          }).render('#paypal-button-container-P-90557282VR7716254MRTRZKY'); // Renders the PayPal button
+                                        </script>
+
+
                                         <br><br>
                                         <a style="display: none;" class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>
-                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                        <form style="display: none;"  action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                             <input type="hidden" name="cmd" value="_s-xclick">
                                             <input type="hidden" name="hosted_button_id" value="9VJVJSQAYQ6SJ">
                                             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG_global.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
