@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<link rel="icon" href="images/favicon-leadspod.png" type="image/png" sizes="16x16">
+<script src="https://kit.fontawesome.com/933defe073.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="dashboard.css">
+<script src="https://www.paypal.com/sdk/js?client-id=AQc5qXfxvJJxCNZiJ0IOy2clZAqq3K7-kAXouJVHgO82NayKnRIcq82fwroPFh5RaHVFI9UIBotQECIQ"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+
+<script>
+    var USER_ROLE = "admin";
+    var host = "https://app.mailswami.com";
+    if (location.host == "mailswami.com") {
+        host = "https://app.mailswami.com";
+    }
+    if (location.host == "leadspod.com") {
+        host = "https://app.leadspod.com";
+    }
+    if (location.host == "localhost:8080") {
+        host = "http://localhost:8080";
+        USER_ROLE = "admin";
+    }
+</script>
+<style>
+#spin-wrapper {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#spin-wrapper>#spinner {
+	position: absolute;
+	margin-left: calc(50% - 25px);
+	width: 50px;
+	margin-top: 50px;
+}
+</style>
+<script>
+    function docReady(fn) {
+        if (document.readyState === "complete"
+                || document.readyState === "interactive") {
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    let spinner = {
+        on : function () {
+            document.querySelector('#spin-wrapper').style.display = "block";
+        },
+        off : function () {
+            document.querySelector('#spin-wrapper').style.display = "none";
+        }
+    }
+
+    docReady(function () {
+        spinner.on();
+    });
+</script>
+</head>
+<body>
+	<div id="spin-wrapper">
+		<img id="spinner" src="images/spinner.svg">
+	</div>
+
+	<div id="help-modal">
+		<div id="close-modal">x</div>
+		<div id="inner-help-modal"></div>
+	</div>
+
+	<div id="wrapper">
+		<button class="tablink" onclick="openPage('Home', this, '#4d9bc0')" id="dashboard-button">Warmup</button>
+		<button id="cronjobpage" style="display: none;" class="tablink" onclick="openPage('Contact', this, '#4d9bc0')">Schedule</button>
+		<button id="statspage" style="display: _none;" class="tablink" onclick="openPage('Stats', this, '#4d9bc0')">Stats</button>
+
+		
+		<!--
+		<button id="serverpage" style="display: none;" class="tablink" onclick="openPage('Servers', this, '#4d9bc0')">Servers</button>
+		-->
+		<button id="_serverpage" style="display: block; color: transparent; width: 20%;" class="tablink">Servers</button>
+
+		
+		<button id="invoicepage" class="tablink" onclick="openPage('News', this, '#4d9bc0')">Account</button>
+		<button class="tablink" onclick="openPage('About', this, '#4d9bc0')" id="defaultOpen">
+			<span id="logout-link" href="#">Logout</span>
+		</button>
+		<div id="Home" class="tabcontent">
+			<a class="help-link" href="#">help</a>
+			<div id="account-manager"></div>
+		</div>
+
+		<div id="News" class="tabcontent">
+			<div id="invoice-viewer">
+				<div id="invoice">
+					<i id="close-invoice" class="far fa-window-close"></i>
+					<span>
+						Invoice nr:
+						<span id="invoice-nr"></span>
+					</span>
+					<table id="invoice-personal-details" class="transparent subtitle">
+						<tbody>
+							<tr>
+								<th id="customer-name"></th>
+								<td id="company-name">MailSwami</td>
+							</tr>
+							<tr>
+								<th id="customer-email"></th>
+								<td id="company-email">invoice@mailswami.com</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="invoice-table" class="table table-condensed mobile-data dataTable no-footer" role="grid">
+						<thead>
+							<tr role="row">
+								<th rowspan="1" colspan="1">DESCRIPTION</th>
+								<th rowspan="1" colspan="1">START DATE</th>
+								<th rowspan="1" colspan="1">END DATE</th>
+								<th rowspan="1" colspan="1">AMOUNT</th>
+							</tr>
+						</thead>
+						<tbody id="invoice-table-body">
+						</tbody>
+					</table>
+					<table class="invoice-totals">
+						<tbody>
+							<tr>
+								<th></th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>Invoice Total:</th>
+								<td id="invoice-table-totals"></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div id="paypal-button-container"></div>
+			</div>
+			<a class="help-link" href="#">help</a>
+			<div id="invoice-manager">
+				<button class="btn-add-credit" style="float: right; visibility: visible;">add credit</button>
+			</div>
+		</div>
+		<div id="Contact" class="tabcontent">
+			<div id="cron-manager-messages"></div>
+			<a class="help-link" href="#">help</a>
+			<div id="cron-manager"></div>
+		</div>
+		<div id="Servers" class="tabcontent">
+			<div id="server-manager-messages"></div>
+			<a class="help-link" href="#">help</a>
+			<div id="server-manager"></div>
+		</div>
+		<div id="Stats" class="tabcontent">
+			<div id="stats-manager-messages"></div>
+			<a class="help-link" href="#">help</a>
+			<div id="stats-manager">
+			
+			
+				
+			
+			</div>
+		</div>
+		<div id="About" class="tabcontent">
+			<div id="user-manager-messages"></div>
+			<a class="help-link" href="#">help</a>
+			<div id="user-manager"></div>
+		</div>
+
+	</div>
+
+	<!-- page content -->
+	<script src="js/jsencrypt.min.js"></script>
+	<script src="js/crypt.js"></script>
+	<script src="js/network.js"></script>
+	<script src="js/form.js"></script>
+	<script src="js/table.js"></script>
+	<script src="stats.js"></script>
+	<script src="user.js"></script>
+	<script src="invoice.js"></script>
+	<script src="warmup.js"></script>
+	<script src="schedule.js"></script>
+	<script src="servers.js"></script>
+
+
+
+	<script>
+        docReady(function () {
+
+            if (USER_ROLE == "admin") {
+                document.querySelector('#cronjobpage').style.display = "block";
+                try{
+                    document.querySelector('#serverpage').style.display = "block";
+                }catch{
+                    
+                }
+                var tablinks = document.querySelectorAll('.tablink');
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.width = "20%";
+                }
+            }
+
+            userManager.init("user-manager", host);
+            //invoiceManager.init("invoice-manager", host);
+
+            //setTimeout(function () {
+            //accountManager.init("account-manager", host);
+            //}, 5000);
+
+            //serverManager.init("server-manager", host);
+            //cronManager.init("cron-manager", host);
+
+            document.getElementById("dashboard-button").addEventListener(
+                    "click", function () {
+                        spinner.on();
+                        accountManager.init("account-manager", host);
+                    });
+            document.getElementById("cronjobpage").addEventListener("click",
+                    function () {
+                        spinner.on();
+                        cronManager.init("cron-manager", host);
+                    });
+            document.getElementById("statspage").addEventListener("click",
+                    function () {
+                        spinner.on();
+                        statsManager.init("stats-manager", host);
+                    });
+            try{
+                document.getElementById("serverpage").addEventListener("click",
+                        function () {
+                            spinner.on();
+                            serverManager.init("server-manager", host);
+                        });                
+            }catch{}
+
+            document.getElementById("invoicepage").addEventListener("click",
+                    function () {
+                        spinner.on();
+                        invoiceManager.init("invoice-manager", host);
+                    });
+
+
+            
+            
+            (function(){
+                document.getElementById("defaultOpen").click();
+                spinner.off();
+            })();
+            
+
+            document
+                    .getElementById("close-modal")
+                    .addEventListener(
+                            "click",
+                            function () {
+                                document.getElementById("help-modal").style.display = "none";
+                            });
+
+        });
+    </script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/61a76edd53b398095a66f341/1flr0i4pu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>

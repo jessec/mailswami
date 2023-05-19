@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Arial;
+}
+
+#wrapper {
+	max-width: 650px;
+}
+
+img {
+	max-width: 90%;
+}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Schedule</h1>
+		<p>
+		Use <a href="https://crontab.guru/">Crontab Guru</a> to create a time schedule.
+		</p>		
+		<p>To use the scheduler you need to have a Email Relay Server. The scheduling rules will be applied to the Email Relay Server.</p>
+		<p><br>Servers > Add Server > Choose Server type: Email</p>
+		
+		<h2>Batch size</h2>
+		<p>
+
+			Batch size is made of a total and a number of emails per batch run. <br> <br> 2 50 <br> <br> This will send 2 emails per run
+			and 50 in total.
+			
+			A batch is scheduled over a period of 15 minutes. So it is best to schedule the start of a batch at the beginning of a quarter at 0, 15, 30, or 45 minutes.
+			
+			There is a max per day limit of 30 emails combined with the emails of the warmer service it makes a total of 55 emails per day.
+			
+		<p>
+			<img src="assets/images/schedule-screenshot.png" alt="My helpful screenshot" /> <br>
+			<br>
+		<h2>Cron format</h2>
+		<p>This is the cron format to schedule how your email is send out.</p>
+		<p>You could use <a href="https://crontab.guru/">crontab.guru</a> to create the schedules that you need.</p>
+		<br> <img src="assets/images/cron-job-format.png" alt="My helpful screenshot" />
+	</div>
+</body>
+</html>
